@@ -179,7 +179,8 @@ class PlaylistEvent:
 if __name__ == '__main__':
     print("howdy")
 
-
+    room = "Swissotel Chicago | Zurich A"
+    print(f"scheduling for {room}")
 
     mapping_xml = ET.parse("mapping.xml")
     # dictonary for event_id to confpub id mapping
@@ -198,6 +199,9 @@ if __name__ == '__main__':
     timeslots = []
     for ts in schedule_xml.getroot().xpath("//timeslot[event_id]"):
         timeslots.append(Timeslot(schedule_timezone, ts))
+
+    timeslots_to_schedule = list(filter(lambda x: x.room == room, timeslots))
+    
     
     timeslots = []
     for c in schedule_xml.getroot():
