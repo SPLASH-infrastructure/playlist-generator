@@ -106,8 +106,8 @@ class Timeslot:
         end_time = timeslot_xml.xpath(".//end_time/text()")[0]
 
         researchr_fstring = "%Y/%m/%d %H:%M"
-        self.start = datetime.datetime.strptime(f"${start_date} ${start_time}", researchr_fstring).replace(tzinfo=timezone)
-        self.end = datetime.datetime.strptime(f"${end_date} ${end_time}", researchr_fstring).replace(tzinfo=timezone)
+        self.start = datetime.datetime.strptime(f"{start_date} {start_time}", researchr_fstring).replace(tzinfo=timezone)
+        self.end = datetime.datetime.strptime(f"{end_date} {end_time}", researchr_fstring).replace(tzinfo=timezone)
 
         # description and persons elided; we don't need them for scheduling
 
@@ -196,9 +196,10 @@ if __name__ == '__main__':
     schedule_timezone = TZ.gettz(schedule_xml.xpath("//timezone_id/text()")[0])
     # get all the time slots from all the subevents under events
     timeslots = []
-    for ts in schedule_xml.getroot().xpath("//timeslot"):
+    for ts in schedule_xml.getroot().xpath("//timeslot[event_id]"):
         timeslots.append(Timeslot(schedule_timezone, ts))
     
+    timeslots = []
     for c in schedule_xml.getroot():
         for cc in c:
             if cc.tag == 'timeslot':
