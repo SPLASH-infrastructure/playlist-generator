@@ -17,6 +17,8 @@
 #        </event>
 
 import lxml
+import datetime, dateutil
+import dateutil.tz as TZ
 import lxml.etree as ET
 
 class TimeSlotSchedule:
@@ -66,6 +68,57 @@ def mapping_from_xml(match):
     </match>
     """
     return Mapping(match.get("event_id"), match[0].get("id"))
+
+class Timeslot:
+    """
+    An example timeslot
+    <timeslot>
+      <slot_id>1b9393da-cc9d-4307-98e8-03dd6215eb94</slot_id>
+      <event_id>c37258b4-1df6-476e-b6e1-b5168f6b0ece</event_id>
+      <submission_id>32</submission_id>
+      <title>Synbit: Synthesizing Bidirectional Programs using Unidirectional Sketches</title>
+      <room>Swissotel Chicago | Zurich A</room>
+      <date>2021/10/20</date>
+      <start_time>19:35</start_time>
+      <end_date>2021/10/20</end_date>
+      <end_time>19:50</end_time>
+      <description></description>
+      <persons> [...]
+      </persons>
+      <tracks>
+        <track>OOPSLA</track>
+      </tracks>
+      <badges>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+    """
+    def __init__(self, timezone, timeslot_xml):
+        #basic metadata
+        self.event_id = timeslot_xml.xpath(".//event_id/text()")[0]
+        self.title = timeslot_xml.xpath(".//title/text()")[0]
+        self.room = timeslot_xml.xpath(".//room/text()")[0]
+
+        #annoying date/time gubbins
+        start_date = timeslot_xml.xpath(".//date/text()")[0]
+        start_time = timeslot_xml.xpath(".//start_time/text()")[0]
+        end_date = timeslot_xml.xpath(".//end_date/text()")[0]
+        end_time = timeslot_xml.xpath(".//end_time/text()")[0]
+
+        researchr_fstring = "%Y/%m/%d %H:%M"
+        self.start = datetime.datetime.strptime(f"${start_date} ${start_time}", researchr_fstring).replace(tzinfo=timezone)
+        self.end = datetime.datetime.strptime(f"${end_date} ${end_time}", researchr_fstring).replace(tzinfo=timezone)
+
+        # description and persons elided; we don't need them for scheduling
+
+        # track information
+        self.tracks = timeslot_xml.xpath(".//tracks/track/text()")
+
+        # badges information
+        # badges are annoying. Some of them have a "property" (really only the Event Form ones), while most don't
+        # however, basically all of them have some semantic use. Keynotes, for example, are (sometimes) plenary, etc
+        # for now we'll just shove them into an array without including the property data
+        self.badges = timeslot_xml.xpath(".//badges/badge/text()")
 
 
 class PlaylistEvent:
@@ -139,8 +192,13 @@ if __name__ == '__main__':
 
 
     schedule_xml = ET.parse("schedule.xml")
-    timeslots = []
+
+    schedule_timezone = TZ.gettz(schedule_xml.xpath("//timezone_id/text()")[0])
     # get all the time slots from all the subevents under events
+    timeslots = []
+    for ts in schedule_xml.getroot().xpath("//timeslot"):
+        timeslots.append(Timeslot(schedule_timezone, ts))
+    
     for c in schedule_xml.getroot():
         for cc in c:
             if cc.tag == 'timeslot':
