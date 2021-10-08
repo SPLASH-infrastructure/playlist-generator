@@ -85,13 +85,26 @@ class Event:
         self.onairtime = onairtime
         self.title = title
 
+
     def to_xml(self):
-        tmp_event_xml = ET.Element("event")
-        category_xml = ET.Element("category")
-        duration_xml = ET.Element("duration")
-        title_xml = ET.Element("title")
+        tmp_event_n = ET.Element("event")
+        category_n = ET.Element("category")
+        category_n.text = self.category
+        
+        duration_n = ET.Element("duration")
+        duration_n.text = self.duration
+        
+        title_n = ET.Element("title")
+        
+        # Bunch of defaults
+        offset_n = ET.Element("offset")
+        offset_n.text = "00:00:00:00"
+        endmode_n = ET.Element("endmode")
+        endmode_n.text = "FOLLOW"
+        igincomsig_n = ET.Element("ignoreincomingscte35signals")
+        endmode_n.text = "false"
         # TODO fix setters and tostring should do the job
-        return lxml.etree.tostring(tmp_event)
+        return lxml.etree.tostring(tmp_event_n)
 
 
 # "SPLASH-2021-sample_demo.xml"
@@ -102,12 +115,12 @@ if __name__ == '__main__':
 
     mapping_xml = ET.parse("mapping.xml")
     # dictonary for event_id to confpub id mapping
-    event_mappings = []
+    event_mappings = {}
     # for match in mapping_xml.getroot():
     #     event_mapping[match.get("event_id")] = match[0].get("id")
     for match in mapping_xml.getroot():
-        event_mappings.append(mapping_from_xml(match))
-
+        m = mapping_from_xml(match)
+        event_mappings[m.event_id] = m
 
 
     schedule_xml = ET.parse("schedule.xml")
@@ -118,5 +131,21 @@ if __name__ == '__main__':
             if cc.tag == 'timeslot':
                 timeslots.append(cc)
 
-    print(len(event_mappings), len(timeslots))
+    # mapping between even_ids and schedule timeslots
+    # we filter on only those timeslots that have an event_id and a badges node
+    timeslots1 = []
+    for ts in timeslots:
+        elems = [c.tag for c in ts]
+        if "event_id" in elems and "badges" in elems:
+            timeslots1.append(ts)
+
+    timeslots_mapping = {}
+    for ts in timeslots1:
+        timeslots_mapping[ts.find("event_id").text] = ts
+        
+    
+    print(len(event_mappings), len(timeslots1))
+    
+    
+    
     print("bye")
