@@ -19,25 +19,37 @@
 import lxml
 import lxml.etree as ET
 
-class Schedule:
-    def __init__(self, event_id, start_date, start_time, end_date, end_time, event_form):
+class TimeSlotSchedule:
+    """
+    Appears as a timeslot in the schedule
+    <timeslot>
+      <slot_id>db0c516c-2586-43e1-be4d-958a3b92057a</slot_id>
+      <event_id>754ed478-9409-48b7-a054-dd3a25f7d775</event_id>
+      <title>Invited Speaker</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>18:20</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>18:50</end_time>
+      <description>undefined</description>
+      <persons>...</persons>
+      <tracks>
+        <track>Ask Me Anything (AMA)</track>
+      </tracks>
+      <badges>
+        <badge>AMA</badge>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+    """
+    def __init__(self, event_id, start_date, start_time, end_date, end_time, badge_event_form):
         self.event_id = event_id
         self.start_date = start_date
         self.start_time = start_time
         self.end_date = end_date
         self.end_time = end_time
-        self.event_form = event_form # in-person or virtual
+        self.badge_event_form = badge_event_form # in-person or virtual
 
-
-# now select timeslot that have event_id, start_time, end_time, start_date and end_date and a badge?
-# interesting_timeslots = [ ts for ts in timeslots
-#                           if ('event_id' in [elem.tag for elem in ts]) ] # FIXME a better way to do it is may be filter via event ids that are in mapping.xml?
-
-
-# interesting_timeslots1 = [ts for ts in interesting_timeslots
-#                           if 'end_date' in [elem.tag for elem in ts]]
-
-# def schedule_from_xml(event):
 
 
 class Mapping:
@@ -47,13 +59,16 @@ class Mapping:
 
 
 def mapping_from_xml(match):
+    """
+    A sample mapper
+    <match event_id="2b702965-d312-4316-8d55-39a1e0d157f4">
+        <confpub id="splashws21slemain-p44-p"/>
+    </match>
+    """
     return Mapping(match.get("event_id"), match[0].get("id"))
 
 
-
-# print(len(schedule_xml.getroot()), len(mapping_xml.getroot()))
-
-class Event:
+class PlaylistEvent:
     """
     An example event
       <event>
@@ -141,7 +156,12 @@ if __name__ == '__main__':
 
     timeslots_mapping = {}
     for ts in timeslots1:
-        timeslots_mapping[ts.find("event_id").text] = ts
+        timeslots_mapping[ts.find("event_id").text] = TimeSlotSchedule(ts.find("event_id").text
+                                                                       , "" # ts.find("start_date").text
+                                                                       , ts.find("start_time").text
+                                                                       , ts.find("end_date").text
+                                                                       , ts.find("end_time").text
+                                                                       , "FixBadges")
         
     
     print(len(event_mappings), len(timeslots1))
