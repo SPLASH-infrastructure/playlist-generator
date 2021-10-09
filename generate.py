@@ -93,7 +93,6 @@ class Mapping:
     def __init__(self, event_id, title, m):
         self.event_id = event_id
         self.title = title
-
         self.m = m # pointer to the mapping xml node
 
         
@@ -106,60 +105,6 @@ def mapping_from_xml(match):
     </match>
     """
     return Mapping(match.get("event_id"), match[0].get("id"), match)
-
-# # ANI: I am going to merge your way of doing it with  mine.
-# # The reason being I want to keep the validation layer separate from the object creation.
-# # But I like the way you use xpaths.
-# class Timeslot:
-#     """
-#     An example timeslot
-#     <timeslot>
-#       <slot_id>1b9393da-cc9d-4307-98e8-03dd6215eb94</slot_id>
-#       <event_id>c37258b4-1df6-476e-b6e1-b5168f6b0ece</event_id>
-#       <submission_id>32</submission_id>
-#       <title>Synbit: Synthesizing Bidirectional Programs using Unidirectional Sketches</title>
-#       <room>Swissotel Chicago | Zurich A</room>
-#       <date>2021/10/20</date>
-#       <start_time>19:35</start_time>
-#       <end_date>2021/10/20</end_date>
-#       <end_time>19:50</end_time>
-#       <description></description>
-#       <persons> [...]
-#       </persons>
-#       <tracks>
-#         <track>OOPSLA</track>
-#       </tracks>
-#       <badges>
-#         <badge property="Event Form">Virtual</badge>
-#       </badges>
-#     </timeslot>
-#     """
-#     def __init__(self, timezone, timeslot_xml):
-#         #basic metadata
-#         self.event_id = timeslot_xml.xpath(".//event_id/text()")[0]
-#         self.title = timeslot_xml.xpath(".//title/text()")[0]
-#         self.room = timeslot_xml.xpath(".//room/text()")[0]
-
-#         #annoying date/time gubbins
-#         start_date = timeslot_xml.xpath(".//date/text()")[0]
-#         start_time = timeslot_xml.xpath(".//start_time/text()")[0]
-#         end_date = timeslot_xml.xpath(".//end_date/text()")[0]
-#         end_time = timeslot_xml.xpath(".//end_time/text()")[0]
-
-#         researchr_fstring = "%Y/%m/%d %H:%M"
-#         self.start = datetime.datetime.strptime(f"{start_date} {start_time}", researchr_fstring).replace(tzinfo=timezone)
-#         self.end = datetime.datetime.strptime(f"{end_date} {end_time}", researchr_fstring).replace(tzinfo=timezone)
-
-#         # description and persons elided; we don't need them for scheduling
-
-#         # track information
-#         self.tracks = timeslot_xml.xpath(".//tracks/track/text()")
-
-#         # badges information
-#         # badges are annoying. Some of them have a "property" (really only the Event Form ones), while most don't
-#         # however, basically all of them have some semantic use. Keynotes, for example, are (sometimes) plenary, etc
-#         # for now we'll just shove them into an array without including the property data
-#         self.badges = timeslot_xml.xpath(".//badges/badge/text()")
 
 
 class PlaylistEvent:
@@ -254,13 +199,13 @@ class PlaylistEvent:
               , som, startmode, twitchrpclist, untimedAdList, voiceoverlist ]
         )
         
-        return event # ideally we'd like to have a pretty printer. but thats not necessary right now.
+        return event
 
 
 def generate_playlist(event_mappings, timeslots_mappings):
     # first get the common keyset
     interesting_event_ids = event_mappings.keys() & timeslots_mappings.keys()
-    # Why are there just 72 of them?
+    # TODO: Why are there just 72 of them?
 
     es = []
     for k in interesting_event_ids:
@@ -270,18 +215,17 @@ def generate_playlist(event_mappings, timeslots_mappings):
         title = m.title
         category = "LIVE" # FIXME
         duration = ts.end_ts - ts.start_ts
-        endmode = "FOLLOW" # Confirm
+        endmode = "FOLLOW" # TODO: Confirm this
         onairtime = ts.start_ts # TODO: I believe ideally we need to arrange this in an ascending order
-                                 #      so that we can find filler events
+                                #      so that we can find filler events
         
         es.append(
             PlaylistEvent(title, category, duration, endmode, onairtime)
         )
 
     return es
-
     
-# prduces 3 files "SPLASH-2021-playlist-Zurich{A|B|C}.xml"
+# prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
 if __name__ == '__main__':
     print("howdy")
     base_output_file = "SPLASH21-playlist-demo-Zurich-" # FIXME remove demo for final
@@ -352,9 +296,11 @@ if __name__ == '__main__':
         root.extend(list(playlist_xml))
         
         with ET.xmlfile(output_file, encoding='utf-8', close=True) as xf:
-            xf.write(root) # TODO add metadata <?xml version="1.0" encoding=... >
+            xf.write(root)
+            # TODO: add metadata <?xml version="1.0" encoding=... >
+            #       pretty printing would be nice
         
     # TODO: find filler events in the timeline
     # TODO: Some manual events whose durations we don't know, cut through filler or zoom room (ANI: I don't undrstand this)
-    
+    # TODO: maybe take file names are arguments to the script.
     print("bye")
