@@ -45,9 +45,9 @@ class TimeSlotSchedule:
       </badges>
     </timeslot>
     """
-    def __init__(self, event_id, start_ts, end_ts, badges, tracks, ts):
+    def __init__(self, event_id, room, start_ts, end_ts, badges, tracks, ts):
         self.event_id = event_id
-
+        self.room = room
         self.start_ts = start_ts
         self.end_ts = end_ts
 
@@ -86,7 +86,7 @@ class TimeSlotSchedule:
         # ANI: Maybe we can have a class Badge to define that behaviour
         badges = timeslot_xml.xpath(".//badges/badge/text()")
 
-        return TimeSlotSchedule(event_id, start_ts, end_ts, badges, tracks, timeslot_xml)
+        return TimeSlotSchedule(event_id, room, start_ts, end_ts, badges, tracks, timeslot_xml)
         
 
 class Mapping:
@@ -196,6 +196,9 @@ class PlaylistEvent:
 
 
     def to_xml(self):
+        """
+        This returns the etree object
+        """
         # The base element
         event = ET.Element("event")
 
@@ -203,13 +206,13 @@ class PlaylistEvent:
         category.text = self.category
 
         duration = ET.Element("duration")
-        duration.text = self.duration
+        duration.text = str(self.duration)
         
         title = ET.Element("title")
         title.text = self.title
 
         onairtime = ET.Element("onairtime")
-        onairtime.text = self.onairtime
+        onairtime.text = str(self.onairtime)
 
         recordingpat = ET.Element("recordingpattern")
         recordingpat.text = "$(title)" # TODO: what is this, how is it computed?
@@ -251,19 +254,42 @@ class PlaylistEvent:
               , som, startmode, twitchrpclist, untimedAdList, voiceoverlist ]
         )
         
-        return ET.tostring(event) # ideally we'd like to have a pretty printer. but thats not necessary right now.
+        return event # ideally we'd like to have a pretty printer. but thats not necessary right now.
 
 
+def generate_playlist(event_mappings, timeslots_mappings):
+    # first get the common keyset
+    interesting_event_ids = event_mappings.keys() & timeslots_mappings.keys()
+    # Why are there just 72 of them?
+
+    es = []
+    for k in interesting_event_ids:
+        m = event_mappings[k]
+        ts = timeslots_mappings[k]
+        
+        title = m.title
+        category = "LIVE" # FIXME
+        duration = ts.end_ts - ts.start_ts
+        endmode = "FOLLOW" # Confirm
+        onairtime = ts.start_ts # TODO: I believe ideally we need to arrange this in an ascending order
+                                 #      so that we can find filler events
+        
+        es.append(
+            PlaylistEvent(title, category, duration, endmode, onairtime)
+        )
+
+    return es
+
+    
 # prduces 3 files "SPLASH-2021-playlist-Zurich{A|B|C}.xml"
 if __name__ == '__main__':
     print("howdy")
-
+    base_output_file = "SPLASH21-playlist-demo-Zurich-" # FIXME remove demo for final
     base_room = "Swissotel Chicago | Zurich "
     roomA = base_room + "A"
+    room_ids = ["A", "B", "C"]
     
-    rooms = [base_room + r for r in ["A", "B", "C"]]
-
-    print(f"scheduling for {roomA}")
+    rooms = [base_room + r for r in room_ids]
 
     mapping_xml = ET.parse("mapping.xml")
     # dictonary for event_id to confpub id mapping
@@ -282,54 +308,52 @@ if __name__ == '__main__':
     print(f"for timezone {schedule_timezone}")
 
     # get all the time slots from all the subevents under events
-    timeslots = schedule_xml.getroot().xpath("//timeslot[event_id]")
+    timeslots_xml = schedule_xml.getroot().xpath("//timeslot[event_id]")
     # for ts in schedule_xml.getroot().xpath("//timeslot[event_id]"):
         # timeslots.append(Timeslot(schedule_timezone, ts))
         # timeslots.append(ts)
+
     # timeslots_to_schedule = list(filter(lambda x: x.room == roomA, timeslots))
-    
-    
     # timeslots = []
     # for c in schedule_xml.getroot():
     #     for cc in c:
     #         if cc.tag == 'timeslot':
     #             timeslots.append(cc)
 
-    # mapping between even_ids and schedule timeslots
     # we filter on only those timeslots that have an event_id and a badges node
-    timeslots1 = []
-    for ts in timeslots:
-        elems = [c.tag for c in ts]
+    timeslots = []
+    for ts in timeslots_xml:
+        elems = [c.tag for c in ts] # TODO use xpath maybe?
         if "badges" in elems:
-            timeslots1.append(ts)
+            timeslots.append(TimeSlotSchedule.from_xml(schedule_timezone, ts))
 
-    timeslots_mapping = {}
-    for ts in timeslots1:
-        timeslots_mapping[ts.find("event_id").text] = TimeSlotSchedule.from_xml(schedule_timezone, ts)
-        
-    print("Parsed Schedule and event mappings")
-    print(len(event_mappings), len(timeslots1))
+    print(f"Parsed Schedule({len(timeslots)}) and event mappings({len(event_mappings)})")
+            
+    # No one cares about efficiency when we have < 5000 elements.
+    for r in room_ids:
+        print(f"scheduling for {base_room + r}")
+        output_file = base_output_file + r + ".xml"
 
-    # generate playlist for a room
-    # first get the common keyset
-    interesting_event_ids = event_mappings.keys() & timeslots_mapping.keys()
-    # Why are there just 72 of them?
-    
-    # playlist_events = []
-    # for k in interesting_event_ids:
-    #     title = event_mapping[k].title
-    #     category = "LIVE" # FIXME
-    #     duration = end_ts - start_ts
-    #     endmode = "FOLLOW" # Confirm
-    #     onairtime = start_ts
+        # mapping between even_ids and schedule timeslots
+        timeslots_mapping = {}
+        for ts in timeslots:
+            if ts.room == base_room + r:
+                timeslots_mapping[ts.event_id] = ts
         
-    #     playlist_events.append(
-    #         PlaylistEvent(title, category, duration)
-    #     )
-    
-    # write it to a file
-    # ET.xmlfile()
-    
+        # generate playlist for a room    
+        print(f"writing to file {output_file}")
+        # write it to a file
+        root = ET.Element("playlist")
+        eventlist = ET.Element("eventlist")
+        eventlist.set("timeinmilliseconds", "false")
+        root.append(eventlist)
+        
+        playlist_xml = map (PlaylistEvent.to_xml, generate_playlist(event_mappings, timeslots_mapping))
+        root.extend(list(playlist_xml))
+        
+        with ET.xmlfile(output_file, encoding='utf-8', close=True) as xf:
+            xf.write(root) # TODO add metadata <?xml version="1.0" encoding=... >
+        
     # TODO: find filler events in the timeline
     # TODO: Some manual events whose durations we don't know, cut through filler or zoom room (ANI: I don't undrstand this)
     
