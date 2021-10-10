@@ -15,6 +15,7 @@
 #        <event>
 #         ...
 #        </event>
+# Optimize when # of events > 50000 and the script takes more than 1 sec.
 
 import lxml
 import datetime, dateutil
@@ -233,19 +234,31 @@ def window(iterable, size):
     return list(zip(*iters))
 
 
-def gen_filler(timeslots):
+def gen_fillers(room_id, timeslots):
     """
-    Takes a list of timeslot if any two events have a gap then we generate a filler event to fit in the gap
+    Takes a list of time ordered timeslot if any two events have a gap then we generate a filler event to fit in the gap
     """
-    adjacent_ts = window(timeslots, 2)
+    filler_threshold = (1, 2) # generate a filler only if the gap is between this duration.
+    
+    adjacent_ts = list(window(timeslots, 2))
+    fillers = []
     for (e1, e2) in adjacent_ts:
         if e2.onairtime < e1.onairtime + e1.duration:
             print(f"Warning: Overlapping events {e1.ts.title} {e2.ts.title}")
-        if e2.onairtime > e1.onairtime + e1.duration: # TODO may be the diff should be over a threshold.
+        if e2.onairtime > e1.onairtime + e1.duration: # TODO may be the diff should be between a threshold?
             print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.title} and {e2.title}")
+            fillers.append(PlaylistEvent("FILLER_"+room_id
+                                         , "FILLER" # TODO Fillers won't be live... ?
+                                         , e2.onairtime - (e1.onairtime + e1.duration)
+                                         , e1.endmode
+                                         , e1.onairtime + e1.duration, # start after the prev event ends
+                                         None, # We don't have a mapping or timeslot xml object for fillers
+                                         None))
+    return fillers
+        
 
     
-def gen_playlist(event_mappings, timeslots_mappings):
+def gen_playlist(room_id, event_mappings, timeslots_mappings):
     """
     Given an map of event mappings and a map of event schedules generates a playlist 
     """
@@ -253,18 +266,18 @@ def gen_playlist(event_mappings, timeslots_mappings):
     
     es = map(lambda x: gen_playlist_event(event_mappings[x], timeslots_mappings[x]), event_ids)
 
-
     pl = sorted(es, key=lambda x: x.onairtime)
 
-    gen_filler(pl)
-    
-    return list(pl)
+    fillers = gen_fillers(room_id, pl)
+
+    return list(sorted ((pl + fillers), key=lambda x: x.onairtime))
         
     
     
 # prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
 if __name__ == '__main__':
     print("howdy")
+    
     base_output_file = "SPLASH21-playlist-demo-Zurich-" # FIXME remove demo for final
     base_room = "Swissotel Chicago | Zurich "
     roomA = base_room + "A"
@@ -307,11 +320,10 @@ if __name__ == '__main__':
     if x:
         print(f"Warning: There are {x} events in the schedule but not in event mappings")
             
-    # No one cares about efficiency when we have < 5000 elements.
     for r in room_ids:
         current_room = base_room + r
         print(f"Generating Playlist for {current_room}")
-
+        # filter timeslots for current room
         timeslots_mapping_for_room = dict(filter(lambda x: x[1].room == current_room, timeslots_mappings.items()))
 
         
@@ -321,7 +333,7 @@ if __name__ == '__main__':
         eventlist.set("timeinmilliseconds", "false")
         root.append(eventlist)
 
-        playlist_xml = map(PlaylistEvent.to_xml, gen_playlist(event_mappings, timeslots_mapping_for_room))
+        playlist_xml = map(PlaylistEvent.to_xml, gen_playlist(r, event_mappings, timeslots_mapping_for_room))
         root.extend(list(playlist_xml))
 
         # write it to a file
@@ -333,4 +345,5 @@ if __name__ == '__main__':
     # TODO: find filler events in the timeline
     # TODO: Some manual events whose durations we don't know, cut through filler or zoom room (ANI: I don't undrstand this)
     # TODO: maybe take file names are arguments to the script.
+    
     print("bye")
