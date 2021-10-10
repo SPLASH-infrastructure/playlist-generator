@@ -282,21 +282,21 @@ if __name__ == '__main__':
     for r in room_ids:
         current_room = base_room + r
         print(f"Generating Playlist for {current_room}")
-        output_file = base_output_file + r + ".xml"
 
         timeslots_mapping_for_room = dict(filter(lambda x: x[1].room == current_room, timeslots_mappings.items()))
                 
         # generate playlist for a room    
-        print(f"writing to file {output_file}")
         root = ET.Element("playlist")
         eventlist = ET.Element("eventlist")
         eventlist.set("timeinmilliseconds", "false")
         root.append(eventlist)
 
-        playlist_xml = map (PlaylistEvent.to_xml, gen_playlist(event_mappings, timeslots_mapping_for_room))
+        playlist_xml = map(PlaylistEvent.to_xml, gen_playlist(event_mappings, timeslots_mapping_for_room))
         root.extend(list(playlist_xml))
 
         # write it to a file
+        output_file = base_output_file + r + ".xml"
+        print(f"writing to file {output_file}")
         with open(output_file, "wb") as xf:
             xf.write(ET.tostring(root, pretty_print=True, xml_declaration=True, encoding='utf-8', standalone=True))
         
