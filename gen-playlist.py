@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#! /usr/local/bin/python3
 
 # We have two input files
 # 1. Schedule from researchr.conf called schedule.xml
