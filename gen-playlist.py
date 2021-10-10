@@ -158,13 +158,15 @@ class PlaylistEvent:
         
         title = ET.Element("title")
         title.text = self.title
+        if not self.title:
+            print(f"Warning: {self.ts.event_id} has an empty title")
 
         onairtime = ET.Element("onairtime")
         onairtime.text = self.onairtime.isoformat(timespec='seconds')
 
         recordingpat = ET.Element("recordingpattern")
-        recordingpat.text = "$(title)" # TODO: what is this, how is it computed?
-                                       # I think it should be the confpub id value from the mapping xml?
+        recordingpat.text = "$(title)" # TODO: what is this, how is it computed
+                                       # I am guessing it is be the confpub id value from the mapping xml?
         # Bunch of defaults
         offset = ET.Element("offset")
         offset.text = "00:00:00:00"
@@ -239,8 +241,8 @@ def gen_filler(timeslots):
     for (e1, e2) in adjacent_ts:
         if e2.onairtime < e1.onairtime + e1.duration:
             print(f"Warning: Overlapping events {e1.ts.title} {e2.ts.title}")
-        if e2.onairtime > e1.onairtime + e1.duration: # TODO may be should be over a threshold.
-            print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.ts.title} {e2.ts.title}")
+        if e2.onairtime > e1.onairtime + e1.duration: # TODO may be the diff should be over a threshold.
+            print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.title} and {e2.title}")
 
     
 def gen_playlist(event_mappings, timeslots_mappings):
