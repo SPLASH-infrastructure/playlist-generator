@@ -20,6 +20,7 @@ import lxml
 import datetime, dateutil
 import dateutil.tz as TZ
 import lxml.etree as ET
+from itertools import *
 
 
 class TimeSlotSchedule:
@@ -45,15 +46,16 @@ class TimeSlotSchedule:
       </badges>
     </timeslot>
     """
-    def __init__(self, event_id, room, start_ts, end_ts, badges, tracks, ts):
+    def __init__(self, event_id, title, room, start_ts, end_ts, badges, tracks, ts):
         self.event_id = event_id
+        self.title = title
+        
         self.room = room
         self.start_ts = start_ts
         self.end_ts = end_ts
-
+        
         self.badges = badges # in-person or virtual, keynote etc.
         self.tracks = tracks
-
         self.ts = ts # pointer the timeslot xml node
 
     def from_xml(timezone, timeslot_xml):
@@ -86,7 +88,7 @@ class TimeSlotSchedule:
         # ANI: Maybe we can have a class Badge to define that behaviour
         badges = timeslot_xml.xpath(".//badges/badge/text()")
 
-        return TimeSlotSchedule(event_id, room, start_ts, end_ts, badges, tracks, timeslot_xml)
+        return TimeSlotSchedule(event_id, title, room, start_ts, end_ts, badges, tracks, timeslot_xml)
         
 
 class Mapping:
@@ -131,14 +133,15 @@ class PlaylistEvent:
          <voiceoverlist/>
       </event>
     """
-    def __init__(self, title, category, duration, endmode, onairtime):
+    def __init__(self, title, category, duration, endmode, onairtime, m, ts):
         self.title = title
         self.category = category
         self.duration = duration
         self.endmode = endmode
         self.onairtime = onairtime
 
-
+        self.m = m
+        self.ts = ts
 
     def to_xml(self):
         """
@@ -211,10 +214,33 @@ def gen_playlist_event(m, ts):
     category = "LIVE" # FIXME
     duration = ts.end_ts - ts.start_ts
     endmode = "FOLLOW" # TODO: Confirm this
-    onairtime = ts.start_ts # TODO: I believe ideally we need to arrange this in an ascending order
-                            #      so that we can find filler events
+    onairtime = ts.start_ts
         
-    return PlaylistEvent(title, category, duration, endmode, onairtime)
+    return PlaylistEvent(title, category, duration, endmode, onairtime, m, ts)
+
+
+def window(iterable, size):
+    """
+    sliding window over an iterable
+    src: https://stackoverflow.com/questions/6822725/rolling-or-sliding-window-iterator 
+    """
+    iters = tee(iterable, size)
+    for i in range(1, size):
+        for each in iters[i:]:
+            next(each, None)
+    return list(zip(*iters))
+
+
+def gen_filler(timeslots):
+    """
+    Takes a list of timeslot if any two events have a gap then we generate a filler event to fit in the gap
+    """
+    adjacent_ts = window(timeslots, 2)
+    for (e1, e2) in adjacent_ts:
+        if e2.onairtime < e1.onairtime + e1.duration:
+            print(f"Warning: Overlapping events {e1.ts.title} {e2.ts.title}")
+        if e2.onairtime > e1.onairtime + e1.duration: # TODO may be should be over a threshold.
+            print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.ts.title} {e2.ts.title}")
 
     
 def gen_playlist(event_mappings, timeslots_mappings):
@@ -225,12 +251,13 @@ def gen_playlist(event_mappings, timeslots_mappings):
     
     es = map(lambda x: gen_playlist_event(event_mappings[x], timeslots_mappings[x]), event_ids)
 
-    return list(sorted(es, key=lambda x: x.onairtime))
 
-def gen_filler(ts):
-    """
-    Takes a list of timeslot if any two events have a gap then we generate a filler event to fit in the gap
-    """
+    pl = sorted(es, key=lambda x: x.onairtime)
+
+    gen_filler(pl)
+    
+    return list(pl)
+        
     
     
 # prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
@@ -284,7 +311,8 @@ if __name__ == '__main__':
         print(f"Generating Playlist for {current_room}")
 
         timeslots_mapping_for_room = dict(filter(lambda x: x[1].room == current_room, timeslots_mappings.items()))
-                
+
+        
         # generate playlist for a room    
         root = ET.Element("playlist")
         eventlist = ET.Element("eventlist")
