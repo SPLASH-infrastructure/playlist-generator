@@ -92,23 +92,33 @@ class TimeSlotSchedule:
         return TimeSlotSchedule(event_id, title, room, start_ts, end_ts, badges, tracks, timeslot_xml)
         
 
-class Mapping:
+class PrerecordedVideo:
     def __init__(self, event_id, title, m):
         self.event_id = event_id
         self.title = title
         self.m = m # pointer to the mapping xml node
 
-        
+    @classmethod
+    def mapping_from_xml(cls, match):
+        """
+        A sample mapper
+        <match event_id="2b702965-d312-4316-8d55-39a1e0d157f4">
+            <confpub id="splashws21slemain-p44-p"/>
+        </match>
+        """
+        return cls(match.get("event_id"), match[0].get("id"), match)
 
-def mapping_from_xml(match):
-    """
-    A sample mapper
-    <match event_id="2b702965-d312-4316-8d55-39a1e0d157f4">
-        <confpub id="splashws21slemain-p44-p"/>
-    </match>
-    """
-    return Mapping(match.get("event_id"), match[0].get("id"), match)
 
+class LiveEventInfo:
+    def __init__(self, name,)
+
+class EventRoom:
+    def __init__(self, name, livestream=None):
+        self.name = name
+        self.livestream = livestream
+    @classmethod
+    def from_xml(cls, xml_elem):
+        pass # for now
 
 class PlaylistEvent:
     """
@@ -303,9 +313,7 @@ if __name__ == '__main__':
     # we filter on only those timeslots that have an event_id and a badges node
     timeslots = []
     for ts in timeslots_xml:
-        elems = [c.tag for c in ts] # TODO use xpath maybe?
-        if "badges" in elems:
-            timeslots.append(TimeSlotSchedule.from_xml(schedule_timezone, ts))
+        timeslots.append(TimeSlotSchedule.from_xml(schedule_timezone, ts))
 
     # mapping between even_ids and schedule timeslots
     timeslots_mappings = dict(map(lambda x: (x.event_id, x), timeslots))
@@ -326,14 +334,16 @@ if __name__ == '__main__':
         # filter timeslots for current room
         timeslots_mapping_for_room = dict(filter(lambda x: x[1].room == current_room, timeslots_mappings.items()))
 
+        # a single event_id can appear more than once 
+        # (they're duplicated for mirrored events)
+        # so we can't build a map based on them. Only slot_ids are unique.
         
         # generate playlist for a room    
         root = ET.Element("playlist")
         eventlist = ET.Element("eventlist")
         eventlist.set("timeinmilliseconds", "false")
         root.append(eventlist)
-
-        playlist_xml = map(PlaylistEvent.to_xml, gen_playlist(r, event_mappings, timeslots_mapping_for_room))
+        playlist_xml = map (PlaylistEvent.to_xml, generate_playlist(event_mappings, filter(lambda ts: ts.room == base_room + r, timeslots)))
         root.extend(list(playlist_xml))
 
         # write it to a file
