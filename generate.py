@@ -203,28 +203,35 @@ class PlaylistEvent:
         return event
 
 
-def generate_playlist(event_mappings, timeslots_mappings):
-    # first get the common keyset
-    interesting_event_ids = event_mappings.keys() & timeslots_mappings.keys()
-    # TODO: Why are there just 72 of them?
-
-    es = []
-    for k in interesting_event_ids:
-        m = event_mappings[k]
-        ts = timeslots_mappings[k]
+def gen_playlist_event(m, ts):
+    """
+    Given a event mapping and a schedule timeslot generates a playlist event
+    """    
+    title = m.title
+    category = "LIVE" # FIXME
+    duration = ts.end_ts - ts.start_ts
+    endmode = "FOLLOW" # TODO: Confirm this
+    onairtime = ts.start_ts # TODO: I believe ideally we need to arrange this in an ascending order
+                            #      so that we can find filler events
         
-        title = m.title
-        category = "LIVE" # FIXME
-        duration = ts.end_ts - ts.start_ts
-        endmode = "FOLLOW" # TODO: Confirm this
-        onairtime = ts.start_ts # TODO: I believe ideally we need to arrange this in an ascending order
-                                #      so that we can find filler events
-        
-        es.append(
-            PlaylistEvent(title, category, duration, endmode, onairtime)
-        )
+    return PlaylistEvent(title, category, duration, endmode, onairtime)
 
-    return sorted(es, key=lambda x: x.onairtime)
+    
+def gen_playlist(event_mappings, timeslots_mappings):
+    """
+    Given an map of event mappings and a map of event schedules generates a playlist 
+    """
+    event_ids = event_mappings.keys() & timeslots_mappings.keys()
+    
+    es = map(lambda x: gen_playlist_event(event_mappings[x], timeslots_mappings[x]), event_ids)
+
+    return list(sorted(es, key=lambda x: x.onairtime))
+
+def gen_filler(ts):
+    """
+    Takes a list of timeslot if any two events have a gap then we generate a filler event to fit in the gap
+    """
+    
     
 # prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
 if __name__ == '__main__':
@@ -237,14 +244,10 @@ if __name__ == '__main__':
     rooms = [base_room + r for r in room_ids]
 
     mapping_xml = ET.parse("mapping.xml")
-    # dictonary for event_id to confpub id mapping
-    event_mappings = {}
-    # for match in mapping_xml.getroot():
-    #     event_mapping[match.get("event_id")] = match[0].get("id")
-    for match in mapping_xml.getroot():
-        m = mapping_from_xml(match)
-        event_mappings[m.event_id] = m
 
+    # dictonary for event_id to confpub id mapping
+    event_mappings = dict(map(lambda match: (match.event_id, match)
+                              , map(lambda m: mapping_from_xml(m), mapping_xml.getroot())))
 
     schedule_xml = ET.parse("schedule.xml")
 
@@ -262,35 +265,40 @@ if __name__ == '__main__':
         if "badges" in elems:
             timeslots.append(TimeSlotSchedule.from_xml(schedule_timezone, ts))
 
+    # mapping between even_ids and schedule timeslots
+    timeslots_mappings = dict(map(lambda x: (x.event_id, x), timeslots))
+    
     print(f"Parsed Schedule({len(timeslots)}) and event mappings({len(event_mappings)})")
+
+    x = len (event_mappings.keys() - timeslots_mappings.keys())    
+    if x:
+        print(f"Warning: There are {x} events in event mappings that are not scheduled")
+
+    x = len (timeslots_mappings.keys() - event_mappings.keys()) 
+    if x:
+        print(f"Warning: There are {x} events in the schedule but not in event mappings")
             
     # No one cares about efficiency when we have < 5000 elements.
     for r in room_ids:
-        print(f"scheduling for {base_room + r}")
+        current_room = base_room + r
+        print(f"Generating Playlist for {current_room}")
         output_file = base_output_file + r + ".xml"
 
-        # mapping between even_ids and schedule timeslots
-        timeslots_mapping = {}
-        for ts in timeslots:
-            if ts.room == base_room + r:
-                timeslots_mapping[ts.event_id] = ts
-                
+        timeslots_mapping_for_room = dict(filter(lambda x: x[1].room == current_room, timeslots_mappings.items()))
                 
         # generate playlist for a room    
         print(f"writing to file {output_file}")
-        # write it to a file
         root = ET.Element("playlist")
         eventlist = ET.Element("eventlist")
         eventlist.set("timeinmilliseconds", "false")
         root.append(eventlist)
 
-        playlist_xml = map (PlaylistEvent.to_xml, generate_playlist(event_mappings, timeslots_mapping))
+        playlist_xml = map (PlaylistEvent.to_xml, gen_playlist(event_mappings, timeslots_mapping_for_room))
         root.extend(list(playlist_xml))
-        
+
+        # write it to a file
         with open(output_file, "wb") as xf:
             xf.write(ET.tostring(root, pretty_print=True, xml_declaration=True, encoding='utf-8', standalone=True))
-            # TODO: add metadata <?xml version="1.0" encoding=... >
-            #       pretty printing would be nice
         
     # TODO: find filler events in the timeline
     # TODO: Some manual events whose durations we don't know, cut through filler or zoom room (ANI: I don't undrstand this)
