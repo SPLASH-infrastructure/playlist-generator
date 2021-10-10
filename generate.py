@@ -224,7 +224,7 @@ def generate_playlist(event_mappings, timeslots_mappings):
             PlaylistEvent(title, category, duration, endmode, onairtime)
         )
 
-    return es
+    return sorted(es, key=lambda x: x.onairtime)
     
 # prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
 if __name__ == '__main__':
@@ -274,7 +274,8 @@ if __name__ == '__main__':
         for ts in timeslots:
             if ts.room == base_room + r:
                 timeslots_mapping[ts.event_id] = ts
-        
+                
+                
         # generate playlist for a room    
         print(f"writing to file {output_file}")
         # write it to a file
@@ -282,7 +283,7 @@ if __name__ == '__main__':
         eventlist = ET.Element("eventlist")
         eventlist.set("timeinmilliseconds", "false")
         root.append(eventlist)
-        
+
         playlist_xml = map (PlaylistEvent.to_xml, generate_playlist(event_mappings, timeslots_mapping))
         root.extend(list(playlist_xml))
         
