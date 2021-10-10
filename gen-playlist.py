@@ -299,7 +299,7 @@ if __name__ == '__main__':
 
     # dictonary for event_id to confpub id mapping
     event_mappings = dict(map(lambda match: (match.event_id, match)
-                              , map(lambda m: mapping_from_xml(m), mapping_xml.getroot())))
+                              , map(lambda m: PrerecordedVideo.mapping_from_xml(m), mapping_xml.getroot())))
 
     schedule_xml = ET.parse("schedule.xml")
 
