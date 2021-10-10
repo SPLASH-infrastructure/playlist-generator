@@ -157,7 +157,7 @@ class PlaylistEvent:
         title.text = self.title
 
         onairtime = ET.Element("onairtime")
-        onairtime.text = str(self.onairtime)
+        onairtime.text = self.onairtime.isoformat(timespec='seconds')
 
         recordingpat = ET.Element("recordingpattern")
         recordingpat.text = "$(title)" # TODO: what is this, how is it computed?
@@ -194,9 +194,10 @@ class PlaylistEvent:
 
         
         event.extend (
-              [ category, title, duration ]
+              [ category, title, duration, onairtime, recordingpat ]
             + [ offset, endmode, igincomsig, maxExtendedDuration, scte35list
-              , som, startmode, twitchrpclist, untimedAdList, voiceoverlist ]
+                , som, playoutswithlist, startmode, recording
+                , twitchrpclist, untimedAdList, voiceoverlist ]
         )
         
         return event
@@ -253,16 +254,6 @@ if __name__ == '__main__':
 
     # get all the time slots from all the subevents under events
     timeslots_xml = schedule_xml.getroot().xpath("//timeslot[event_id]")
-    # for ts in schedule_xml.getroot().xpath("//timeslot[event_id]"):
-        # timeslots.append(Timeslot(schedule_timezone, ts))
-        # timeslots.append(ts)
-
-    # timeslots_to_schedule = list(filter(lambda x: x.room == roomA, timeslots))
-    # timeslots = []
-    # for c in schedule_xml.getroot():
-    #     for cc in c:
-    #         if cc.tag == 'timeslot':
-    #             timeslots.append(cc)
 
     # we filter on only those timeslots that have an event_id and a badges node
     timeslots = []
@@ -295,8 +286,8 @@ if __name__ == '__main__':
         playlist_xml = map (PlaylistEvent.to_xml, generate_playlist(event_mappings, timeslots_mapping))
         root.extend(list(playlist_xml))
         
-        with ET.xmlfile(output_file, encoding='utf-8', close=True) as xf:
-            xf.write(root)
+        with open(output_file, "wb") as xf:
+            xf.write(ET.tostring(root, pretty_print=True, xml_declaration=True, encoding='utf-8', standalone=True))
             # TODO: add metadata <?xml version="1.0" encoding=... >
             #       pretty printing would be nice
         
