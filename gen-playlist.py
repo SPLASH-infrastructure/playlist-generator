@@ -150,6 +150,9 @@ class PlaylistEvent:
         self.m = m
         self.ts = ts
 
+    def __str__(self):
+    	return f"PlaylistEvent({self.title}, {self.onairtime} for {self.duration})"
+
     def to_xml(self):
         """
         This returns the etree object
@@ -269,8 +272,10 @@ class VideoMapping:
 	def has_event(self, event_id):
 		return event_id in self.asset_map
 	def get_event(self, event_id):
-		return dict(asset_name=self.asset_map[event_id], 
-					duration=self.duration_map[event_id] if event_id in self.duration_map else None)
+		duration = self.duration_map[event_id] if event_id in self.duration_map else None
+		print(duration)
+		return dict(asset_name=self.asset_map[event_id].title, 
+					duration=duration)
 
 	@classmethod
 	def from_files(cls, mapping_file, asset_info):
@@ -292,9 +297,11 @@ class VideoMapping:
 		# to do this, we need to combine event_mappings and duration_mappings
 		event_duration_mapping = dict()
 		for event_id, asset_id in event_mappings.items():
-			asset_name = f"${asset_id}-video"
+			if asset_id.title == None:
+				continue
+			asset_name = f"{asset_id.title.lower()}-video"
 			if asset_name in duration_mappings:
-				event_duration_mapping[event_id] = duration_mappings
+				event_duration_mapping[event_id] = duration_mappings[asset_name]
 		return VideoMapping(event_mappings, event_duration_mapping)
 
 class EventRoom:
@@ -319,7 +326,7 @@ class ZoomInfo:
 			room = None
 		else: 
 			room = room_elem[0]
-		return cls(room, elem.xpath("./@url"), elem.xpath("./@stream"))
+		return cls(room, elem.xpath("./@url")[0], elem.xpath("./@stream")[0])
 
 # elements of an event's schedule template
 class ScheduleElement:
@@ -355,15 +362,17 @@ class PrerecordedElement(ScheduleElement):
 
 	def schedule_one(self, mapping, room, spec, format, timeslot, now):
 		ctx_dict = self.make_context_dict(room, spec, format, timeslot)
+		
+		if not mapping.has_event(timeslot.event_id):
+			raise RuntimeError(f"Playing a prerecorded video for an unmapped event ({timeslot.event_id})!")
+		asset_data = mapping.get_event(timeslot.event_id)
 
 		if self.source != None:
 			title = self.source.format(**ctx_dict)
 		else:
-			title = None # TODO
+			title = asset_data["asset_name"] # TODO
 		category = "PROGRAM"
-		if not mapping.has_event(timeslot.event_id):
-			raise RuntimeError(f"Playing a prerecorded video for an unmapped event ({timeslot.event_id})!")
-		asset_data = mapping.get_event(timeslot.event_id)
+
 		if asset_data["duration"] != None:
 			duration = asset_data["duration"]
 		else:
@@ -387,14 +396,19 @@ class PrerecordedElement(ScheduleElement):
 		return cls(asset, plenary=is_plenary)
 
 class LiveElement(ScheduleElement): 
-	def __init__(self, source, plenary=False, recording=None):
+	def __init__(self, source, plenary=False, recording=None, xml_elem=None):
 		self.source = source
 		self.plenary = plenary
 		self.recording = recording
+		self.xml_elem = xml_elem
 
 	def schedule_one(self, mapping, rooms, spec, format, timeslot, now):
 		ctx_dict = self.make_context_dict(rooms, spec, format, timeslot)
-		title = self.source.format(**ctx_dict)
+		try: 
+			title = self.source.format(**ctx_dict)
+		except ValueError:
+			print(f"invalid format string {self.source} in element on line {self.xml_elem.sourceline}")
+			raise 
 		category = "LIVE"
 		duration = timeslot.end_ts - now
 		endmode = "FOLLOW"
@@ -418,7 +432,7 @@ class LiveElement(ScheduleElement):
 		else:
 			recordName = None
 
-		return cls(source[0], plenary=is_plenary, recording=recordName)
+		return cls(source[0], plenary=is_plenary, recording=recordName, xml_elem=elem)
 
 class NotStreamedElement(ScheduleElement):
 	def __init__(self):
@@ -623,6 +637,9 @@ if __name__ == '__main__':
     		schedule[k].extend(v)
     for k,v in schedule.items():
     	print(k)
+    	v.sort(key=lambda evt: evt.onairtime)
+    	for it in v:
+    		print(it)
 
     # TODO: actually assemble the schedule
     # TODO: insert filler elements
