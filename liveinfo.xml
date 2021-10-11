@@ -38,7 +38,9 @@
 		</event>
 		<event name="Closing">
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
-			<format plenary="true"><live source="{zoom.stream}"/></format>
+			<format plenary="true">
+				<live source="{zoom.stream}"/>
+			</format>
 		</event>
 		<event name="Opening">
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>

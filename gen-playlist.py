@@ -60,6 +60,8 @@ class TimeSlotSchedule:
         self.tracks = tracks
         self.ts = ts # pointer the timeslot xml node
 
+    def __str__(self):
+    	return f"Timeslot({self.title}, {self.tracks})"
     def from_xml(timezone, timeslot_xml):
         """
         Does validation and returns a TimeSlot Schedule
@@ -151,7 +153,7 @@ class PlaylistEvent:
         self.ts = ts
 
     def __str__(self):
-    	return f"PlaylistEvent({self.title}, {self.onairtime} for {self.duration})"
+    	return f"PlaylistEvent({self.title}; {self.onairtime} for {self.duration}; for {self.ts})"
 
     def to_xml(self):
         """
