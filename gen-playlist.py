@@ -275,7 +275,6 @@ class VideoMapping:
 		return event_id in self.asset_map
 	def get_event(self, event_id):
 		duration = self.duration_map[event_id] if event_id in self.duration_map else None
-		print(duration)
 		return dict(asset_name=self.asset_map[event_id].title, 
 					duration=duration)
 
@@ -372,7 +371,7 @@ class PrerecordedElement(ScheduleElement):
 		if self.source != None:
 			title = self.source.format(**ctx_dict)
 		else:
-			title = asset_data["asset_name"] # TODO
+			title = asset_data["asset_name"]
 		category = "PROGRAM"
 
 		if asset_data["duration"] != None:
@@ -486,12 +485,17 @@ class EventFormat:
 		cond = prop_cond("./@name", lambda cond, name: lambda sch, ts: ts.title == name and cond(sch, ts), cond)
 
 		def is_mirror(scheduler, ts, mirrored):
-			return scheduler.is_mirror(ts) == mirrored
+			is_mirror = scheduler.is_mirror(ts)
+			return scheduler.is_mirror(ts) and mirrored
 		# mirror condition
 		cond = prop_cond("./@mirror", lambda cond, mirrored: lambda sch, ts: is_mirror(sch, ts, mirrored=="true") and cond(sch, ts), cond)
 
-
-    	# TODO: support badges
+		# badges condition
+		badge_cond = elem.xpath("./@badge")
+		if len(badge_cond) > 0:
+			badge_req = badge_cond[0]
+			old_cond = cond
+			cond = lambda sch, ts: badge_req in ts.badges and old_cond(sch, ts)
 
 		# ====================
 		# event format parsing
@@ -570,9 +574,13 @@ class Scheduler:
 		if len(mirroring_els) > 0:
 			mirroring_el = mirroring_els[0]
 			# find when the main track starts and ends
-			main_start = datetime.time.fromisoformat(mirroring_el.xpath("./@start")[0])
-			main_end = datetime.time.fromisoformat(mirroring_el.xpath("./@end")[0])
-			is_mirror = lambda ts: ts.start_ts.time() < main_start or ts.end_ts.time() > main_end
+			tz = TZ.gettz(mirroring_el.xpath("./@timezone")[0])
+			main_start = datetime.time.fromisoformat(mirroring_el.xpath("./@start")[0]).replace(tzinfo=tz)
+			main_end = datetime.time.fromisoformat(mirroring_el.xpath("./@end")[0]).replace(tzinfo=tz)
+			def is_mirror_fun(ts):
+				out = ts.start_ts.timetz() <= main_start or ts.end_ts.timetz() >= main_end
+				return out
+			is_mirror = is_mirror_fun
 		rooms = list(map(EventRoom.from_xml, elem.xpath(".//rooms/room")))
 		events = list(map(EventSpec.from_xml, elem.xpath(".//events/event")))
 		return cls(rooms, events, is_mirror)
