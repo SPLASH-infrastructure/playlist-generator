@@ -3457,197 +3457,6 @@ In this work, we introduce a novel analysis based on abstract interpreters. Comp
     </timeslot>
   </subevent>
   <subevent>
-    <subevent_id>b4127135-c5e0-45a5-9240-4631f48283c1</subevent_id>
-    <title>DLS: DLS Talks 1</title>
-    <subevent_type type="regular"/>
-    <room>Swissotel Chicago | Zurich C</room>
-    <date>2021/10/19</date>
-    <url>https://conf.researchr.org/home/dls-2021</url>
-    <url_link_display>Dynamic Languages Symposium</url_link_display>
-    <tracks>
-      <track>Dynamic Languages Symposium</track>
-    </tracks>
-    <timeslot is_mirror="true">
-      <slot_id>bfab50af-9ce4-4e52-964d-648c29b4ccbd</slot_id>
-      <title>Session: DLS - DLS Talks 1</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>21:50</start_time>
-      <end_time>23:10</end_time>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot is_mirror="true">
-      <slot_id>21a18983-3db6-4ef5-ad72-5d32e7a91ca7</slot_id>
-      <event_id>b34908e0-77cf-44d3-a0e4-e7848afc6c69</event_id>
-      <title>CompGen: Generation of Fast JIT Compilers in a Multi-Language VM</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>22:50</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>23:10</end_time>
-      <description>The first Futamura projection enables compilation and high performance code generation of user programs by partial evaluation of language interpreters. Previous work has shown that it yields the same peak performance as a specialized JIT compiler. However, this comes with the downside of additional compile time: Partial evaluation of language interpreters has to specialize interpreter code on the fly to the dynamic types used at run time to create efficient target code. As a result, the time spent on partial evaluation itself is a significant contributor to the overall compile time of a method. 
-The second Futamura projection solves this problem by self-applying partial evaluation on the partial evaluation algorithm, effectively generating language-specific compilers from interpreters. This typically reduces compilation time compared to the first projection. Previous work employed the second projection to some extent, however we are not aware of any usage of the generic second Futamura projection in a state-of-the-art language runtime. 
-To solve the problems of self-application and code-size explosion, this paper proposes CompGen, an approach based on code generation of subsets of language interpreters. It is loosely based upon the idea of the second Futamura projection. Our implementation of CompGen for GraalVM shows that our usage of a novel code-generation algorithm allows us to generate efficient compilers that emit fast target programs which easily outperform the first Futamura projection in compilation time. We evaluated our approach with the high-performance JavaScript implementation of GraalVM and standard JavaScript benchmarks, showing that our approach achieves &amp;gt; 2X speedups of partial evaluation.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Florian</first_name>
-          <last_name>Latifi</last_name>
-          <affiliation>Johannes Kepler University Linz</affiliation>
-          <bio>Researcher and PhD student at the Johannes Kepler University in Linz, Austria.</bio>
-          <homepage_url>https://florian-latifi.at</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/florianlatifi/a986450f-d097-4d8e-8448-4ebfc1a2206e/small.jpg</picture_url>
-          <person_id>florianlatifi</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>2</sort_key>
-          <first_name>David</first_name>
-          <last_name>Leopoldseder</last_name>
-          <affiliation>Oracle Labs</affiliation>
-          <bio>undefined</bio>
-          <homepage_url>https://www.davidleopoldseder.com/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/davidleopoldseder/e0b1ae47-d779-400d-8f0f-0b3cce3e0f7f/small.jpg</picture_url>
-          <person_id>davidleopoldseder</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>3</sort_key>
-          <first_name>Christian</first_name>
-          <last_name>Wimmer</last_name>
-          <affiliation>Oracle Labs</affiliation>
-          <bio>Christian Wimmer is the architect of GraalVM Native Image. He was one of the first engineer of the GraalVM project, and helped growing it from a research project of Oracle Labs to a supported Oracle product. He believes that all languages should be equally fast, and that we therefore need to stop writing individual VMs and instead have one polyglot VM. His research interests span from compilers, virtual machines, and secure systems to component-based software architectures. 
-He received a Dr. techn. degree in Computer Science (advisor: Prof. Hanspeter Mössenböck) and a Dipl.-Ing. degree in Computer Science, both from the Johannes Kepler University Linz, Austria. Before the time at Oracle, he was a postdoctoral researcher at the Department of Computer Science of the University of California, Irvine. He worked with Prof. Michael Franz at the Secure Systems and Software Laboratory on compiler optimizations, dynamic programming languages, and language-based security.</bio>
-          <homepage_url>http://www.christianwimmer.at/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/christianwimmer/faa7e48f-04de-4752-83a4-efdf6b175be1/small.jpg</picture_url>
-          <person_id>christianwimmer</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>4</sort_key>
-          <first_name>Hanspeter</first_name>
-          <last_name>Mössenböck</last_name>
-          <affiliation>JKU Linz, Austria</affiliation>
-          <bio>undefined</bio>
-          <homepage_url>http://ssw.jku.at/General/Staff/HM/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/hanspetermossenbock/3a16b6f0-00fa-4ef3-93df-13ea4a29430c/small.jpg</picture_url>
-          <person_id>hanspetermossenbock</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot is_mirror="true">
-      <slot_id>3630d2a4-565a-4ee6-88dc-d19d2132aa7a</slot_id>
-      <event_id>a2bd814e-644b-4386-a2fe-63fc670a4c7d</event_id>
-      <title> Union and intersection contracts are hard, actually</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>22:15</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>22:50</end_time>
-      <description>Union and intersection types are a staple of gradually typed language such as TypeScript. While it’s long been recog- nized that union and intersection types are difficult to ver- ify statically, it may appear at first that the dynamic part of gradual typing is actually pretty simple. It turns out however, that in presence of higher-order con- tracts union and intersection are deceptively difficult. The literature on higher-order contracts with union and inter- section, while keenly aware of the fact, doesn’t really ex- plain why. We point and illustrate the problems and trade- offs inherent to union and intersection contracts, via exam- ple and a survey of the literature.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Teodoro</first_name>
-          <last_name>Freund</last_name>
-          <affiliation>undefined</affiliation>
-          <bio>undefined</bio>
-          <person_id>teodorofreund</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>2</sort_key>
-          <first_name>Yann</first_name>
-          <last_name>Hamdaoui</last_name>
-          <affiliation>Tweag I/O</affiliation>
-          <bio>I graduated with a Ph.D from IRIF (Université Paris Diderot and CNRS, France) on the translation of effectful computation into Linear Logic. I now work at Tweag I/O on the design and implementation of Nickel, a configuration programming language.</bio>
-          <homepage_url>https://hamdaoui.me</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/yannhamdaoui/e32e29d2-8091-41a9-9239-a4497b6578f8/small.jpg</picture_url>
-          <person_id>yannhamdaoui</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>3</sort_key>
-          <first_name>Arnaud</first_name>
-          <last_name>Spiwack</last_name>
-          <affiliation>Tweag</affiliation>
-          <bio>Arnaud Spiwack spend the first 10 years of his working life in Academia, between Chalmers university in Gothenburg, Sweden, and École Polytechnique, Inria, and Mines ParisTech, in the Paris area. He spent this time researching dependent types, computer-verified proof, and sequent calculus. During his time in Academia, Arnaud got involved in the development of the Coq Proof Assistant, where he, in particular, re-engineered Coq’s tactic engine and gave it an abstract interface. After leaving Academia, he remained a member of the core development team of the Coq Proof Assistant. He is now a senior architect at Tweag, and is working at making the world better typed.</bio>
-          <homepage_url>http://assert-false.science/arnaud/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/arnaudspiwack/2658428c-5eaf-48b9-9ff9-322b4260141e/small.jpg</picture_url>
-          <person_id>arnaudspiwack</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot is_mirror="true">
-      <slot_id>ac2ca061-f144-4848-abff-0265b278fa7d</slot_id>
-      <event_id>9993747b-3c5e-4b12-955b-de42f70eb152</event_id>
-      <title>Analyzing Permission Transfer Channels for Dynamically Typed Languages</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>21:50</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>22:15</end_time>
-      <description>Communicating Sequential Process~(CSP) is nowadays a popular concurrency model in which threads/processes communicate by exchanging data through channels. Channels helps in orchestrating concurrent processes but do not solve per-se data races. To prevent data races in the channel model, many programming languages rely on type systems to express ownership and behavioural restrictions such as immutability. However, dynamically-typed languages require runtime mechanisms because of the lack of type information at compile-time. 
-In this paper, we propose to augment channels with four different permission transfer semantics. We explore two mechanisms to implement such permission transfers at run-time: write-barriers and partial read-barriers. To validate our approach we implemented a channel framework in Pharo, and we extended it with different permission transfer semantics. We report on performance measurements of both (a) the transfer overhead on a single object and on a graph of objects, and (b) the per-object access overhead incurred by ownership checks. This work stands as a cornerstone of future work on adaptive optimisations for permission transfer channels.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Théo</first_name>
-          <last_name>Rogliano</last_name>
-          <affiliation>undefined</affiliation>
-          <bio>undefined</bio>
-          <person_id>theorogliano</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>2</sort_key>
-          <first_name>Guillermo</first_name>
-          <last_name>Polito</last_name>
-          <affiliation>Univ. Lille, CNRS, Centrale Lille, Inria, UMR 9189 - CRIStAL - Centre de Recherche en Informatique Signal et Automatique de Lille</affiliation>
-          <bio>Guille Polito is research engineer at the CRIStAL laboratory in the university of Lille, working in tight relation with the RMoD team. Guille’s main research interests are programming language development, programming tools, modular systems, and maintenance of large software systems. 
-He currently works on techniques to develop modular systems and languages, and new development tools. Guille works in the development of the open source Pharo programming language and environment since 2010, and he is a member of its technical board since 2018.</bio>
-          <homepage_url>https://guillep.github.io</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/guillermopolito/fb027991-a37d-4375-8c71-1858ce478695/small.jpg</picture_url>
-          <person_id>guillermopolito</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>3</sort_key>
-          <first_name>Luc</first_name>
-          <last_name>Fabresse</last_name>
-          <affiliation>Mines Douai</affiliation>
-          <bio>undefined</bio>
-          <person_id>lucfabresse</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>4</sort_key>
-          <first_name>Stéphane</first_name>
-          <last_name>Ducasse</last_name>
-          <affiliation> INRIA Lille</affiliation>
-          <bio>undefined</bio>
-          <homepage_url>http://stephane.ducasse.free.fr/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/stephaneducasse/509504d8-baa1-42b4-a71a-b441f9ae92bb/small.jpg</picture_url>
-          <person_id>stephaneducasse</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-  </subevent>
-  <subevent>
     <subevent_id>bd594d43-6bbf-4fa1-beb5-07aa9a867d7c</subevent_id>
     <title>VMIL: Session 2</title>
     <subevent_type type="regular"/>
@@ -4107,126 +3916,6 @@ His research spans object-oriented foundations, type systems, module systems, di
       </persons>
       <tracks>
         <track>Beyond Code: No Code</track>
-      </tracks>
-    </timeslot>
-  </subevent>
-  <subevent>
-    <subevent_id>45b69314-213b-4e02-918a-bf5851ee6967</subevent_id>
-    <title>DLS: DLS Talks 2</title>
-    <subevent_type type="regular"/>
-    <room>Swissotel Chicago | Zurich C</room>
-    <date>2021/10/19</date>
-    <url>https://conf.researchr.org/home/dls-2021</url>
-    <url_link_display>Dynamic Languages Symposium</url_link_display>
-    <tracks>
-      <track>Dynamic Languages Symposium</track>
-    </tracks>
-    <timeslot is_mirror="true">
-      <slot_id>048dfe84-32d6-459c-9a51-98ca84eaf3eb</slot_id>
-      <title>Session: DLS - DLS Talks 2</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>07:40</start_time>
-      <end_time>09:00</end_time>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot is_mirror="true">
-      <slot_id>b884e037-fe5b-4da5-ba28-4651d39f6f51</slot_id>
-      <event_id>9bdff49b-71f5-4402-b9c5-72c6e4a6847f</event_id>
-      <title>On Design and Use of First-Class Environments in R</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>07:50</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>08:15</end_time>
-      <description>The R programming language is widely used for statistical computing. To enable interactive data exploration and rapid prototyping, R encourages a dynamic programming style. This programming style is support by a number of features including first-class environments. R is the only language, with millions of users, that provides a full reflective interface for manipulating environments. With the great flexibility afforded by first-class environments, comes challenges for reasoning about code and significant restrictions about what transformations a compiler is allowed to apply to programs. This paper is an overview of the environment interface refined over two decades. We explain the rationale behind the design and document how environments are used in the wild by the means of a corpus analysis.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Aviral</first_name>
-          <last_name>Goel</last_name>
-          <affiliation>Northeastern University</affiliation>
-          <bio>Aviral Goel is a Ph.D. candidate at Northeastern University. His research interests are primarily focused around Program Analysis, Type Systems and Compilers. Currently he is investigating the use of laziness in R.</bio>
-          <homepage_url>http://aviral.io</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/aviralgoel/aefb57df-77b4-45d0-aac2-1bda11fd94dd/small.jpg</picture_url>
-          <person_id>aviralgoel</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>2</sort_key>
-          <first_name>Jan</first_name>
-          <last_name>Vitek</last_name>
-          <affiliation>Northeastern University / Czech Technical University</affiliation>
-          <bio>Jan Vitek is a Professor of Computer Science at Northeastern University. Dr. Vitek was born in Czechoslovakia and educated in Switzerland. Over the years, he worked on topics related to programming languages, their design, use, and implementation. With Noble and Potter, he proposed the notion of flexible alias control which became know as Ownership Types. He led the Ovm project which produced the first real-time Java virtual machine to be flight tested on a ScanEagle drone (he claims no one was harmed). Outcomes of this project include the Schism real-time garbage collector and the FijiVM – a production VM for embedded systems. More recently, he worked on dynamic languages, trying to make sense of JavaScript and to design a new language called, Thorn. Nowadays, he spends his time with statisticians and data scientists. Jan believes that his 2012 election as Chair of SIGPLAN was an accident; since has been busy trying to rock the boat to ensure this does not happen again. In his spare time, Jan enjoys organizing conferences and sitting on PCs (over 25 in the last decade). He founded the MOS (mobile objects), IWACO (alias control), STOP (gradual typing), and TRANSACT (transactional memory) workshop series. He was the first program chair of VEE and chaired ESOP, ECOOP, Coordination and TOOLS. He was the general chair of PLDI (in Beijing!), ISMM and LCTES. He may still be sitting on the steering committees of ECOOP, JTRES, ICFP, OOPLSA, POPL, PLDI, LCTES, ESOP.</bio>
-          <homepage_url>http://janvitek.org</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/janvitek/213b9734-8942-47ea-933d-6ffad4bb1ee6/small.jpg</picture_url>
-          <person_id>janvitek</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot is_mirror="true">
-      <slot_id>bbbbd066-3c65-4023-a091-23547bde668f</slot_id>
-      <event_id>77995b66-f823-4c12-a66a-32f1a9318823</event_id>
-      <title>Chair's Welcome and Most Notable Paper Award</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>07:40</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>07:50</end_time>
-      <description>undefined</description>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot is_mirror="true">
-      <slot_id>e4eb37b3-952f-40b2-bd12-177b2f5d502e</slot_id>
-      <event_id>2ff813f8-2b71-4bbd-8098-ecd51e17189c</event_id>
-      <title>Runtime and Compiler Support for HAMTs</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>08:15</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>08:40</end_time>
-      <description>Many functional languages—including Racket, Clojure, and Scala—provide a persistent-map datatype with an implementation based on Hash Array Mapped Tries (HAMTs). HAMTs enable efficient functional lookup, insertion, and deletion operations with a small memory footprint, especially when taking advantage of implementation techniques that have been developed since the original HAMT implementation. Racket’s latest HAMT implementation is based on an intermediate data structure, a stencil vector, that supports an especially compact representation of HAMTs with help from the compiler and memory manager. That is, stencil vectors provide an abstraction to improve HAMT performance without burdening the compiler with all of the complexity and design choices of a HAMT implementation. Benchmark measurements show that HAMTs in Racket have performance comparable to other state-of-the-art implementations, while stencil-vector HAMTs are more compact and run at least as fast as alternative representations in Racket.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Sona</first_name>
-          <last_name>Torosyan</last_name>
-          <affiliation>undefined</affiliation>
-          <bio>undefined</bio>
-          <person_id>sonatorosyan</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>2</sort_key>
-          <first_name>Jon</first_name>
-          <last_name>Zeppieri</last_name>
-          <affiliation>undefined</affiliation>
-          <bio>undefined</bio>
-          <person_id>jonzeppieri</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>3</sort_key>
-          <first_name>Matthew</first_name>
-          <last_name>Flatt</last_name>
-          <affiliation>University of Utah, USA</affiliation>
-          <bio>Matthew Flatt is a professor in the School of Computing at the University of Utah, where he works on extensible programming languages, runtime systems, and applications of functional programming. He is one of the developers of the Racket programming language. He received his PhD from Rice University in 1999.</bio>
-          <homepage_url>http://www.cs.utah.edu/~mflatt/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/matthewflatt/8be359a0-6498-4c8c-a43a-e74a3d39673c/small.jpg</picture_url>
-          <person_id>matthewflatt</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
       </tracks>
     </timeslot>
   </subevent>
@@ -6051,343 +5740,6 @@ In this paper, we propose improving the usability of Liquid Haskell by extending
     </timeslot>
   </subevent>
   <subevent>
-    <subevent_id>f43cd203-2745-4656-8731-fdd54a931ceb</subevent_id>
-    <title>DLS: DLS Talks 1</title>
-    <subevent_type type="regular"/>
-    <room>Swissotel Chicago | Zurich C</room>
-    <date>2021/10/19</date>
-    <url>https://conf.researchr.org/home/dls-2021</url>
-    <url_link_display>Dynamic Languages Symposium</url_link_display>
-    <tracks>
-      <track>Dynamic Languages Symposium</track>
-    </tracks>
-    <timeslot>
-      <slot_id>880378ab-220f-4abf-81d1-b3ed940f43ab</slot_id>
-      <title>Session: DLS - DLS Talks 1</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>13:50</start_time>
-      <end_time>15:10</end_time>
-      <persons>
-        <person>
-          <role>Session Chair</role>
-          <sort_key>1</sort_key>
-          <first_name>Arjun</first_name>
-          <last_name>Guha</last_name>
-          <affiliation>Northeastern University</affiliation>
-          <bio>undefined</bio>
-          <homepage_url>http://khoury.northeastern.edu/~arjunguha</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/arjunguha/284e0782-ec24-4ad9-b6a4-b6a1d0e2fe9a/small.jpg</picture_url>
-          <person_id>arjunguha</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>4075ca50-74f1-4d2c-b922-1ffea0391e1a</slot_id>
-      <event_id>9993747b-3c5e-4b12-955b-de42f70eb152</event_id>
-      <title>Analyzing Permission Transfer Channels for Dynamically Typed Languages</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>13:50</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>14:15</end_time>
-      <description>Communicating Sequential Process~(CSP) is nowadays a popular concurrency model in which threads/processes communicate by exchanging data through channels. Channels helps in orchestrating concurrent processes but do not solve per-se data races. To prevent data races in the channel model, many programming languages rely on type systems to express ownership and behavioural restrictions such as immutability. However, dynamically-typed languages require runtime mechanisms because of the lack of type information at compile-time. 
-In this paper, we propose to augment channels with four different permission transfer semantics. We explore two mechanisms to implement such permission transfers at run-time: write-barriers and partial read-barriers. To validate our approach we implemented a channel framework in Pharo, and we extended it with different permission transfer semantics. We report on performance measurements of both (a) the transfer overhead on a single object and on a graph of objects, and (b) the per-object access overhead incurred by ownership checks. This work stands as a cornerstone of future work on adaptive optimisations for permission transfer channels.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Théo</first_name>
-          <last_name>Rogliano</last_name>
-          <affiliation>undefined</affiliation>
-          <bio>undefined</bio>
-          <person_id>theorogliano</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>2</sort_key>
-          <first_name>Guillermo</first_name>
-          <last_name>Polito</last_name>
-          <affiliation>Univ. Lille, CNRS, Centrale Lille, Inria, UMR 9189 - CRIStAL - Centre de Recherche en Informatique Signal et Automatique de Lille</affiliation>
-          <bio>Guille Polito is research engineer at the CRIStAL laboratory in the university of Lille, working in tight relation with the RMoD team. Guille’s main research interests are programming language development, programming tools, modular systems, and maintenance of large software systems. 
-He currently works on techniques to develop modular systems and languages, and new development tools. Guille works in the development of the open source Pharo programming language and environment since 2010, and he is a member of its technical board since 2018.</bio>
-          <homepage_url>https://guillep.github.io</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/guillermopolito/fb027991-a37d-4375-8c71-1858ce478695/small.jpg</picture_url>
-          <person_id>guillermopolito</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>3</sort_key>
-          <first_name>Luc</first_name>
-          <last_name>Fabresse</last_name>
-          <affiliation>Mines Douai</affiliation>
-          <bio>undefined</bio>
-          <person_id>lucfabresse</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>4</sort_key>
-          <first_name>Stéphane</first_name>
-          <last_name>Ducasse</last_name>
-          <affiliation> INRIA Lille</affiliation>
-          <bio>undefined</bio>
-          <homepage_url>http://stephane.ducasse.free.fr/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/stephaneducasse/509504d8-baa1-42b4-a71a-b441f9ae92bb/small.jpg</picture_url>
-          <person_id>stephaneducasse</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>46e336ac-6a7b-4628-b60f-f5f205446a6c</slot_id>
-      <event_id>a2bd814e-644b-4386-a2fe-63fc670a4c7d</event_id>
-      <title> Union and intersection contracts are hard, actually</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>14:15</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>14:50</end_time>
-      <description>Union and intersection types are a staple of gradually typed language such as TypeScript. While it’s long been recog- nized that union and intersection types are difficult to ver- ify statically, it may appear at first that the dynamic part of gradual typing is actually pretty simple. It turns out however, that in presence of higher-order con- tracts union and intersection are deceptively difficult. The literature on higher-order contracts with union and inter- section, while keenly aware of the fact, doesn’t really ex- plain why. We point and illustrate the problems and trade- offs inherent to union and intersection contracts, via exam- ple and a survey of the literature.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Teodoro</first_name>
-          <last_name>Freund</last_name>
-          <affiliation>undefined</affiliation>
-          <bio>undefined</bio>
-          <person_id>teodorofreund</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>2</sort_key>
-          <first_name>Yann</first_name>
-          <last_name>Hamdaoui</last_name>
-          <affiliation>Tweag I/O</affiliation>
-          <bio>I graduated with a Ph.D from IRIF (Université Paris Diderot and CNRS, France) on the translation of effectful computation into Linear Logic. I now work at Tweag I/O on the design and implementation of Nickel, a configuration programming language.</bio>
-          <homepage_url>https://hamdaoui.me</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/yannhamdaoui/e32e29d2-8091-41a9-9239-a4497b6578f8/small.jpg</picture_url>
-          <person_id>yannhamdaoui</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>3</sort_key>
-          <first_name>Arnaud</first_name>
-          <last_name>Spiwack</last_name>
-          <affiliation>Tweag</affiliation>
-          <bio>Arnaud Spiwack spend the first 10 years of his working life in Academia, between Chalmers university in Gothenburg, Sweden, and École Polytechnique, Inria, and Mines ParisTech, in the Paris area. He spent this time researching dependent types, computer-verified proof, and sequent calculus. During his time in Academia, Arnaud got involved in the development of the Coq Proof Assistant, where he, in particular, re-engineered Coq’s tactic engine and gave it an abstract interface. After leaving Academia, he remained a member of the core development team of the Coq Proof Assistant. He is now a senior architect at Tweag, and is working at making the world better typed.</bio>
-          <homepage_url>http://assert-false.science/arnaud/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/arnaudspiwack/2658428c-5eaf-48b9-9ff9-322b4260141e/small.jpg</picture_url>
-          <person_id>arnaudspiwack</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>dbd20693-2efb-4e71-b4e6-3f2c8521e28b</slot_id>
-      <event_id>b34908e0-77cf-44d3-a0e4-e7848afc6c69</event_id>
-      <title>CompGen: Generation of Fast JIT Compilers in a Multi-Language VM</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>14:50</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>15:10</end_time>
-      <description>The first Futamura projection enables compilation and high performance code generation of user programs by partial evaluation of language interpreters. Previous work has shown that it yields the same peak performance as a specialized JIT compiler. However, this comes with the downside of additional compile time: Partial evaluation of language interpreters has to specialize interpreter code on the fly to the dynamic types used at run time to create efficient target code. As a result, the time spent on partial evaluation itself is a significant contributor to the overall compile time of a method. 
-The second Futamura projection solves this problem by self-applying partial evaluation on the partial evaluation algorithm, effectively generating language-specific compilers from interpreters. This typically reduces compilation time compared to the first projection. Previous work employed the second projection to some extent, however we are not aware of any usage of the generic second Futamura projection in a state-of-the-art language runtime. 
-To solve the problems of self-application and code-size explosion, this paper proposes CompGen, an approach based on code generation of subsets of language interpreters. It is loosely based upon the idea of the second Futamura projection. Our implementation of CompGen for GraalVM shows that our usage of a novel code-generation algorithm allows us to generate efficient compilers that emit fast target programs which easily outperform the first Futamura projection in compilation time. We evaluated our approach with the high-performance JavaScript implementation of GraalVM and standard JavaScript benchmarks, showing that our approach achieves &amp;gt; 2X speedups of partial evaluation.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Florian</first_name>
-          <last_name>Latifi</last_name>
-          <affiliation>Johannes Kepler University Linz</affiliation>
-          <bio>Researcher and PhD student at the Johannes Kepler University in Linz, Austria.</bio>
-          <homepage_url>https://florian-latifi.at</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/florianlatifi/a986450f-d097-4d8e-8448-4ebfc1a2206e/small.jpg</picture_url>
-          <person_id>florianlatifi</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>2</sort_key>
-          <first_name>David</first_name>
-          <last_name>Leopoldseder</last_name>
-          <affiliation>Oracle Labs</affiliation>
-          <bio>undefined</bio>
-          <homepage_url>https://www.davidleopoldseder.com/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/davidleopoldseder/e0b1ae47-d779-400d-8f0f-0b3cce3e0f7f/small.jpg</picture_url>
-          <person_id>davidleopoldseder</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>3</sort_key>
-          <first_name>Christian</first_name>
-          <last_name>Wimmer</last_name>
-          <affiliation>Oracle Labs</affiliation>
-          <bio>Christian Wimmer is the architect of GraalVM Native Image. He was one of the first engineer of the GraalVM project, and helped growing it from a research project of Oracle Labs to a supported Oracle product. He believes that all languages should be equally fast, and that we therefore need to stop writing individual VMs and instead have one polyglot VM. His research interests span from compilers, virtual machines, and secure systems to component-based software architectures. 
-He received a Dr. techn. degree in Computer Science (advisor: Prof. Hanspeter Mössenböck) and a Dipl.-Ing. degree in Computer Science, both from the Johannes Kepler University Linz, Austria. Before the time at Oracle, he was a postdoctoral researcher at the Department of Computer Science of the University of California, Irvine. He worked with Prof. Michael Franz at the Secure Systems and Software Laboratory on compiler optimizations, dynamic programming languages, and language-based security.</bio>
-          <homepage_url>http://www.christianwimmer.at/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/christianwimmer/faa7e48f-04de-4752-83a4-efdf6b175be1/small.jpg</picture_url>
-          <person_id>christianwimmer</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>4</sort_key>
-          <first_name>Hanspeter</first_name>
-          <last_name>Mössenböck</last_name>
-          <affiliation>JKU Linz, Austria</affiliation>
-          <bio>undefined</bio>
-          <homepage_url>http://ssw.jku.at/General/Staff/HM/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/hanspetermossenbock/3a16b6f0-00fa-4ef3-93df-13ea4a29430c/small.jpg</picture_url>
-          <person_id>hanspetermossenbock</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-  </subevent>
-  <subevent>
-    <subevent_id>a53df478-53e0-47fe-953e-ceb67a9ac537</subevent_id>
-    <title>DLS: DLS Talks 2</title>
-    <subevent_type type="regular"/>
-    <room>Swissotel Chicago | Zurich C</room>
-    <date>2021/10/19</date>
-    <url>https://conf.researchr.org/home/dls-2021</url>
-    <url_link_display>Dynamic Languages Symposium</url_link_display>
-    <tracks>
-      <track>Dynamic Languages Symposium</track>
-    </tracks>
-    <timeslot>
-      <slot_id>5d3899c1-58d6-440f-a511-aacee5bf9dca</slot_id>
-      <title>Session: DLS - DLS Talks 2</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>15:40</start_time>
-      <end_time>17:00</end_time>
-      <persons>
-        <person>
-          <role>Session Chair</role>
-          <sort_key>1</sort_key>
-          <first_name>Arjun</first_name>
-          <last_name>Guha</last_name>
-          <affiliation>Northeastern University</affiliation>
-          <bio>undefined</bio>
-          <homepage_url>http://khoury.northeastern.edu/~arjunguha</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/arjunguha/284e0782-ec24-4ad9-b6a4-b6a1d0e2fe9a/small.jpg</picture_url>
-          <person_id>arjunguha</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>1e4733e7-ba6c-4c1a-99bd-ae30d09f99c9</slot_id>
-      <event_id>9bdff49b-71f5-4402-b9c5-72c6e4a6847f</event_id>
-      <title>On Design and Use of First-Class Environments in R</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>15:50</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>16:15</end_time>
-      <description>The R programming language is widely used for statistical computing. To enable interactive data exploration and rapid prototyping, R encourages a dynamic programming style. This programming style is support by a number of features including first-class environments. R is the only language, with millions of users, that provides a full reflective interface for manipulating environments. With the great flexibility afforded by first-class environments, comes challenges for reasoning about code and significant restrictions about what transformations a compiler is allowed to apply to programs. This paper is an overview of the environment interface refined over two decades. We explain the rationale behind the design and document how environments are used in the wild by the means of a corpus analysis.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Aviral</first_name>
-          <last_name>Goel</last_name>
-          <affiliation>Northeastern University</affiliation>
-          <bio>Aviral Goel is a Ph.D. candidate at Northeastern University. His research interests are primarily focused around Program Analysis, Type Systems and Compilers. Currently he is investigating the use of laziness in R.</bio>
-          <homepage_url>http://aviral.io</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/aviralgoel/aefb57df-77b4-45d0-aac2-1bda11fd94dd/small.jpg</picture_url>
-          <person_id>aviralgoel</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>2</sort_key>
-          <first_name>Jan</first_name>
-          <last_name>Vitek</last_name>
-          <affiliation>Northeastern University / Czech Technical University</affiliation>
-          <bio>Jan Vitek is a Professor of Computer Science at Northeastern University. Dr. Vitek was born in Czechoslovakia and educated in Switzerland. Over the years, he worked on topics related to programming languages, their design, use, and implementation. With Noble and Potter, he proposed the notion of flexible alias control which became know as Ownership Types. He led the Ovm project which produced the first real-time Java virtual machine to be flight tested on a ScanEagle drone (he claims no one was harmed). Outcomes of this project include the Schism real-time garbage collector and the FijiVM – a production VM for embedded systems. More recently, he worked on dynamic languages, trying to make sense of JavaScript and to design a new language called, Thorn. Nowadays, he spends his time with statisticians and data scientists. Jan believes that his 2012 election as Chair of SIGPLAN was an accident; since has been busy trying to rock the boat to ensure this does not happen again. In his spare time, Jan enjoys organizing conferences and sitting on PCs (over 25 in the last decade). He founded the MOS (mobile objects), IWACO (alias control), STOP (gradual typing), and TRANSACT (transactional memory) workshop series. He was the first program chair of VEE and chaired ESOP, ECOOP, Coordination and TOOLS. He was the general chair of PLDI (in Beijing!), ISMM and LCTES. He may still be sitting on the steering committees of ECOOP, JTRES, ICFP, OOPLSA, POPL, PLDI, LCTES, ESOP.</bio>
-          <homepage_url>http://janvitek.org</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/janvitek/213b9734-8942-47ea-933d-6ffad4bb1ee6/small.jpg</picture_url>
-          <person_id>janvitek</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>30be21ce-3b68-4562-b83e-6a65be713945</slot_id>
-      <event_id>2ff813f8-2b71-4bbd-8098-ecd51e17189c</event_id>
-      <title>Runtime and Compiler Support for HAMTs</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>16:15</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>16:40</end_time>
-      <description>Many functional languages—including Racket, Clojure, and Scala—provide a persistent-map datatype with an implementation based on Hash Array Mapped Tries (HAMTs). HAMTs enable efficient functional lookup, insertion, and deletion operations with a small memory footprint, especially when taking advantage of implementation techniques that have been developed since the original HAMT implementation. Racket’s latest HAMT implementation is based on an intermediate data structure, a stencil vector, that supports an especially compact representation of HAMTs with help from the compiler and memory manager. That is, stencil vectors provide an abstraction to improve HAMT performance without burdening the compiler with all of the complexity and design choices of a HAMT implementation. Benchmark measurements show that HAMTs in Racket have performance comparable to other state-of-the-art implementations, while stencil-vector HAMTs are more compact and run at least as fast as alternative representations in Racket.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Sona</first_name>
-          <last_name>Torosyan</last_name>
-          <affiliation>undefined</affiliation>
-          <bio>undefined</bio>
-          <person_id>sonatorosyan</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>2</sort_key>
-          <first_name>Jon</first_name>
-          <last_name>Zeppieri</last_name>
-          <affiliation>undefined</affiliation>
-          <bio>undefined</bio>
-          <person_id>jonzeppieri</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>3</sort_key>
-          <first_name>Matthew</first_name>
-          <last_name>Flatt</last_name>
-          <affiliation>University of Utah, USA</affiliation>
-          <bio>Matthew Flatt is a professor in the School of Computing at the University of Utah, where he works on extensible programming languages, runtime systems, and applications of functional programming. He is one of the developers of the Racket programming language. He received his PhD from Rice University in 1999.</bio>
-          <homepage_url>http://www.cs.utah.edu/~mflatt/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/matthewflatt/8be359a0-6498-4c8c-a43a-e74a3d39673c/small.jpg</picture_url>
-          <person_id>matthewflatt</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>e0d09b80-0418-43bc-9094-c046c66d423e</slot_id>
-      <event_id>77995b66-f823-4c12-a66a-32f1a9318823</event_id>
-      <title>Chair's Welcome and Most Notable Paper Award</title>
-      <room>Swissotel Chicago | Zurich C</room>
-      <date>2021/10/19</date>
-      <start_time>15:40</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>15:50</end_time>
-      <description>undefined</description>
-      <tracks>
-        <track>Dynamic Languages Symposium</track>
-      </tracks>
-    </timeslot>
-  </subevent>
-  <subevent>
     <subevent_id>922b2264-71a7-4b71-951f-45f9517b68b7</subevent_id>
     <title>HATRA: Type Systems</title>
     <subevent_type type="regular"/>
@@ -7645,7 +6997,7 @@ Tomas’ many other interests include open-source and functional programming (he
           <sort_key>3</sort_key>
           <first_name>Jun</first_name>
           <last_name>Kato</last_name>
-          <affiliation>National Institute of Advanced Industrial Science and Technology, Japan</affiliation>
+          <affiliation>National Institute of Advanced Industrial Science and Technology (AIST)</affiliation>
           <bio>Jun Kato is a Human-Computer Interaction researcher at National Institute of Advanced Industrial Science and Technology (AIST), Japan. He has focused on improving Programming Experience (PX) by creating toolkits and integrated development environments. He has worked for Microsoft and Adobe Research and received a Ph.D. from The University of Tokyo under the supervision of Prof. Takeo Igarashi in 2014.</bio>
           <homepage_url>https://junkato.jp</homepage_url>
           <picture_url>https://2021.splashcon.org/getProfileImage/junkato/946564ad-0347-4e3c-8dbb-625e3449c713/small.jpg</picture_url>
@@ -7782,6 +7134,977 @@ To explore this question, we built Inkbase, a programmable digital sketchbook. I
       <tracks>
         <track>Awards</track>
       </tracks>
+    </timeslot>
+  </subevent>
+  <subevent>
+    <subevent_id>67849182-5812-45b5-b906-3279c61ff47f</subevent_id>
+    <title>SPLASH Doctoral Symposium: Afternoon 2</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Currents</room>
+    <date>2021/10/19</date>
+    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
+    <url_link_display>Doctoral Symposium</url_link_display>
+    <tracks>
+      <track>Doctoral Symposium</track>
+    </tracks>
+    <timeslot>
+      <slot_id>f6de485e-7203-452c-a5a8-b82ebc28c3b7</slot_id>
+      <title>Session: SPLASH Doctoral Symposium - Afternoon 2</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>15:40</start_time>
+      <end_time>17:00</end_time>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>194fd2b6-a26e-431d-871e-009cc7e3b902</slot_id>
+      <event_id>603107bf-a2ab-4cfb-9a63-6bf03aedefc5</event_id>
+      <title>Test Overfitting: Challenges, Approaches and Measurements</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>15:40</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>16:15</end_time>
+      <description>Dynamic automated program repair (APR) techniques have promising results, which use test suites for bug localization and evaluating candidate patches. Several studies have shown that generated patches by dynamic APR tools that pass its test suite do not always correctly implement the program’s expected behavior, which is known as test overfitting. My research aims to provide fresh insight into the test overfitting problem by using formal methods.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Amirfarhad</first_name>
+          <last_name>Nilizadeh</last_name>
+          <affiliation>University of Central Florida</affiliation>
+          <bio>undefined</bio>
+          <picture_url>https://2021.splashcon.org/getProfileImage/amirfarhadnilizadeh/4be0d65c-8538-4573-9f26-e7d3f2a96659/small.jpg</picture_url>
+          <person_id>amirfarhadnilizadeh</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+      <badges>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+  </subevent>
+  <subevent>
+    <subevent_id>e0c87dbc-03d7-4243-a877-9bb3ca138893</subevent_id>
+    <title>SPLASH Doctoral Symposium: Morning 1</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Currents</room>
+    <date>2021/10/19</date>
+    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
+    <url_link_display>Doctoral Symposium</url_link_display>
+    <tracks>
+      <track>Doctoral Symposium</track>
+    </tracks>
+    <timeslot>
+      <slot_id>2a42d691-03b6-4718-9e1f-b6a0c4bc0c94</slot_id>
+      <title>Session: SPLASH Doctoral Symposium - Morning 1</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>09:00</start_time>
+      <end_time>10:20</end_time>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>5abe0486-060a-4d94-ab4a-18f84e612c59</slot_id>
+      <event_id>43ddbf51-5139-47a3-a6a0-3e93521cf49a</event_id>
+      <title>TBD [Invited Talk]</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>09:00</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>10:00</end_time>
+      <description>TBD</description>
+      <persons>
+        <person>
+          <role>Invited Speaker</role>
+          <sort_key>1</sort_key>
+          <first_name>Jonathan</first_name>
+          <last_name>Aldrich</last_name>
+          <affiliation>Carnegie Mellon University</affiliation>
+          <bio>Jonathan Aldrich is a Professor of Computer Science at Carnegie Mellon University. He teaches courses in programming languages, software engineering, and program analysis for quality and security. Prof. Aldrich directed CMU’s Software Engineering Ph.D. program from 2013-2019. 
+Dr. Aldrich’s research centers on programming languages and type systems that are deeply informed by software engineering considerations and human factors. His research contributions include verifying the correct implementation of an architectural design, modular formal reasoning about code, and API protocol specification and verification. His notable awards include an NSF CAREER award (2006), the Dahl-Nygaard Junior Prize (2007), the DARPA Computer Science Study Group, and an ICSE most influential paper award (2012). He served as general chair (2015), program chair (2017), and steering committee chair (2017-2019) of SPLASH and OOPSLA. Aldrich holds a bachelor’s degree in Computer Science from Caltech and a Ph.D. from the University of Washington.</bio>
+          <homepage_url>http://www.cs.cmu.edu/~aldrich/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/jonathanaldrich/e4add3cf-580c-4d1b-9832-3f7577a14b72/small.jpg</picture_url>
+          <person_id>jonathanaldrich</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>84edaa08-4541-40ae-a487-250ab4061567</slot_id>
+      <event_id>1d27d46d-dc9e-4962-8d49-50b91db97e1a</event_id>
+      <title>Elevator Talks</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>10:00</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>10:20</end_time>
+      <description>undefined</description>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+  </subevent>
+  <subevent>
+    <subevent_id>d0f4838e-c5e1-4ff2-b330-93d5ed5888b3</subevent_id>
+    <title>SPLASH Doctoral Symposium: Afternoon</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Currents</room>
+    <date>2021/10/19</date>
+    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
+    <url_link_display>Doctoral Symposium</url_link_display>
+    <tracks>
+      <track>Doctoral Symposium</track>
+    </tracks>
+    <timeslot>
+      <slot_id>7b61e51f-b04f-46da-855c-e445313f9c91</slot_id>
+      <title>Session: SPLASH Doctoral Symposium - Afternoon</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>13:50</start_time>
+      <end_time>15:10</end_time>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>42630ffc-fa9a-4aa7-a920-b0d13092644f</slot_id>
+      <event_id>fa7a0238-71a4-4c1d-840b-d38d6e050afc</event_id>
+      <title>Towards Deep Learning Specification</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>13:55</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>14:30</end_time>
+      <description>Deep Learning techniques are applied in software systems rapidly. Therefore, it becomes necessary to specify Deep Learning (DL) application programming interfaces (APIs) for desired output. Unlike traditional software, DL-specific development occupies bugs that exhibit not only crashes but also yield low accuracy and high training time issues. Inspired by the design-by-contract (DbC) methodology, this work proposes a preemptive measure against such bugs, we call it DL Contract. DL Contract aims to document properties of DL libraries and provide developers with a mechanism to prevent low accuracy and high training time-related bugs during development. One of the main challenges towards DL Contract is to specify properties of the training process, which is inaccessible at the functional interface of the DL libraries. Thus, we introduce the notion of ML variable that allows developers to specify the properties of model architecture, data, and training behavior. To evaluate the utility of DL Contract, we intend to utilize benchmarks from prior works on DL bug detection and repair after implementing DL Contract for Python-based DL libraries.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Shibbir</first_name>
+          <last_name>Ahmed</last_name>
+          <affiliation>undefined</affiliation>
+          <bio>undefined</bio>
+          <person_id>shibbirahmed</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+      <badges>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot>
+      <slot_id>8dbcd39c-877d-440d-8780-5cdd298cc386</slot_id>
+      <event_id>64c6fe19-a14c-43ca-ae22-f19158bc3aae</event_id>
+      <title>Avoiding Monomorphization Bottlenecks with Phase-based Splitting</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>14:30</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>15:05</end_time>
+      <description>State-of-the-art managed runtimes apply aggressive optimizations often based on the speculative assumption that programs have low variability. However, literature shows that program behavior may evolve at run time and experience different execution “phases”. This variable behavior may hide optimization opportunities from the compiler. Taking such phases into account may thus help improving performance when applied to phase-sensitive optimizations such as lookup caches, that may generate monomorphization bottlenecks when they contain entries that are phase-specific. 
+In this project, we introduce Phase-based splitting, an experimental compiler optimization that utilizes phases to guide monomorphization based on splitting. Preliminary results on micro-benchmarks show our first prototype reaches promising speedups ranging from 10 to 20% on average, peaking up to 47.6% at phase granularity. In the next steps, we aim at further evaluating the potential benefits of our approach on a richer set of benchmarks and real-world applications as well as defining heuristics to better guide phase-based splitting.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Sophie</first_name>
+          <last_name>Kaleba</last_name>
+          <affiliation>University of Kent</affiliation>
+          <bio>undefined</bio>
+          <picture_url>https://2021.splashcon.org/getProfileImage/sophiekaleba/83d4bbee-60e2-41f8-a354-707df6642dc8/small.jpg</picture_url>
+          <person_id>sophiekaleba</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+      <badges>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+  </subevent>
+  <subevent>
+    <subevent_id>35162ce7-2874-407b-a169-518deb8b969f</subevent_id>
+    <title>SPLASH Doctoral Symposium: Morning 2</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Currents</room>
+    <date>2021/10/19</date>
+    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
+    <url_link_display>Doctoral Symposium</url_link_display>
+    <tracks>
+      <track>Doctoral Symposium</track>
+    </tracks>
+    <timeslot>
+      <slot_id>136ac841-b2ed-4264-88ae-3066c01a824d</slot_id>
+      <title>Session: SPLASH Doctoral Symposium - Morning 2</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>10:50</start_time>
+      <end_time>12:10</end_time>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>40026591-7251-428c-b51c-1a6f4369c980</slot_id>
+      <event_id>3344db26-7384-4321-b98a-c129d01971bc</event_id>
+      <title>Run-time Data Analysis to Drive Compiler Optimizations</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>10:55</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>11:30</end_time>
+      <description>Throughout program execution, types may stabilize, variables may become constant, and code sections may turn out to be redundant - all information that is used by just-in-time (JIT) compilers to achieve peak performance. Yet, since JIT compilation is done on demand for individual code parts, global observations cannot be made. Moreover, global data analysis is an inherently expensive process, that collects information over large data sets. Thus, it is infeasible in dynamic compilers. With this project, we propose integrating data analysis into a dynamic runtime to speed up big data applications. The goal is to use the detailed run-time information for speculative compiler optimizations based on the shape and complexion of the data to improve performance.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Sebastian</first_name>
+          <last_name>Kloibhofer</last_name>
+          <affiliation>Johannes Kepler Universität Linz</affiliation>
+          <bio>undefined</bio>
+          <person_id>sebastiankloibhofer</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+      <badges>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot>
+      <slot_id>973e50a7-3055-4cef-94dc-7a7f2d1c1781</slot_id>
+      <event_id>db93d0c5-6661-4334-a2d4-ce8053c39876</event_id>
+      <title>Run-Time Data Analysis in Dynamic Runtimes</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>11:30</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>12:05</end_time>
+      <description>Databases are typically faster in processing huge amounts of data than applications with hand-coded data access. Even though modern dynamic runtimes optimize applications intensively, they cannot perform certain optimizations that are traditionally used by database systems as they lack the required information. Thus, we propose to extend the capabilities of dynamic runtimes to allow them to collect fine-grained information of the processed data at run time and use it to perform database-like optimizations. By doing so, we want to enable dynamic runtimes to significantly boost the performance of data-processing workloads. Ideally, applications should be as fast as databases in data-processing workloads by detecting the data schema at run time. To show the feasibility of our approach, we are implementing it in a polyglot dynamic runtime.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Lukas</first_name>
+          <last_name>Makor</last_name>
+          <affiliation>Johannes Kepler University Linz</affiliation>
+          <bio>undefined</bio>
+          <person_id>lukasmakor</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+      <badges>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+  </subevent>
+  <subevent>
+    <subevent_id>f43cd203-2745-4656-8731-fdd54a931ceb</subevent_id>
+    <title>DLS: DLS Talks 1</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Zurich C</room>
+    <date>2021/10/19</date>
+    <url>https://conf.researchr.org/home/dls-2021</url>
+    <url_link_display>Dynamic Languages Symposium</url_link_display>
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <timeslot>
+      <slot_id>880378ab-220f-4abf-81d1-b3ed940f43ab</slot_id>
+      <title>Session: DLS - DLS Talks 1</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>13:50</start_time>
+      <end_time>15:10</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Arjun</first_name>
+          <last_name>Guha</last_name>
+          <affiliation>Northeastern University</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>http://khoury.northeastern.edu/~arjunguha</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/arjunguha/284e0782-ec24-4ad9-b6a4-b6a1d0e2fe9a/small.jpg</picture_url>
+          <person_id>arjunguha</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>4075ca50-74f1-4d2c-b922-1ffea0391e1a</slot_id>
+      <event_id>9993747b-3c5e-4b12-955b-de42f70eb152</event_id>
+      <title>Analyzing Permission Transfer Channels for Dynamically Typed Languages</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>13:50</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>14:15</end_time>
+      <description>Communicating Sequential Process~(CSP) is nowadays a popular concurrency model in which threads/processes communicate by exchanging data through channels. Channels helps in orchestrating concurrent processes but do not solve per-se data races. To prevent data races in the channel model, many programming languages rely on type systems to express ownership and behavioural restrictions such as immutability. However, dynamically-typed languages require runtime mechanisms because of the lack of type information at compile-time. 
+In this paper, we propose to augment channels with four different permission transfer semantics. We explore two mechanisms to implement such permission transfers at run-time: write-barriers and partial read-barriers. To validate our approach we implemented a channel framework in Pharo, and we extended it with different permission transfer semantics. We report on performance measurements of both (a) the transfer overhead on a single object and on a graph of objects, and (b) the per-object access overhead incurred by ownership checks. This work stands as a cornerstone of future work on adaptive optimisations for permission transfer channels.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Théo</first_name>
+          <last_name>Rogliano</last_name>
+          <affiliation>undefined</affiliation>
+          <bio>undefined</bio>
+          <person_id>theorogliano</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>2</sort_key>
+          <first_name>Guillermo</first_name>
+          <last_name>Polito</last_name>
+          <affiliation>Univ. Lille, CNRS, Centrale Lille, Inria, UMR 9189 - CRIStAL - Centre de Recherche en Informatique Signal et Automatique de Lille</affiliation>
+          <bio>Guille Polito is research engineer at the CRIStAL laboratory in the university of Lille, working in tight relation with the RMoD team. Guille’s main research interests are programming language development, programming tools, modular systems, and maintenance of large software systems. 
+He currently works on techniques to develop modular systems and languages, and new development tools. Guille works in the development of the open source Pharo programming language and environment since 2010, and he is a member of its technical board since 2018.</bio>
+          <homepage_url>https://guillep.github.io</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/guillermopolito/fb027991-a37d-4375-8c71-1858ce478695/small.jpg</picture_url>
+          <person_id>guillermopolito</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>3</sort_key>
+          <first_name>Luc</first_name>
+          <last_name>Fabresse</last_name>
+          <affiliation>Mines Douai</affiliation>
+          <bio>undefined</bio>
+          <person_id>lucfabresse</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>4</sort_key>
+          <first_name>Stéphane</first_name>
+          <last_name>Ducasse</last_name>
+          <affiliation> INRIA Lille</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>http://stephane.ducasse.free.fr/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/stephaneducasse/509504d8-baa1-42b4-a71a-b441f9ae92bb/small.jpg</picture_url>
+          <person_id>stephaneducasse</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Research Paper</badge>
+        <badge>Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot>
+      <slot_id>46e336ac-6a7b-4628-b60f-f5f205446a6c</slot_id>
+      <event_id>9bdff49b-71f5-4402-b9c5-72c6e4a6847f</event_id>
+      <title>On Design and Use of First-Class Environments in R</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>14:15</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>14:50</end_time>
+      <description>The R programming language is widely used for statistical computing. To enable interactive data exploration and rapid prototyping, R encourages a dynamic programming style. This programming style is support by a number of features including first-class environments. R is the only language, with millions of users, that provides a full reflective interface for manipulating environments. With the great flexibility afforded by first-class environments, comes challenges for reasoning about code and significant restrictions about what transformations a compiler is allowed to apply to programs. This paper is an overview of the environment interface refined over two decades. We explain the rationale behind the design and document how environments are used in the wild by the means of a corpus analysis.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Aviral</first_name>
+          <last_name>Goel</last_name>
+          <affiliation>Northeastern University</affiliation>
+          <bio>Aviral Goel is a Ph.D. candidate at Northeastern University. His research interests are primarily focused around Program Analysis, Type Systems and Compilers. Currently he is investigating the use of laziness in R.</bio>
+          <homepage_url>http://aviral.io</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/aviralgoel/aefb57df-77b4-45d0-aac2-1bda11fd94dd/small.jpg</picture_url>
+          <person_id>aviralgoel</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>2</sort_key>
+          <first_name>Jan</first_name>
+          <last_name>Vitek</last_name>
+          <affiliation>Northeastern University / Czech Technical University</affiliation>
+          <bio>Jan Vitek is a Professor of Computer Science at Northeastern University. Dr. Vitek was born in Czechoslovakia and educated in Switzerland. Over the years, he worked on topics related to programming languages, their design, use, and implementation. With Noble and Potter, he proposed the notion of flexible alias control which became know as Ownership Types. He led the Ovm project which produced the first real-time Java virtual machine to be flight tested on a ScanEagle drone (he claims no one was harmed). Outcomes of this project include the Schism real-time garbage collector and the FijiVM – a production VM for embedded systems. More recently, he worked on dynamic languages, trying to make sense of JavaScript and to design a new language called, Thorn. Nowadays, he spends his time with statisticians and data scientists. Jan believes that his 2012 election as Chair of SIGPLAN was an accident; since has been busy trying to rock the boat to ensure this does not happen again. In his spare time, Jan enjoys organizing conferences and sitting on PCs (over 25 in the last decade). He founded the MOS (mobile objects), IWACO (alias control), STOP (gradual typing), and TRANSACT (transactional memory) workshop series. He was the first program chair of VEE and chaired ESOP, ECOOP, Coordination and TOOLS. He was the general chair of PLDI (in Beijing!), ISMM and LCTES. He may still be sitting on the steering committees of ECOOP, JTRES, ICFP, OOPLSA, POPL, PLDI, LCTES, ESOP.</bio>
+          <homepage_url>http://janvitek.org</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/janvitek/213b9734-8942-47ea-933d-6ffad4bb1ee6/small.jpg</picture_url>
+          <person_id>janvitek</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Research Paper</badge>
+        <badge>Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot>
+      <slot_id>dbd20693-2efb-4e71-b4e6-3f2c8521e28b</slot_id>
+      <event_id>b34908e0-77cf-44d3-a0e4-e7848afc6c69</event_id>
+      <title>CompGen: Generation of Fast JIT Compilers in a Multi-Language VM</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>14:50</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>15:10</end_time>
+      <description>The first Futamura projection enables compilation and high performance code generation of user programs by partial evaluation of language interpreters. Previous work has shown that it yields the same peak performance as a specialized JIT compiler. However, this comes with the downside of additional compile time: Partial evaluation of language interpreters has to specialize interpreter code on the fly to the dynamic types used at run time to create efficient target code. As a result, the time spent on partial evaluation itself is a significant contributor to the overall compile time of a method. 
+The second Futamura projection solves this problem by self-applying partial evaluation on the partial evaluation algorithm, effectively generating language-specific compilers from interpreters. This typically reduces compilation time compared to the first projection. Previous work employed the second projection to some extent, however we are not aware of any usage of the generic second Futamura projection in a state-of-the-art language runtime. 
+To solve the problems of self-application and code-size explosion, this paper proposes CompGen, an approach based on code generation of subsets of language interpreters. It is loosely based upon the idea of the second Futamura projection. Our implementation of CompGen for GraalVM shows that our usage of a novel code-generation algorithm allows us to generate efficient compilers that emit fast target programs which easily outperform the first Futamura projection in compilation time. We evaluated our approach with the high-performance JavaScript implementation of GraalVM and standard JavaScript benchmarks, showing that our approach achieves &amp;gt; 2X speedups of partial evaluation.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Florian</first_name>
+          <last_name>Latifi</last_name>
+          <affiliation>Johannes Kepler University Linz</affiliation>
+          <bio>Researcher and PhD student at the Johannes Kepler University in Linz, Austria.</bio>
+          <homepage_url>https://florian-latifi.at</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/florianlatifi/a986450f-d097-4d8e-8448-4ebfc1a2206e/small.jpg</picture_url>
+          <person_id>florianlatifi</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>2</sort_key>
+          <first_name>David</first_name>
+          <last_name>Leopoldseder</last_name>
+          <affiliation>Oracle Labs</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>https://www.davidleopoldseder.com/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/davidleopoldseder/e0b1ae47-d779-400d-8f0f-0b3cce3e0f7f/small.jpg</picture_url>
+          <person_id>davidleopoldseder</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>3</sort_key>
+          <first_name>Christian</first_name>
+          <last_name>Wimmer</last_name>
+          <affiliation>Oracle Labs</affiliation>
+          <bio>Christian Wimmer is the architect of GraalVM Native Image. He was one of the first engineer of the GraalVM project, and helped growing it from a research project of Oracle Labs to a supported Oracle product. He believes that all languages should be equally fast, and that we therefore need to stop writing individual VMs and instead have one polyglot VM. His research interests span from compilers, virtual machines, and secure systems to component-based software architectures. 
+He received a Dr. techn. degree in Computer Science (advisor: Prof. Hanspeter Mössenböck) and a Dipl.-Ing. degree in Computer Science, both from the Johannes Kepler University Linz, Austria. Before the time at Oracle, he was a postdoctoral researcher at the Department of Computer Science of the University of California, Irvine. He worked with Prof. Michael Franz at the Secure Systems and Software Laboratory on compiler optimizations, dynamic programming languages, and language-based security.</bio>
+          <homepage_url>http://www.christianwimmer.at/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/christianwimmer/faa7e48f-04de-4752-83a4-efdf6b175be1/small.jpg</picture_url>
+          <person_id>christianwimmer</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>4</sort_key>
+          <first_name>Hanspeter</first_name>
+          <last_name>Mössenböck</last_name>
+          <affiliation>JKU Linz, Austria</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>http://ssw.jku.at/General/Staff/HM/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/hanspetermossenbock/3a16b6f0-00fa-4ef3-93df-13ea4a29430c/small.jpg</picture_url>
+          <person_id>hanspetermossenbock</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Research Paper</badge>
+        <badge>Virtual</badge>
+      </badges>
+    </timeslot>
+  </subevent>
+  <subevent>
+    <subevent_id>45b69314-213b-4e02-918a-bf5851ee6967</subevent_id>
+    <title>DLS: DLS Talks 2</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Zurich C</room>
+    <date>2021/10/19</date>
+    <url>https://conf.researchr.org/home/dls-2021</url>
+    <url_link_display>Dynamic Languages Symposium</url_link_display>
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <timeslot is_mirror="true">
+      <slot_id>048dfe84-32d6-459c-9a51-98ca84eaf3eb</slot_id>
+      <title>Session: DLS - DLS Talks 2</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>07:40</start_time>
+      <end_time>09:00</end_time>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot is_mirror="true">
+      <slot_id>41c51c84-3406-4682-80dc-71448c168246</slot_id>
+      <event_id>a2bd814e-644b-4386-a2fe-63fc670a4c7d</event_id>
+      <title> Union and intersection contracts are hard, actually</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>07:50</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>08:15</end_time>
+      <description>Union and intersection types are a staple of gradually typed language such as TypeScript. While it’s long been recog- nized that union and intersection types are difficult to ver- ify statically, it may appear at first that the dynamic part of gradual typing is actually pretty simple. It turns out however, that in presence of higher-order con- tracts union and intersection are deceptively difficult. The literature on higher-order contracts with union and inter- section, while keenly aware of the fact, doesn’t really ex- plain why. We point and illustrate the problems and trade- offs inherent to union and intersection contracts, via exam- ple and a survey of the literature.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Teodoro</first_name>
+          <last_name>Freund</last_name>
+          <affiliation>undefined</affiliation>
+          <bio>undefined</bio>
+          <person_id>teodorofreund</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>2</sort_key>
+          <first_name>Yann</first_name>
+          <last_name>Hamdaoui</last_name>
+          <affiliation>Tweag I/O</affiliation>
+          <bio>I graduated with a Ph.D from IRIF (Université Paris Diderot and CNRS, France) on the translation of effectful computation into Linear Logic. I now work at Tweag I/O on the design and implementation of Nickel, a configuration programming language.</bio>
+          <homepage_url>https://hamdaoui.me</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/yannhamdaoui/e32e29d2-8091-41a9-9239-a4497b6578f8/small.jpg</picture_url>
+          <person_id>yannhamdaoui</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>3</sort_key>
+          <first_name>Arnaud</first_name>
+          <last_name>Spiwack</last_name>
+          <affiliation>Tweag</affiliation>
+          <bio>Arnaud Spiwack spend the first 10 years of his working life in Academia, between Chalmers university in Gothenburg, Sweden, and École Polytechnique, Inria, and Mines ParisTech, in the Paris area. He spent this time researching dependent types, computer-verified proof, and sequent calculus. During his time in Academia, Arnaud got involved in the development of the Coq Proof Assistant, where he, in particular, re-engineered Coq’s tactic engine and gave it an abstract interface. After leaving Academia, he remained a member of the core development team of the Coq Proof Assistant. He is now a senior architect at Tweag, and is working at making the world better typed.</bio>
+          <homepage_url>http://assert-false.science/arnaud/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/arnaudspiwack/2658428c-5eaf-48b9-9ff9-322b4260141e/small.jpg</picture_url>
+          <person_id>arnaudspiwack</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Research Paper</badge>
+        <badge>Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot is_mirror="true">
+      <slot_id>bbbbd066-3c65-4023-a091-23547bde668f</slot_id>
+      <event_id>77995b66-f823-4c12-a66a-32f1a9318823</event_id>
+      <title>Chair's Welcome and Most Notable Paper Award</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>07:40</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>07:50</end_time>
+      <description>undefined</description>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot is_mirror="true">
+      <slot_id>e4eb37b3-952f-40b2-bd12-177b2f5d502e</slot_id>
+      <event_id>2ff813f8-2b71-4bbd-8098-ecd51e17189c</event_id>
+      <title>Runtime and Compiler Support for HAMTs</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>08:15</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>08:40</end_time>
+      <description>Many functional languages—including Racket, Clojure, and Scala—provide a persistent-map datatype with an implementation based on Hash Array Mapped Tries (HAMTs). HAMTs enable efficient functional lookup, insertion, and deletion operations with a small memory footprint, especially when taking advantage of implementation techniques that have been developed since the original HAMT implementation. Racket’s latest HAMT implementation is based on an intermediate data structure, a stencil vector, that supports an especially compact representation of HAMTs with help from the compiler and memory manager. That is, stencil vectors provide an abstraction to improve HAMT performance without burdening the compiler with all of the complexity and design choices of a HAMT implementation. Benchmark measurements show that HAMTs in Racket have performance comparable to other state-of-the-art implementations, while stencil-vector HAMTs are more compact and run at least as fast as alternative representations in Racket.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Sona</first_name>
+          <last_name>Torosyan</last_name>
+          <affiliation>undefined</affiliation>
+          <bio>undefined</bio>
+          <person_id>sonatorosyan</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>2</sort_key>
+          <first_name>Jon</first_name>
+          <last_name>Zeppieri</last_name>
+          <affiliation>undefined</affiliation>
+          <bio>undefined</bio>
+          <person_id>jonzeppieri</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>3</sort_key>
+          <first_name>Matthew</first_name>
+          <last_name>Flatt</last_name>
+          <affiliation>University of Utah, USA</affiliation>
+          <bio>Matthew Flatt is a professor in the School of Computing at the University of Utah, where he works on extensible programming languages, runtime systems, and applications of functional programming. He is one of the developers of the Racket programming language. He received his PhD from Rice University in 1999.</bio>
+          <homepage_url>http://www.cs.utah.edu/~mflatt/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/matthewflatt/8be359a0-6498-4c8c-a43a-e74a3d39673c/small.jpg</picture_url>
+          <person_id>matthewflatt</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Research Paper</badge>
+        <badge>Virtual</badge>
+      </badges>
+    </timeslot>
+  </subevent>
+  <subevent>
+    <subevent_id>b4127135-c5e0-45a5-9240-4631f48283c1</subevent_id>
+    <title>DLS: DLS Talks 1</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Zurich C</room>
+    <date>2021/10/19</date>
+    <url>https://conf.researchr.org/home/dls-2021</url>
+    <url_link_display>Dynamic Languages Symposium</url_link_display>
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <timeslot is_mirror="true">
+      <slot_id>bfab50af-9ce4-4e52-964d-648c29b4ccbd</slot_id>
+      <title>Session: DLS - DLS Talks 1</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>21:50</start_time>
+      <end_time>23:10</end_time>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot is_mirror="true">
+      <slot_id>21a18983-3db6-4ef5-ad72-5d32e7a91ca7</slot_id>
+      <event_id>b34908e0-77cf-44d3-a0e4-e7848afc6c69</event_id>
+      <title>CompGen: Generation of Fast JIT Compilers in a Multi-Language VM</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>22:50</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>23:10</end_time>
+      <description>The first Futamura projection enables compilation and high performance code generation of user programs by partial evaluation of language interpreters. Previous work has shown that it yields the same peak performance as a specialized JIT compiler. However, this comes with the downside of additional compile time: Partial evaluation of language interpreters has to specialize interpreter code on the fly to the dynamic types used at run time to create efficient target code. As a result, the time spent on partial evaluation itself is a significant contributor to the overall compile time of a method. 
+The second Futamura projection solves this problem by self-applying partial evaluation on the partial evaluation algorithm, effectively generating language-specific compilers from interpreters. This typically reduces compilation time compared to the first projection. Previous work employed the second projection to some extent, however we are not aware of any usage of the generic second Futamura projection in a state-of-the-art language runtime. 
+To solve the problems of self-application and code-size explosion, this paper proposes CompGen, an approach based on code generation of subsets of language interpreters. It is loosely based upon the idea of the second Futamura projection. Our implementation of CompGen for GraalVM shows that our usage of a novel code-generation algorithm allows us to generate efficient compilers that emit fast target programs which easily outperform the first Futamura projection in compilation time. We evaluated our approach with the high-performance JavaScript implementation of GraalVM and standard JavaScript benchmarks, showing that our approach achieves &amp;gt; 2X speedups of partial evaluation.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Florian</first_name>
+          <last_name>Latifi</last_name>
+          <affiliation>Johannes Kepler University Linz</affiliation>
+          <bio>Researcher and PhD student at the Johannes Kepler University in Linz, Austria.</bio>
+          <homepage_url>https://florian-latifi.at</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/florianlatifi/a986450f-d097-4d8e-8448-4ebfc1a2206e/small.jpg</picture_url>
+          <person_id>florianlatifi</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>2</sort_key>
+          <first_name>David</first_name>
+          <last_name>Leopoldseder</last_name>
+          <affiliation>Oracle Labs</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>https://www.davidleopoldseder.com/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/davidleopoldseder/e0b1ae47-d779-400d-8f0f-0b3cce3e0f7f/small.jpg</picture_url>
+          <person_id>davidleopoldseder</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>3</sort_key>
+          <first_name>Christian</first_name>
+          <last_name>Wimmer</last_name>
+          <affiliation>Oracle Labs</affiliation>
+          <bio>Christian Wimmer is the architect of GraalVM Native Image. He was one of the first engineer of the GraalVM project, and helped growing it from a research project of Oracle Labs to a supported Oracle product. He believes that all languages should be equally fast, and that we therefore need to stop writing individual VMs and instead have one polyglot VM. His research interests span from compilers, virtual machines, and secure systems to component-based software architectures. 
+He received a Dr. techn. degree in Computer Science (advisor: Prof. Hanspeter Mössenböck) and a Dipl.-Ing. degree in Computer Science, both from the Johannes Kepler University Linz, Austria. Before the time at Oracle, he was a postdoctoral researcher at the Department of Computer Science of the University of California, Irvine. He worked with Prof. Michael Franz at the Secure Systems and Software Laboratory on compiler optimizations, dynamic programming languages, and language-based security.</bio>
+          <homepage_url>http://www.christianwimmer.at/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/christianwimmer/faa7e48f-04de-4752-83a4-efdf6b175be1/small.jpg</picture_url>
+          <person_id>christianwimmer</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>4</sort_key>
+          <first_name>Hanspeter</first_name>
+          <last_name>Mössenböck</last_name>
+          <affiliation>JKU Linz, Austria</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>http://ssw.jku.at/General/Staff/HM/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/hanspetermossenbock/3a16b6f0-00fa-4ef3-93df-13ea4a29430c/small.jpg</picture_url>
+          <person_id>hanspetermossenbock</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Research Paper</badge>
+        <badge>Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot is_mirror="true">
+      <slot_id>46f09562-bd76-41b0-b48c-cab1c289cdba</slot_id>
+      <event_id>9bdff49b-71f5-4402-b9c5-72c6e4a6847f</event_id>
+      <title>On Design and Use of First-Class Environments in R</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>22:15</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>22:50</end_time>
+      <description>The R programming language is widely used for statistical computing. To enable interactive data exploration and rapid prototyping, R encourages a dynamic programming style. This programming style is support by a number of features including first-class environments. R is the only language, with millions of users, that provides a full reflective interface for manipulating environments. With the great flexibility afforded by first-class environments, comes challenges for reasoning about code and significant restrictions about what transformations a compiler is allowed to apply to programs. This paper is an overview of the environment interface refined over two decades. We explain the rationale behind the design and document how environments are used in the wild by the means of a corpus analysis.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Aviral</first_name>
+          <last_name>Goel</last_name>
+          <affiliation>Northeastern University</affiliation>
+          <bio>Aviral Goel is a Ph.D. candidate at Northeastern University. His research interests are primarily focused around Program Analysis, Type Systems and Compilers. Currently he is investigating the use of laziness in R.</bio>
+          <homepage_url>http://aviral.io</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/aviralgoel/aefb57df-77b4-45d0-aac2-1bda11fd94dd/small.jpg</picture_url>
+          <person_id>aviralgoel</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>2</sort_key>
+          <first_name>Jan</first_name>
+          <last_name>Vitek</last_name>
+          <affiliation>Northeastern University / Czech Technical University</affiliation>
+          <bio>Jan Vitek is a Professor of Computer Science at Northeastern University. Dr. Vitek was born in Czechoslovakia and educated in Switzerland. Over the years, he worked on topics related to programming languages, their design, use, and implementation. With Noble and Potter, he proposed the notion of flexible alias control which became know as Ownership Types. He led the Ovm project which produced the first real-time Java virtual machine to be flight tested on a ScanEagle drone (he claims no one was harmed). Outcomes of this project include the Schism real-time garbage collector and the FijiVM – a production VM for embedded systems. More recently, he worked on dynamic languages, trying to make sense of JavaScript and to design a new language called, Thorn. Nowadays, he spends his time with statisticians and data scientists. Jan believes that his 2012 election as Chair of SIGPLAN was an accident; since has been busy trying to rock the boat to ensure this does not happen again. In his spare time, Jan enjoys organizing conferences and sitting on PCs (over 25 in the last decade). He founded the MOS (mobile objects), IWACO (alias control), STOP (gradual typing), and TRANSACT (transactional memory) workshop series. He was the first program chair of VEE and chaired ESOP, ECOOP, Coordination and TOOLS. He was the general chair of PLDI (in Beijing!), ISMM and LCTES. He may still be sitting on the steering committees of ECOOP, JTRES, ICFP, OOPLSA, POPL, PLDI, LCTES, ESOP.</bio>
+          <homepage_url>http://janvitek.org</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/janvitek/213b9734-8942-47ea-933d-6ffad4bb1ee6/small.jpg</picture_url>
+          <person_id>janvitek</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Research Paper</badge>
+        <badge>Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot is_mirror="true">
+      <slot_id>ac2ca061-f144-4848-abff-0265b278fa7d</slot_id>
+      <event_id>9993747b-3c5e-4b12-955b-de42f70eb152</event_id>
+      <title>Analyzing Permission Transfer Channels for Dynamically Typed Languages</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>21:50</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>22:15</end_time>
+      <description>Communicating Sequential Process~(CSP) is nowadays a popular concurrency model in which threads/processes communicate by exchanging data through channels. Channels helps in orchestrating concurrent processes but do not solve per-se data races. To prevent data races in the channel model, many programming languages rely on type systems to express ownership and behavioural restrictions such as immutability. However, dynamically-typed languages require runtime mechanisms because of the lack of type information at compile-time. 
+In this paper, we propose to augment channels with four different permission transfer semantics. We explore two mechanisms to implement such permission transfers at run-time: write-barriers and partial read-barriers. To validate our approach we implemented a channel framework in Pharo, and we extended it with different permission transfer semantics. We report on performance measurements of both (a) the transfer overhead on a single object and on a graph of objects, and (b) the per-object access overhead incurred by ownership checks. This work stands as a cornerstone of future work on adaptive optimisations for permission transfer channels.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Théo</first_name>
+          <last_name>Rogliano</last_name>
+          <affiliation>undefined</affiliation>
+          <bio>undefined</bio>
+          <person_id>theorogliano</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>2</sort_key>
+          <first_name>Guillermo</first_name>
+          <last_name>Polito</last_name>
+          <affiliation>Univ. Lille, CNRS, Centrale Lille, Inria, UMR 9189 - CRIStAL - Centre de Recherche en Informatique Signal et Automatique de Lille</affiliation>
+          <bio>Guille Polito is research engineer at the CRIStAL laboratory in the university of Lille, working in tight relation with the RMoD team. Guille’s main research interests are programming language development, programming tools, modular systems, and maintenance of large software systems. 
+He currently works on techniques to develop modular systems and languages, and new development tools. Guille works in the development of the open source Pharo programming language and environment since 2010, and he is a member of its technical board since 2018.</bio>
+          <homepage_url>https://guillep.github.io</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/guillermopolito/fb027991-a37d-4375-8c71-1858ce478695/small.jpg</picture_url>
+          <person_id>guillermopolito</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>3</sort_key>
+          <first_name>Luc</first_name>
+          <last_name>Fabresse</last_name>
+          <affiliation>Mines Douai</affiliation>
+          <bio>undefined</bio>
+          <person_id>lucfabresse</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>4</sort_key>
+          <first_name>Stéphane</first_name>
+          <last_name>Ducasse</last_name>
+          <affiliation> INRIA Lille</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>http://stephane.ducasse.free.fr/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/stephaneducasse/509504d8-baa1-42b4-a71a-b441f9ae92bb/small.jpg</picture_url>
+          <person_id>stephaneducasse</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Research Paper</badge>
+        <badge>Virtual</badge>
+      </badges>
+    </timeslot>
+  </subevent>
+  <subevent>
+    <subevent_id>a53df478-53e0-47fe-953e-ceb67a9ac537</subevent_id>
+    <title>DLS: DLS Talks 2</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Zurich C</room>
+    <date>2021/10/19</date>
+    <url>https://conf.researchr.org/home/dls-2021</url>
+    <url_link_display>Dynamic Languages Symposium</url_link_display>
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <timeslot>
+      <slot_id>5d3899c1-58d6-440f-a511-aacee5bf9dca</slot_id>
+      <title>Session: DLS - DLS Talks 2</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>15:40</start_time>
+      <end_time>17:00</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Arjun</first_name>
+          <last_name>Guha</last_name>
+          <affiliation>Northeastern University</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>http://khoury.northeastern.edu/~arjunguha</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/arjunguha/284e0782-ec24-4ad9-b6a4-b6a1d0e2fe9a/small.jpg</picture_url>
+          <person_id>arjunguha</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>1e4733e7-ba6c-4c1a-99bd-ae30d09f99c9</slot_id>
+      <event_id>a2bd814e-644b-4386-a2fe-63fc670a4c7d</event_id>
+      <title> Union and intersection contracts are hard, actually</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>15:50</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>16:15</end_time>
+      <description>Union and intersection types are a staple of gradually typed language such as TypeScript. While it’s long been recog- nized that union and intersection types are difficult to ver- ify statically, it may appear at first that the dynamic part of gradual typing is actually pretty simple. It turns out however, that in presence of higher-order con- tracts union and intersection are deceptively difficult. The literature on higher-order contracts with union and inter- section, while keenly aware of the fact, doesn’t really ex- plain why. We point and illustrate the problems and trade- offs inherent to union and intersection contracts, via exam- ple and a survey of the literature.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Teodoro</first_name>
+          <last_name>Freund</last_name>
+          <affiliation>undefined</affiliation>
+          <bio>undefined</bio>
+          <person_id>teodorofreund</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>2</sort_key>
+          <first_name>Yann</first_name>
+          <last_name>Hamdaoui</last_name>
+          <affiliation>Tweag I/O</affiliation>
+          <bio>I graduated with a Ph.D from IRIF (Université Paris Diderot and CNRS, France) on the translation of effectful computation into Linear Logic. I now work at Tweag I/O on the design and implementation of Nickel, a configuration programming language.</bio>
+          <homepage_url>https://hamdaoui.me</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/yannhamdaoui/e32e29d2-8091-41a9-9239-a4497b6578f8/small.jpg</picture_url>
+          <person_id>yannhamdaoui</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>3</sort_key>
+          <first_name>Arnaud</first_name>
+          <last_name>Spiwack</last_name>
+          <affiliation>Tweag</affiliation>
+          <bio>Arnaud Spiwack spend the first 10 years of his working life in Academia, between Chalmers university in Gothenburg, Sweden, and École Polytechnique, Inria, and Mines ParisTech, in the Paris area. He spent this time researching dependent types, computer-verified proof, and sequent calculus. During his time in Academia, Arnaud got involved in the development of the Coq Proof Assistant, where he, in particular, re-engineered Coq’s tactic engine and gave it an abstract interface. After leaving Academia, he remained a member of the core development team of the Coq Proof Assistant. He is now a senior architect at Tweag, and is working at making the world better typed.</bio>
+          <homepage_url>http://assert-false.science/arnaud/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/arnaudspiwack/2658428c-5eaf-48b9-9ff9-322b4260141e/small.jpg</picture_url>
+          <person_id>arnaudspiwack</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Research Paper</badge>
+        <badge>Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot>
+      <slot_id>30be21ce-3b68-4562-b83e-6a65be713945</slot_id>
+      <event_id>2ff813f8-2b71-4bbd-8098-ecd51e17189c</event_id>
+      <title>Runtime and Compiler Support for HAMTs</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>16:15</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>16:40</end_time>
+      <description>Many functional languages—including Racket, Clojure, and Scala—provide a persistent-map datatype with an implementation based on Hash Array Mapped Tries (HAMTs). HAMTs enable efficient functional lookup, insertion, and deletion operations with a small memory footprint, especially when taking advantage of implementation techniques that have been developed since the original HAMT implementation. Racket’s latest HAMT implementation is based on an intermediate data structure, a stencil vector, that supports an especially compact representation of HAMTs with help from the compiler and memory manager. That is, stencil vectors provide an abstraction to improve HAMT performance without burdening the compiler with all of the complexity and design choices of a HAMT implementation. Benchmark measurements show that HAMTs in Racket have performance comparable to other state-of-the-art implementations, while stencil-vector HAMTs are more compact and run at least as fast as alternative representations in Racket.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Sona</first_name>
+          <last_name>Torosyan</last_name>
+          <affiliation>undefined</affiliation>
+          <bio>undefined</bio>
+          <person_id>sonatorosyan</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>2</sort_key>
+          <first_name>Jon</first_name>
+          <last_name>Zeppieri</last_name>
+          <affiliation>undefined</affiliation>
+          <bio>undefined</bio>
+          <person_id>jonzeppieri</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>3</sort_key>
+          <first_name>Matthew</first_name>
+          <last_name>Flatt</last_name>
+          <affiliation>University of Utah, USA</affiliation>
+          <bio>Matthew Flatt is a professor in the School of Computing at the University of Utah, where he works on extensible programming languages, runtime systems, and applications of functional programming. He is one of the developers of the Racket programming language. He received his PhD from Rice University in 1999.</bio>
+          <homepage_url>http://www.cs.utah.edu/~mflatt/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/matthewflatt/8be359a0-6498-4c8c-a43a-e74a3d39673c/small.jpg</picture_url>
+          <person_id>matthewflatt</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Research Paper</badge>
+        <badge>Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot>
+      <slot_id>e0d09b80-0418-43bc-9094-c046c66d423e</slot_id>
+      <event_id>77995b66-f823-4c12-a66a-32f1a9318823</event_id>
+      <title>Chair's Welcome and Most Notable Paper Award</title>
+      <room>Swissotel Chicago | Zurich C</room>
+      <date>2021/10/19</date>
+      <start_time>15:40</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>15:50</end_time>
+      <description>undefined</description>
+      <tracks>
+        <track>Dynamic Languages Symposium</track>
+      </tracks>
+      <badges>
+        <badge>Virtual</badge>
+      </badges>
     </timeslot>
   </subevent>
   <subevent>
@@ -9296,9 +9619,9 @@ Oh, and I am currently looking for students! Please apply!</bio>
       <title>Neural Surrogates of Programs</title>
       <room>Swissotel Chicago | Zurich C</room>
       <date>2021/10/20</date>
-      <start_time>19:10</start_time>
+      <start_time>19:50</start_time>
       <end_date>2021/10/20</end_date>
-      <end_time>19:30</end_time>
+      <end_time>20:10</end_time>
       <description>\emph{Neural surrogates}, neural networks that are trained to compute the same function as a given program, provide alternative representations of classical programs with different properties that are useful for a variety of programming tasks. With neural compilation, programmers develop a neural surrogate that replicates the behavior of the original program to deploy to end-users in place of the original program. With neural adaptation, programmers first develop a neural surrogate of a program then continue to train the neural surrogate on a different task. With neural surrogate optimization, programmers develop a neural surrogate of the original program, optimize input parameters of that neural surrogate using gradient descent, then plug the optimized input parameters back into the original program. Compared to standard programming approaches on these tasks, neural surrogates are more efficient and result in higher accuracy. 
 However, the approaches in the literature for developing neural surrogates are disparate. We identify the \emph{neural surrogate programming methodology} common to these approaches, consisting of the \emph{specification} of the problem, the \emph{design} of the neural network architecture, the \emph{training} of the neural network, and the \emph{deployment} considerations of the system.</description>
       <persons>
@@ -9369,9 +9692,9 @@ His research on verifying the reliability of programs that execute on unreliable
       <title>Natural Language-Guided Programming</title>
       <room>Swissotel Chicago | Zurich C</room>
       <date>2021/10/20</date>
-      <start_time>19:50</start_time>
+      <start_time>19:10</start_time>
       <end_date>2021/10/20</end_date>
-      <end_time>20:10</end_time>
+      <end_time>19:30</end_time>
       <description>In today’s software world with its cornucopia of reusable software libraries, when a programmer is faced with a programming task that they suspect can be completed through the use of a library, they often look for code examples using a search engine and then manually adapt found examples to their specific context of use. We put forward a vision based on a new breed of developer tools that have the potential to largely automate this process. The key idea is to adapt code autocompletion tools such that they take into account not only the developer’s already-written code but also the intent of the task the developer is trying to achieve next, formulated in plain natural language. We call this practice of enriching the code with natural language intent to facilitate its completion language-guided programming. 
 To show that this idea is feasible we design, implement and benchmark a tool that solves this problem in the context of a specific domain (data science) and a specific programming language (Python). Central to the tool is the use of language models trained on a large corpus of documented code. Our initial experiments confirm the feasibility of the idea but also make it clear that we have only scratched the surface of what may become possible in the future. We end the paper with a comprehensive research agenda to stimulate additional research in the budding area of language-guided programming.</description>
       <persons>
@@ -9590,61 +9913,58 @@ To show that this idea is feasible we design, implement and benchmark a tool tha
     </timeslot>
     <timeslot>
       <slot_id>82acac3f-7e60-4c3a-bb00-8048352a2ce6</slot_id>
-      <event_id>a7c8cbe2-0dca-4ddf-95b1-1261b79c3555</event_id>
-      <submission_id>7</submission_id>
-      <title>Natural Language-Guided Programming</title>
+      <event_id>0f80dc7c-040a-4764-a133-5e55b5519014</event_id>
+      <submission_id>4</submission_id>
+      <title>Neural Surrogates of Programs</title>
       <room>Swissotel Chicago | Zurich C</room>
       <date>2021/10/20</date>
       <start_time>11:50</start_time>
       <end_date>2021/10/20</end_date>
       <end_time>12:10</end_time>
-      <description>In today’s software world with its cornucopia of reusable software libraries, when a programmer is faced with a programming task that they suspect can be completed through the use of a library, they often look for code examples using a search engine and then manually adapt found examples to their specific context of use. We put forward a vision based on a new breed of developer tools that have the potential to largely automate this process. The key idea is to adapt code autocompletion tools such that they take into account not only the developer’s already-written code but also the intent of the task the developer is trying to achieve next, formulated in plain natural language. We call this practice of enriching the code with natural language intent to facilitate its completion language-guided programming. 
-To show that this idea is feasible we design, implement and benchmark a tool that solves this problem in the context of a specific domain (data science) and a specific programming language (Python). Central to the tool is the use of language models trained on a large corpus of documented code. Our initial experiments confirm the feasibility of the idea but also make it clear that we have only scratched the surface of what may become possible in the future. We end the paper with a comprehensive research agenda to stimulate additional research in the budding area of language-guided programming.</description>
+      <description>\emph{Neural surrogates}, neural networks that are trained to compute the same function as a given program, provide alternative representations of classical programs with different properties that are useful for a variety of programming tasks. With neural compilation, programmers develop a neural surrogate that replicates the behavior of the original program to deploy to end-users in place of the original program. With neural adaptation, programmers first develop a neural surrogate of a program then continue to train the neural surrogate on a different task. With neural surrogate optimization, programmers develop a neural surrogate of the original program, optimize input parameters of that neural surrogate using gradient descent, then plug the optimized input parameters back into the original program. Compared to standard programming approaches on these tasks, neural surrogates are more efficient and result in higher accuracy. 
+However, the approaches in the literature for developing neural surrogates are disparate. We identify the \emph{neural surrogate programming methodology} common to these approaches, consisting of the \emph{specification} of the problem, the \emph{design} of the neural network architecture, the \emph{training} of the neural network, and the \emph{deployment} considerations of the system.</description>
       <persons>
         <person>
           <role>Author</role>
           <sort_key>1</sort_key>
-          <first_name>Geert</first_name>
-          <last_name>Heyman</last_name>
-          <affiliation>Nokia Bell Labs, Belgium</affiliation>
+          <first_name>Alex</first_name>
+          <last_name>Renda</last_name>
+          <affiliation>MIT CSAIL</affiliation>
           <bio>undefined</bio>
-          <person_id>geertheyman</person_id>
+          <homepage_url>https://www.alexrenda.com</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/alexrenda1/ac1a0658-f452-4012-9317-7b9828864eb7/small.jpg</picture_url>
+          <person_id>alexrenda1</person_id>
         </person>
         <person>
           <role>Author</role>
           <sort_key>2</sort_key>
-          <first_name>Rafael</first_name>
-          <last_name>Huysegems</last_name>
-          <affiliation>Nokia Bell Labs, Belgium</affiliation>
+          <first_name>Yi</first_name>
+          <last_name>Ding</last_name>
+          <affiliation>Massachusetts Institute of Technology</affiliation>
           <bio>undefined</bio>
-          <person_id>rafaelhuysegems</person_id>
+          <homepage_url>https://y-ding.github.io/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/yiding/17d36271-6bb2-44b2-8274-88f3a520bf9c/small.jpg</picture_url>
+          <person_id>yiding</person_id>
         </person>
         <person>
           <role>Author</role>
           <sort_key>3</sort_key>
-          <first_name>Pascal</first_name>
-          <last_name>Justen</last_name>
-          <affiliation>Nokia Bell Labs, Belgium</affiliation>
-          <bio>undefined</bio>
-          <person_id>pascaljusten</person_id>
-        </person>
-        <person>
-          <role>Author</role>
-          <sort_key>4</sort_key>
-          <first_name>Tom</first_name>
-          <last_name>Van Cutsem</last_name>
-          <affiliation>Nokia Bell Labs</affiliation>
-          <bio>undefined</bio>
-          <homepage_url>https://tvcutsem.github.io</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/tomvancutsem/d758e20f-3414-45b2-a82f-af50d8a3b6b3/small.jpg</picture_url>
-          <person_id>tomvancutsem</person_id>
+          <first_name>Michael</first_name>
+          <last_name>Carbin</last_name>
+          <affiliation>Massachusetts Institute of Technology</affiliation>
+          <bio>Michael Carbin is the Jamieson Career Development Assistant Professor of Electrical Engineering and Computer Science at the Massachusetts Institute of Technology. 
+His primary research focus is the design of programming systems that manipulate system uncertainty to deliver improved performance, energy consumption, and resilience. Uncertainty — in the form of sampled and sensed values, dynamic computation structure, and intermittently available computing — is a first-order challenge in modern computing systems. 
+His research on verifying the reliability of programs that execute on unreliable hardware has received best paper awards at leading programming languages conferences (OOPSLA 2013 and OOPSLA 2014) as well as a Communications of the ACM Research Highlight in 2016.&amp;nbsp;He has also published work at leading programming languages and systems conferences, including PLDI, OOPSLA, ASPLOS, LICS, SOSP, ICSE, and PPoPP.</bio>
+          <homepage_url>http://people.csail.mit.edu/mcarbin/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/michaelcarbin/fd0efe40-41d3-4eaf-b227-c8fe1a9f6e96/small.jpg</picture_url>
+          <person_id>michaelcarbin</person_id>
         </person>
       </persons>
       <tracks>
         <track>Onward! Papers</track>
       </tracks>
       <badges>
-        <badge property="Event Form">Virtual</badge>
+        <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
     <timeslot>
@@ -9710,58 +10030,61 @@ To show that this idea is feasible we design, implement and benchmark a tool tha
     </timeslot>
     <timeslot>
       <slot_id>f390fc4b-72a9-4b8c-a731-5900b1cc0c94</slot_id>
-      <event_id>0f80dc7c-040a-4764-a133-5e55b5519014</event_id>
-      <submission_id>4</submission_id>
-      <title>Neural Surrogates of Programs</title>
+      <event_id>a7c8cbe2-0dca-4ddf-95b1-1261b79c3555</event_id>
+      <submission_id>7</submission_id>
+      <title>Natural Language-Guided Programming</title>
       <room>Swissotel Chicago | Zurich C</room>
       <date>2021/10/20</date>
       <start_time>11:10</start_time>
       <end_date>2021/10/20</end_date>
       <end_time>11:30</end_time>
-      <description>\emph{Neural surrogates}, neural networks that are trained to compute the same function as a given program, provide alternative representations of classical programs with different properties that are useful for a variety of programming tasks. With neural compilation, programmers develop a neural surrogate that replicates the behavior of the original program to deploy to end-users in place of the original program. With neural adaptation, programmers first develop a neural surrogate of a program then continue to train the neural surrogate on a different task. With neural surrogate optimization, programmers develop a neural surrogate of the original program, optimize input parameters of that neural surrogate using gradient descent, then plug the optimized input parameters back into the original program. Compared to standard programming approaches on these tasks, neural surrogates are more efficient and result in higher accuracy. 
-However, the approaches in the literature for developing neural surrogates are disparate. We identify the \emph{neural surrogate programming methodology} common to these approaches, consisting of the \emph{specification} of the problem, the \emph{design} of the neural network architecture, the \emph{training} of the neural network, and the \emph{deployment} considerations of the system.</description>
+      <description>In today’s software world with its cornucopia of reusable software libraries, when a programmer is faced with a programming task that they suspect can be completed through the use of a library, they often look for code examples using a search engine and then manually adapt found examples to their specific context of use. We put forward a vision based on a new breed of developer tools that have the potential to largely automate this process. The key idea is to adapt code autocompletion tools such that they take into account not only the developer’s already-written code but also the intent of the task the developer is trying to achieve next, formulated in plain natural language. We call this practice of enriching the code with natural language intent to facilitate its completion language-guided programming. 
+To show that this idea is feasible we design, implement and benchmark a tool that solves this problem in the context of a specific domain (data science) and a specific programming language (Python). Central to the tool is the use of language models trained on a large corpus of documented code. Our initial experiments confirm the feasibility of the idea but also make it clear that we have only scratched the surface of what may become possible in the future. We end the paper with a comprehensive research agenda to stimulate additional research in the budding area of language-guided programming.</description>
       <persons>
         <person>
           <role>Author</role>
           <sort_key>1</sort_key>
-          <first_name>Alex</first_name>
-          <last_name>Renda</last_name>
-          <affiliation>MIT CSAIL</affiliation>
+          <first_name>Geert</first_name>
+          <last_name>Heyman</last_name>
+          <affiliation>Nokia Bell Labs, Belgium</affiliation>
           <bio>undefined</bio>
-          <homepage_url>https://www.alexrenda.com</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/alexrenda1/ac1a0658-f452-4012-9317-7b9828864eb7/small.jpg</picture_url>
-          <person_id>alexrenda1</person_id>
+          <person_id>geertheyman</person_id>
         </person>
         <person>
           <role>Author</role>
           <sort_key>2</sort_key>
-          <first_name>Yi</first_name>
-          <last_name>Ding</last_name>
-          <affiliation>Massachusetts Institute of Technology</affiliation>
+          <first_name>Rafael</first_name>
+          <last_name>Huysegems</last_name>
+          <affiliation>Nokia Bell Labs, Belgium</affiliation>
           <bio>undefined</bio>
-          <homepage_url>https://y-ding.github.io/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/yiding/17d36271-6bb2-44b2-8274-88f3a520bf9c/small.jpg</picture_url>
-          <person_id>yiding</person_id>
+          <person_id>rafaelhuysegems</person_id>
         </person>
         <person>
           <role>Author</role>
           <sort_key>3</sort_key>
-          <first_name>Michael</first_name>
-          <last_name>Carbin</last_name>
-          <affiliation>Massachusetts Institute of Technology</affiliation>
-          <bio>Michael Carbin is the Jamieson Career Development Assistant Professor of Electrical Engineering and Computer Science at the Massachusetts Institute of Technology. 
-His primary research focus is the design of programming systems that manipulate system uncertainty to deliver improved performance, energy consumption, and resilience. Uncertainty — in the form of sampled and sensed values, dynamic computation structure, and intermittently available computing — is a first-order challenge in modern computing systems. 
-His research on verifying the reliability of programs that execute on unreliable hardware has received best paper awards at leading programming languages conferences (OOPSLA 2013 and OOPSLA 2014) as well as a Communications of the ACM Research Highlight in 2016.&amp;nbsp;He has also published work at leading programming languages and systems conferences, including PLDI, OOPSLA, ASPLOS, LICS, SOSP, ICSE, and PPoPP.</bio>
-          <homepage_url>http://people.csail.mit.edu/mcarbin/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/michaelcarbin/fd0efe40-41d3-4eaf-b227-c8fe1a9f6e96/small.jpg</picture_url>
-          <person_id>michaelcarbin</person_id>
+          <first_name>Pascal</first_name>
+          <last_name>Justen</last_name>
+          <affiliation>Nokia Bell Labs, Belgium</affiliation>
+          <bio>undefined</bio>
+          <person_id>pascaljusten</person_id>
+        </person>
+        <person>
+          <role>Author</role>
+          <sort_key>4</sort_key>
+          <first_name>Tom</first_name>
+          <last_name>Van Cutsem</last_name>
+          <affiliation>Nokia Bell Labs</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>https://tvcutsem.github.io</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/tomvancutsem/d758e20f-3414-45b2-a82f-af50d8a3b6b3/small.jpg</picture_url>
+          <person_id>tomvancutsem</person_id>
         </person>
       </persons>
       <tracks>
         <track>Onward! Papers</track>
       </tracks>
       <badges>
-        <badge property="Event Form">In-Person</badge>
+        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
   </subevent>
@@ -14276,283 +14599,6 @@ In this paper, we propose to complement FCA-based FL techniques. Our proposed te
       </persons>
       <tracks>
         <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
-      </tracks>
-      <badges>
-        <badge property="Event Form">Virtual</badge>
-      </badges>
-    </timeslot>
-  </subevent>
-  <subevent>
-    <subevent_id>67849182-5812-45b5-b906-3279c61ff47f</subevent_id>
-    <title>SPLASH Doctoral Symposium: Afternoon 2</title>
-    <subevent_type type="regular"/>
-    <room>Swissotel Chicago | Currents</room>
-    <date>2021/10/19</date>
-    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
-    <url_link_display>Doctoral Symposium</url_link_display>
-    <tracks>
-      <track>Doctoral Symposium</track>
-    </tracks>
-    <timeslot>
-      <slot_id>f6de485e-7203-452c-a5a8-b82ebc28c3b7</slot_id>
-      <title>Session: SPLASH Doctoral Symposium - Afternoon 2</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>15:40</start_time>
-      <end_time>17:00</end_time>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>194fd2b6-a26e-431d-871e-009cc7e3b902</slot_id>
-      <event_id>603107bf-a2ab-4cfb-9a63-6bf03aedefc5</event_id>
-      <title>Test Overfitting: Challenges, Approaches and Measurements</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>15:40</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>16:15</end_time>
-      <description>Dynamic automated program repair (APR) techniques have promising results, which use test suites for bug localization and evaluating candidate patches. Several studies have shown that generated patches by dynamic APR tools that pass its test suite do not always correctly implement the program’s expected behavior, which is known as test overfitting. My research aims to provide fresh insight into the test overfitting problem by using formal methods.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Amirfarhad</first_name>
-          <last_name>Nilizadeh</last_name>
-          <affiliation>University of Central Florida</affiliation>
-          <bio>undefined</bio>
-          <picture_url>https://2021.splashcon.org/getProfileImage/amirfarhadnilizadeh/4be0d65c-8538-4573-9f26-e7d3f2a96659/small.jpg</picture_url>
-          <person_id>amirfarhadnilizadeh</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-      <badges>
-        <badge property="Event Form">Virtual</badge>
-      </badges>
-    </timeslot>
-  </subevent>
-  <subevent>
-    <subevent_id>e0c87dbc-03d7-4243-a877-9bb3ca138893</subevent_id>
-    <title>SPLASH Doctoral Symposium: Morning 1</title>
-    <subevent_type type="regular"/>
-    <room>Swissotel Chicago | Currents</room>
-    <date>2021/10/19</date>
-    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
-    <url_link_display>Doctoral Symposium</url_link_display>
-    <tracks>
-      <track>Doctoral Symposium</track>
-    </tracks>
-    <timeslot>
-      <slot_id>2a42d691-03b6-4718-9e1f-b6a0c4bc0c94</slot_id>
-      <title>Session: SPLASH Doctoral Symposium - Morning 1</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>09:00</start_time>
-      <end_time>10:20</end_time>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>5abe0486-060a-4d94-ab4a-18f84e612c59</slot_id>
-      <event_id>43ddbf51-5139-47a3-a6a0-3e93521cf49a</event_id>
-      <title>TBD [Invited Talk]</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>09:00</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>10:00</end_time>
-      <description>TBD</description>
-      <persons>
-        <person>
-          <role>Invited Speaker</role>
-          <sort_key>1</sort_key>
-          <first_name>Jonathan</first_name>
-          <last_name>Aldrich</last_name>
-          <affiliation>Carnegie Mellon University</affiliation>
-          <bio>Jonathan Aldrich is a Professor of Computer Science at Carnegie Mellon University. He teaches courses in programming languages, software engineering, and program analysis for quality and security. Prof. Aldrich directed CMU’s Software Engineering Ph.D. program from 2013-2019. 
-Dr. Aldrich’s research centers on programming languages and type systems that are deeply informed by software engineering considerations and human factors. His research contributions include verifying the correct implementation of an architectural design, modular formal reasoning about code, and API protocol specification and verification. His notable awards include an NSF CAREER award (2006), the Dahl-Nygaard Junior Prize (2007), the DARPA Computer Science Study Group, and an ICSE most influential paper award (2012). He served as general chair (2015), program chair (2017), and steering committee chair (2017-2019) of SPLASH and OOPSLA. Aldrich holds a bachelor’s degree in Computer Science from Caltech and a Ph.D. from the University of Washington.</bio>
-          <homepage_url>http://www.cs.cmu.edu/~aldrich/</homepage_url>
-          <picture_url>https://2021.splashcon.org/getProfileImage/jonathanaldrich/e4add3cf-580c-4d1b-9832-3f7577a14b72/small.jpg</picture_url>
-          <person_id>jonathanaldrich</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>84edaa08-4541-40ae-a487-250ab4061567</slot_id>
-      <event_id>1d27d46d-dc9e-4962-8d49-50b91db97e1a</event_id>
-      <title>Elevator Talks</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>10:00</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>10:20</end_time>
-      <description>undefined</description>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-    </timeslot>
-  </subevent>
-  <subevent>
-    <subevent_id>d0f4838e-c5e1-4ff2-b330-93d5ed5888b3</subevent_id>
-    <title>SPLASH Doctoral Symposium: Afternoon</title>
-    <subevent_type type="regular"/>
-    <room>Swissotel Chicago | Currents</room>
-    <date>2021/10/19</date>
-    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
-    <url_link_display>Doctoral Symposium</url_link_display>
-    <tracks>
-      <track>Doctoral Symposium</track>
-    </tracks>
-    <timeslot>
-      <slot_id>7b61e51f-b04f-46da-855c-e445313f9c91</slot_id>
-      <title>Session: SPLASH Doctoral Symposium - Afternoon</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>13:50</start_time>
-      <end_time>15:10</end_time>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>42630ffc-fa9a-4aa7-a920-b0d13092644f</slot_id>
-      <event_id>fa7a0238-71a4-4c1d-840b-d38d6e050afc</event_id>
-      <title>Towards Deep Learning Specification</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>13:55</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>14:30</end_time>
-      <description>Deep Learning techniques are applied in software systems rapidly. Therefore, it becomes necessary to specify Deep Learning (DL) application programming interfaces (APIs) for desired output. Unlike traditional software, DL-specific development occupies bugs that exhibit not only crashes but also yield low accuracy and high training time issues. Inspired by the design-by-contract (DbC) methodology, this work proposes a preemptive measure against such bugs, we call it DL Contract. DL Contract aims to document properties of DL libraries and provide developers with a mechanism to prevent low accuracy and high training time-related bugs during development. One of the main challenges towards DL Contract is to specify properties of the training process, which is inaccessible at the functional interface of the DL libraries. Thus, we introduce the notion of ML variable that allows developers to specify the properties of model architecture, data, and training behavior. To evaluate the utility of DL Contract, we intend to utilize benchmarks from prior works on DL bug detection and repair after implementing DL Contract for Python-based DL libraries.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Shibbir</first_name>
-          <last_name>Ahmed</last_name>
-          <affiliation>undefined</affiliation>
-          <bio>undefined</bio>
-          <person_id>shibbirahmed</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-      <badges>
-        <badge property="Event Form">Virtual</badge>
-      </badges>
-    </timeslot>
-    <timeslot>
-      <slot_id>8dbcd39c-877d-440d-8780-5cdd298cc386</slot_id>
-      <event_id>64c6fe19-a14c-43ca-ae22-f19158bc3aae</event_id>
-      <title>Avoiding Monomorphization Bottlenecks with Phase-based Splitting</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>14:30</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>15:05</end_time>
-      <description>State-of-the-art managed runtimes apply aggressive optimizations often based on the speculative assumption that programs have low variability. However, literature shows that program behavior may evolve at run time and experience different execution “phases”. This variable behavior may hide optimization opportunities from the compiler. Taking such phases into account may thus help improving performance when applied to phase-sensitive optimizations such as lookup caches, that may generate monomorphization bottlenecks when they contain entries that are phase-specific. 
-In this project, we introduce Phase-based splitting, an experimental compiler optimization that utilizes phases to guide monomorphization based on splitting. Preliminary results on micro-benchmarks show our first prototype reaches promising speedups ranging from 10 to 20% on average, peaking up to 47.6% at phase granularity. In the next steps, we aim at further evaluating the potential benefits of our approach on a richer set of benchmarks and real-world applications as well as defining heuristics to better guide phase-based splitting.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Sophie</first_name>
-          <last_name>Kaleba</last_name>
-          <affiliation>University of Kent</affiliation>
-          <bio>undefined</bio>
-          <picture_url>https://2021.splashcon.org/getProfileImage/sophiekaleba/83d4bbee-60e2-41f8-a354-707df6642dc8/small.jpg</picture_url>
-          <person_id>sophiekaleba</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-      <badges>
-        <badge property="Event Form">Virtual</badge>
-      </badges>
-    </timeslot>
-  </subevent>
-  <subevent>
-    <subevent_id>35162ce7-2874-407b-a169-518deb8b969f</subevent_id>
-    <title>SPLASH Doctoral Symposium: Morning 2</title>
-    <subevent_type type="regular"/>
-    <room>Swissotel Chicago | Currents</room>
-    <date>2021/10/19</date>
-    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
-    <url_link_display>Doctoral Symposium</url_link_display>
-    <tracks>
-      <track>Doctoral Symposium</track>
-    </tracks>
-    <timeslot>
-      <slot_id>136ac841-b2ed-4264-88ae-3066c01a824d</slot_id>
-      <title>Session: SPLASH Doctoral Symposium - Morning 2</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>10:50</start_time>
-      <end_time>12:10</end_time>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>40026591-7251-428c-b51c-1a6f4369c980</slot_id>
-      <event_id>3344db26-7384-4321-b98a-c129d01971bc</event_id>
-      <title>Run-time Data Analysis to Drive Compiler Optimizations</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>10:55</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>11:30</end_time>
-      <description>Throughout program execution, types may stabilize, variables may become constant, and code sections may turn out to be redundant - all information that is used by just-in-time (JIT) compilers to achieve peak performance. Yet, since JIT compilation is done on demand for individual code parts, global observations cannot be made. Moreover, global data analysis is an inherently expensive process, that collects information over large data sets. Thus, it is infeasible in dynamic compilers. With this project, we propose integrating data analysis into a dynamic runtime to speed up big data applications. The goal is to use the detailed run-time information for speculative compiler optimizations based on the shape and complexion of the data to improve performance.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Sebastian</first_name>
-          <last_name>Kloibhofer</last_name>
-          <affiliation>Johannes Kepler Universität Linz</affiliation>
-          <bio>undefined</bio>
-          <person_id>sebastiankloibhofer</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-      <badges>
-        <badge property="Event Form">Virtual</badge>
-      </badges>
-    </timeslot>
-    <timeslot>
-      <slot_id>973e50a7-3055-4cef-94dc-7a7f2d1c1781</slot_id>
-      <event_id>db93d0c5-6661-4334-a2d4-ce8053c39876</event_id>
-      <title>Run-Time Data Analysis in Dynamic Runtimes</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>11:30</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>12:05</end_time>
-      <description>Databases are typically faster in processing huge amounts of data than applications with hand-coded data access. Even though modern dynamic runtimes optimize applications intensively, they cannot perform certain optimizations that are traditionally used by database systems as they lack the required information. Thus, we propose to extend the capabilities of dynamic runtimes to allow them to collect fine-grained information of the processed data at run time and use it to perform database-like optimizations. By doing so, we want to enable dynamic runtimes to significantly boost the performance of data-processing workloads. Ideally, applications should be as fast as databases in data-processing workloads by detecting the data schema at run time. To show the feasibility of our approach, we are implementing it in a polyglot dynamic runtime.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Lukas</first_name>
-          <last_name>Makor</last_name>
-          <affiliation>Johannes Kepler University Linz</affiliation>
-          <bio>undefined</bio>
-          <person_id>lukasmakor</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Doctoral Symposium</track>
       </tracks>
       <badges>
         <badge property="Event Form">Virtual</badge>
@@ -26775,6 +26821,24 @@ In this paper, we present a new approach to inclusion-based analysis by compacti
       <date>2021/10/20</date>
       <start_time>13:50</start_time>
       <end_time>15:10</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Yannis</first_name>
+          <last_name>Smaragdakis</last_name>
+          <affiliation>University of Athens</affiliation>
+          <bio>Research Interests: programming languages and software engineering 
+ 
+ Program analysis (static analysis, test generation, invariant inference, symbolic execution) 
+ Language mechanisms for abstraction (declarative languages, program generation, DSLs, modules and components, generics, extensible languages, multi-paradigm programming) 
+ Languages and tools for systems (programming models for concurrency, language support for distributed computing, memory management and program locality) 
+</bio>
+          <homepage_url>http://smaragd.org/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/yannissmaragdakis/62908ab5-aaed-4f2a-a953-10d12d91d826/small.jpg</picture_url>
+          <person_id>yannissmaragdakis</person_id>
+        </person>
+      </persons>
       <tracks>
         <track>OOPSLA</track>
       </tracks>
@@ -27286,7 +27350,7 @@ My research interests are at the intersection of Programming Languages and Human
         <track>OOPSLA</track>
       </tracks>
       <badges>
-        <badge property="Event Form">In-Person</badge>
+        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
     <timeslot>
@@ -27368,6 +27432,19 @@ My research interests are at the intersection of Programming Languages and Human
       <date>2021/10/20</date>
       <start_time>07:40</start_time>
       <end_time>09:00</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Shigeru</first_name>
+          <last_name>Chiba</last_name>
+          <affiliation>The University of Tokyo</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>http://www.csg.ci.i.u-tokyo.ac.jp/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/shigeruchiba/b57db719-4160-4e39-9f41-ef3facc9e449/small.jpg</picture_url>
+          <person_id>shigeruchiba</person_id>
+        </person>
+      </persons>
       <tracks>
         <track>OOPSLA</track>
       </tracks>
@@ -29045,6 +29122,20 @@ I graduated in 2002 with a B.S. in both Computer Science and Computer Engineerin
       <date>2021/10/22</date>
       <start_time>10:50</start_time>
       <end_time>12:10</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Jonathan</first_name>
+          <last_name>Aldrich</last_name>
+          <affiliation>Carnegie Mellon University</affiliation>
+          <bio>Jonathan Aldrich is a Professor of Computer Science at Carnegie Mellon University. He teaches courses in programming languages, software engineering, and program analysis for quality and security. Prof. Aldrich directed CMU’s Software Engineering Ph.D. program from 2013-2019. 
+Dr. Aldrich’s research centers on programming languages and type systems that are deeply informed by software engineering considerations and human factors. His research contributions include verifying the correct implementation of an architectural design, modular formal reasoning about code, and API protocol specification and verification. His notable awards include an NSF CAREER award (2006), the Dahl-Nygaard Junior Prize (2007), the DARPA Computer Science Study Group, and an ICSE most influential paper award (2012). He served as general chair (2015), program chair (2017), and steering committee chair (2017-2019) of SPLASH and OOPSLA. Aldrich holds a bachelor’s degree in Computer Science from Caltech and a Ph.D. from the University of Washington.</bio>
+          <homepage_url>http://www.cs.cmu.edu/~aldrich/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/jonathanaldrich/e4add3cf-580c-4d1b-9832-3f7577a14b72/small.jpg</picture_url>
+          <person_id>jonathanaldrich</person_id>
+        </person>
+      </persons>
       <tracks>
         <track>OOPSLA</track>
       </tracks>
@@ -30240,7 +30331,7 @@ We present Dynaplex, a tool that implements these ideas to automatically generat
         <track>OOPSLA</track>
       </tracks>
       <badges>
-        <badge property="Event Form">In-Person</badge>
+        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
   </subevent>
@@ -30329,7 +30420,7 @@ We present Dynaplex, a tool that implements these ideas to automatically generat
         <track>OOPSLA</track>
       </tracks>
       <badges>
-        <badge property="Event Form">In-Person</badge>
+        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
     <timeslot is_mirror="true">
@@ -30406,7 +30497,7 @@ We present the first comprehensive evaluation of GTLC type migration algorithms,
         <track>OOPSLA</track>
       </tracks>
       <badges>
-        <badge property="Event Form">In-Person</badge>
+        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
     <timeslot is_mirror="true">
@@ -30548,6 +30639,19 @@ We present the first comprehensive evaluation of GTLC type migration algorithms,
       <date>2021/10/22</date>
       <start_time>21:50</start_time>
       <end_time>23:10</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Shigeru</first_name>
+          <last_name>Chiba</last_name>
+          <affiliation>The University of Tokyo</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>http://www.csg.ci.i.u-tokyo.ac.jp/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/shigeruchiba/b57db719-4160-4e39-9f41-ef3facc9e449/small.jpg</picture_url>
+          <person_id>shigeruchiba</person_id>
+        </person>
+      </persons>
       <tracks>
         <track>OOPSLA</track>
       </tracks>
@@ -32773,6 +32877,19 @@ Our results are formalized in the Coq proof assistant. Our continuation-passing 
       <date>2021/10/20</date>
       <start_time>07:40</start_time>
       <end_time>09:00</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Sebastian</first_name>
+          <last_name>Burckhardt</last_name>
+          <affiliation>Microsoft Research</affiliation>
+          <bio>Sebastian Burckhardt was born and raised in Basel, Switzerland, where he studied Mathematics at the local University. During an exchange year at Brandeis University, he discovered his affinity to Computer Science and immigrated to the United States. After a few years of industry experience at IBM, he returned to academia and earned his PhD in Computer Science at the University of Pennsylvania. Since then, he has worked as a researcher at Microsoft Research in Redmond. His general research interest is the study of programming models for of concurrent, parallel, and distributed systems. More specific interests include consistency models, concurrency testing, self-adjusting computation, and the concurrent revisions programming model.</bio>
+          <homepage_url>http://research.microsoft.com/en-us/people/sburckha/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/sebastianburckhardt/726ac702-681a-40f8-94d6-c0465e108867/small.jpg</picture_url>
+          <person_id>sebastianburckhardt</person_id>
+        </person>
+      </persons>
       <tracks>
         <track>OOPSLA</track>
       </tracks>
@@ -33552,7 +33669,7 @@ My research interests are at the intersection of Programming Languages and Human
         <track>OOPSLA</track>
       </tracks>
       <badges>
-        <badge property="Event Form">In-Person</badge>
+        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
     <timeslot is_mirror="true">
@@ -34048,7 +34165,7 @@ We present the first comprehensive evaluation of GTLC type migration algorithms,
         <track>OOPSLA</track>
       </tracks>
       <badges>
-        <badge property="Event Form">In-Person</badge>
+        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
     <timeslot>
@@ -34115,7 +34232,7 @@ We present the first comprehensive evaluation of GTLC type migration algorithms,
         <track>OOPSLA</track>
       </tracks>
       <badges>
-        <badge property="Event Form">In-Person</badge>
+        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
     <timeslot>
@@ -36318,7 +36435,7 @@ We present Dynaplex, a tool that implements these ideas to automatically generat
         <track>OOPSLA</track>
       </tracks>
       <badges>
-        <badge property="Event Form">In-Person</badge>
+        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
     <timeslot>
