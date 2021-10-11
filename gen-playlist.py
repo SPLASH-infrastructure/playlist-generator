@@ -334,12 +334,14 @@ class ScheduleElement:
 		out = dict()
 		if self.plenary:
 			for room in rooms:
-				out[room.name], new_now = self.schedule_one(mapping, room, spec, format, timeslot, now)
+				out_evt, new_now = self.schedule_one(mapping, room, spec, format, timeslot, now)
+				out[room.name] = [out_evt]
 		else: 
 			for room in rooms:
 				previous_now = None
 				if room.name == timeslot.room:
-					out[room.name], new_now = self.schedule_one(mapping, room, spec, format, timeslot, now)
+					out_evt, new_now = self.schedule_one(mapping, room, spec, format, timeslot, now)
+					out[room.name] = [out_evt]
 					if new_now != previous_now and previous_now != None:
 						raise RuntimeError("Repeated scheduling of a plenary event produced a different now time")
 					elif previous_now == None:
@@ -445,7 +447,10 @@ class EventFormat:
 		now = timeslot.start_ts
 		for schedule_elem in self.schedules:
 			res, now = schedule_elem.schedule(mapping, rooms, spec, self, timeslot, now)
-			scheduled.update(res)
+			for room, evts in res.items():
+				if not room in scheduled.keys():
+					scheduled[room] = []
+				scheduled[room].extend(evts)
 		return scheduled
 
 	@classmethod
@@ -610,10 +615,14 @@ if __name__ == '__main__':
     parser = ET.XMLParser(remove_comments=True)
     scheduler = Scheduler.from_xml(ET.parse("liveinfo.xml", parser = parser))
 
+    schedule = dict((room, []) for room in rooms)
     for ts in timeslots:
     	if not ts.room in rooms:
     		continue
-    	scheduler.schedule(mapping, ts)
+    	for k,v in scheduler.schedule(mapping, ts).items():
+    		schedule[k].extend(v)
+    for k,v in schedule.items():
+    	print(k)
 
     # TODO: actually assemble the schedule
     # TODO: insert filler elements
