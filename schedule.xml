@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!DOCTYPE event [<!ELEMENT zip_code (#PCDATA)><!ELEMENT url_link_display (#PCDATA)><!ELEMENT url (#PCDATA)><!ELEMENT tracks (track+)><!ELEMENT track (#PCDATA)><!ELEMENT title (#PCDATA)><!ELEMENT timeslot (slot_id?, event_id?, submission_id?, title, room, date, start_time, end_date?, end_time, description?, acm_doi?, persons?, tracks?, tags?, badges?)><!ELEMENT event_id (#PCDATA)><!ELEMENT submission_id (#PCDATA)><!ELEMENT tags (tag+)><!ELEMENT tag (#PCDATA)><!ELEMENT badges (badge+)><!ELEMENT badge (#PCDATA)><!ATTLIST badge property CDATA #IMPLIED><!ELEMENT suffix (#PCDATA)><!ELEMENT subevent_logo_url (#PCDATA)><!ELEMENT subevent_id (#PCDATA)><!ELEMENT subevent (subevent_id?, title, acronym?, subevent_type, description?, room, date, url?, url_link_display?, subevent_logo_url?, acm_doi?, persons?, tracks?, tags?, sponsor?, timeslot*)><!ELEMENT state (#PCDATA)><!ELEMENT start_time (#PCDATA)><!ELEMENT start_date (#PCDATA)><!ELEMENT sponsor (#PCDATA)><!ELEMENT sort_key (#PCDATA)><!ELEMENT slot_id (#PCDATA)><!ELEMENT subevent_type EMPTY><!ATTLIST subevent_type	type (case_study | demonstration | poster | regular | tutorial | workshop) #IMPLIED><!ELEMENT room (#PCDATA)><!ELEMENT role (#PCDATA)><!ELEMENT picture_url (#PCDATA)><!ELEMENT persons (person+)><!ELEMENT person (role, sort_key, first_name, middle_name?, last_name, suffix?, affiliation, acm_profile_id?, email?, bio?, homepage_url?, picture_url?, person_id?)><!ELEMENT person_id (#PCDATA)><!ELEMENT middle_name (#PCDATA)><!ELEMENT location (facility_name, facility_map_url?, address, city, state?, country, zip_code?)><!ELEMENT last_name (#PCDATA)><!ELEMENT homepage_url (#PCDATA)><!ELEMENT first_name (#PCDATA)><!ELEMENT facility_name (#PCDATA)><!ELEMENT facility_map_url (#PCDATA)><!ELEMENT event_type EMPTY><!ATTLIST event_type	type (conference|workshop|symposium) #IMPLIED><!ELEMENT event (event_details, subevent*, timeslot*, timezone_id?)><!ELEMENT timezone_id (#PCDATA)><!ELEMENT event_logo_url (#PCDATA)><!ELEMENT event_details (title, acronym, event_type, start_date, end_date, location, description, url?, url_link_display?, event_logo_url?, persons?)><!ELEMENT end_time (#PCDATA)><!ELEMENT end_date (#PCDATA)><!ELEMENT email (#PCDATA)><!ELEMENT description (#PCDATA)><!ELEMENT date (#PCDATA)><!ELEMENT country (#PCDATA)><!ELEMENT city (#PCDATA)><!ELEMENT bio (#PCDATA)><!ELEMENT affiliation (#PCDATA)><!ELEMENT address (#PCDATA)><!ELEMENT acronym (#PCDATA)><!ELEMENT acm_profile_id (#PCDATA)><!ELEMENT acm_doi (#PCDATA)>]>
+<!DOCTYPE event [<!ELEMENT zip_code (#PCDATA)><!ELEMENT url_link_display (#PCDATA)><!ELEMENT url (#PCDATA)><!ELEMENT tracks (track+)><!ELEMENT track (#PCDATA)><!ELEMENT title (#PCDATA)><!ELEMENT timeslot (slot_id?, event_id?, submission_id?, title, room, date, start_time, end_date?, end_time, description?, acm_doi?, persons?, tracks?, tags?, badges?)><!ATTLIST timeslot is_mirror CDATA #IMPLIED><!ELEMENT event_id (#PCDATA)><!ELEMENT submission_id (#PCDATA)><!ELEMENT tags (tag+)><!ELEMENT tag (#PCDATA)><!ELEMENT badges (badge+)><!ELEMENT badge (#PCDATA)><!ATTLIST badge property CDATA #IMPLIED><!ELEMENT suffix (#PCDATA)><!ELEMENT subevent_logo_url (#PCDATA)><!ELEMENT subevent_id (#PCDATA)><!ELEMENT subevent (subevent_id?, title, acronym?, subevent_type, description?, room, date, url?, url_link_display?, subevent_logo_url?, acm_doi?, persons?, tracks?, tags?, sponsor?, timeslot*)><!ELEMENT state (#PCDATA)><!ELEMENT start_time (#PCDATA)><!ELEMENT start_date (#PCDATA)><!ELEMENT sponsor (#PCDATA)><!ELEMENT sort_key (#PCDATA)><!ELEMENT slot_id (#PCDATA)><!ELEMENT subevent_type EMPTY><!ATTLIST subevent_type	type (case_study | demonstration | poster | regular | tutorial | workshop) #IMPLIED><!ELEMENT room (#PCDATA)><!ELEMENT role (#PCDATA)><!ELEMENT picture_url (#PCDATA)><!ELEMENT persons (person+)><!ELEMENT person (role, sort_key, first_name, middle_name?, last_name, suffix?, affiliation, acm_profile_id?, email?, bio?, homepage_url?, picture_url?, person_id?)><!ELEMENT person_id (#PCDATA)><!ELEMENT middle_name (#PCDATA)><!ELEMENT location (facility_name, facility_map_url?, address, city, state?, country, zip_code?)><!ELEMENT last_name (#PCDATA)><!ELEMENT homepage_url (#PCDATA)><!ELEMENT first_name (#PCDATA)><!ELEMENT facility_name (#PCDATA)><!ELEMENT facility_map_url (#PCDATA)><!ELEMENT event_type EMPTY><!ATTLIST event_type	type (conference|workshop|symposium) #IMPLIED><!ELEMENT event (event_details, subevent*, timeslot*, timezone_id?)><!ELEMENT timezone_id (#PCDATA)><!ELEMENT event_logo_url (#PCDATA)><!ELEMENT event_details (title, acronym, event_type, start_date, end_date, location, description, url?, url_link_display?, event_logo_url?, persons?)><!ELEMENT end_time (#PCDATA)><!ELEMENT end_date (#PCDATA)><!ELEMENT email (#PCDATA)><!ELEMENT description (#PCDATA)><!ELEMENT date (#PCDATA)><!ELEMENT country (#PCDATA)><!ELEMENT city (#PCDATA)><!ELEMENT bio (#PCDATA)><!ELEMENT affiliation (#PCDATA)><!ELEMENT address (#PCDATA)><!ELEMENT acronym (#PCDATA)><!ELEMENT acm_profile_id (#PCDATA)><!ELEMENT acm_doi (#PCDATA)>]>
 <event>
   <event_details>
     <title>SPLASH 2021</title>
@@ -973,7 +973,7 @@ He (co-)authored 50+ journal and conference papers that appeared in top places i
     <tracks>
       <track>SIGPLAN Business</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>433abd40-8649-43c5-8ed2-e04aab7f021a</slot_id>
       <title>Session: SPLASH SIGPLAN Business - Future of Conferences</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -984,7 +984,7 @@ He (co-)authored 50+ journal and conference papers that appeared in top places i
         <track>SIGPLAN Business</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>f6696639-1a27-4530-bc49-9ae0a3728df9</slot_id>
       <event_id>b41962fe-f7e6-43cf-a9b7-e0d1ee39e8d9</event_id>
       <title>Future of Conferences</title>
@@ -2195,7 +2195,7 @@ Martin founded the multidisciplinary initiatives NUS Seafarers, a programme for 
     <tracks>
       <track>Opening</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a7d2f4f2-2ebf-40ff-954e-f87653b07e4c</slot_id>
       <title>Session: SPLASH Opening - Opening Session</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -2206,7 +2206,7 @@ Martin founded the multidisciplinary initiatives NUS Seafarers, a programme for 
         <track>Opening</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>60378c0a-3c6e-4afe-90a9-45c800cde12f</slot_id>
       <event_id>479c9271-75b9-4332-a52e-2443916ed203</event_id>
       <title>Opening Session</title>
@@ -2740,7 +2740,7 @@ We validate Dyninka on a Fog computing scenario with limited resources and sever
     <tracks>
       <track>Onward! Essays</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>8db8a028-77fb-4751-b7be-812f5bd5804b</slot_id>
       <title>Session: SPLASH Onward! Essays - Essays Session 2</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -2751,7 +2751,7 @@ We validate Dyninka on a Fog computing scenario with limited resources and sever
         <track>Onward! Essays</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>49800847-ee8c-4414-9c1b-1113be4ed322</slot_id>
       <event_id>ccbe3853-1f7d-4e58-9239-01fa953d1723</event_id>
       <title>The Kingdoms of Objects and Values</title>
@@ -2780,7 +2780,7 @@ We validate Dyninka on a Fog computing scenario with limited resources and sever
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>938dcd42-4596-443e-aa56-886514e483ee</slot_id>
       <event_id>69c1593f-353c-46f0-85b2-479ddbd22f12</event_id>
       <title>Let a Thousand Flowers Bloom: on the Uses of Diversity in Software Testing</title>
@@ -3457,86 +3457,6 @@ In this work, we introduce a novel analysis based on abstract interpreters. Comp
     </timeslot>
   </subevent>
   <subevent>
-    <subevent_id>d0f4838e-c5e1-4ff2-b330-93d5ed5888b3</subevent_id>
-    <title>SPLASH Doctoral Symposium: Afternoon</title>
-    <subevent_type type="regular"/>
-    <room>Swissotel Chicago | Currents</room>
-    <date>2021/10/19</date>
-    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
-    <url_link_display>Doctoral Symposium</url_link_display>
-    <tracks>
-      <track>Doctoral Symposium</track>
-    </tracks>
-    <timeslot>
-      <slot_id>7b61e51f-b04f-46da-855c-e445313f9c91</slot_id>
-      <title>Session: SPLASH Doctoral Symposium - Afternoon</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>13:50</start_time>
-      <end_time>15:10</end_time>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>42630ffc-fa9a-4aa7-a920-b0d13092644f</slot_id>
-      <event_id>fa7a0238-71a4-4c1d-840b-d38d6e050afc</event_id>
-      <title>Towards Deep Learning Specification</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>14:30</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>15:10</end_time>
-      <description>Deep Learning techniques are applied in software systems rapidly. Therefore, it becomes necessary to specify Deep Learning (DL) application programming interfaces (APIs) for desired output. Unlike traditional software, DL-specific development occupies bugs that exhibit not only crashes but also yield low accuracy and high training time issues. Inspired by the design-by-contract (DbC) methodology, this work proposes a preemptive measure against such bugs, we call it DL Contract. DL Contract aims to document properties of DL libraries and provide developers with a mechanism to prevent low accuracy and high training time-related bugs during development. One of the main challenges towards DL Contract is to specify properties of the training process, which is inaccessible at the functional interface of the DL libraries. Thus, we introduce the notion of ML variable that allows developers to specify the properties of model architecture, data, and training behavior. To evaluate the utility of DL Contract, we intend to utilize benchmarks from prior works on DL bug detection and repair after implementing DL Contract for Python-based DL libraries.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Shibbir</first_name>
-          <last_name>Ahmed</last_name>
-          <affiliation>undefined</affiliation>
-          <bio>undefined</bio>
-          <person_id>shibbirahmed</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-      <badges>
-        <badge property="Event Form">Virtual</badge>
-      </badges>
-    </timeslot>
-    <timeslot>
-      <slot_id>a5966eab-76b8-4408-8ecc-1c1e02ed0012</slot_id>
-      <event_id>603107bf-a2ab-4cfb-9a63-6bf03aedefc5</event_id>
-      <title>Test Overfitting: Challenges, Approaches and Measurements</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>13:50</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>14:30</end_time>
-      <description>Dynamic automated program repair (APR) techniques have promising results, which use test suites for bug localization and evaluating candidate patches. Several studies have shown that generated patches by dynamic APR tools that pass its test suite do not always correctly implement the program’s expected behavior, which is known as test overfitting. My research aims to provide fresh insight into the test overfitting problem by using formal methods.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Amirfarhad</first_name>
-          <last_name>Nilizadeh</last_name>
-          <affiliation>University of Central Florida</affiliation>
-          <bio>undefined</bio>
-          <picture_url>https://2021.splashcon.org/getProfileImage/amirfarhadnilizadeh/4be0d65c-8538-4573-9f26-e7d3f2a96659/small.jpg</picture_url>
-          <person_id>amirfarhadnilizadeh</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-      <badges>
-        <badge property="Event Form">Virtual</badge>
-      </badges>
-    </timeslot>
-  </subevent>
-  <subevent>
     <subevent_id>b4127135-c5e0-45a5-9240-4631f48283c1</subevent_id>
     <title>DLS: DLS Talks 1</title>
     <subevent_type type="regular"/>
@@ -3547,7 +3467,7 @@ In this work, we introduce a novel analysis based on abstract interpreters. Comp
     <tracks>
       <track>Dynamic Languages Symposium</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>bfab50af-9ce4-4e52-964d-648c29b4ccbd</slot_id>
       <title>Session: DLS - DLS Talks 1</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -3558,7 +3478,7 @@ In this work, we introduce a novel analysis based on abstract interpreters. Comp
         <track>Dynamic Languages Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>21a18983-3db6-4ef5-ad72-5d32e7a91ca7</slot_id>
       <event_id>b34908e0-77cf-44d3-a0e4-e7848afc6c69</event_id>
       <title>CompGen: Generation of Fast JIT Compilers in a Multi-Language VM</title>
@@ -3621,7 +3541,7 @@ He received a Dr. techn. degree in Computer Science (advisor: Prof. Hanspeter M�
         <track>Dynamic Languages Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>3630d2a4-565a-4ee6-88dc-d19d2132aa7a</slot_id>
       <event_id>a2bd814e-644b-4386-a2fe-63fc670a4c7d</event_id>
       <title> Union and intersection contracts are hard, actually</title>
@@ -3668,7 +3588,7 @@ He received a Dr. techn. degree in Computer Science (advisor: Prof. Hanspeter M�
         <track>Dynamic Languages Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>ac2ca061-f144-4848-abff-0265b278fa7d</slot_id>
       <event_id>9993747b-3c5e-4b12-955b-de42f70eb152</event_id>
       <title>Analyzing Permission Transfer Channels for Dynamically Typed Languages</title>
@@ -3917,7 +3837,7 @@ My research focuses on debugging concurrent and parallel applications, particula
     <tracks>
       <track>Keynote Talks</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>129055a2-6d77-46ce-ac35-4f657d8226dc</slot_id>
       <title>Session: APLAS Keynote Talks - Invited talk 2</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -3941,7 +3861,7 @@ My research focuses on debugging concurrent and parallel applications, particula
         <track>Keynote Talks</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>3d9800fa-a4f4-4f43-a55d-9b9fdd069c83</slot_id>
       <event_id>181db6e0-3cfe-45c3-98cd-f72b64ec7f58</event_id>
       <title>A Separation Logic for Probabilistic Independence</title>
@@ -4038,7 +3958,7 @@ Prof. Stevens is a member of the American Association for the Advancement of Sci
     <tracks>
       <track>Keynote Talks</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>d426b18d-9e37-4c73-ac1b-daaba8872f7e</slot_id>
       <title>Session: APLAS Keynote Talks - Invited talk 1</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -4062,7 +3982,7 @@ Prof. Stevens is a member of the American Association for the Advancement of Sci
         <track>Keynote Talks</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>fbf088e0-3719-4e58-bb71-415e6e76ec78</slot_id>
       <event_id>dcfc0f60-1f4f-4dfa-bbaf-2da4274d67cc</event_id>
       <title> Solidifying and Advancing the Software Foundations</title>
@@ -4201,7 +4121,7 @@ His research spans object-oriented foundations, type systems, module systems, di
     <tracks>
       <track>Dynamic Languages Symposium</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>048dfe84-32d6-459c-9a51-98ca84eaf3eb</slot_id>
       <title>Session: DLS - DLS Talks 2</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -4212,7 +4132,7 @@ His research spans object-oriented foundations, type systems, module systems, di
         <track>Dynamic Languages Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>b884e037-fe5b-4da5-ba28-4651d39f6f51</slot_id>
       <event_id>9bdff49b-71f5-4402-b9c5-72c6e4a6847f</event_id>
       <title>On Design and Use of First-Class Environments in R</title>
@@ -4250,7 +4170,7 @@ His research spans object-oriented foundations, type systems, module systems, di
         <track>Dynamic Languages Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>bbbbd066-3c65-4023-a091-23547bde668f</slot_id>
       <event_id>77995b66-f823-4c12-a66a-32f1a9318823</event_id>
       <title>Chair's Welcome and Most Notable Paper Award</title>
@@ -4264,7 +4184,7 @@ His research spans object-oriented foundations, type systems, module systems, di
         <track>Dynamic Languages Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e4eb37b3-952f-40b2-bd12-177b2f5d502e</slot_id>
       <event_id>2ff813f8-2b71-4bbd-8098-ecd51e17189c</event_id>
       <title>Runtime and Compiler Support for HAMTs</title>
@@ -4423,59 +4343,6 @@ We focus on multiparty session types (MPST), an approach that uses governing mul
       <tracks>
         <track>AGERE 2021</track>
       </tracks>
-    </timeslot>
-  </subevent>
-  <subevent>
-    <subevent_id>e0c87dbc-03d7-4243-a877-9bb3ca138893</subevent_id>
-    <title>SPLASH Doctoral Symposium: Morning 1</title>
-    <subevent_type type="regular"/>
-    <room>Swissotel Chicago | Currents</room>
-    <date>2021/10/19</date>
-    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
-    <url_link_display>Doctoral Symposium</url_link_display>
-    <tracks>
-      <track>Doctoral Symposium</track>
-    </tracks>
-    <timeslot>
-      <slot_id>2a42d691-03b6-4718-9e1f-b6a0c4bc0c94</slot_id>
-      <title>Session: SPLASH Doctoral Symposium - Morning 1</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>09:00</start_time>
-      <end_time>10:20</end_time>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>e95ae6cf-50d7-45c7-b169-0c0b2c95972e</slot_id>
-      <event_id>64c6fe19-a14c-43ca-ae22-f19158bc3aae</event_id>
-      <title>Avoiding Monomorphization Bottlenecks with Phase-based Splitting</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>09:00</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>09:40</end_time>
-      <description>State-of-the-art managed runtimes apply aggressive optimizations often based on the speculative assumption that programs have low variability. However, literature shows that program behavior may evolve at run time and experience different execution “phases”. This variable behavior may hide optimization opportunities from the compiler. Taking such phases into account may thus help improving performance when applied to phase-sensitive optimizations such as lookup caches, that may generate monomorphization bottlenecks when they contain entries that are phase-specific. 
-In this project, we introduce Phase-based splitting, an experimental compiler optimization that utilizes phases to guide monomorphization based on splitting. Preliminary results on micro-benchmarks show our first prototype reaches promising speedups ranging from 10 to 20% on average, peaking up to 47.6% at phase granularity. In the next steps, we aim at further evaluating the potential benefits of our approach on a richer set of benchmarks and real-world applications as well as defining heuristics to better guide phase-based splitting.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Sophie</first_name>
-          <last_name>Kaleba</last_name>
-          <affiliation>University of Kent</affiliation>
-          <bio>undefined</bio>
-          <picture_url>https://2021.splashcon.org/getProfileImage/sophiekaleba/83d4bbee-60e2-41f8-a354-707df6642dc8/small.jpg</picture_url>
-          <person_id>sophiekaleba</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-      <badges>
-        <badge property="Event Form">Virtual</badge>
-      </badges>
     </timeslot>
   </subevent>
   <subevent>
@@ -5041,7 +4908,7 @@ Dr Rapos’ research areas of interest are: model-driven engineering, model-base
     <tracks>
       <track>Keynotes</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>ecaf664a-b751-43bd-b0d2-bbd609c4cbd4</slot_id>
       <title>Session: SPLASH Keynotes - SPLASH Keynote</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -5052,7 +4919,7 @@ Dr Rapos’ research areas of interest are: model-driven engineering, model-base
         <track>Keynotes</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>ddf16e4f-40bd-41b2-8c3e-3dc96063ff9f</slot_id>
       <event_id>3cd9d6e6-482e-4d66-9453-b8af77578e91</event_id>
       <title>Integrated Scientific Modeling and Lab Automation</title>
@@ -5266,85 +5133,6 @@ In this session I will review MoarVM’s journey so far, picking out some of the
       </tracks>
       <badges>
         <badge>Keynote</badge>
-      </badges>
-    </timeslot>
-  </subevent>
-  <subevent>
-    <subevent_id>35162ce7-2874-407b-a169-518deb8b969f</subevent_id>
-    <title>SPLASH Doctoral Symposium: Morning 2</title>
-    <subevent_type type="regular"/>
-    <room>Swissotel Chicago | Currents</room>
-    <date>2021/10/19</date>
-    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
-    <url_link_display>Doctoral Symposium</url_link_display>
-    <tracks>
-      <track>Doctoral Symposium</track>
-    </tracks>
-    <timeslot>
-      <slot_id>136ac841-b2ed-4264-88ae-3066c01a824d</slot_id>
-      <title>Session: SPLASH Doctoral Symposium - Morning 2</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>10:50</start_time>
-      <end_time>12:10</end_time>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-    </timeslot>
-    <timeslot>
-      <slot_id>40026591-7251-428c-b51c-1a6f4369c980</slot_id>
-      <event_id>3344db26-7384-4321-b98a-c129d01971bc</event_id>
-      <title>Run-time Data Analysis to Drive Compiler Optimizations</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>10:50</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>11:30</end_time>
-      <description>Throughout program execution, types may stabilize, variables may become constant, and code sections may turn out to be redundant - all information that is used by just-in-time (JIT) compilers to achieve peak performance. Yet, since JIT compilation is done on demand for individual code parts, global observations cannot be made. Moreover, global data analysis is an inherently expensive process, that collects information over large data sets. Thus, it is infeasible in dynamic compilers. With this project, we propose integrating data analysis into a dynamic runtime to speed up big data applications. The goal is to use the detailed run-time information for speculative compiler optimizations based on the shape and complexion of the data to improve performance.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Sebastian</first_name>
-          <last_name>Kloibhofer</last_name>
-          <affiliation>Johannes Kepler Universität Linz</affiliation>
-          <bio>undefined</bio>
-          <person_id>sebastiankloibhofer</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-      <badges>
-        <badge property="Event Form">Virtual</badge>
-      </badges>
-    </timeslot>
-    <timeslot>
-      <slot_id>973e50a7-3055-4cef-94dc-7a7f2d1c1781</slot_id>
-      <event_id>db93d0c5-6661-4334-a2d4-ce8053c39876</event_id>
-      <title>Run-Time Data Analysis in Dynamic Runtimes</title>
-      <room>Swissotel Chicago | Currents</room>
-      <date>2021/10/19</date>
-      <start_time>11:30</start_time>
-      <end_date>2021/10/19</end_date>
-      <end_time>12:10</end_time>
-      <description>Databases are typically faster in processing huge amounts of data than applications with hand-coded data access. Even though modern dynamic runtimes optimize applications intensively, they cannot perform certain optimizations that are traditionally used by database systems as they lack the required information. Thus, we propose to extend the capabilities of dynamic runtimes to allow them to collect fine-grained information of the processed data at run time and use it to perform database-like optimizations. By doing so, we want to enable dynamic runtimes to significantly boost the performance of data-processing workloads. Ideally, applications should be as fast as databases in data-processing workloads by detecting the data schema at run time. To show the feasibility of our approach, we are implementing it in a polyglot dynamic runtime.</description>
-      <persons>
-        <person>
-          <role>Author</role>
-          <sort_key>1</sort_key>
-          <first_name>Lukas</first_name>
-          <last_name>Makor</last_name>
-          <affiliation>Johannes Kepler University Linz</affiliation>
-          <bio>undefined</bio>
-          <person_id>lukasmakor</person_id>
-        </person>
-      </persons>
-      <tracks>
-        <track>Doctoral Symposium</track>
-      </tracks>
-      <badges>
-        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
   </subevent>
@@ -5628,7 +5416,7 @@ Inspired by interrogative debugging, this paper proposes an interactive debuggin
     <tracks>
       <track>Keynotes</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>28d9633c-c93e-43dc-afcc-1b119d3d07aa</slot_id>
       <title>Session: SPLASH Keynotes - SPLASH Keynote</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -5639,7 +5427,7 @@ Inspired by interrogative debugging, this paper proposes an interactive debuggin
         <track>Keynotes</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>77c3355e-c0a4-4bd2-901e-cc8a16528eda</slot_id>
       <event_id>4aea397e-24ec-43c4-a73b-26df9bb20557</event_id>
       <title>Exascale and then what?: HPC and AI for Scientific Discovery</title>
@@ -6842,7 +6630,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
     <tracks>
       <track>Onward! Essays</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>824a6f16-2ebb-4536-bace-13de7579591e</slot_id>
       <title>Session: SPLASH Onward! Essays - Essays Session 1</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -6866,7 +6654,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
         <track>Onward! Essays</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>638db432-f284-41cb-aa74-4f6c929e437b</slot_id>
       <event_id>d9d6e0ac-f9e4-415c-9e4a-5ff0f2802def</event_id>
       <title>Angelic and Demonic Visitation: School Memories</title>
@@ -6894,7 +6682,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>9a011290-2f5c-4d14-9d08-85cb039747d7</slot_id>
       <event_id>5d3ee16e-9b3a-4ef2-8613-7460b6b8831b</event_id>
       <title>Programming as Architecture, Design and Urban Planning</title>
@@ -7970,7 +7758,7 @@ To explore this question, we built Inkbase, a programmable digital sketchbook. I
     <tracks>
       <track>Awards</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>01d1ee2e-b6ed-4ad0-9653-4d6433e33aff</slot_id>
       <title>Session: SPLASH Awards - Awards</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -7981,7 +7769,7 @@ To explore this question, we built Inkbase, a programmable digital sketchbook. I
         <track>Awards</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c352bcc8-0023-411b-8e96-b9c7e70cb99e</slot_id>
       <event_id>fa5fb5f4-0b6b-404a-90be-226c87cf9558</event_id>
       <title>SPLASH Awards</title>
@@ -8191,8 +7979,9 @@ Dave’s first major accomplishment in the C++ community was to create and promo
           <sort_key>3</sort_key>
           <first_name>Denys</first_name>
           <last_name>Shabalin</last_name>
-          <affiliation>EPFL, Switzerland</affiliation>
-          <bio>undefined</bio>
+          <affiliation>Google</affiliation>
+          <bio>Hacking on compilers and frameworks for machine learning at Google Research.</bio>
+          <picture_url>https://2021.splashcon.org/getProfileImage/denysshabalin/9ee8b323-f1ae-49d0-8233-a0aa1cc91899/small.jpg</picture_url>
           <person_id>denysshabalin</person_id>
         </person>
       </persons>
@@ -8459,7 +8248,7 @@ My main interest is in applying techniques from programming languages and formal
       </tracks>
       <badges>
         <badge>AMA</badge>
-        <badge property="Event Form">In-person</badge>
+        <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
   </subevent>
@@ -8656,7 +8445,7 @@ My main interest is in applying techniques from programming languages and formal
     <tracks>
       <track>Onward! Papers</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>9d1c2f7a-6fa3-4054-9d0a-b88976d14e9f</slot_id>
       <title>Session: SPLASH Onward! Papers - Onward! Keynote Talk</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -8667,7 +8456,7 @@ My main interest is in applying techniques from programming languages and formal
         <track>Onward! Papers</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c17481a0-322c-4322-92b8-902d89d2d1f6</slot_id>
       <event_id>35abc255-2ef4-4837-af5f-9c0784a6fcca</event_id>
       <title>Designing Safe Programmed Molecular Systems</title>
@@ -8710,18 +8499,31 @@ My main interest is in applying techniques from programming languages and formal
     <tracks>
       <track>Onward! Papers</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e35825fd-5469-4326-afc4-3b46b247674b</slot_id>
       <title>Session: SPLASH Onward! Papers - Onward! Paper Session 2</title>
       <room>Swissotel Chicago | Zurich C</room>
       <date>2021/10/20</date>
       <start_time>21:50</start_time>
       <end_time>23:10</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Hidehiko</first_name>
+          <last_name>Masuhara</last_name>
+          <affiliation>Tokyo Institute of Technology</affiliation>
+          <bio>Hidehiko Masuhara is a Professor of Mathematical and Computing Science, Tokyo Institute of Technology since April 2013. He received his B.S., M.S., and Ph.D. in Computer Science from Department of Information Science, University of Tokyo in 1992, 1994, and 1999, respectively, and served as an assistant professor, lecturer, and associate professor at Graphics and Computer Science, Graduate School of Arts and Sciences, University of Tokyo from 1995 until 2013.</bio>
+          <homepage_url>http://prg.is.titech.ac.jp/people/masuhara/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/hidehikomasuhara/3ea94269-6fb5-4c6d-8d6f-0435717377d6/small.jpg</picture_url>
+          <person_id>hidehikomasuhara</person_id>
+        </person>
+      </persons>
       <tracks>
         <track>Onward! Papers</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>44ac58b5-05e4-4ab3-b706-460d05c64932</slot_id>
       <event_id>2013a3de-a0a1-4586-91cf-a5c3d4b998b6</event_id>
       <submission_id>11</submission_id>
@@ -8782,7 +8584,7 @@ We overview existing approaches to asynchronous programming, zoom in and talk ab
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>59cde55d-dbaf-4e3a-ad5b-8abaffc2706c</slot_id>
       <event_id>9f76f988-b925-4637-b537-a889063cde4e</event_id>
       <submission_id>12</submission_id>
@@ -8839,7 +8641,7 @@ Since current students have a strong level of concern about environmental conseq
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>703d79e0-9bcf-421d-9534-a077b554ff7a</slot_id>
       <event_id>f77a59ba-575f-4997-a122-2336da8c6a72</event_id>
       <submission_id>10</submission_id>
@@ -8905,7 +8707,7 @@ Since current students have a strong level of concern about environmental conseq
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>7f115c65-b398-4d3d-893d-13e2ada1180b</slot_id>
       <event_id>6f69f227-02b2-4a33-941a-f0f43b49ac3e</event_id>
       <submission_id>3</submission_id>
@@ -9402,18 +9204,31 @@ Oh, and I am currently looking for students! Please apply!</bio>
     <tracks>
       <track>Onward! Papers</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>285c3128-2a49-46f9-ab47-4c0f365a520d</slot_id>
       <title>Session: SPLASH Onward! Papers - Onward! Paper Session 1</title>
       <room>Swissotel Chicago | Zurich C</room>
       <date>2021/10/20</date>
       <start_time>18:50</start_time>
       <end_time>20:10</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Shigeru</first_name>
+          <last_name>Chiba</last_name>
+          <affiliation>The University of Tokyo</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>http://www.csg.ci.i.u-tokyo.ac.jp/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/shigeruchiba/b57db719-4160-4e39-9f41-ef3facc9e449/small.jpg</picture_url>
+          <person_id>shigeruchiba</person_id>
+        </person>
+      </persons>
       <tracks>
         <track>Onward! Papers</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>17dfc907-3ea3-48bc-941c-62f54493038a</slot_id>
       <event_id>ed615e6c-703b-40b2-adf5-3ba0be78f021</event_id>
       <submission_id>13</submission_id>
@@ -9474,7 +9289,7 @@ Oh, and I am currently looking for students! Please apply!</bio>
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>1e770879-4010-4bc1-ab7b-c1fb83663bec</slot_id>
       <event_id>0f80dc7c-040a-4764-a133-5e55b5519014</event_id>
       <submission_id>4</submission_id>
@@ -9530,7 +9345,7 @@ His research on verifying the reliability of programs that execute on unreliable
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>250790ad-588f-43c2-8b92-89e077b35b35</slot_id>
       <event_id>645df455-35ac-42ea-bfb9-de49bf84c5d7</event_id>
       <title>Onward! Welcome</title>
@@ -9547,7 +9362,7 @@ His research on verifying the reliability of programs that execute on unreliable
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a328fca9-8159-4910-8706-f578270ceae8</slot_id>
       <event_id>a7c8cbe2-0dca-4ddf-95b1-1261b79c3555</event_id>
       <submission_id>7</submission_id>
@@ -9618,7 +9433,7 @@ To show that this idea is feasible we design, implement and benchmark a tool tha
     <tracks>
       <track>PLMW@SPLASH</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c8054045-16d4-4a2d-ad8e-dcfaef67f84c</slot_id>
       <title>Session: SPLASH PLMW - Career Perspectives</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -9629,7 +9444,7 @@ To show that this idea is feasible we design, implement and benchmark a tool tha
         <track>PLMW@SPLASH</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>0a141f90-f28c-4f92-9e44-21a2a751286c</slot_id>
       <event_id>7cec55c1-6dca-4fb5-8296-9086c8d221a3</event_id>
       <title>PL/SE Career Panel</title>
@@ -10015,7 +9830,7 @@ His research on verifying the reliability of programs that execute on unreliable
     <tracks>
       <track>PLMW@SPLASH</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a82aab2a-e674-47fb-9a69-fbb2b4f5e855</slot_id>
       <title>Session: SPLASH PLMW - Introduction to SPLASH</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -10026,7 +9841,7 @@ His research on verifying the reliability of programs that execute on unreliable
         <track>PLMW@SPLASH</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>5c40d758-f0a2-44c3-b55e-207c605ed501</slot_id>
       <event_id>9df416db-af69-4b2c-abe6-4b16a5a780d2</event_id>
       <title>A Tour through the Program</title>
@@ -10040,7 +9855,7 @@ His research on verifying the reliability of programs that execute on unreliable
         <track>PLMW@SPLASH</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>9fbdd55a-df48-4afd-97e8-0fdd090c34ae</slot_id>
       <event_id>feb3456e-20e1-4145-80dc-76b9267690e5</event_id>
       <title>Mentoring Sessions</title>
@@ -10054,7 +9869,7 @@ His research on verifying the reliability of programs that execute on unreliable
         <track>PLMW@SPLASH</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>f6e9ed35-63bb-4023-8932-e508fa6c4753</slot_id>
       <event_id>c8cfd98d-a1c2-432d-b78a-b37bf9ce6f83</event_id>
       <title>How to Navigate SPLASH</title>
@@ -10117,7 +9932,7 @@ His research on verifying the reliability of programs that execute on unreliable
     <tracks>
       <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>25ed95d4-df79-4324-8048-2ec41bd9bf30</slot_id>
       <title>Session: GPCE - GPCE/SLE Session 3</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -10142,7 +9957,7 @@ I am originally from Moscow, Russia with a background in Mathematics. I have com
         <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>3770702d-c36c-450a-abf9-857d93a92dee</slot_id>
       <event_id>6cb74ab3-5834-4f3e-b5c6-56c554779d1d</event_id>
       <submission_id>3</submission_id>
@@ -10216,7 +10031,7 @@ I am originally from Moscow, Russia with a background in Mathematics. I have com
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>501914d4-9271-47a2-b819-fab3faf062df</slot_id>
       <event_id>e27d703b-7803-4980-b6f0-2b57ef2e63ab</event_id>
       <submission_id>2</submission_id>
@@ -10299,7 +10114,7 @@ I am originally from Moscow, Russia with a background in Mathematics. I have com
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>7beee119-94d3-434b-8dc1-fc4affea15a6</slot_id>
       <event_id>ddf5336e-5697-40aa-a3b7-8562a642f07f</event_id>
       <submission_id>5</submission_id>
@@ -10346,7 +10161,7 @@ I am originally from Moscow, Russia with a background in Mathematics. I have com
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>f4a53e78-99e8-4a23-b90a-ea9e41469690</slot_id>
       <event_id>2f5730cd-6e81-4edf-950f-b18abe169215</event_id>
       <submission_id>28</submission_id>
@@ -11064,7 +10879,7 @@ Robert received a PhD in Computer Science from the Ilmenau University of Technol
       <track>SLE (Software Language Engineering) 2021</track>
       <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e4d94e3e-2d48-4ab3-a195-2fa2e954c413</slot_id>
       <title>Session: SLE - SLE/GPCE Session 7</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -11088,7 +10903,7 @@ Robert received a PhD in Computer Science from the Ilmenau University of Technol
         <track>SLE (Software Language Engineering) 2021</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>3d475699-6c74-473b-b9e0-db5beaad8011</slot_id>
       <event_id>10f4854e-9741-4aee-8e3a-44cf4712a53b</event_id>
       <submission_id>25</submission_id>
@@ -11129,7 +10944,7 @@ The functional approach and Haskell’s type system support a high-level formula
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>50187c0d-999b-4bd7-bbed-4e9f633909e7</slot_id>
       <event_id>60d3efad-cea5-4f5b-8978-c0d7e8885703</event_id>
       <submission_id>15</submission_id>
@@ -11191,7 +11006,7 @@ The functional approach and Haskell’s type system support a high-level formula
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>50db0d12-af1c-4f98-b3b1-62e1ce4eab92</slot_id>
       <event_id>c4f8988a-f821-4472-877f-7debd62c4400</event_id>
       <submission_id>40</submission_id>
@@ -11252,7 +11067,7 @@ The functional approach and Haskell’s type system support a high-level formula
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a2b908e3-c687-42d2-b3a6-9683718727f0</slot_id>
       <event_id>eb9cb457-b2ba-4cca-8b8f-1ecfc278b4b3</event_id>
       <submission_id>36</submission_id>
@@ -11316,7 +11131,7 @@ The functional approach and Haskell’s type system support a high-level formula
       <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
       <track>SLE (Software Language Engineering) 2021</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>69d77a2d-770b-41a2-a42b-56535e9fdd22</slot_id>
       <title>Session: GPCE - GPCE/SLE Session 2</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -11340,7 +11155,7 @@ The functional approach and Haskell’s type system support a high-level formula
         <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>159ebb2b-6e6a-4b80-b06f-ba4fe5765117</slot_id>
       <event_id>2b3eb64f-c0f9-4ad3-b113-1dec06a4f5f9</event_id>
       <submission_id>20</submission_id>
@@ -11409,7 +11224,7 @@ To alleviate this problem, we propose an automated approach to the generation of
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>5aabf679-4f50-4871-b67c-b44b0faf11c2</slot_id>
       <event_id>c5b4c471-5d34-49c8-b9cf-38139c8819c2</event_id>
       <submission_id>6</submission_id>
@@ -11467,7 +11282,7 @@ To alleviate this problem, we propose an automated approach to the generation of
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>60b1efc8-cec3-4ebf-ac39-c0f4c62249b3</slot_id>
       <event_id>52162c2c-b58f-4bf6-8bfd-aa4df8dc3e4b</event_id>
       <title>GPCE Keynote - Live Programming and Programming by Example: Better Together</title>
@@ -11498,7 +11313,7 @@ To alleviate this problem, we propose an automated approach to the generation of
         <badge>Keynote</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>dcec7b49-a675-4db6-ab5b-9e0d80e98b16</slot_id>
       <event_id>39b6d8a1-da11-453e-a8a4-16fb2f3bf829</event_id>
       <submission_id>18</submission_id>
@@ -12637,7 +12452,7 @@ The functional approach and Haskell’s type system support a high-level formula
       <track>SLE (Software Language Engineering) 2021</track>
       <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>558db5dc-7240-441f-89e9-bbb28d52e7fc</slot_id>
       <title>Session: SLE - SLE/GPCE Session 6</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -12671,7 +12486,7 @@ The functional approach and Haskell’s type system support a high-level formula
         <track>SLE (Software Language Engineering) 2021</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>2ddb22ac-450b-48a9-bfe0-36df2b11fa0d</slot_id>
       <event_id>d2a351ab-6925-489a-973b-88f21de65a05</event_id>
       <submission_id>33</submission_id>
@@ -12714,7 +12529,7 @@ gfixr can be configured to explore the repair space in different ways, and can a
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>306452f1-7656-4eb5-a779-d91ce59f78ca</slot_id>
       <event_id>ba7452c9-2b20-416d-9e9d-2729e6174030</event_id>
       <submission_id>5</submission_id>
@@ -12756,7 +12571,7 @@ gfixr can be configured to explore the repair space in different ways, and can a
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a0d24ff2-d12e-4a53-a4b2-dc0ce8c244e2</slot_id>
       <event_id>239feb7d-9134-4d66-a0af-d859a58d738b</event_id>
       <submission_id>15</submission_id>
@@ -12797,7 +12612,7 @@ gfixr can be configured to explore the repair space in different ways, and can a
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>b655a376-07e4-4144-905c-75cfd7e716fd</slot_id>
       <event_id>75bbcf77-fd35-49e7-a3ca-2450da7386b8</event_id>
       <submission_id>12</submission_id>
@@ -12838,7 +12653,7 @@ We quantify these biases and evaluate the effect they have on coverage over the 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>ec877122-d505-41ab-8d66-1ae7f55d5b38</slot_id>
       <event_id>9f6a14d7-8413-4511-b2ee-7881c6ccdfd5</event_id>
       <submission_id>22</submission_id>
@@ -13174,7 +12989,7 @@ To alleviate this problem, we propose an automated approach to the generation of
       <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
       <track>SLE (Software Language Engineering) 2021</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>86125ad8-ef14-46f7-b8ed-ef4a66a68d4f</slot_id>
       <title>Session: GPCE - GPCE/SLE Session 4</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -13198,7 +13013,7 @@ To alleviate this problem, we propose an automated approach to the generation of
         <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>5970c411-07b5-498c-8e12-d987aa799190</slot_id>
       <event_id>65df9844-070c-4122-adea-ff24e69cdcd3</event_id>
       <submission_id>18</submission_id>
@@ -13239,7 +13054,7 @@ Our main insight is that it is possible to express all three steps in a single l
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>5c5f9bbb-8722-4249-a0e9-b5d2c76a969d</slot_id>
       <event_id>5c03a4dc-23f5-48ee-86f6-f3a571c4d6d1</event_id>
       <submission_id>28</submission_id>
@@ -13343,7 +13158,7 @@ Robert received a PhD in Computer Science from the Ilmenau University of Technol
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>9c3dbdb2-5dbc-49f5-8a57-867ba13b0c77</slot_id>
       <event_id>f340a855-bbd0-40ac-b6c6-e866e008342a</event_id>
       <submission_id>38</submission_id>
@@ -13382,7 +13197,7 @@ Thread model is a familiar concept to programmers and can help reduce errors in 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>ca17582e-f031-4629-9dc3-262e0eecf180</slot_id>
       <event_id>138aa42e-f060-4c89-8f76-da77c5521751</event_id>
       <submission_id>30</submission_id>
@@ -13436,7 +13251,7 @@ In this paper, we take the next steps in exploring this topic by conducting an i
       <track>SLE (Software Language Engineering) 2021</track>
       <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>30dcb99f-50c1-4d85-8813-3c6906b693a1</slot_id>
       <title>Session: SLE - SLE/GPCE Session 5</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -13459,7 +13274,7 @@ In this paper, we take the next steps in exploring this topic by conducting an i
         <track>SLE (Software Language Engineering) 2021</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>502820f7-dd23-4c74-ab80-5079cd51b867</slot_id>
       <event_id>973121e8-34fe-4e2b-b368-0c84d6a61a30</event_id>
       <submission_id>6</submission_id>
@@ -13498,7 +13313,7 @@ In this paper, we take the next steps in exploring this topic by conducting an i
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>5702bbfb-f578-42bc-8581-615791b0bc03</slot_id>
       <event_id>b0370501-3004-4d97-999e-22e02e3f92bd</event_id>
       <submission_id>21</submission_id>
@@ -13553,7 +13368,7 @@ Over the last 10 years, Martin worked on unifying object-oriented and functional
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>abada571-40f6-43bc-a04b-25b43a53c638</slot_id>
       <event_id>bdc15ba9-7bbe-4361-bc81-f63ec2005af2</event_id>
       <submission_id>35</submission_id>
@@ -13593,7 +13408,7 @@ Over the last 10 years, Martin worked on unifying object-oriented and functional
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>f2e62f4a-02fc-442a-aa09-4acf990ee825</slot_id>
       <event_id>f543f436-3672-458d-b29e-a56692560d3c</event_id>
       <submission_id>24</submission_id>
@@ -14032,7 +13847,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
       <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
       <track>SLE (Software Language Engineering) 2021</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>5368203e-cdf2-4091-87b7-cdd3a1ea3e6c</slot_id>
       <title>Session: GPCE - GPCE/SLE Session 1</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -14056,7 +13871,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
         <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>3b8ecd57-0b13-448c-a852-ca7c1b76d191</slot_id>
       <event_id>a97ec605-a47a-416a-8145-2f81ace21eaa</event_id>
       <title>SLE Keynote - Integrating Usability into Programming Language Design</title>
@@ -14087,7 +13902,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>42a0c8f9-ae61-4255-8a01-54fc33d6a2cb</slot_id>
       <event_id>1953b8e6-dbc4-41de-82f3-767184e4791d</event_id>
       <title>SLE/GPCE Joint Welcome</title>
@@ -14138,7 +13953,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>85d0f65a-6499-4e9b-bd86-675b89e603cf</slot_id>
       <event_id>3b6843f6-c930-4990-8436-e1c21f83e8eb</event_id>
       <submission_id>24</submission_id>
@@ -14169,7 +13984,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>9aa66e54-33a3-4c38-9bc1-9a0ab464daf6</slot_id>
       <event_id>266304e3-dcf6-42bc-a743-4dca7cdb3e2c</event_id>
       <submission_id>21</submission_id>
@@ -14240,7 +14055,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
       <track>SLE (Software Language Engineering) 2021</track>
       <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>0159b319-5a47-4a94-ab90-eccc45ec1bc5</slot_id>
       <title>Session: SLE - SLE/GPCE Session 8</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -14264,7 +14079,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
         <track>SLE (Software Language Engineering) 2021</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>0779ee13-33b6-4493-a402-cc705a2de26a</slot_id>
       <event_id>52a219ce-0523-4856-a126-3b25b9f6063c</event_id>
       <submission_id>16</submission_id>
@@ -14323,7 +14138,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>11b5365b-cbbd-411b-84a5-6fc9ef9a35b8</slot_id>
       <event_id>2b702965-d312-4316-8d55-39a1e0d157f4</event_id>
       <submission_id>44</submission_id>
@@ -14372,7 +14187,7 @@ Dr. Aldrich’s research centers on programming languages and type systems that 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>72c7e18c-f119-45f5-a05c-2de4928289d2</slot_id>
       <event_id>cbec2229-545a-457e-8f6a-da00c5321161</event_id>
       <submission_id>20</submission_id>
@@ -14405,7 +14220,7 @@ We have implemented an experimental lifted termination analyzer, called SPLFuncT
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>86de36b9-f26d-4b63-b8b4-b648734c8c7b</slot_id>
       <event_id>04f49794-5679-4653-af38-5b6b995e0cd3</event_id>
       <submission_id>32</submission_id>
@@ -14468,6 +14283,283 @@ In this paper, we propose to complement FCA-based FL techniques. Our proposed te
     </timeslot>
   </subevent>
   <subevent>
+    <subevent_id>67849182-5812-45b5-b906-3279c61ff47f</subevent_id>
+    <title>SPLASH Doctoral Symposium: Afternoon 2</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Currents</room>
+    <date>2021/10/19</date>
+    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
+    <url_link_display>Doctoral Symposium</url_link_display>
+    <tracks>
+      <track>Doctoral Symposium</track>
+    </tracks>
+    <timeslot>
+      <slot_id>f6de485e-7203-452c-a5a8-b82ebc28c3b7</slot_id>
+      <title>Session: SPLASH Doctoral Symposium - Afternoon 2</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>15:40</start_time>
+      <end_time>17:00</end_time>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>194fd2b6-a26e-431d-871e-009cc7e3b902</slot_id>
+      <event_id>603107bf-a2ab-4cfb-9a63-6bf03aedefc5</event_id>
+      <title>Test Overfitting: Challenges, Approaches and Measurements</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>15:40</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>16:15</end_time>
+      <description>Dynamic automated program repair (APR) techniques have promising results, which use test suites for bug localization and evaluating candidate patches. Several studies have shown that generated patches by dynamic APR tools that pass its test suite do not always correctly implement the program’s expected behavior, which is known as test overfitting. My research aims to provide fresh insight into the test overfitting problem by using formal methods.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Amirfarhad</first_name>
+          <last_name>Nilizadeh</last_name>
+          <affiliation>University of Central Florida</affiliation>
+          <bio>undefined</bio>
+          <picture_url>https://2021.splashcon.org/getProfileImage/amirfarhadnilizadeh/4be0d65c-8538-4573-9f26-e7d3f2a96659/small.jpg</picture_url>
+          <person_id>amirfarhadnilizadeh</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+      <badges>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+  </subevent>
+  <subevent>
+    <subevent_id>e0c87dbc-03d7-4243-a877-9bb3ca138893</subevent_id>
+    <title>SPLASH Doctoral Symposium: Morning 1</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Currents</room>
+    <date>2021/10/19</date>
+    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
+    <url_link_display>Doctoral Symposium</url_link_display>
+    <tracks>
+      <track>Doctoral Symposium</track>
+    </tracks>
+    <timeslot>
+      <slot_id>2a42d691-03b6-4718-9e1f-b6a0c4bc0c94</slot_id>
+      <title>Session: SPLASH Doctoral Symposium - Morning 1</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>09:00</start_time>
+      <end_time>10:20</end_time>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>5abe0486-060a-4d94-ab4a-18f84e612c59</slot_id>
+      <event_id>43ddbf51-5139-47a3-a6a0-3e93521cf49a</event_id>
+      <title>TBD [Invited Talk]</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>09:00</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>10:00</end_time>
+      <description>TBD</description>
+      <persons>
+        <person>
+          <role>Invited Speaker</role>
+          <sort_key>1</sort_key>
+          <first_name>Jonathan</first_name>
+          <last_name>Aldrich</last_name>
+          <affiliation>Carnegie Mellon University</affiliation>
+          <bio>Jonathan Aldrich is a Professor of Computer Science at Carnegie Mellon University. He teaches courses in programming languages, software engineering, and program analysis for quality and security. Prof. Aldrich directed CMU’s Software Engineering Ph.D. program from 2013-2019. 
+Dr. Aldrich’s research centers on programming languages and type systems that are deeply informed by software engineering considerations and human factors. His research contributions include verifying the correct implementation of an architectural design, modular formal reasoning about code, and API protocol specification and verification. His notable awards include an NSF CAREER award (2006), the Dahl-Nygaard Junior Prize (2007), the DARPA Computer Science Study Group, and an ICSE most influential paper award (2012). He served as general chair (2015), program chair (2017), and steering committee chair (2017-2019) of SPLASH and OOPSLA. Aldrich holds a bachelor’s degree in Computer Science from Caltech and a Ph.D. from the University of Washington.</bio>
+          <homepage_url>http://www.cs.cmu.edu/~aldrich/</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/jonathanaldrich/e4add3cf-580c-4d1b-9832-3f7577a14b72/small.jpg</picture_url>
+          <person_id>jonathanaldrich</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>84edaa08-4541-40ae-a487-250ab4061567</slot_id>
+      <event_id>1d27d46d-dc9e-4962-8d49-50b91db97e1a</event_id>
+      <title>Elevator Talks</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>10:00</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>10:20</end_time>
+      <description>undefined</description>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+  </subevent>
+  <subevent>
+    <subevent_id>d0f4838e-c5e1-4ff2-b330-93d5ed5888b3</subevent_id>
+    <title>SPLASH Doctoral Symposium: Afternoon</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Currents</room>
+    <date>2021/10/19</date>
+    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
+    <url_link_display>Doctoral Symposium</url_link_display>
+    <tracks>
+      <track>Doctoral Symposium</track>
+    </tracks>
+    <timeslot>
+      <slot_id>7b61e51f-b04f-46da-855c-e445313f9c91</slot_id>
+      <title>Session: SPLASH Doctoral Symposium - Afternoon</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>13:50</start_time>
+      <end_time>15:10</end_time>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>42630ffc-fa9a-4aa7-a920-b0d13092644f</slot_id>
+      <event_id>fa7a0238-71a4-4c1d-840b-d38d6e050afc</event_id>
+      <title>Towards Deep Learning Specification</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>13:55</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>14:30</end_time>
+      <description>Deep Learning techniques are applied in software systems rapidly. Therefore, it becomes necessary to specify Deep Learning (DL) application programming interfaces (APIs) for desired output. Unlike traditional software, DL-specific development occupies bugs that exhibit not only crashes but also yield low accuracy and high training time issues. Inspired by the design-by-contract (DbC) methodology, this work proposes a preemptive measure against such bugs, we call it DL Contract. DL Contract aims to document properties of DL libraries and provide developers with a mechanism to prevent low accuracy and high training time-related bugs during development. One of the main challenges towards DL Contract is to specify properties of the training process, which is inaccessible at the functional interface of the DL libraries. Thus, we introduce the notion of ML variable that allows developers to specify the properties of model architecture, data, and training behavior. To evaluate the utility of DL Contract, we intend to utilize benchmarks from prior works on DL bug detection and repair after implementing DL Contract for Python-based DL libraries.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Shibbir</first_name>
+          <last_name>Ahmed</last_name>
+          <affiliation>undefined</affiliation>
+          <bio>undefined</bio>
+          <person_id>shibbirahmed</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+      <badges>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot>
+      <slot_id>8dbcd39c-877d-440d-8780-5cdd298cc386</slot_id>
+      <event_id>64c6fe19-a14c-43ca-ae22-f19158bc3aae</event_id>
+      <title>Avoiding Monomorphization Bottlenecks with Phase-based Splitting</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>14:30</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>15:05</end_time>
+      <description>State-of-the-art managed runtimes apply aggressive optimizations often based on the speculative assumption that programs have low variability. However, literature shows that program behavior may evolve at run time and experience different execution “phases”. This variable behavior may hide optimization opportunities from the compiler. Taking such phases into account may thus help improving performance when applied to phase-sensitive optimizations such as lookup caches, that may generate monomorphization bottlenecks when they contain entries that are phase-specific. 
+In this project, we introduce Phase-based splitting, an experimental compiler optimization that utilizes phases to guide monomorphization based on splitting. Preliminary results on micro-benchmarks show our first prototype reaches promising speedups ranging from 10 to 20% on average, peaking up to 47.6% at phase granularity. In the next steps, we aim at further evaluating the potential benefits of our approach on a richer set of benchmarks and real-world applications as well as defining heuristics to better guide phase-based splitting.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Sophie</first_name>
+          <last_name>Kaleba</last_name>
+          <affiliation>University of Kent</affiliation>
+          <bio>undefined</bio>
+          <picture_url>https://2021.splashcon.org/getProfileImage/sophiekaleba/83d4bbee-60e2-41f8-a354-707df6642dc8/small.jpg</picture_url>
+          <person_id>sophiekaleba</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+      <badges>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+  </subevent>
+  <subevent>
+    <subevent_id>35162ce7-2874-407b-a169-518deb8b969f</subevent_id>
+    <title>SPLASH Doctoral Symposium: Morning 2</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Currents</room>
+    <date>2021/10/19</date>
+    <url>https://2021.splashcon.org/track/splash-2021-Doctoral-Symposium</url>
+    <url_link_display>Doctoral Symposium</url_link_display>
+    <tracks>
+      <track>Doctoral Symposium</track>
+    </tracks>
+    <timeslot>
+      <slot_id>136ac841-b2ed-4264-88ae-3066c01a824d</slot_id>
+      <title>Session: SPLASH Doctoral Symposium - Morning 2</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>10:50</start_time>
+      <end_time>12:10</end_time>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+    </timeslot>
+    <timeslot>
+      <slot_id>40026591-7251-428c-b51c-1a6f4369c980</slot_id>
+      <event_id>3344db26-7384-4321-b98a-c129d01971bc</event_id>
+      <title>Run-time Data Analysis to Drive Compiler Optimizations</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>10:55</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>11:30</end_time>
+      <description>Throughout program execution, types may stabilize, variables may become constant, and code sections may turn out to be redundant - all information that is used by just-in-time (JIT) compilers to achieve peak performance. Yet, since JIT compilation is done on demand for individual code parts, global observations cannot be made. Moreover, global data analysis is an inherently expensive process, that collects information over large data sets. Thus, it is infeasible in dynamic compilers. With this project, we propose integrating data analysis into a dynamic runtime to speed up big data applications. The goal is to use the detailed run-time information for speculative compiler optimizations based on the shape and complexion of the data to improve performance.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Sebastian</first_name>
+          <last_name>Kloibhofer</last_name>
+          <affiliation>Johannes Kepler Universität Linz</affiliation>
+          <bio>undefined</bio>
+          <person_id>sebastiankloibhofer</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+      <badges>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+    <timeslot>
+      <slot_id>973e50a7-3055-4cef-94dc-7a7f2d1c1781</slot_id>
+      <event_id>db93d0c5-6661-4334-a2d4-ce8053c39876</event_id>
+      <title>Run-Time Data Analysis in Dynamic Runtimes</title>
+      <room>Swissotel Chicago | Currents</room>
+      <date>2021/10/19</date>
+      <start_time>11:30</start_time>
+      <end_date>2021/10/19</end_date>
+      <end_time>12:05</end_time>
+      <description>Databases are typically faster in processing huge amounts of data than applications with hand-coded data access. Even though modern dynamic runtimes optimize applications intensively, they cannot perform certain optimizations that are traditionally used by database systems as they lack the required information. Thus, we propose to extend the capabilities of dynamic runtimes to allow them to collect fine-grained information of the processed data at run time and use it to perform database-like optimizations. By doing so, we want to enable dynamic runtimes to significantly boost the performance of data-processing workloads. Ideally, applications should be as fast as databases in data-processing workloads by detecting the data schema at run time. To show the feasibility of our approach, we are implementing it in a polyglot dynamic runtime.</description>
+      <persons>
+        <person>
+          <role>Author</role>
+          <sort_key>1</sort_key>
+          <first_name>Lukas</first_name>
+          <last_name>Makor</last_name>
+          <affiliation>Johannes Kepler University Linz</affiliation>
+          <bio>undefined</bio>
+          <person_id>lukasmakor</person_id>
+        </person>
+      </persons>
+      <tracks>
+        <track>Doctoral Symposium</track>
+      </tracks>
+      <badges>
+        <badge property="Event Form">Virtual</badge>
+      </badges>
+    </timeslot>
+  </subevent>
+  <subevent>
     <subevent_id>73a2139a-6e8e-4e57-a154-7510d98deba1</subevent_id>
     <title>APLAS Research Papers: Language Design (mirror)</title>
     <subevent_type type="regular"/>
@@ -14478,7 +14570,7 @@ In this paper, we propose to complement FCA-based FL techniques. Our proposed te
     <tracks>
       <track>Research Papers</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>393de962-dd29-41b6-a150-f22b304d5bf2</slot_id>
       <title>Session: APLAS Research Papers - Language Design (mirror)</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -14502,7 +14594,7 @@ In this paper, we propose to complement FCA-based FL techniques. Our proposed te
         <track>Research Papers</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>38036427-4020-404e-be5b-21f9e5a8859b</slot_id>
       <event_id>5e8f5b7a-f99e-4413-9421-293ae8506852</event_id>
       <submission_id>25</submission_id>
@@ -14566,7 +14658,7 @@ This paper defines latent effects, a generic class of such control-flow mechanis
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>7230183f-cf51-4ff6-b7c5-bd9e8c0f8878</slot_id>
       <event_id>c504fd73-31ce-4375-a74d-fa36f0c6d31b</event_id>
       <submission_id>58</submission_id>
@@ -14605,7 +14697,7 @@ This paper defines latent effects, a generic class of such control-flow mechanis
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a3d87e33-0445-4645-9c2c-a0c2af26ea90</slot_id>
       <event_id>ac9913d2-431f-4244-aa49-c54872343cd9</event_id>
       <title>Q&amp;A and discussion</title>
@@ -14622,7 +14714,7 @@ This paper defines latent effects, a generic class of such control-flow mechanis
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>d96e6bc0-33b3-4d53-82cc-c4fb724bc5ae</slot_id>
       <event_id>d75f138f-18d6-4382-9e30-3bf9e3b517f9</event_id>
       <submission_id>16</submission_id>
@@ -14699,7 +14791,7 @@ This work is an experience report that describes the implementation of a \textit
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>dd879fdd-d529-4ea7-b6b5-02f40cc3fb73</slot_id>
       <event_id>eaee7960-f7b4-427d-8c7b-7bc3df70bc41</event_id>
       <submission_id>54</submission_id>
@@ -15636,7 +15728,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
     <tracks>
       <track>Research Papers</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>347f705b-85eb-477f-b22f-4bb7bd7aad04</slot_id>
       <title>Session: APLAS Research Papers - Compilation / Transformation (mirror)</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -15660,7 +15752,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <track>Research Papers</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>00ae502d-8b2f-4101-8527-d08896109105</slot_id>
       <event_id>9325b9d3-7399-47b6-a12b-9bdf3c315ab7</event_id>
       <submission_id>45</submission_id>
@@ -15700,7 +15792,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>250b93a6-7a2e-48b6-aba8-78872dc6b685</slot_id>
       <event_id>1888d977-be71-4fae-b1d1-e7a23822c901</event_id>
       <submission_id>28</submission_id>
@@ -15748,7 +15840,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>3525d3d5-573a-4945-8d75-9e84c3731549</slot_id>
       <event_id>e1a791fb-2102-4026-9fc8-3a9400cbe9c4</event_id>
       <submission_id>80</submission_id>
@@ -15786,7 +15878,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>5f7442b6-b112-4750-bd3a-1c4b286b18dd</slot_id>
       <event_id>0eb87a5c-311b-4a3b-b4b2-cf9a7aa967da</event_id>
       <submission_id>24</submission_id>
@@ -15840,7 +15932,7 @@ This work, based on the pure-quantum circuit optimization procedure by Duncan et
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>fa3b73ef-d576-4172-8c0f-050147bbd587</slot_id>
       <event_id>ac9913d2-431f-4244-aa49-c54872343cd9</event_id>
       <title>Q&amp;A and discussion</title>
@@ -15869,7 +15961,7 @@ This work, based on the pure-quantum circuit optimization procedure by Duncan et
     <tracks>
       <track>Research Papers</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c73123c7-03b5-428d-aafa-6869e065fc65</slot_id>
       <title>Session: APLAS Research Papers - Analysis / Synthesis (mirror)</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -15893,7 +15985,7 @@ This work, based on the pure-quantum circuit optimization procedure by Duncan et
         <track>Research Papers</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>16a8f5b4-de1e-48fb-97b6-cbb0b8cd914f</slot_id>
       <event_id>ac9913d2-431f-4244-aa49-c54872343cd9</event_id>
       <title>Q&amp;A and discussion</title>
@@ -15910,7 +16002,7 @@ This work, based on the pure-quantum circuit optimization procedure by Duncan et
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>36854ace-68ad-4b9d-9206-43bedbb3685c</slot_id>
       <event_id>907e9700-9131-4487-bb17-c947fd91adb2</event_id>
       <submission_id>20</submission_id>
@@ -15959,7 +16051,7 @@ This work, based on the pure-quantum circuit optimization procedure by Duncan et
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>533d993a-6f5c-488f-b9d8-83560ade1bbc</slot_id>
       <event_id>2cf3b543-8892-48b1-956b-60a7954965d1</event_id>
       <submission_id>76</submission_id>
@@ -16030,7 +16122,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>7e7848f4-a1a5-469c-836f-a3dd298bddf6</slot_id>
       <event_id>f4797ec2-3f39-4e93-87f9-3efc30cb9952</event_id>
       <submission_id>33</submission_id>
@@ -16096,7 +16188,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>b0ac3866-f7af-4c56-9f8d-1c232a7bc1ff</slot_id>
       <event_id>47844a39-78c0-49b3-8e9b-cfa59c9eb1d2</event_id>
       <submission_id>10</submission_id>
@@ -16155,7 +16247,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c458ef6a-1a93-4a39-a71d-7b47b6471619</slot_id>
       <event_id>764db38c-a04e-4c02-b590-2c2572e8c133</event_id>
       <submission_id>37</submission_id>
@@ -16207,7 +16299,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
     <tracks>
       <track>Research Papers</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a108d5af-3c9a-48bb-9fcb-dea304d1825c</slot_id>
       <title>Session: APLAS Research Papers - Verification / Theory (mirror)</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -16231,7 +16323,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <track>Research Papers</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>68ebb151-afc6-45a1-92e2-a3cbbf414e04</slot_id>
       <event_id>3b8750a2-df2f-4f69-b8bc-4984930a61a6</event_id>
       <submission_id>7</submission_id>
@@ -16308,7 +16400,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>84cfe53e-7afa-4e29-9744-5d6539440746</slot_id>
       <event_id>ac9913d2-431f-4244-aa49-c54872343cd9</event_id>
       <title>Q&amp;A and discussion</title>
@@ -16325,7 +16417,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c2f27777-02f8-449a-87d3-b5edbd3fa066</slot_id>
       <event_id>b9215798-f744-4c16-93b2-8d43afb864c8</event_id>
       <submission_id>40</submission_id>
@@ -16363,7 +16455,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c4666271-e3f6-4ec5-80f3-95f130046a99</slot_id>
       <event_id>a4646d88-3a99-4d96-b6af-bf0af08c54cc</event_id>
       <submission_id>77</submission_id>
@@ -16452,7 +16544,7 @@ Based on the concept of PyExZ3, we develop a new tool called PyCT to alleviate t
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>d6394635-f865-4612-94cf-0fc6ea1f5c7b</slot_id>
       <event_id>098ed30d-d2aa-4c91-bf58-0f28a84ad9b2</event_id>
       <submission_id>91</submission_id>
@@ -23013,7 +23105,7 @@ Building on Pyro we extend Stan with support for explicit variational inference 
     <tracks>
       <track>SAS 2021 - 28th Static Analysis Symposium</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>5759cb83-4e50-46f3-abb4-853effc1c162</slot_id>
       <title>Session: SAS - Session 2B</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -23024,7 +23116,7 @@ Building on Pyro we extend Stan with support for explicit variational inference 
         <track>SAS 2021 - 28th Static Analysis Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>0f93dbdd-a387-4915-90c3-42899a732050</slot_id>
       <event_id>978b8bed-74af-46a6-b73a-7bc39813dbc5</event_id>
       <title>Selectively-Amortized Resource Bounding</title>
@@ -23072,7 +23164,7 @@ Building on Pyro we extend Stan with support for explicit variational inference 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c3fd5da2-3755-4db2-a26c-b3da047f40a1</slot_id>
       <event_id>1bce6dfa-6838-46f2-a5a1-5ef566fa1b5f</event_id>
       <title>Compositional Verification of Smart Contracts Through Communication Abstraction</title>
@@ -23153,7 +23245,7 @@ Building on Pyro we extend Stan with support for explicit variational inference 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e6a6a3e3-66ab-49cf-b85e-1e928e465b7f</slot_id>
       <event_id>b08a178c-7f0c-4bc7-b0f8-680f11280a67</event_id>
       <title>Thread-modular Analysis of Release-Acquire Concurrency</title>
@@ -23560,7 +23652,7 @@ Building on Pyro we extend Stan with support for explicit variational inference 
     <tracks>
       <track>SAS 2021 - 28th Static Analysis Symposium</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>b6e90b1f-ac7a-409f-a3f3-111ce5410e1b</slot_id>
       <title>Session: SAS - Session 1A</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -23571,7 +23663,7 @@ Building on Pyro we extend Stan with support for explicit variational inference 
         <track>SAS 2021 - 28th Static Analysis Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>18b96aef-d776-4ec0-8743-6aba7ad5b5db</slot_id>
       <event_id>95da4eb7-6b2a-4e6b-849d-03f3c2019e40</event_id>
       <title>Accelerating Program Analyses in Datalog by Merging Library Facts</title>
@@ -23662,7 +23754,7 @@ In this paper, we propose a new technique, 4DM, to tune abstractions for program
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>6bcf1752-cb31-4ef8-9043-468d50d7df81</slot_id>
       <event_id>07d7e99b-7049-483c-bfc8-b77b31d2e4b4</event_id>
       <title>Verifying Low-dimensional Input Neural Networks via Input Quantization</title>
@@ -23704,7 +23796,7 @@ This paper revisits the original problem of verifying ACAS Xu networks. The netw
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>7a62d34a-dba1-4d05-aacd-619ea77539a6</slot_id>
       <event_id>f90ffbc6-0cc9-4f1a-9361-fb6dc9e9dc39</event_id>
       <title>Exploiting Verified Neural Networks via Floating Point Numerical Error</title>
@@ -23744,7 +23836,7 @@ We show that the negligence of floating point error leads to unsound verificatio
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c8813a87-933e-45fb-a21a-88287f1cbebe</slot_id>
       <event_id>6e4c887f-ca9b-4171-a7bf-d5cdf413503e</event_id>
       <title>A Multi-Language Static Analysis of Python Programs with Native C Extensions</title>
@@ -24231,7 +24323,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
     <tracks>
       <track>SAS 2021 - 28th Static Analysis Symposium</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>58fbc480-a611-4b39-b306-eea771090cf3</slot_id>
       <title>Session: SAS - Session 3B</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -24242,7 +24334,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
         <track>SAS 2021 - 28th Static Analysis Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>6d8ed01d-b735-4f2e-8c9d-168b7792ea84</slot_id>
       <event_id>277b5be0-47ca-44d7-8c34-1f84145614be</event_id>
       <title>Interactive Code Analysis</title>
@@ -24285,7 +24377,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
     <tracks>
       <track>SAS 2021 - 28th Static Analysis Symposium</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>6dd83f9f-aacc-480c-b680-f6209eec2dfd</slot_id>
       <title>Session: SAS - Session 4B</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -24296,7 +24388,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
         <track>SAS 2021 - 28th Static Analysis Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>2fc05924-79c8-4da2-8514-bc49c7a85afa</slot_id>
       <event_id>e9f054af-c0e2-4c0e-9e9d-3e223f756061</event_id>
       <title>Backward Symbolic Execution with Loop Folding</title>
@@ -24334,7 +24426,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>7ba8b1c7-a7bc-4be9-a0e1-ea022bca2762</slot_id>
       <event_id>6086e00a-20aa-4a82-b0ff-a48a99c3a839</event_id>
       <title>Improving Thread-Modular Abstract Interpretation</title>
@@ -24411,7 +24503,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>b9886349-3eea-44ce-adb1-a4e679dc5a9b</slot_id>
       <event_id>64e069c6-2609-4d24-a969-3dc6d81d48fe</event_id>
       <title>Symbolic Automatic Relations and Their Applications to SMT and CHC Solving</title>
@@ -24469,7 +24561,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>d78336cf-4bb1-440f-995d-3ce22cbdca18</slot_id>
       <event_id>60f4fa55-a96f-4db6-9954-a94ad5243bcc</event_id>
       <title>Automated Verification of the Parallel Bellman--Ford Algorithm</title>
@@ -24761,7 +24853,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
     <tracks>
       <track>SAS 2021 - 28th Static Analysis Symposium</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>7d4cde15-2270-46e7-ae3f-18994f5b5561</slot_id>
       <title>Session: SAS - Session 2C</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -24772,7 +24864,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
         <track>SAS 2021 - 28th Static Analysis Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>1674e5a5-700a-40a2-b06b-3739fa134e47</slot_id>
       <event_id>5b184311-60b5-4fbb-8372-ab77441e91d5</event_id>
       <title>Pointer Analysis of Bytecode Programs for Effective Formal Verification of Smart Contracts</title>
@@ -24869,7 +24961,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
     <tracks>
       <track>SAS 2021 - 28th Static Analysis Symposium</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>9bb48f44-48a8-4897-9ff5-6deaeabf6ff4</slot_id>
       <title>Session: SAS - Session 3C</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -24880,7 +24972,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
         <track>SAS 2021 - 28th Static Analysis Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>251ef49a-a302-4165-9f86-4290fff8f9d9</slot_id>
       <event_id>0a214e99-fc0c-4b38-ad7b-7b27f94df17b</event_id>
       <title>Hash Consed Points-To Sets</title>
@@ -24921,7 +25013,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>54730bda-14ee-4e3f-8457-71bcb959d2ea</slot_id>
       <event_id>2c3eebff-50b9-4105-85f2-b8ccbd1eed98</event_id>
       <title>Automatic Synthesis of Data-Flow Analyzers</title>
@@ -24972,7 +25064,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>8889a918-8614-4f1e-a6df-48fbffcf2d62</slot_id>
       <event_id>08c40c54-313a-4b25-88d0-c5d351b1521f</event_id>
       <title>Disjunctive Interval Analysis</title>
@@ -25038,7 +25130,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c72a7717-94a5-4923-a5d8-bca70aacf88e</slot_id>
       <event_id>90b4e2a4-4af7-4e89-aa86-9d042700e863</event_id>
       <title>Selective Context-Sensitivity for k-CFA with CFL-Reachability</title>
@@ -25098,7 +25190,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
     <tracks>
       <track>SAS 2021 - 28th Static Analysis Symposium</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>58fd6cb9-d999-4dfb-8cb6-695ff6d700bc</slot_id>
       <title>Session: SAS - Session 4C</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -25109,7 +25201,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
         <track>SAS 2021 - 28th Static Analysis Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>2c3b1cae-5b56-41bd-b73a-834db45a08c7</slot_id>
       <event_id>0a69e561-77a5-4b4d-88c5-de8c3a0dd7d2</event_id>
       <title>Fast and Efficient Bit-Level Precision Tuning</title>
@@ -25155,7 +25247,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>73600e84-1ade-4172-a0a9-120fd2500442</slot_id>
       <event_id>fb0761d9-16c7-4e3e-93d8-8a386f88a71d</event_id>
       <title>Reduced Products of Abstract Domains for Fairness Certification of Neural Networks</title>
@@ -25194,7 +25286,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>b7294443-2e99-4c83-9946-50a0c65409ee</slot_id>
       <event_id>4c218694-b052-4c87-9e69-81d7076e6850</event_id>
       <title>Static analysis of ReLU neural networks with tropical polyhedra</title>
@@ -25261,7 +25353,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>ba67ac56-3438-4564-ba07-b870def25c47</slot_id>
       <event_id>e6d9543d-594e-4e03-83e7-6464df6cc24e</event_id>
       <title>Toward Neural-Network-Guided Program Synthesis and Verification</title>
@@ -25333,7 +25425,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
     <tracks>
       <track>SAS 2021 - 28th Static Analysis Symposium</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>b25863ac-b766-4816-b3b3-3eb6deef208f</slot_id>
       <title>Session: SAS - Session 3A</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -25344,7 +25436,7 @@ Unlike previous approaches which make algorithmic changes to points-to analysis,
         <track>SAS 2021 - 28th Static Analysis Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>4c2c99b5-3d0d-4047-ab73-022061aab228</slot_id>
       <event_id>8ba2c7e3-b473-4cc6-978b-cb5e94764f5e</event_id>
       <title>Verified Functional Programming of an Abstract Interpreter</title>
@@ -25397,7 +25489,7 @@ This paper presents a formally verified abstract interpreter fully programmed an
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>b403fcab-8a79-4d94-90b7-6e9b2e784064</slot_id>
       <event_id>e8cf7f79-77ce-44b2-b4fd-a19e24245cc6</event_id>
       <title>Data Abstraction: A General Framework to Handle Program Verification of Data Structures</title>
@@ -25447,7 +25539,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e321d0c3-4d2f-4e30-bcdf-96ffc3f80226</slot_id>
       <event_id>55890513-6497-44fd-a3a9-838f69361366</event_id>
       <title>Static Analysis of Endian Portability by Abstract Interpretation</title>
@@ -25510,7 +25602,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
     <tracks>
       <track>SAS 2021 - 28th Static Analysis Symposium</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>4a44fd86-0785-4db9-9f8d-809d9bc08acd</slot_id>
       <title>Session: SAS - Session 4A</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -25521,7 +25613,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
         <track>SAS 2021 - 28th Static Analysis Symposium</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>4254b140-3107-4377-8cd3-0368a9e6966d</slot_id>
       <event_id>7e2633f1-97fd-426d-a081-22c7758eefa7</event_id>
       <title>Oracle Parfait: The Flavour of Real-World Vulnerability Detection and Intelligent Configuration</title>
@@ -25799,7 +25891,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>5ffde632-68d8-419b-856e-ab6b07b6653c</slot_id>
       <title>Session: SPLASH OOPSLA - Security - mirror</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -25810,7 +25902,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>1a4e2e8e-4a39-479c-99c4-a42919d24ab9</slot_id>
       <event_id>b8e58c10-44b0-4c96-94ba-19e9d23a0e86</event_id>
       <submission_id>141</submission_id>
@@ -25871,7 +25963,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>2043c29b-cfc0-4a4f-a23a-c277bf4b865f</slot_id>
       <event_id>e1451bd2-8368-4f79-bdf9-aa3a7332f14e</event_id>
       <submission_id>190</submission_id>
@@ -25939,7 +26031,7 @@ Her main research interests lie in the design of static analyses, with emphasis 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>8a278a8c-eade-4505-a47b-da97400661f2</slot_id>
       <event_id>f767b573-d238-483e-bafc-2f0adec651ed</event_id>
       <submission_id>301</submission_id>
@@ -26008,7 +26100,7 @@ Santosh Pande’s research is supported by NSF, ONR, DARPA, Air Force and severa
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>b26e92f1-4a9f-4087-b52c-b2df8f8cb025</slot_id>
       <event_id>d160658e-2c64-4c8e-9ce6-b2048d30d69c</event_id>
       <submission_id>184</submission_id>
@@ -26046,7 +26138,7 @@ Santosh Pande’s research is supported by NSF, ONR, DARPA, Air Force and severa
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>cd19dc75-b4e7-4828-8295-92bf15a306ce</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -26072,7 +26164,7 @@ Santosh Pande’s research is supported by NSF, ONR, DARPA, Air Force and severa
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c093c87f-86aa-4979-895b-b373efc4b6c3</slot_id>
       <title>Session: SPLASH OOPSLA - Testing - Mirror</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -26096,7 +26188,7 @@ Santosh Pande’s research is supported by NSF, ONR, DARPA, Air Force and severa
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>4199ad4b-84e9-4db0-aafe-fe832f507f75</slot_id>
       <event_id>1f6ab670-2e0d-4713-b59c-0e28fbaea895</event_id>
       <submission_id>532</submission_id>
@@ -26155,7 +26247,7 @@ Santosh Pande’s research is supported by NSF, ONR, DARPA, Air Force and severa
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>4d5b8437-7f63-4301-be16-82838d9273c6</slot_id>
       <event_id>26e88f75-7306-434e-afa1-624701a72947</event_id>
       <submission_id>264</submission_id>
@@ -26217,7 +26309,7 @@ Santosh Pande’s research is supported by NSF, ONR, DARPA, Air Force and severa
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>6fa9fef5-de7e-4939-abe9-efe57d735fc5</slot_id>
       <event_id>033e9d5c-0599-4e16-95be-bf846cf24376</event_id>
       <submission_id>236</submission_id>
@@ -26260,7 +26352,7 @@ The implementation of Permchecker uses a combination of compile-time annotation 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>70b60540-3a4b-4ae8-b3d8-9482d12a56a4</slot_id>
       <event_id>4e7d7fa2-4fd4-42e1-9e44-961a43dfab85</event_id>
       <submission_id>344</submission_id>
@@ -26362,7 +26454,7 @@ To facilitate reviewing and replication of our work, we have open-sourced Genie 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a6f27578-93c5-46e6-a572-76294d79f2e3</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -27269,7 +27361,7 @@ My research interests are at the intersection of Programming Languages and Human
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>00e194c2-4376-4112-89f3-73af0ec946b7</slot_id>
       <title>Session: SPLASH OOPSLA - Distributed Programming - mirror</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -27280,7 +27372,7 @@ My research interests are at the intersection of Programming Languages and Human
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>03e82f8b-8f60-425c-af89-204e4a7c18ee</slot_id>
       <event_id>62c941e0-1d73-41ab-b192-9220506f2589</event_id>
       <submission_id>119</submission_id>
@@ -27343,7 +27435,7 @@ Patrick is interested in software systems, with a particular focus on distribute
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>3393a505-4e20-454c-9af1-05039d37e8ca</slot_id>
       <event_id>740c257f-f41f-4619-8c89-49e2da972d1d</event_id>
       <submission_id>446</submission_id>
@@ -27395,7 +27487,7 @@ Patrick is interested in software systems, with a particular focus on distribute
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>d1d5c082-3275-45e6-91eb-30e9dbfe2c91</slot_id>
       <event_id>2c375f32-8c80-4300-b328-20661ab229e4</event_id>
       <submission_id>2</submission_id>
@@ -27456,7 +27548,7 @@ Patrick is interested in software systems, with a particular focus on distribute
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>f312ed4c-cf5d-4b52-8f89-3720ab2ac0de</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -27470,7 +27562,7 @@ Patrick is interested in software systems, with a particular focus on distribute
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>f4f575f7-84e1-422f-93d4-b18b82249cdf</slot_id>
       <event_id>cdc5b0cb-32bc-47df-a54d-5dd5e4516932</event_id>
       <submission_id>364</submission_id>
@@ -27563,6 +27655,19 @@ I graduated in 2002 with a B.S. in both Computer Science and Computer Engineerin
       <date>2021/10/22</date>
       <start_time>10:50</start_time>
       <end_time>12:10</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Hans-J.</first_name>
+          <last_name>Boehm</last_name>
+          <affiliation>Google</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>http://hboehm.info</homepage_url>
+          <picture_url>https://2021.splashcon.org/getProfileImage/hansjboehm/cc58482a-75bd-4d4f-85fc-73f60b132d04/small.jpg</picture_url>
+          <person_id>hansjboehm</person_id>
+        </person>
+      </persons>
       <tracks>
         <track>OOPSLA</track>
       </tracks>
@@ -27767,7 +27872,7 @@ We have implemented our proposed technique in a tool called CLIS for optimizing 
         <track>OOPSLA</track>
       </tracks>
       <badges>
-        <badge property="Event Form">In-Person</badge>
+        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
     <timeslot>
@@ -27831,7 +27936,7 @@ At Oracle labs, he is responsible for research in language design and implementa
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>375e13b1-a4ff-4a0b-83a1-8c4345bbb63e</slot_id>
       <title>Session: SPLASH OOPSLA - Types &amp; Verification -- mirror</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -27855,7 +27960,7 @@ At Oracle labs, he is responsible for research in language design and implementa
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>076a59a0-8d0d-4812-9f1b-8d05be432673</slot_id>
       <event_id>1d37dffb-2929-4565-b632-7873f6a12ea7</event_id>
       <submission_id>130</submission_id>
@@ -27898,7 +28003,7 @@ In particular, we explore mixing untyped structural code with typed nominal code
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>2f0a850b-662f-4724-8f93-4452ec4f6f97</slot_id>
       <event_id>7776cd20-1ef0-46d3-ba4d-606e81ee96fe</event_id>
       <submission_id>191</submission_id>
@@ -27959,7 +28064,7 @@ In particular, we explore mixing untyped structural code with typed nominal code
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>79135465-ce74-4ace-a2b3-46827be21917</slot_id>
       <event_id>c535117f-4286-427b-a999-ec9db64e4b2c</event_id>
       <submission_id>161</submission_id>
@@ -28083,7 +28188,7 @@ In particular, we explore mixing untyped structural code with typed nominal code
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>9b437d7d-6bcb-4877-8eaa-a5d59724d1d8</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -28109,7 +28214,7 @@ In particular, we explore mixing untyped structural code with typed nominal code
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c5427d6f-d455-4a9c-864c-832c78628b9a</slot_id>
       <title>Session: SPLASH OOPSLA - Algorithms, Libraries and Databases - mirror</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -28120,7 +28225,7 @@ In particular, we explore mixing untyped structural code with typed nominal code
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>1379c8da-fc7e-42c5-b672-d188f52d1edc</slot_id>
       <event_id>bbd115c1-8ed3-4aed-a963-aa15387946b3</event_id>
       <submission_id>229</submission_id>
@@ -28169,7 +28274,7 @@ At Oracle labs, he is responsible for research in language design and implementa
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>19bbbc59-6d9b-4b51-b372-063e2888c5e6</slot_id>
       <event_id>c7fcb53f-6c45-46d6-9e4c-be51477a0bbb</event_id>
       <submission_id>469</submission_id>
@@ -28234,10 +28339,10 @@ At Oracle labs, he is responsible for research in language design and implementa
         <track>OOPSLA</track>
       </tracks>
       <badges>
-        <badge property="Event Form">In-Person</badge>
+        <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>2cb336ef-2fc3-46cc-a63d-8c3689197567</slot_id>
       <event_id>e41ff4b0-ba00-4e8f-ba86-28ea4d9821ae</event_id>
       <submission_id>66</submission_id>
@@ -28298,7 +28403,7 @@ We have implemented our proposed technique in a tool called CLIS for optimizing 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>484d7f87-e011-4764-b4fe-44ad2fb95f14</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -28312,7 +28417,7 @@ We have implemented our proposed technique in a tool called CLIS for optimizing 
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>9f2c66d6-0ef7-4d0a-b7a0-67631dbe792f</slot_id>
       <event_id>7a1731c9-53d0-4f27-90c8-227f5a3a717e</event_id>
       <submission_id>70</submission_id>
@@ -28384,7 +28489,7 @@ We have implemented our proposed technique in a tool called CLIS for optimizing 
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>4426a3c5-f277-4432-a3f8-6e68112cefb0</slot_id>
       <title>Session: SPLASH OOPSLA - Rust - mirror</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -28408,7 +28513,7 @@ We have implemented our proposed technique in a tool called CLIS for optimizing 
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>292df5aa-7eb3-4bc1-972b-1038f415e5ef</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -28422,7 +28527,7 @@ We have implemented our proposed technique in a tool called CLIS for optimizing 
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>2ec7edc8-a01c-4de0-9735-ca966c4021a0</slot_id>
       <event_id>9c148540-5a2f-4370-b1e1-f409b281e5e6</event_id>
       <submission_id>215</submission_id>
@@ -28491,7 +28596,7 @@ We have implemented our proposed technique in a tool called CLIS for optimizing 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>3598eb7a-c40d-43d2-89f3-ea3fcaa4d013</slot_id>
       <event_id>d6067c7f-9230-454c-9672-66c980a2da21</event_id>
       <submission_id>27</submission_id>
@@ -28562,7 +28667,7 @@ We have implemented our proposed technique in a tool called CLIS for optimizing 
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>cd67f289-4480-487b-8df0-f4b18caaad55</slot_id>
       <event_id>66f57c5c-e9da-44bf-9914-726337159123</event_id>
       <submission_id>101</submission_id>
@@ -29591,7 +29696,7 @@ In this paper, we propose a uniform definition for memory fairness that can be i
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>8153f459-3cfe-49cd-8d4e-9d4e71696db5</slot_id>
       <title>Session: SPLASH OOPSLA - Corpus and User Studies - mirror</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -29615,7 +29720,7 @@ In this paper, we propose a uniform definition for memory fairness that can be i
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>75b8eaac-5ea7-4297-b6e0-126c27db131d</slot_id>
       <event_id>75978bcc-89d2-43d2-9ca9-77bb20edeb87</event_id>
       <submission_id>117</submission_id>
@@ -29700,7 +29805,7 @@ We believe that our study opens up a new research direction by driving future re
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>787347b9-de22-44d5-b96f-227252fd0205</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -29714,7 +29819,7 @@ We believe that our study opens up a new research direction by driving future re
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>98e58ad0-22ab-4cd0-8ede-f97536a24f74</slot_id>
       <event_id>da83cec0-6c60-4185-8177-b65b19357468</event_id>
       <submission_id>331</submission_id>
@@ -29756,7 +29861,7 @@ We believe that our study opens up a new research direction by driving future re
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>b0441656-3f10-41a3-bbe7-4c23758dbfa7</slot_id>
       <event_id>24a8f69d-0191-4166-b3f5-353579f8fe38</event_id>
       <submission_id>121</submission_id>
@@ -29843,7 +29948,7 @@ We believe that our study opens up a new research direction by driving future re
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>52220131-aaac-43d0-a6aa-8542c265e505</slot_id>
       <title>Session: SPLASH OOPSLA - Specification Synthesis - mirror</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -29867,7 +29972,7 @@ We believe that our study opens up a new research direction by driving future re
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>739a4d31-084e-43c6-9d0b-dd59e44aa7b3</slot_id>
       <event_id>b1cf329e-5f00-41ab-a8ac-2a2f2ba72e9f</event_id>
       <submission_id>83</submission_id>
@@ -29930,7 +30035,7 @@ We believe that our study opens up a new research direction by driving future re
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>8a159243-799e-4a57-965a-9d4ed0173bb1</slot_id>
       <event_id>f48451af-33ee-4d30-9177-5142a5caec22</event_id>
       <submission_id>30</submission_id>
@@ -30008,7 +30113,7 @@ We believe that our study opens up a new research direction by driving future re
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c21c51d4-de12-4296-92e6-a7db54f5d126</slot_id>
       <event_id>63e652b6-5919-48e6-b8bb-c7ed0009804e</event_id>
       <submission_id>183</submission_id>
@@ -30072,7 +30177,7 @@ This paper presents ConfigX, the first tool for the detection of silent configur
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>ee0d102a-302a-42a2-93f3-d3bb2d1c6c8c</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -30086,7 +30191,7 @@ This paper presents ConfigX, the first tool for the detection of silent configur
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>f7bea629-2705-42bd-993d-9510ba088906</slot_id>
       <event_id>42d71fb3-b56f-4be5-89c7-9df2b25795da</event_id>
       <submission_id>180</submission_id>
@@ -30150,7 +30255,7 @@ We present Dynaplex, a tool that implements these ideas to automatically generat
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>9c1678ac-f9f3-4394-bb5f-dcf6d2c8a157</slot_id>
       <title>Session: SPLASH OOPSLA - Dynamic Languages - mirror</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -30174,7 +30279,7 @@ We present Dynaplex, a tool that implements these ideas to automatically generat
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>01c5df6d-286f-45e0-a5e7-796ce7925ded</slot_id>
       <event_id>499d1ade-0a8a-4045-884c-ebba85519ad6</event_id>
       <submission_id>125</submission_id>
@@ -30227,7 +30332,7 @@ We present Dynaplex, a tool that implements these ideas to automatically generat
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>441cec5f-ac9b-46f9-836d-f29811756433</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -30241,7 +30346,7 @@ We present Dynaplex, a tool that implements these ideas to automatically generat
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>5d57069f-89f7-47e2-8afd-48ee42649455</slot_id>
       <event_id>4a141d82-81f5-4f25-b5aa-659e52e64f49</event_id>
       <submission_id>49</submission_id>
@@ -30304,7 +30409,7 @@ We present the first comprehensive evaluation of GTLC type migration algorithms,
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a86c125d-c53a-485e-993a-0385b0752982</slot_id>
       <event_id>05e9115b-0577-4202-ab11-ae1224cdc112</event_id>
       <submission_id>18</submission_id>
@@ -30375,7 +30480,7 @@ We present the first comprehensive evaluation of GTLC type migration algorithms,
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>f8e154dc-79df-459a-b3aa-5869bf215669</slot_id>
       <event_id>27a5d755-7c49-43c3-aea7-317ade9e584c</event_id>
       <submission_id>40</submission_id>
@@ -30436,7 +30541,7 @@ We present the first comprehensive evaluation of GTLC type migration algorithms,
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c8d659a5-dfbb-4bfd-b77a-99d196decdb2</slot_id>
       <title>Session: SPLASH OOPSLA - Test and Verification - mirror</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -30447,7 +30552,7 @@ We present the first comprehensive evaluation of GTLC type migration algorithms,
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>2efdf859-c73b-4086-9dbc-aca64c21f394</slot_id>
       <event_id>dec21536-5710-4cea-9e64-3c18c13c7578</event_id>
       <submission_id>86</submission_id>
@@ -30508,7 +30613,7 @@ To address this problem, we present the first HLS tool that is mechanically veri
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>78986357-ae60-46fa-baaa-f8f281035d7c</slot_id>
       <event_id>ffbfc4af-f8a6-43e6-9e8b-c1c5253ab739</event_id>
       <submission_id>143</submission_id>
@@ -30602,7 +30707,7 @@ I received my PhD from the Multicore Programming Group at Imperial College Londo
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>8d59326a-c468-4b0c-afe0-2af3492a713f</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -30616,7 +30721,7 @@ I received my PhD from the Multicore Programming Group at Imperial College Londo
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a6922131-e626-4aba-95fc-aae684ec3304</slot_id>
       <event_id>b5f75101-c8be-4cba-88b6-888ea6deaadc</event_id>
       <submission_id>150</submission_id>
@@ -30700,7 +30805,7 @@ This paper presents MonkeyDB, a mock storage system for testing storage-backed a
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>322b7dcc-5e03-4dd7-a39e-cafc2a04605e</slot_id>
       <title>Session: SPLASH OOPSLA - Analysis - mirror</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -30711,7 +30816,7 @@ This paper presents MonkeyDB, a mock storage system for testing storage-backed a
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>1ee69b3f-ed6c-4eee-8601-91fa96b79fb4</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -30725,7 +30830,7 @@ This paper presents MonkeyDB, a mock storage system for testing storage-backed a
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>6e6a1ffc-0c1a-477f-9a8e-dea6f6267250</slot_id>
       <event_id>6ff2a930-bcaf-47ae-9930-b8baa0788972</event_id>
       <submission_id>90</submission_id>
@@ -30789,7 +30894,7 @@ In this work, we introduce two algorithms for the symbolic abstraction of quanti
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>9a43d50f-14fe-43fa-bf7b-74da0cdac194</slot_id>
       <event_id>4f4af528-c989-4120-8b8e-ab1590c33f65</event_id>
       <submission_id>426</submission_id>
@@ -30832,7 +30937,7 @@ In this paper, we present a new approach to inclusion-based analysis by compacti
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e8aa17c9-3a57-4a32-b32b-dd6e4ac64a3d</slot_id>
       <event_id>15b825cc-d30b-4dc1-97c4-9068619d905b</event_id>
       <submission_id>223</submission_id>
@@ -30913,7 +31018,7 @@ As a proof-of-concept, we instantiate Unity-Relay into a tool called Baton and e
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>f2a13135-2f97-4197-90fc-99212f5e46f8</slot_id>
       <event_id>9ea1d9f0-04dc-4462-8e51-cc113731d741</event_id>
       <submission_id>507</submission_id>
@@ -30975,18 +31080,29 @@ In this paper, we present JavaDL, a Datalog-based declarative specification lang
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>3b5a71fa-a93b-4849-8955-4c631c0461ec</slot_id>
       <title>Session: SPLASH OOPSLA - Types - mirror</title>
       <room>Swissotel Chicago | Zurich A</room>
       <date>2021/10/21</date>
       <start_time>21:50</start_time>
       <end_time>23:10</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Wei-Ngan</first_name>
+          <last_name>Chin</last_name>
+          <affiliation>National University of Singapore</affiliation>
+          <bio>undefined</bio>
+          <person_id>weinganchin</person_id>
+        </person>
+      </persons>
       <tracks>
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>2eb69533-e384-4477-97d7-16389221519c</slot_id>
       <event_id>41174c70-3ab0-4594-8b81-6dea9b1c3735</event_id>
       <submission_id>47</submission_id>
@@ -31041,7 +31157,7 @@ Affiliations:
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>4c0ffa54-c1a7-45b1-a606-8c216af69649</slot_id>
       <event_id>3aad0c8c-c620-4cea-b83f-3ef19cdf6d5f</event_id>
       <submission_id>237</submission_id>
@@ -31114,7 +31230,7 @@ Affiliations:
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>bb3e1cca-69ed-4767-b2a0-b8f20e19e96e</slot_id>
       <event_id>ca540410-cf87-4a60-a719-2ad9b0f97620</event_id>
       <submission_id>170</submission_id>
@@ -31144,7 +31260,7 @@ Affiliations:
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>be154f86-b7f0-4fa0-9daa-b96c00567176</slot_id>
       <event_id>3d8946fe-98b1-4684-8c3c-05faf136ee3f</event_id>
       <submission_id>43</submission_id>
@@ -31194,7 +31310,7 @@ We provide type checking algorithms for the underlying label-dependent lambda ca
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>eaa8a4ca-8b77-4aab-bc2a-8943329ed46f</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -31220,7 +31336,7 @@ We provide type checking algorithms for the underlying label-dependent lambda ca
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>d6b893e4-4379-493d-a976-07255b29e178</slot_id>
       <title>Session: SPLASH OOPSLA - Smart Contracts and Distributed Programming - mirror</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -31231,7 +31347,7 @@ We provide type checking algorithms for the underlying label-dependent lambda ca
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>00c58c00-636e-4ab1-bf76-f324c06feb72</slot_id>
       <event_id>f2687be1-d8a0-434b-942c-242aef9f826d</event_id>
       <submission_id>153</submission_id>
@@ -31311,7 +31427,7 @@ We provide type checking algorithms for the underlying label-dependent lambda ca
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>52a62ecb-10d2-4f3a-ac3a-d8167fa61c47</slot_id>
       <event_id>1d8597cd-3c9f-4c45-b22a-ec533b6faaba</event_id>
       <submission_id>222</submission_id>
@@ -31383,7 +31499,7 @@ In this paper, we present a novel specification methodology tailored to the doma
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>59604b67-99f1-439a-b8da-4a50a6d74203</slot_id>
       <event_id>70fddf0a-a865-4d6d-a00e-3c602d4f2336</event_id>
       <submission_id>42</submission_id>
@@ -31445,7 +31561,7 @@ In this paper, we present a novel specification methodology tailored to the doma
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>aafea98a-1654-42b3-a5ee-188d08506e47</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -31459,7 +31575,7 @@ In this paper, we present a novel specification methodology tailored to the doma
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>ec352f48-b220-4545-bfe1-e7c476737204</slot_id>
       <event_id>3864f6b3-a74b-4f39-89f7-b15e107b4a2a</event_id>
       <submission_id>476</submission_id>
@@ -32355,7 +32471,7 @@ We provide type checking algorithms for the underlying label-dependent lambda ca
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>8e0d34df-b3fd-4312-999a-ed7e301bf584</slot_id>
       <title>Session: SPLASH OOPSLA - Functional Programming - Mirror</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -32379,7 +32495,7 @@ We provide type checking algorithms for the underlying label-dependent lambda ca
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>1b9393da-cc9d-4307-98e8-03dd6215eb94</slot_id>
       <event_id>c37258b4-1df6-476e-b6e1-b5168f6b0ece</event_id>
       <submission_id>32</submission_id>
@@ -32439,7 +32555,7 @@ We provide type checking algorithms for the underlying label-dependent lambda ca
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>852ee1fb-6de7-4ac3-a96a-e4c69a691d74</slot_id>
       <event_id>7e72ede0-84a8-45df-97b4-f2b728e7a48d</event_id>
       <submission_id>75</submission_id>
@@ -32480,7 +32596,7 @@ Our results are formalized in the Coq proof assistant. Our continuation-passing 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>9935e976-d33e-4b76-a94c-45fa4fe9e891</slot_id>
       <event_id>fc877a4c-cd99-491d-bb86-11c7282681b5</event_id>
       <submission_id>24</submission_id>
@@ -32542,7 +32658,7 @@ Our results are formalized in the Coq proof assistant. Our continuation-passing 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e25e936e-96a6-4c05-bbce-1f9b468664e4</slot_id>
       <event_id>f0e509f9-0fba-48ca-8b45-d1c318f1c895</event_id>
       <submission_id>181</submission_id>
@@ -32624,7 +32740,7 @@ Our results are formalized in the Coq proof assistant. Our continuation-passing 
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e39dafac-31e1-4327-a29d-9430e76ff6fb</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -32650,7 +32766,7 @@ Our results are formalized in the Coq proof assistant. Our continuation-passing 
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e720dc2a-c28f-409b-b845-195b7acbd998</slot_id>
       <title>Session: SPLASH OOPSLA - Shared Memory - mirror</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -32661,7 +32777,7 @@ Our results are formalized in the Coq proof assistant. Our continuation-passing 
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>11272339-eca4-4e1f-acb1-e86adece70f6</slot_id>
       <event_id>ebe80fc8-3b07-494a-a4ca-22e80b3c5b6e</event_id>
       <submission_id>14</submission_id>
@@ -32704,7 +32820,7 @@ We apply SecRSL to implement and verify the functional correctness and constant-
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>3e103d6c-b3e1-4d80-a0e4-71fef8024a60</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -32718,7 +32834,7 @@ We apply SecRSL to implement and verify the functional correctness and constant-
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>d2c19f6b-4891-44d8-a0a3-8b5f79364c97</slot_id>
       <event_id>6aa106ca-9202-4ee8-904b-b032fcb07a70</event_id>
       <submission_id>99</submission_id>
@@ -32782,7 +32898,7 @@ We apply SecRSL to implement and verify the functional correctness and constant-
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>dbbc9422-0634-48bd-bec7-2282cd918f63</slot_id>
       <event_id>14c40490-ef1d-49cd-9483-5f093e37fb06</event_id>
       <submission_id>490</submission_id>
@@ -32851,7 +32967,7 @@ In this work we solve the algorithmic problem of consistency verification for th
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>f0a05798-8d9b-41df-ac1c-dd9b1c047df6</slot_id>
       <event_id>ad86ee65-6cc2-442d-97e9-4761304ac507</event_id>
       <submission_id>9</submission_id>
@@ -33279,7 +33395,7 @@ In systematic comparison of symvalic analysis with past tools, we find significa
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>4b1b228a-e73a-44d1-be09-d3d0b8750ca0</slot_id>
       <title>Session: SPLASH OOPSLA - Program Synthesis - mirror</title>
       <room>Swissotel Chicago | Zurich B</room>
@@ -33290,7 +33406,7 @@ In systematic comparison of symvalic analysis with past tools, we find significa
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>55ed420c-2bf4-45bd-b7c0-8566455b3cec</slot_id>
       <event_id>43ca20c2-56eb-45a4-ba22-83f5f26257c4</event_id>
       <submission_id>542</submission_id>
@@ -33350,7 +33466,7 @@ In systematic comparison of symvalic analysis with past tools, we find significa
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>67cf58e2-d6e5-49d2-b403-1ff51bf1704a</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -33364,7 +33480,7 @@ In systematic comparison of symvalic analysis with past tools, we find significa
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a479a497-b908-4a11-a3c2-17c8e0554d36</slot_id>
       <event_id>d4737a93-8cd6-4e8c-833c-7ed194f21b7a</event_id>
       <submission_id>294</submission_id>
@@ -33439,7 +33555,7 @@ My research interests are at the intersection of Programming Languages and Human
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>bfc296e9-1636-49ac-b6d9-5c805e70cf6e</slot_id>
       <event_id>24dd1202-bb64-4cef-86c5-251fda3fcd93</event_id>
       <submission_id>448</submission_id>
@@ -33525,7 +33641,7 @@ My research interests are at the intersection of Programming Languages and Human
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e74679b8-faae-4fa8-b819-021a4772058d</slot_id>
       <event_id>25bb8503-88a2-4ba4-b253-0fc9a52e05dc</event_id>
       <submission_id>157</submission_id>
@@ -34134,7 +34250,7 @@ We present the first comprehensive evaluation of GTLC type migration algorithms,
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>688199a3-e3ee-4326-b3c9-f8e197a9aada</slot_id>
       <title>Session: SPLASH OOPSLA - Implementation of special Paradigms - mirror</title>
       <room>Swissotel Chicago | Zurich C</room>
@@ -34158,7 +34274,7 @@ We present the first comprehensive evaluation of GTLC type migration algorithms,
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>02d115cd-f530-4201-a82c-158edd660183</slot_id>
       <event_id>dfc8e21a-b4fb-4095-9b67-790f96f35c7b</event_id>
       <submission_id>142</submission_id>
@@ -34307,7 +34423,7 @@ We present the first comprehensive evaluation of GTLC type migration algorithms,
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>3cc08e01-8cdd-4d59-b253-2c5bce3ead3b</slot_id>
       <event_id>2a3bd10f-d88a-4ac7-b023-0ee9946d5e84</event_id>
       <submission_id>133</submission_id>
@@ -34396,7 +34512,7 @@ When compared with two widely-used Python sparse array packages, our evaluation 
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>58469ca1-f603-48ce-82bf-8b4ffe5ac6bf</slot_id>
       <event_id>aac8ee13-0cef-4d91-b60c-f029b7f08587</event_id>
       <submission_id>45</submission_id>
@@ -34473,7 +34589,7 @@ When compared with two widely-used Python sparse array packages, our evaluation 
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>67dad211-ae8c-4596-a540-b236875ad378</slot_id>
       <event_id>a9b6a816-8bad-42e4-8254-5769ef450530</event_id>
       <submission_id>81</submission_id>
@@ -34545,7 +34661,7 @@ His research on verifying the reliability of programs that execute on unreliable
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>a1dfdef2-017e-48de-a170-0c4cab31b51e</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -35081,18 +35197,30 @@ The implementation of Permchecker uses a combination of compile-time annotation 
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>09cc35f9-916b-4d5a-a7cf-eeaafc88fe22</slot_id>
       <title>Session: SPLASH OOPSLA - Optimization - mirror</title>
       <room>Swissotel Chicago | Zurich B</room>
       <date>2021/10/22</date>
       <start_time>18:50</start_time>
       <end_time>20:10</end_time>
+      <persons>
+        <person>
+          <role>Session Chair</role>
+          <sort_key>1</sort_key>
+          <first_name>Anthony</first_name>
+          <last_name>Hosking</last_name>
+          <affiliation>undefined</affiliation>
+          <bio>undefined</bio>
+          <homepage_url>https://www.cs.purdue.edu/homes/hosking/Antony_Hosking/Home.html</homepage_url>
+          <person_id>anthonyhosking</person_id>
+        </person>
+      </persons>
       <tracks>
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>4f8f3862-a0f2-4606-b6a9-820ad1446521</slot_id>
       <event_id>e78d6285-c5ed-4a96-8242-9315d1c25ef4</event_id>
       <submission_id>194</submission_id>
@@ -35146,7 +35274,7 @@ Angélica’s research interest lies in pursuing the design and implementation o
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>673da911-a6ef-4694-9060-2f33f99a74a5</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>
@@ -35160,7 +35288,7 @@ Angélica’s research interest lies in pursuing the design and implementation o
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>c0a553bd-f733-401d-ba14-549846caebe2</slot_id>
       <event_id>a07657bd-7670-4ce9-b59c-c0d4a5733ee1</event_id>
       <submission_id>245</submission_id>
@@ -35209,7 +35337,7 @@ Angélica’s research interest lies in pursuing the design and implementation o
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>ed0d0bb3-1d5b-4325-a611-db9415eb772e</slot_id>
       <event_id>b07a5fb5-66c7-4797-a121-2c07df02ff9d</event_id>
       <submission_id>169</submission_id>
@@ -35262,7 +35390,7 @@ We demonstrate two use cases of copy-and-patch: a compiler for a high-level C-li
     <tracks>
       <track>OOPSLA</track>
     </tracks>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>b5d1f561-5a97-4653-98b7-180431dac4d1</slot_id>
       <title>Session: SPLASH OOPSLA - Synthesis of models, tools and programs -- mirror</title>
       <room>Swissotel Chicago | Zurich A</room>
@@ -35287,7 +35415,7 @@ I am originally from Moscow, Russia with a background in Mathematics. I have com
         <track>OOPSLA</track>
       </tracks>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>59414d9a-7616-453a-9e08-c8d152d22846</slot_id>
       <event_id>44632a19-da24-4769-9abf-fb6b1a1b8dab</event_id>
       <submission_id>410</submission_id>
@@ -35392,7 +35520,7 @@ I was previously a research intern at Microsoft, working on a new program synthe
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>91e24019-5406-4d22-961b-b97be409022f</slot_id>
       <event_id>984afe45-291b-4657-9b18-5d36553b8fcb</event_id>
       <submission_id>107</submission_id>
@@ -35445,7 +35573,7 @@ We show that this reformulation allows us to extend the search space and express
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e8ac9e87-2082-4ff9-84a9-3029d269f30c</slot_id>
       <event_id>5a37cd42-11e4-4df2-a92f-376c879a05e3</event_id>
       <submission_id>94</submission_id>
@@ -35558,7 +35686,7 @@ We prototyped these strategies in a tool dubbed Ruler. Compared to a similar too
         <badge property="Event Form">Virtual</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>e9f05f39-4114-48e9-9b23-5f7d71644d9c</slot_id>
       <event_id>c534281c-22ac-4d12-b79c-ef3db26a300f</event_id>
       <submission_id>17</submission_id>
@@ -35609,7 +35737,7 @@ We prototyped these strategies in a tool dubbed Ruler. Compared to a similar too
         <badge property="Event Form">In-Person</badge>
       </badges>
     </timeslot>
-    <timeslot>
+    <timeslot is_mirror="true">
       <slot_id>ea328dc8-7806-4dae-9e84-49f7ca09907c</slot_id>
       <event_id>1608901f-c7e7-4e37-b5d4-9d39b4e807b6</event_id>
       <title>Discussion, Questions and Answers</title>

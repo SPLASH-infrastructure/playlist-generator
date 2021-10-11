@@ -1,5 +1,5 @@
 <liveinfo>
-	<mirroring start="06:00:00" end="12:00:00"/>
+	<mirroring start="09:00:00" end="17:00:00" timezone="America/Chicago"/>
 	<rooms>
 		<room name="Swissotel Chicago | Zurich A" live="STREAM_A" filler="FILLER_A"/>
 		<room name="Swissotel Chicago | Zurich B" live="STREAM_B" filler="FILLER_B"/>
@@ -29,22 +29,31 @@
 			<format mirror="true" name="Discussion, Questions and Answers">
 				<live source="{zoom.stream}"/>
 			</format>
-			<format mirror="false" name="Discussion, Questions and Answers">
+			<format mirror="true" badge="In-Person">
+				<prerecorded/>
+			</format>
+			<format mirror="true" badge="Virtual">
+				<prerecorded/>
+			</format>
+			<format name="Discussion, Questions and Answers">
 				<live source="{room.live}"/>
 			</format>
-			<format>
+			<format badge="In-Person">
+				<live source="{room.live}"/>
+			</format>
+			<format badge="Virtual">
 				<prerecorded/>
 			</format>
 		</event>
 		<event name="Closing">
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
-			<format plenary="true">
-				<live source="{zoom.stream}"/>
+			<format>
+				<live plenary="true" source="{room.live}"/>
 			</format>
 		</event>
 		<event name="Opening">
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
-			<format plenary="true"><live source="{zoom.stream}"/></format>
+			<format><live plenary="true" source="{room.live}"/></format>
 		</event>
 		<event name="Keynote Talks"> <!-- APLAS keynotes -->
 			<zoom url="" stream="APLAS_ZOOM"/>
@@ -110,8 +119,9 @@
 		</event>
 		<event name="Ask Me Anything (AMA)">
 			<zoom url="" stream="AMA_ZOOM"/>
-			<format><live source="{room.live}" record="{event_id}"/></format>
-			<format mirror="after"><prerecorded source="{event_id}"/></format>
+			<format badge="In-Person"><live source="{room.live}" record="{event_id}"/></format>
+			<format badge="In-person"><live source="{room.live}" record="{event_id}"/></format>
+			<format badge="Virtual"><live source="{room.live}" record="{event_id}"/></format>
 		</event>
 		<event name="SIGPLAN Business">
 			<zoom url="" stream="OOPSLA_ZURICH_C_ZOOM"/>
