@@ -455,7 +455,6 @@ class EventFormat:
 		# =================
 		# by default we always apply
 		cond = lambda sch, ts: True 
-
 		#helper for attribute parsing
 		def prop_cond(prop_xpath, if_cond, acc):
 			elems = elem.xpath(prop_xpath)
@@ -469,6 +468,9 @@ class EventFormat:
 			return scheduler.is_mirror(ts) == mirrored
 		# mirror condition
 		cond = prop_cond("./@mirror", lambda cond, mirrored: lambda sch, ts: is_mirror(sch, ts, mirrored=="true") and cond(sch, ts), cond)
+
+
+    	# TODO: support badges
 
 		# ====================
 		# event format parsing
@@ -612,6 +614,9 @@ if __name__ == '__main__':
     	if not ts.room in rooms:
     		continue
     	scheduler.schedule(mapping, ts)
+
+    # TODO: actually assemble the schedule
+    # TODO: insert filler elements
 
     # mapping between even_ids and schedule timeslots
     timeslots_mappings = dict(map(lambda x: (x.event_id, x), timeslots))
