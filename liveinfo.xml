@@ -1,129 +1,142 @@
 <liveinfo>
-	<room name="Swissotel Chicago | Zurich A" live="STREAM_A">
+	<mirroring start="06:00:00" end="12:00:00"/>
+	<rooms>
+		<room name="Swissotel Chicago | Zurich A" live="STREAM_A" filler="FILLER_A"/>
+		<room name="Swissotel Chicago | Zurich B" live="STREAM_B" filler="FILLER_B"/>
+		<room name="Swissotel Chicago | Zurich C" live="STREAM_C" filler="FILLER_C"/>
+	</rooms>
+	<events>
 		<event name="Research Papers">
 			<zoom url="" stream="APLAS_ZOOM"/>
-			<format where=".//name/[text()[contains(.,'Q&amp;A and discussion')]]">
-				<live source="zoom"/>
+			<format name="Q&amp;A and discussion">
+				<live source="{zoom.stream}"/>
+			</format>
+			<format>
+				<prerecorded/>
 			</format>
 		</event>
 		<event name="SAS 2021 - 28th Static Analysis Symposium">
 			<zoom url="" stream="SAS_ZURICH_A_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="zoom"/>
+				<live source="{zoom.stream}"/>
 			</format>
 		</event>
 		<event name="OOPSLA">
-			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
-			<format mirror="before" where=".//name/[text()[contains(.,'Discussion, Questions and Answers')]]">
-				<live source="zoom"/>
+			<zoom room="Swissotel Chicago | Zurich A" url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
+			<zoom room="Swissotel Chicago | Zurich B" url="" stream="OOPSLA_ZURICH_B_ZOOM"/>
+			<zoom room="Swissotel Chicago | Zurich C" url="" stream="OOPSLA_ZURICH_C_ZOOM"/>
+			<format mirror="true" name="Discussion, Questions and Answers">
+				<live source="{zoom.stream}"/>
 			</format>
-			<format mirror="after" where=".//name/[text()[contains(.,'Discussion, Questions and Answers')]]">
-				<live source="room"/>
+			<format mirror="false" name="Discussion, Questions and Answers">
+				<live source="{room.live}"/>
 			</format>
-			<format where=".//name/[text()[contains(.,'Discussion, Questions and Answers')]]">
-				<live source="room"/>
+			<format>
+				<prerecorded/>
 			</format>
 		</event>
 		<event name="Closing">
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
-			<format plenary="true"><live/></format>
+			<format plenary="true"><live source="{zoom.stream}"/></format>
 		</event>
 		<event name="Opening">
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
-			<format plenary="true"><live/></format>
+			<format plenary="true"><live source="{zoom.stream}"/></format>
 		</event>
 		<event name="Keynote Talks"> <!-- APLAS keynotes -->
 			<zoom url="" stream="APLAS_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="zoom"/>
+				<live source="{zoom.stream}"/>
 			</format>
 		</event>
 		<event name="Keynotes"> <!-- SPLASH keynotes -->
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
-			<format plenary="true">
-				<live source="room" record="{event_id}"/>
+			<format>
+				<live source="{room.live}" plenary="true" record="{timeslot.event_id}"/>
 			</format>
-			<format mirror="after" plenary="true">
-				<prerecorded source="{event_id}"/>
+			<format mirror="true">
+				<prerecorded plenary="true" source="{timeslot.event_id}"/>
 			</format>
 		</event>
 		<event name="Awards">
-			<format plenary="true"><live/></format>
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
+			<format><live source="{zoom.stream}" plenary="true"/></format>
 		</event>
 		<event name="Onward! Papers">
 			<zoom url="" stream="ONWARD_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="room"/>
+				<live source="{room.live}"/>
 			</format>
-			<format mirror="after">
+			<format mirror="true">
 				<prerecorded/>
-				<live source="zoom"/>
-			</format>
-		</event>
-	</room>
-	<room name="Swissotel Chicago | Zurich B" live="STREAM_B">
-		<event name="SAS 2021 - 28th Static Analysis Symposium">
-			<zoom url="" stream="SAS_ZURICH_B_ZOOM"/>
-			<format>
-				<prerecorded/>
-				<live source="zoom"/>
+				<live source="{zoom.stream}"/>
 			</format>
 		</event>
 		<event name="REBASE">
 			<zoom url="" stream="REBASE_ZOOM"/>
 			<format>
-				<live source="zoom"/>
+				<live source="{zoom.stream}"/>
 			</format>
-		</event>
-		<event name="OOPSLA">
-			<zoom url="" stream="OOPSLA_ZURICH_B_ZOOM"/>
-			<format where=".//name/[text()[contains(.,'Discussion, Questions and Answers')]]">
-				<live/>
-			</format>
-		</event>
-	</room>
-	<room name="Swissotel Chicago | Zurich C" live="STREAM_C">
-		<event name="OOPSLA">
-			<zoom url="" stream="OOPSLA_ZURICH_C_ZOOM"/>
 		</event>
 		<event name="Dynamic Languages Symposium">
 			<zoom url="" stream="DLS_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="zoom"/>
+				<live source="{zoom.stream}"/>
 			</format>
 		</event>
 		<event name="SLE (Software Language Engineering) 2021">
 			<zoom url="" stream="SLE_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="zoom"/>
+				<live source="{zoom.stream}"/>
+			</format>
+		</event>
+		<event name="GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences">
+			<zoom url="" stream="GPCE_ZOOM"/>
+			<format>
+				<prerecorded/>
+				<live source="{zoom.stream}"/>
 			</format>
 		</event>
 		<event name="PLMW@SPLASH">
 			<zoom url="" stream="PLMW_ZOOM"/>
-			<format><live source="room"/></format>
+			<format><live source="{room.live}"/></format>
 		</event>
 		<event name="Ask Me Anything (AMA)">
 			<zoom url="" stream="AMA_ZOOM"/>
-			<format><live source="room" record="{event_id}"/></format>
+			<format><live source="{room.live}" record="{event_id}"/></format>
 			<format mirror="after"><prerecorded source="{event_id}"/></format>
 		</event>
 		<event name="SIGPLAN Business">
 			<zoom url="" stream="OOPSLA_ZURICH_C_ZOOM"/>
-			<format><live source="room" record="{event_id}"/></format>
+			<format><live source="{room.live}" record="{event_id}"/></format>
 			<format mirror="after"><prerecorded source="{event_id}"/></format>
 		</event>
 		<event name="Onward! Essays">
 			<zoom url="" stream="ONWARD_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live/>
+				<live source="{room.live}"/>
 			</format>
 		</event>
-	</room>
+		<event name="Faculty Mentorship Roundtable">
+			<format>
+				<notstreamed/>  <!--- not streamed -->
+			</format>
+		</event>
+		<event name="Student Research Competition">
+			<format>
+				<notstreamed/>  <!--- not streamed -->
+			</format>
+		</event>
+		<event name="PLTea">
+			<format>
+				<notstreamed/>  <!--- not streamed -->
+			</format>
+		</event>
+	</events>
 </liveinfo>
