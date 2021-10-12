@@ -730,14 +730,25 @@ def gen_playlist(room_id, event_mappings, timeslots_mappings):
     return list(sorted ((pl + fillers), key=lambda x: x.onairtime))
         
     
-    
+def validate_playlist(pl):
+    """
+    For a room, we don't want multiple events running or 
+    two adjacent events overlap each other.
+    """
+    sorted_pl = sorted(pl, key=lambda x: x.onairtime)
+    adj_evs = list(window(sorted_pl, 2))
+    for (e1, e2) in adj_evs:
+        if e2.onairtime < e1.onairtime + e1.duration:
+            print(f"{e1.title} runs over {e2.title}")
+        
+
 # prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
 if __name__ == '__main__':
     print("howdy")
     
     base_output_file = "SPLASH21-playlist-demo-Zurich-" # FIXME remove demo for final
     base_room = "Swissotel Chicago | Zurich "
-    roomA = base_room + "A"
+
     room_ids = ["A", "B", "C"]
     
     rooms = [base_room + r for r in room_ids]
@@ -748,7 +759,6 @@ if __name__ == '__main__':
     schedule_timezone = TZ.gettz(schedule_xml.xpath("//timezone_id/text()")[0])
 
     print(f"for timezone {schedule_timezone}")
-
 
     subevents = list(map(lambda el: SubeventSchedule.from_xml(schedule_timezone, el), schedule_xml.xpath("//subevent[subevent_id]")))
 
@@ -766,7 +776,9 @@ if __name__ == '__main__':
     for room, evts in schedule.items():
         evts.sort(key=lambda evt: evt.start)
         room_playlists[room] = list(map(lambda evt: evt.make_playlist_element(), evts))
-
+        print(f"validating playlist for room {room}")
+        validate_playlist(room_playlists[room])
+        
     # TODO: insert filler elements
     for r in room_ids:
         current_room = base_room + r
