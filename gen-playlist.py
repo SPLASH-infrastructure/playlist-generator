@@ -262,9 +262,11 @@ class ScheduleElement:
     def schedule(self, mapping, rooms, spec, format, timeslot, now):
         out = dict()
         if self.plenary:
+            first = True
             for room in rooms:
-                out_evt, new_now = self.schedule_one(mapping, room, spec, format, timeslot, now)
+                out_evt, new_now = self.schedule_one(mapping, room, spec, format, timeslot, now, first=first)
                 out[room.name] = [out_evt]
+                first = False
         else: 
             for room in rooms:
                 previous_now = None
@@ -282,7 +284,7 @@ class PrerecordedElement(ScheduleElement):
         self.source = source
         self.plenary = plenary
 
-    def schedule_one(self, mapping, room, spec, format, timeslot, now):
+    def schedule_one(self, mapping, room, spec, format, timeslot, now, first=True):
         ctx_dict = self.make_context_dict(room, spec, format, timeslot)
         
         if not mapping.has_event(timeslot.event_id):
@@ -325,7 +327,7 @@ class LiveElement(ScheduleElement):
         self.recording = recording
         self.xml_elem = xml_elem
 
-    def schedule_one(self, mapping, rooms, spec, format, timeslot:TimeSlotSchedule, now):
+    def schedule_one(self, mapping, rooms, spec, format, timeslot:TimeSlotSchedule, now, first=True):
         ctx_dict = self.make_context_dict(rooms, spec, format, timeslot)
         try: 
             source = ctx_dict[self.source]
@@ -335,7 +337,7 @@ class LiveElement(ScheduleElement):
         duration = timeslot.end_ts - now
         onairtime = now
         ts = timeslot
-        return LiveEvent(timeslot.title, source, onairtime, duration, timeslot, recording=self.recording), now+duration
+        return LiveEvent(timeslot.title, source, onairtime, duration, timeslot, recording=self.recording.format(**ctx_dict) if self.recording != None and first else None), now+duration
 
     @classmethod
     def from_xml(cls, elem):
@@ -610,7 +612,7 @@ class PlaylistEvent:
         onairtime.text = self.onairtime.isoformat(timespec='seconds')
 
         recordingpat = ET.Element("recordingpattern")
-        recordingpat.text = "$(title)" # TODO: what is this, how is it computed
+        recordingpat.text = self.recording if self.recording != None else "" # TODO: what is this, how is it computed
                                        # I am guessing it is be the confpub id value from the mapping xml?
         # Bunch of defaults
         offset = ET.Element("offset")
@@ -618,7 +620,7 @@ class PlaylistEvent:
         endmode = ET.Element("endmode")
         endmode.text = "FOLLOW"
         igincomsig = ET.Element("ignoreincomingscte35signals")
-        igincomsig_text = "false"
+        igincomsig.text = "false"
 
         maxExtendedDuration = ET.Element("maxExtendedDuration")
         maxExtendedDuration.text = "00:00:00:00"
@@ -637,10 +639,10 @@ class PlaylistEvent:
         voiceoverlist = ET.Element("voiceoverlist")
         
         
-        playoutswithlist = ET.Element("playoutswithlist")
+        playoutswithlist = ET.Element("playoutswitchlist")
         recording = ET.Element("recording") # TODO: Confirm! if category is not live then we dont have to record,
                                             # or do we record everything or there are some events that we won't record?
-        recording.text = "true"
+        recording.text = "true" if self.recording != None else "false"
 
         
         event.extend (
@@ -761,11 +763,18 @@ if __name__ == '__main__':
         
         # generate playlist for a room    
         root = ET.Element("playlist")
+        
+        listmeta = ET.Element("list")
+        name = ET.Element("name")
+        name.text = current_room
+        listmeta.append(name)
+        root.append(listmeta)
+
         eventlist = ET.Element("eventlist")
         eventlist.set("timeinmilliseconds", "false")
         root.append(eventlist)
         playlist_xml = map (PlaylistEvent.to_xml, room_playlists[current_room])
-        root.extend(list(playlist_xml))
+        eventlist.extend(list(playlist_xml))
 
         # write it to a file
         output_file = base_output_file + r + ".xml"
