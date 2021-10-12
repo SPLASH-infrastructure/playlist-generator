@@ -169,14 +169,14 @@
 		</event>
 		<event name="Ask Me Anything (AMA)">
 			<zoom url="" stream="AMA_ZOOM"/>
-			<format badge="In-Person"><live source="room" record="{event_id}"/></format>
-			<format badge="In-person"><live source="room" record="{event_id}"/></format>
-			<format badge="Virtual"><live source="room" record="{event_id}"/></format>
+			<format badge="In-Person"><live source="room" record="{timeslot.event_id}"/></format>
+			<format badge="In-person"><live source="room" record="{timeslot.event_id}"/></format>
+			<format badge="Virtual"><live source="room" record="{timeslot.event_id}"/></format>
 		</event>
 		<event name="SIGPLAN Business">
 			<zoom url="" stream="OOPSLA_ZURICH_C_ZOOM"/>
-			<format><live source="room" record="{event_id}"/></format>
-			<format mirror="after"><prerecorded source="{event_id}"/></format>
+			<format mirror="true"><prerecorded source="mirror"/></format>
+			<format><live source="room" record="{timeslot.event_id}"/></format>
 		</event>
 		<event name="Onward! Essays">
 			<zoom url="" stream="ONWARD_ZOOM"/>
