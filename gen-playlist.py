@@ -22,6 +22,7 @@ import csv
 import datetime, dateutil
 import dateutil.tz as TZ
 import lxml.etree as ET
+import math
 from itertools import *
 from enum import Enum
 
@@ -601,16 +602,29 @@ class PlaylistEvent:
         category.text = self.category
 
         duration = ET.Element("duration")
-        duration.text = str(self.duration)
+        total_secs = self.duration.total_seconds()
+        hours,remainder = divmod(total_secs, 60*60)
+        minutes,remainder = divmod(remainder, 60)
+        seconds,fractional_seconds = divmod(remainder, 1)
+        frames = math.floor(fractional_seconds*25)
+        duration.text = f"{int(hours):02d}:{int(minutes):02d}:{int(seconds):02d}:{int(frames):02d}"
+        
         
         title = ET.Element("title")
         title.text = self.title
         if not self.title:
             print(f"Warning: {self.ts.event_id} has an empty title")
+        if self.category == "PROGRAM":
+            mediaid = ET.Element("mediaid")
+            mediaid.text = self.title
+            idel = mediaid
+        elif self.category == "LIVE":
+            liveid = ET.Element("liveid")
+            liveid.text = self.title
+            idel = liveid
 
         onairtime = ET.Element("onairtime")
-        onairtime.text = self.onairtime.isoformat(timespec='seconds')
-
+        onairtime.text = self.onairtime.replace(tzinfo=datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S:00")
         recordingpat = ET.Element("recordingpattern")
         recordingpat.text = self.recording if self.recording != None else "" # TODO: what is this, how is it computed
                                        # I am guessing it is be the confpub id value from the mapping xml?
@@ -646,7 +660,7 @@ class PlaylistEvent:
 
         
         event.extend (
-              [ category, title, duration, onairtime, recordingpat ]
+              [ category, title, duration, onairtime, idel, recordingpat ]
             + [ offset, endmode, igincomsig, maxExtendedDuration, scte35list
                 , som, playoutswithlist, startmode, recording
                 , twitchrpclist, untimedAdList, voiceoverlist ]
@@ -771,9 +785,9 @@ if __name__ == '__main__':
         root.append(listmeta)
 
         eventlist = ET.Element("eventlist")
-        eventlist.set("timeinmilliseconds", "false")
+        eventlist.set("timeinmilliseconds", "true")
         root.append(eventlist)
-        playlist_xml = map (PlaylistEvent.to_xml, room_playlists[current_room])
+        playlist_xml = map (PlaylistEvent.to_xml, filter(lambda evt: evt.duration.total_seconds() > 0, room_playlists[current_room]))
         eventlist.extend(list(playlist_xml))
 
         # write it to a file

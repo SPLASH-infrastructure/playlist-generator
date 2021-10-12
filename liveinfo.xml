@@ -53,6 +53,7 @@
 		</event>
 		<event name="Opening">
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
+			<format event_id="479c9271-75b9-4332-a52e-2443916ed203"><notstreamed/></format>
 			<format mirror="true"><prerecorded source="mirror"/></format>
 			<format><live plenary="true" source="room" record="{timeslot.event_id}"/></format>
 		</event>
