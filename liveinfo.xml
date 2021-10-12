@@ -9,7 +9,7 @@
 		<event name="Research Papers">
 			<zoom url="" stream="APLAS_ZOOM"/>
 			<format name="Q&amp;A and discussion">
-				<live source="{zoom.stream}"/>
+				<live source="zoom"/>
 			</format>
 			<format>
 				<prerecorded/>
@@ -19,15 +19,15 @@
 			<zoom url="" stream="SAS_ZURICH_A_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="{zoom.stream}"/>
+				<live source="zoom"/>
 			</format>
 		</event>
-		<event name="OOPSLA">
+		<event name="OOPSLA" compact_recorded="true">
 			<zoom room="Swissotel Chicago | Zurich A" url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="" stream="OOPSLA_ZURICH_B_ZOOM"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="" stream="OOPSLA_ZURICH_C_ZOOM"/>
 			<format mirror="true" name="Discussion, Questions and Answers">
-				<live source="{zoom.stream}"/>
+				<live source="zoom"/>
 			</format>
 			<format mirror="true" badge="In-Person">
 				<prerecorded/>
@@ -36,10 +36,10 @@
 				<prerecorded/>
 			</format>
 			<format name="Discussion, Questions and Answers">
-				<live source="{room.live}"/>
+				<live source="room"/>
 			</format>
 			<format badge="In-Person">
-				<live source="{room.live}"/>
+				<live source="room"/>
 			</format>
 			<format badge="Virtual">
 				<prerecorded/>
@@ -48,91 +48,97 @@
 		<event name="Closing">
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
 			<format>
-				<live plenary="true" source="{room.live}"/>
+				<notstreamed/>  <!--- not streamed -->
 			</format>
 		</event>
 		<event name="Opening">
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
-			<format><live plenary="true" source="{room.live}"/></format>
+			<format mirror="true"><prerecorded source="mirror"/></format>
+			<format><live plenary="true" source="room" record="{timeslot.event_id}"/></format>
 		</event>
 		<event name="Keynote Talks"> <!-- APLAS keynotes -->
 			<zoom url="" stream="APLAS_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="{zoom.stream}"/>
+				<live source="zoom"/>
 			</format>
 		</event>
 		<event name="Keynotes"> <!-- SPLASH keynotes -->
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
-			<format>
-				<live source="{room.live}" plenary="true" record="{timeslot.event_id}"/>
-			</format>
 			<format mirror="true">
-				<prerecorded plenary="true" source="{timeslot.event_id}"/>
+				<prerecorded plenary="true" source="mirror"/>
+			</format>
+			<format>
+				<live source="room" plenary="true" record="{timeslot.event_id}"/>
 			</format>
 		</event>
 		<event name="Awards">
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
-			<format><live source="{zoom.stream}" plenary="true"/></format>
+			<format mirror="true">
+				<prerecorded plenary="true" source="mirror"/>
+			</format>
+			<format>
+				<live source="room" plenary="true" record="{timeslot.event_id}"/>
+			</format>
 		</event>
 		<event name="Onward! Papers">
 			<zoom url="" stream="ONWARD_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="{room.live}"/>
+				<live source="room"/>
 			</format>
 			<format mirror="true">
 				<prerecorded/>
-				<live source="{zoom.stream}"/>
+				<live source="zoom"/>
 			</format>
 		</event>
 		<event name="REBASE">
 			<zoom url="" stream="REBASE_ZOOM"/>
 			<format>
-				<live source="{zoom.stream}"/>
+				<live source="zoom"/>
 			</format>
 		</event>
 		<event name="Dynamic Languages Symposium">
 			<zoom url="" stream="DLS_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="{zoom.stream}"/>
+				<live source="zoom"/>
 			</format>
 		</event>
 		<event name="SLE (Software Language Engineering) 2021">
 			<zoom url="" stream="SLE_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="{zoom.stream}"/>
+				<live source="zoom"/>
 			</format>
 		</event>
 		<event name="GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences">
 			<zoom url="" stream="GPCE_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="{zoom.stream}"/>
+				<live source="zoom"/>
 			</format>
 		</event>
 		<event name="PLMW@SPLASH">
 			<zoom url="" stream="PLMW_ZOOM"/>
-			<format><live source="{room.live}"/></format>
+			<format><live source="room"/></format>
 		</event>
 		<event name="Ask Me Anything (AMA)">
 			<zoom url="" stream="AMA_ZOOM"/>
-			<format badge="In-Person"><live source="{room.live}" record="{event_id}"/></format>
-			<format badge="In-person"><live source="{room.live}" record="{event_id}"/></format>
-			<format badge="Virtual"><live source="{room.live}" record="{event_id}"/></format>
+			<format badge="In-Person"><live source="room" record="{event_id}"/></format>
+			<format badge="In-person"><live source="room" record="{event_id}"/></format>
+			<format badge="Virtual"><live source="room" record="{event_id}"/></format>
 		</event>
 		<event name="SIGPLAN Business">
 			<zoom url="" stream="OOPSLA_ZURICH_C_ZOOM"/>
-			<format><live source="{room.live}" record="{event_id}"/></format>
+			<format><live source="room" record="{event_id}"/></format>
 			<format mirror="after"><prerecorded source="{event_id}"/></format>
 		</event>
 		<event name="Onward! Essays">
 			<zoom url="" stream="ONWARD_ZOOM"/>
 			<format>
 				<prerecorded/>
-				<live source="{room.live}"/>
+				<live source="room"/>
 			</format>
 		</event>
 		<event name="Faculty Mentorship Roundtable">

@@ -23,7 +23,7 @@ import datetime, dateutil
 import dateutil.tz as TZ
 import lxml.etree as ET
 from itertools import *
-
+from enum import Enum
 
 class TimeSlotSchedule:
     """
@@ -48,21 +48,24 @@ class TimeSlotSchedule:
       </badges>
     </timeslot>
     """
-    def __init__(self, event_id, title, room, start_ts, end_ts, badges, tracks, ts):
+    def __init__(self, event_id, title, room, start_ts, end_ts, badges, tracks, subevent, ts):
         self.event_id = event_id
         self.title = title
         
         self.room = room
         self.start_ts = start_ts
         self.end_ts = end_ts
+        self.subevent = subevent
         
         self.badges = badges # in-person or virtual, keynote etc.
         self.tracks = tracks
         self.ts = ts # pointer the timeslot xml node
 
     def __str__(self):
-    	return f"Timeslot({self.title}, {self.tracks})"
-    def from_xml(timezone, timeslot_xml):
+        return f"Timeslot({self.title}, {self.tracks})"
+
+    @classmethod
+    def from_xml(cls, timezone, subevent, timeslot_xml):
         """
         Does validation and returns a TimeSlot Schedule
         """
@@ -79,7 +82,6 @@ class TimeSlotSchedule:
         researchr_fstring = "%Y/%m/%d %H:%M"
         start_ts = datetime.datetime.strptime(f"{start_date} {start_time}", researchr_fstring).replace(tzinfo=timezone)
         end_ts = datetime.datetime.strptime(f"{end_date} {end_time}", researchr_fstring).replace(tzinfo=timezone)
-
         # description and persons elided; we don't need them for scheduling
 
         # track information
@@ -92,31 +94,72 @@ class TimeSlotSchedule:
         # ANI: Maybe we can have a class Badge to define that behaviour
         badges = timeslot_xml.xpath(".//badges/badge/text()")
 
-        return TimeSlotSchedule(event_id, title, room, start_ts, end_ts, badges, tracks, timeslot_xml)
-        
-class PrerecordedVideo:
-    def __init__(self, event_id, title, m):
-        self.event_id = event_id
+        return TimeSlotSchedule(event_id, title, room, start_ts, end_ts, badges, tracks, subevent, timeslot_xml)
+
+class SubeventSchedule:
+    """
+    Appears as a subevent in the schedule
+    <subevent>
+    <subevent_id>e81627dd-cd12-4947-afc6-8153f78bd262</subevent_id>
+    <title>APLAS Keynote Talks: Invited talk 1</title>
+    <subevent_type type="regular"/>
+    <room>Swissotel Chicago | Zurich A</room>
+    <date>2021/10/17</date>
+    <url>https://conf.researchr.org/track/aplas-2021/aplas-2021-keynote-talks</url>
+    <url_link_display>Keynote Talks</url_link_display>
+    <tracks>
+        <track>Keynote Talks</track>
+    </tracks>
+    <timeslot/>....
+    </subevent>
+    """
+    def __init__(self, subevent_id, title, room, tracks, timeslots):
+        self.subevent_id = subevent_id
         self.title = title
-        self.m = m # pointer to the mapping xml node
-
+        self.room = room
+        self.tracks = tracks
+        self.timeslots = timeslots
     @classmethod
-    def mapping_from_xml(cls, match):
-        """
-        A sample mapper
-        <match event_id="2b702965-d312-4316-8d55-39a1e0d157f4">
-            <confpub id="splashws21slemain-p44-p"/>
-        </match>
-        """
-        return cls(match.get("event_id"), match[0].get("id"), match)
+    def from_xml(cls, timezone, subevent_xml):
+        subevent_id = subevent_xml.xpath("./subevent_id/text()")[0]
+        title = subevent_xml.xpath("./title/text()")[0]
+        room = subevent_xml.xpath("./room/text()")[0]
+        tracks = subevent_xml.xpath("./tracks/track/text()")
 
-class EventRoom:
-    def __init__(self, name, livestream=None):
-        self.name = name
-        self.livestream = livestream
-    @classmethod
-    def from_xml(cls, xml_elem):
-        pass # for now
+        ses = SubeventSchedule(subevent_id, title, room, tracks, [])
+        ses.timeslots = list(map(lambda el: TimeSlotSchedule.from_xml(timezone, ses, el), subevent_xml.xpath("./timeslot[event_id]")))
+        return ses
+
+class ConferenceEvent:
+    pass
+class PrerecordedEvent(ConferenceEvent):
+    def __init__(self, title, asset, start, duration, timeslot):
+        self.title = title
+        self.asset = asset
+        self.start = start
+        self.duration = duration
+        self.timeslot = timeslot
+    
+    def offer_time(self, offered):
+        if self.asset != None and self.asset.duration != None and self.asset.duration > self.duration:
+            stretch = min(offered, self.asset.duration - self.duration)
+            self.duration += stretch
+            return stretch
+        return datetime.timedelta()
+    def __str__(self):
+        return f"Prerecorded({self.title}, {self.asset}, {self.start} for {self.duration}, in {self.timeslot})"
+class LiveEvent(ConferenceEvent):
+    def __init__(self, title, source, start, duration, timeslot, recording=None):
+        self.title = title
+        self.source = source
+        self.start = start
+        self.duration = duration
+        self.timeslot = timeslot
+        self.recording = recording
+    def offer_time(self, offered):
+        return datetime.timedelta()
+    def __str__(self):
+        return f"Live({self.title}, {self.source}, {self.start} for {self.duration}, in {self.timeslot})"
 
 class PlaylistEvent:
     """
@@ -153,7 +196,7 @@ class PlaylistEvent:
         self.ts = ts
 
     def __str__(self):
-    	return f"PlaylistEvent({self.title}; {self.onairtime} for {self.duration}; for {self.ts})"
+        return f"PlaylistEvent({self.title}; {self.onairtime} for {self.duration}; for {self.ts})"
 
     def to_xml(self):
         """
@@ -219,7 +262,6 @@ class PlaylistEvent:
         
         return event
 
-
 def gen_playlist_event(m, ts):
     """
     Given a event mapping and a schedule timeslot generates a playlist event
@@ -267,323 +309,374 @@ def gen_fillers(room_id, timeslots):
                                          None))
     return fillers
 
-class VideoMapping:
-	def __init__(self, asset_map, duration_map):
-		self.asset_map = asset_map
-		self.duration_map = duration_map
-	def has_event(self, event_id):
-		return event_id in self.asset_map
-	def get_event(self, event_id):
-		duration = self.duration_map[event_id] if event_id in self.duration_map else None
-		return dict(asset_name=self.asset_map[event_id].title, 
-					duration=duration)
+def parse_confpub(el):
+    confpub_id = el.xpath("./@id")[0]
+    return f"{confpub_id}-video"
+ASSET_TYPES = {
+    "confpub": parse_confpub, 
+    "missing": lambda el: None,
+    "manual": lambda el: el.xpath("./@asset")[0]}
 
-	@classmethod
-	def from_files(cls, mapping_file, asset_info):
-		mapping_xml = ET.parse(mapping_file)
-		event_mappings = dict(map(lambda match: (match.event_id, match), 
-			map(lambda m: PrerecordedVideo.mapping_from_xml(m), mapping_xml.getroot())))
-		duration_mappings = dict()
-		with open(asset_info) as csvfile:
-			reader = csv.DictReader(csvfile)
-			fmt = "%H:%M:%S.%f"
-			for row in reader:
-				dt = datetime.datetime.strptime(row["Duration"], fmt)
-				duration_mappings[row["Name"]] = \
-					datetime.timedelta(hours=dt.hour, minutes=dt.minute, 
-									   seconds=dt.second, microseconds=dt.microsecond)
-		# we now have duration mappings! They're wrong though.
-		# the map is of the form (lowercase) video_id[-video] => duration
-		# we want something of the form event_id => duration
-		# to do this, we need to combine event_mappings and duration_mappings
-		event_duration_mapping = dict()
-		for event_id, asset_id in event_mappings.items():
-			if asset_id.title == None:
-				continue
-			asset_name = f"{asset_id.title.lower()}-video"
-			if asset_name in duration_mappings:
-				event_duration_mapping[event_id] = duration_mappings[asset_name]
-		return VideoMapping(event_mappings, event_duration_mapping)
+class PrerecordedVideo:
+    def __init__(self, asset_name, duration):
+        self.asset_name = asset_name
+        self.duration = duration
+    def __str__(self) -> str:
+        return f"Prerecord({self.asset_name} for {self.duration})"
+    @classmethod
+    def from_xml(cls, elem, duration_mappings):
+        source = list(elem)[0]
+        asset_name = ASSET_TYPES[source.tag](source)
+        duration = None
+        if asset_name in duration_mappings:
+            duration = duration_mappings[asset_name]
+        return cls(asset_name, duration)
+
+class VideoMapping:
+    def __init__(self, event_map):
+        self.event_map = event_map
+    def has_event(self, event_id):
+        return event_id in self.event_map
+    def get_event(self, event_id):
+        return self.event_map[event_id]
+
+    @classmethod
+    def from_files(cls, mapping_file, asset_info):
+        duration_mappings = dict()
+        with open(asset_info) as csvfile:
+            reader = csv.DictReader(csvfile)
+            fmt = "%H:%M:%S.%f"
+            for row in reader:
+                dt = datetime.datetime.strptime(row["Duration"], fmt)
+                duration_mappings[row["Name"]] = \
+                    datetime.timedelta(hours=dt.hour, minutes=dt.minute, 
+                                       seconds=dt.second, microseconds=dt.microsecond)
+        mapping_xml = ET.parse(mapping_file)
+        event_mappings = dict(map(lambda el: (el.xpath("./@event_id")[0], PrerecordedVideo.from_xml(el, duration_mappings)), mapping_xml.getroot()))
+        return VideoMapping(event_mappings)
 
 class EventRoom:
-	def __init__(self, name, live_stream, filler_stream):
-		self.name = name
-		self.live = live_stream
-		self.filler = filler_stream
+    def __init__(self, name, live_stream, filler_stream):
+        self.name = name
+        self.live = live_stream
+        self.filler = filler_stream
 
-	@classmethod
-	def from_xml(cls, elem):
-		return cls(elem.xpath("./@name")[0], elem.xpath("./@live")[0], elem.xpath("./@filler")[0])
+    @classmethod
+    def from_xml(cls, elem):
+        return cls(elem.xpath("./@name")[0], elem.xpath("./@live")[0], elem.xpath("./@filler")[0])
 
 class ZoomInfo:
-	def __init__(self, room, url, stream):
-		self.room = room
-		self.url = url
-		self.stream = stream
-	@classmethod
-	def from_xml(cls, elem):
-		room_elem = elem.xpath("./@room")
-		if len(room_elem) == 0:
-			room = None
-		else: 
-			room = room_elem[0]
-		return cls(room, elem.xpath("./@url")[0], elem.xpath("./@stream")[0])
+    def __init__(self, room, url, stream):
+        self.room = room
+        self.url = url
+        self.stream = stream
+    @classmethod
+    def from_xml(cls, elem):
+        room_elem = elem.xpath("./@room")
+        if len(room_elem) == 0:
+            room = None
+        else: 
+            room = room_elem[0]
+        return cls(room, elem.xpath("./@url")[0], elem.xpath("./@stream")[0])
 
 # elements of an event's schedule template
 class ScheduleElement:
-	def make_context_dict(self, room, spec, format, timeslot):
-		out = dict() 
-		out['room'] = room
-		if spec.has_zoom():
-			out['zoom'] = spec.get_zoom(room)
-		return out
+    def make_context_dict(self, room, spec, format, timeslot):
+        out = dict() 
+        out['room'] = room
+        out['timeslot'] = timeslot
+        if spec.has_zoom():
+            out['zoom'] = spec.get_zoom(room)
+        return out
 
-	def schedule(self, mapping, rooms, spec, format, timeslot, now):
-		out = dict()
-		if self.plenary:
-			for room in rooms:
-				out_evt, new_now = self.schedule_one(mapping, room, spec, format, timeslot, now)
-				out[room.name] = [out_evt]
-		else: 
-			for room in rooms:
-				previous_now = None
-				if room.name == timeslot.room:
-					out_evt, new_now = self.schedule_one(mapping, room, spec, format, timeslot, now)
-					out[room.name] = [out_evt]
-					if new_now != previous_now and previous_now != None:
-						raise RuntimeError("Repeated scheduling of a plenary event produced a different now time")
-					elif previous_now == None:
-						previous_now = new_now
-		return out, new_now
+    def schedule(self, mapping, rooms, spec, format, timeslot, now):
+        out = dict()
+        if self.plenary:
+            for room in rooms:
+                out_evt, new_now = self.schedule_one(mapping, room, spec, format, timeslot, now)
+                out[room.name] = [out_evt]
+        else: 
+            for room in rooms:
+                previous_now = None
+                if room.name == timeslot.room:
+                    out_evt, new_now = self.schedule_one(mapping, room, spec, format, timeslot, now)
+                    out[room.name] = [out_evt]
+                    if new_now != previous_now and previous_now != None:
+                        raise RuntimeError("Repeated scheduling of a plenary event produced a different now time")
+                    elif previous_now == None:
+                        previous_now = new_now
+        return out, new_now
 
 class PrerecordedElement(ScheduleElement):
-	def __init__(self, source, plenary=False):
-		self.source = source
-		self.plenary = plenary
+    def __init__(self, source, plenary=False):
+        self.source = source
+        self.plenary = plenary
 
-	def schedule_one(self, mapping, room, spec, format, timeslot, now):
-		ctx_dict = self.make_context_dict(room, spec, format, timeslot)
-		
-		if not mapping.has_event(timeslot.event_id):
-			raise RuntimeError(f"Playing a prerecorded video for an unmapped event ({timeslot.event_id})!")
-		asset_data = mapping.get_event(timeslot.event_id)
+    def schedule_one(self, mapping, room, spec, format, timeslot, now):
+        ctx_dict = self.make_context_dict(room, spec, format, timeslot)
+        
+        if not mapping.has_event(timeslot.event_id):
+            raise RuntimeError(f"Playing a prerecorded video for an unmapped event ({timeslot.event_id})!")
+        
+        if self.source != None:
+            sources = {'mirror': lambda: PrerecordedVideo(timeslot.event_id, timeslot.end_ts - timeslot.start_ts)}
+            asset = sources[self.source]()
+            duration = asset.duration
+        else:
+            asset_data = mapping.get_event(timeslot.event_id)
+            if asset_data.asset_name != None:
+                asset = asset_data
+                duration = asset_data.duration
+                if duration == None or duration > (timeslot.end_ts - now):
+                    duration = (timeslot.end_ts - now)
+            else:
+                asset = None
+                duration = (timeslot.end_ts - now)
+        onairtime = now
 
-		if self.source != None:
-			title = self.source.format(**ctx_dict)
-		else:
-			title = asset_data["asset_name"]
-		category = "PROGRAM"
+        return PrerecordedEvent(timeslot.title, asset, onairtime, duration, timeslot), now+duration
 
-		if asset_data["duration"] != None:
-			duration = asset_data["duration"]
-		else:
-			duration = datetime.timedelta() # representing 0 time
-		endmode = "FOLLOW"
-		onairtime = now
-		m = None 
-		ts = timeslot
+    @classmethod
+    def from_xml(cls, elem):
+        asset = None
+        source = elem.xpath('./@source')
+        if len(source) > 0:
+            asset = source[0]
 
-		return PlaylistEvent(title, category, duration, endmode, onairtime, m, ts), now+duration
-
-	@classmethod
-	def from_xml(cls, elem):
-		asset = None
-		source = elem.xpath('./@source')
-		if len(source) > 0:
-			asset = source[0]
-
-		plenary = elem.xpath('./@plenary')
-		is_plenary = len(plenary) > 0 and plenary[0] == "true"
-		return cls(asset, plenary=is_plenary)
+        plenary = elem.xpath('./@plenary')
+        is_plenary = len(plenary) > 0 and plenary[0] == "true"
+        return cls(asset, plenary=is_plenary)
 
 class LiveElement(ScheduleElement): 
-	def __init__(self, source, plenary=False, recording=None, xml_elem=None):
-		self.source = source
-		self.plenary = plenary
-		self.recording = recording
-		self.xml_elem = xml_elem
+    def __init__(self, source, plenary=False, recording=None, xml_elem=None):
+        self.source = source
+        self.plenary = plenary
+        self.recording = recording
+        self.xml_elem = xml_elem
 
-	def schedule_one(self, mapping, rooms, spec, format, timeslot, now):
-		ctx_dict = self.make_context_dict(rooms, spec, format, timeslot)
-		try: 
-			title = self.source.format(**ctx_dict)
-		except ValueError:
-			print(f"invalid format string {self.source} in element on line {self.xml_elem.sourceline}")
-			raise 
-		category = "LIVE"
-		duration = timeslot.end_ts - now
-		endmode = "FOLLOW"
-		onairtime = now # TODO
-		m = None
-		ts = timeslot
-		return PlaylistEvent(title, category, duration, endmode, onairtime, m, ts), now+duration
+    def schedule_one(self, mapping, rooms, spec, format, timeslot:TimeSlotSchedule, now):
+        ctx_dict = self.make_context_dict(rooms, spec, format, timeslot)
+        try: 
+            source = ctx_dict[self.source]
+        except ValueError:
+            print(f"invalid format string {self.source} in element on line {self.xml_elem.sourceline}")
+            raise 
+        duration = timeslot.end_ts - now
+        onairtime = now
+        ts = timeslot
+        return LiveEvent(timeslot.title, source, onairtime, duration, timeslot, recording=self.recording), now+duration
 
-	@classmethod
-	def from_xml(cls, elem):
-		source = elem.xpath('./@source')
-		if len(source) == 0:
-			raise RuntimeError(f"Missing source element on live; line {elem.sourceline}")
+    @classmethod
+    def from_xml(cls, elem):
+        source = elem.xpath('./@source')
+        if len(source) == 0:
+            raise RuntimeError(f"Missing source element on live; line {elem.sourceline}")
 
-		plenary = elem.xpath('./@plenary')
-		is_plenary = len(plenary) > 0 and plenary[0] == "true"
+        plenary = elem.xpath('./@plenary')
+        is_plenary = len(plenary) > 0 and plenary[0] == "true"
 
-		record = elem.xpath('./@record')
-		if len(record) > 0:
-			recordName = record[0]
-		else:
-			recordName = None
+        record = elem.xpath('./@record')
+        if len(record) > 0:
+            recordName = record[0]
+        else:
+            recordName = None
 
-		return cls(source[0], plenary=is_plenary, recording=recordName, xml_elem=elem)
+        return cls(source[0], plenary=is_plenary, recording=recordName, xml_elem=elem)
 
 class NotStreamedElement(ScheduleElement):
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
 
-	def schedule(self, mapping, rooms, spec, format, timeslot, now):
-		return dict(), timeslot.end_ts
-	@classmethod
-	def from_xml(cls, elem):
-		return cls()
+    def schedule(self, mapping, rooms, spec, format, timeslot, now):
+        return dict(), timeslot.end_ts
+    @classmethod
+    def from_xml(cls, elem):
+        return cls()
 
 SCHEDULE_ELEMENT_TYPES = dict(prerecorded=PrerecordedElement, live=LiveElement, notstreamed=NotStreamedElement)
 
 class EventFormat:
-	def __init__(self, cond, schedule):
-		self.cond = cond
-		self.schedules = schedule
+    def __init__(self, cond, schedule):
+        self.cond = cond
+        self.schedules = schedule
 
-	# attempts to schedule the given timeslot with the given spec
-	# if successful, returns a dict of room=>schedule elements. 
-	# if did not match precondition, returns None.
-	def schedule(self, scheduler, mapping, rooms, spec, timeslot):
-		if not self.cond(scheduler, timeslot):
-			return None
-		scheduled = dict()
-		now = timeslot.start_ts
-		for schedule_elem in self.schedules:
-			res, now = schedule_elem.schedule(mapping, rooms, spec, self, timeslot, now)
-			for room, evts in res.items():
-				if not room in scheduled.keys():
-					scheduled[room] = []
-				scheduled[room].extend(evts)
-		return scheduled
+    # attempts to schedule the given timeslot with the given spec
+    # if successful, returns a dict of room=>schedule elements. 
+    # if did not match precondition, returns None.
+    def schedule(self, scheduler, mapping, rooms, spec, timeslot):
+        if not self.cond(scheduler, timeslot):
+            return None
+        scheduled = dict()
+        now = timeslot.start_ts
+        for schedule_elem in self.schedules:
+            res, now = schedule_elem.schedule(mapping, rooms, spec, self, timeslot, now)
+            for room, evts in res.items():
+                if not room in scheduled.keys():
+                    scheduled[room] = []
+                scheduled[room].extend(evts)
+        return scheduled
 
-	@classmethod
-	def from_xml(cls, elem):
-		# =================
-		# condition parsing
-		# =================
-		# by default we always apply
-		cond = lambda sch, ts: True 
-		#helper for attribute parsing
-		def prop_cond(prop_xpath, if_cond, acc):
-			elems = elem.xpath(prop_xpath)
-			if len(elems) > 0:
-				return if_cond(acc, elems[0])
-			return acc
-		# name condition
-		cond = prop_cond("./@name", lambda cond, name: lambda sch, ts: ts.title == name and cond(sch, ts), cond)
+    @classmethod
+    def from_xml(cls, elem):
+        # =================
+        # condition parsing
+        # =================
+        # by default we always apply
+        cond = lambda sch, ts: True 
+        #helper for attribute parsing
+        def prop_cond(prop_xpath, if_cond, acc):
+            elems = elem.xpath(prop_xpath)
+            if len(elems) > 0:
+                return if_cond(acc, elems[0])
+            return acc
+        # name condition
+        cond = prop_cond("./@name", lambda cond, name: lambda sch, ts: ts.title == name and cond(sch, ts), cond)
 
-		def is_mirror(scheduler, ts, mirrored):
-			is_mirror = scheduler.is_mirror(ts)
-			return scheduler.is_mirror(ts) and mirrored
-		# mirror condition
-		cond = prop_cond("./@mirror", lambda cond, mirrored: lambda sch, ts: is_mirror(sch, ts, mirrored=="true") and cond(sch, ts), cond)
+        def is_mirror(scheduler, ts, mirrored):
+            is_mirror = scheduler.is_mirror(ts)
+            return scheduler.is_mirror(ts) and mirrored
+        # mirror condition
+        cond = prop_cond("./@mirror", lambda cond, mirrored: lambda sch, ts: is_mirror(sch, ts, mirrored=="true") and cond(sch, ts), cond)
 
-		# badges condition
-		badge_cond = elem.xpath("./@badge")
-		if len(badge_cond) > 0:
-			badge_req = badge_cond[0]
-			old_cond = cond
-			cond = lambda sch, ts: badge_req in ts.badges and old_cond(sch, ts)
+        # badges condition
+        badge_cond = elem.xpath("./@badge")
+        if len(badge_cond) > 0:
+            badge_req = badge_cond[0]
+            old_cond = cond
+            cond = lambda sch, ts: badge_req in ts.badges and old_cond(sch, ts)
 
-		# ====================
-		# event format parsing
-		# ====================
-		# mostly delegated to the elements
-		# looks up the element type in SCHEDULE_ELEMENT_TYPES and calls the from_xml classmethod on it with the child
-		schedule_elems = []
-		for child in elem:
-			if not child.tag in SCHEDULE_ELEMENT_TYPES:
-				raise RuntimeError(f"Invalid schedule element type {child.tag}")
-			schedule_elems.append(SCHEDULE_ELEMENT_TYPES[child.tag].from_xml(child))
+        # explicit event_id condition (last minute stuff)
+        event_id_cond = elem.xpath("./@event_id")
+        if len(event_id_cond) >0:
+            event_id_req = event_id_cond[0]
+            old_cond = cond
+            cond = lambda sch, ts: event_id_req == ts.event_id and old_cond(sch, ts)
 
-		return EventFormat(cond, schedule_elems)
+        # ====================
+        # event format parsing
+        # ====================
+        # mostly delegated to the elements
+        # looks up the element type in SCHEDULE_ELEMENT_TYPES and calls the from_xml classmethod on it with the child
+        schedule_elems = []
+        for child in elem:
+            if not child.tag in SCHEDULE_ELEMENT_TYPES:
+                raise RuntimeError(f"Invalid schedule element type {child.tag}")
+            schedule_elems.append(SCHEDULE_ELEMENT_TYPES[child.tag].from_xml(child))
 
+        return EventFormat(cond, schedule_elems)
+
+
+def merge_schedule_dicts(d1, d2):
+    out = dict()
+    for k1 in d1.keys():
+        out[k1] = []
+    for k2 in d2.keys():
+        out[k2] = []
+    for k1, v1 in d1.items():
+        out[k1].extend(v1)
+    for k2, v2 in d2.items():
+        out[k2].extend(v2)
+    return out
 
 class EventSpec:
-	def __init__(self, name, formats):
-		self.name = name
-		self.formats = formats
+    def __init__(self, name, formats):
+        self.name = name
+        self.formats = formats
+        self.compact_recorded = False
 
-	def schedule(self, scheduler, mapping, rooms, timeslot):
-		for format in self.formats:
-			result = format.schedule(scheduler, mapping, rooms, self, timeslot)
-			if result != None:
-				return result
-		raise RuntimeError(f"Failure to schedule timeslot {timeslot.event_id}; formatters: {self.formats}!")
-	def has_zoom(self):
-		return hasattr(self, 'zoom')
+    def schedule(self, scheduler, mapping, rooms, subevent):
+        schedule = dict()
+        # TODO: compaction will break excitingly in the case of plenaries. Don't combine them.
+        for ts in subevent.timeslots:
+            schedule = merge_schedule_dicts(schedule, self.schedule_timeslot(scheduler, mapping, rooms, ts))
+        if self.compact_recorded:
+            for room, evts in schedule.items():
+                now = None
+                evts.sort(key=lambda evt: evt.start)
+                evt = None
+                offset = datetime.timedelta()
+                for evt in evts:
+                    if now != None:
+                        offset = evt.start - now 
+                        evt.start = now
+                        offset -= evt.offer_time(offset)
+                        now = now + evt.duration
+                    else:
+                        now = evt.start + evt.duration
+                if evt != None:
+                    evt.duration += offset
+        return schedule
 
-	def get_zoom(self, room):
-		if not self.has_zoom():
-			raise RuntimeError("Tried to get the zoom instance for an event without one")
-		for zoom_instance in self.zoom:
-			if zoom_instance.room == None or zoom_instance.room == room.name:
-				return zoom_instance
-		raise RuntimeError("No zoom instance found when required!")
-	@classmethod
-	def from_xml(cls, elem):
-		formats = list(map(EventFormat.from_xml, elem.xpath("./format")))
-		out = cls(elem.xpath("./@name")[0], formats)
+    def schedule_timeslot(self, scheduler, mapping, rooms, timeslot):
+        for format in self.formats:
+            result = format.schedule(scheduler, mapping, rooms, self, timeslot)
+            if result != None:
+                return result
+        raise RuntimeError(f"Failure to schedule timeslot {timeslot.event_id}; formatters: {self.formats}!")
+    def has_zoom(self):
+        return hasattr(self, 'zoom')
 
+    def get_zoom(self, room):
+        if not self.has_zoom():
+            raise RuntimeError("Tried to get the zoom instance for an event without one")
+        for zoom_instance in self.zoom:
+            if zoom_instance.room == None or zoom_instance.room == room.name:
+                return zoom_instance
+        raise RuntimeError("No zoom instance found when required!")
+    @classmethod
+    def from_xml(cls, elem):
+        formats = list(map(EventFormat.from_xml, elem.xpath("./format")))
+        out = cls(elem.xpath("./@name")[0], formats)
+        zoom_elems = elem.xpath("./zoom")
+        if len(zoom_elems) > 0:
+            out.zoom = [ZoomInfo.from_xml(zoom_elem) for zoom_elem in zoom_elems]
 
-		zoom_elems = elem.xpath("./zoom")
-		if len(zoom_elems) > 0:
-			out.zoom = [ZoomInfo.from_xml(zoom_elem) for zoom_elem in zoom_elems]
-		return out
-
+        compact_recorded = elem.xpath("./@compact_recorded")
+        if len(compact_recorded) > 0 and compact_recorded[0] == 'true':
+            out.compact_recorded = True
+        
+        return out
 
 class Scheduler:
-	def __init__(self, rooms, events, is_mirror = lambda ts: False):
-		self.rooms = rooms 
-		self.events = events
-		self.events_map = dict()
-		for event_spec in self.events:
-			if not event_spec.name in self.events_map:
-				self.events_map[event_spec.name] = event_spec
-			else:
-				raise RuntimeError(f"Repeated definition of event ${event_spec.name}!")
+    def __init__(self, rooms, events, is_mirror = lambda ts: False):
+        self.rooms = rooms 
+        self.events = events
+        self.events_map = dict()
+        for event_spec in self.events:
+            if not event_spec.name in self.events_map:
+                self.events_map[event_spec.name] = event_spec
+            else:
+                raise RuntimeError(f"Repeated definition of event ${event_spec.name}!")
 
-		self.is_mirror = is_mirror
+        self.is_mirror = is_mirror
 
-	def schedule(self, mapping, timeslot):
-		scheduler = None 
-		for track in timeslot.tracks:
-			if track in self.events_map:
-				scheduler = self.events_map[track]
-				break
-		if scheduler == None:
-			raise RuntimeError(f"Was unable to find a scheduler for event {timeslot.event_id} in tracks {timeslot.tracks}!")
-		return scheduler.schedule(self, mapping, self.rooms, timeslot)
+    def schedule(self, mapping, subevent):
+        scheduler = None
+        for track in subevent.tracks:
+            if track in self.events_map:
+                scheduler = self.events_map[track]
+                break
+        if scheduler == None:
+            raise RuntimeError(f"Was unable to find a scheduler for event {subevent.subevent_id} in tracks {subevent.tracks}!")
+        return scheduler.schedule(self, mapping, self.rooms, subevent)
 
-	@classmethod
-	def from_xml(cls, elem):
-		mirroring_els = elem.xpath("./mirroring")
-		is_mirror = lambda ts: False
-		if len(mirroring_els) > 0:
-			mirroring_el = mirroring_els[0]
-			# find when the main track starts and ends
-			tz = TZ.gettz(mirroring_el.xpath("./@timezone")[0])
-			main_start = datetime.time.fromisoformat(mirroring_el.xpath("./@start")[0]).replace(tzinfo=tz)
-			main_end = datetime.time.fromisoformat(mirroring_el.xpath("./@end")[0]).replace(tzinfo=tz)
-			def is_mirror_fun(ts):
-				out = ts.start_ts.timetz() <= main_start or ts.end_ts.timetz() >= main_end
-				return out
-			is_mirror = is_mirror_fun
-		rooms = list(map(EventRoom.from_xml, elem.xpath(".//rooms/room")))
-		events = list(map(EventSpec.from_xml, elem.xpath(".//events/event")))
-		return cls(rooms, events, is_mirror)
+    @classmethod
+    def from_xml(cls, elem):
+        mirroring_els = elem.xpath("./mirroring")
+        is_mirror = lambda ts: False
+        if len(mirroring_els) > 0:
+            mirroring_el = mirroring_els[0]
+            # find when the main track starts and ends
+            tz = TZ.gettz(mirroring_el.xpath("./@timezone")[0])
+            main_start = datetime.time.fromisoformat(mirroring_el.xpath("./@start")[0]).replace(tzinfo=tz)
+            main_end = datetime.time.fromisoformat(mirroring_el.xpath("./@end")[0]).replace(tzinfo=tz)
+            def is_mirror_fun(ts):
+                out = ts.start_ts.timetz() <= main_start or ts.end_ts.timetz() >= main_end
+                return out
+            is_mirror = is_mirror_fun
+        rooms = list(map(EventRoom.from_xml, elem.xpath(".//rooms/room")))
+        events = list(map(EventSpec.from_xml, elem.xpath(".//events/event")))
+        return cls(rooms, events, is_mirror)
 
         
 
@@ -615,11 +708,6 @@ if __name__ == '__main__':
     
     rooms = [base_room + r for r in room_ids]
 
-    mapping_xml = ET.parse("mapping.xml")
-
-    # dictonary for event_id to confpub id mapping
-    event_mappings = dict(map(lambda match: (match.event_id, match)
-                              , map(lambda m: PrerecordedVideo.mapping_from_xml(m), mapping_xml.getroot())))
 
     schedule_xml = ET.parse("schedule.xml")
 
@@ -627,29 +715,39 @@ if __name__ == '__main__':
 
     print(f"for timezone {schedule_timezone}")
 
-    # get all the time slots from all the subevents under events
-    timeslots_xml = schedule_xml.getroot().xpath("//timeslot[event_id]")
 
-    # we filter on only those timeslots that have an event_id and a badges node
-    timeslots = []
-    for ts in timeslots_xml:
-        timeslots.append(TimeSlotSchedule.from_xml(schedule_timezone, ts))
+    subevents = list(map(lambda el: SubeventSchedule.from_xml(schedule_timezone, el), schedule_xml.xpath("//subevent[subevent_id]")))
+
 
     mapping = VideoMapping.from_files("mapping.xml", "asset-info.csv")
     parser = ET.XMLParser(remove_comments=True)
     scheduler = Scheduler.from_xml(ET.parse("liveinfo.xml", parser = parser))
 
     schedule = dict((room, []) for room in rooms)
-    for ts in timeslots:
-    	if not ts.room in rooms:
-    		continue
-    	for k,v in scheduler.schedule(mapping, ts).items():
-    		schedule[k].extend(v)
+    for se in subevents:
+        if not se.room in rooms:
+            continue
+        for k,v in scheduler.schedule(mapping, se).items():
+            schedule[k].extend(v)
     for k,v in schedule.items():
-    	print(k)
-    	v.sort(key=lambda evt: evt.onairtime)
-    	for it in v:
-    		print(it)
+        print(k)
+        v.sort(key=lambda evt: evt.start)
+        for it in v:
+            print(it)
+
+    
+    mapping_xml = ET.parse("mapping.xml")
+
+    # dictonary for event_id to confpub id mapping
+    event_mappings = dict(map(lambda match: (match.event_id, match)
+                              , map(lambda m: PrerecordedVideo.mapping_from_xml(m), mapping_xml.getroot())))
+
+    # get all the time slots from all the subevents under events
+    timeslots_xml = schedule_xml.getroot().xpath("//timeslot[event_id]")
+    # we filter on only those timeslots that have an event_id and a badges node
+    timeslots = []
+    for ts in timeslots_xml:
+        timeslots.append(TimeSlotSchedule.from_xml(schedule_timezone, ts))
 
     # TODO: actually assemble the schedule
     # TODO: insert filler elements
