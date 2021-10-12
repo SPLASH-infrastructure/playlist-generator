@@ -13,7 +13,7 @@
     <confpub id="oopsla21main-p86-p"/>
   </match>
   <match event_id="6f69f227-02b2-4a33-941a-f0f43b49ac3e">
-    <missing/>
+    <confpub id="onward21papers-p3-p"/>
   </match>
   <match event_id="e6d9543d-594e-4e03-83e7-6464df6cc24e">
     <confpub id="sas21main-id14-p"/>
@@ -40,7 +40,7 @@
     <confpub id="splashcomp21src-id10-p"/>
   </match>
   <match event_id="181db6e0-3cfe-45c3-98cd-f72b64ec7f58">
-    <missing/>
+    <manual asset="aplas-keynote-2"/>
   </match>
   <match event_id="ebe80fc8-3b07-494a-a4ca-22e80b3c5b6e">
     <confpub id="oopsla21main-p14-p"/>
@@ -49,7 +49,7 @@
     <confpub id="splashcomp21src-id15-p"/>
   </match>
   <match event_id="ed615e6c-703b-40b2-adf5-3ba0be78f021">
-    <confpub id="splashws21slemain-p40-p"/>
+    <confpub id="onward21papers-p13-p"/>
   </match>
   <match event_id="1608901f-c7e7-4e37-b5d4-9d39b4e807b6">
     <missing/>
@@ -94,7 +94,7 @@
     <confpub id="splashws21slemain-p40-p"/>
   </match>
   <match event_id="69c1593f-353c-46f0-85b2-479ddbd22f12">
-    <missing/>
+    <confpub id="onward21essays-id2-p"/>
   </match>
   <match event_id="5e8f5b7a-f99e-4413-9421-293ae8506852">
     <confpub id="aplas21main-p25-p"/>
@@ -106,7 +106,7 @@
     <confpub id="splashws21gpcemain-p18-p"/>
   </match>
   <match event_id="f77a59ba-575f-4997-a122-2336da8c6a72">
-    <missing/>
+    <confpub id="onward21papers-p10-p"/>
   </match>
   <match event_id="984afe45-291b-4657-9b18-5d36553b8fcb">
     <confpub id="oopsla21main-p107-p"/>
@@ -175,7 +175,7 @@
     <confpub id="oopsla21main-p121-p"/>
   </match>
   <match event_id="479c9271-75b9-4332-a52e-2443916ed203">
-    <missing/>
+    <confpub id="splashcomp21foreword-fm001-p"/>
   </match>
   <match event_id="52162c2c-b58f-4bf6-8bfd-aa4df8dc3e4b">
     <missing/>
@@ -241,7 +241,7 @@
     <missing/>
   </match>
   <match event_id="ccbe3853-1f7d-4e58-9239-01fa953d1723">
-    <missing/>
+    <confpub id="onward21essays-id4-p"/>
   </match>
   <match event_id="15828cbf-e1ac-4b4b-b10a-bee0b57e8722">
     <confpub id="splashcomp21src-id5-p"/>
@@ -280,7 +280,7 @@
     <missing/>
   </match>
   <match event_id="2013a3de-a0a1-4586-91cf-a5c3d4b998b6">
-    <missing/>
+    <confpub id="onward21papers-p11-p"/>
   </match>
   <match event_id="44632a19-da24-4769-9abf-fb6b1a1b8dab">
     <confpub id="oopsla21main-p410-p"/>
@@ -295,7 +295,7 @@
     <confpub id="oopsla21main-p476-p"/>
   </match>
   <match event_id="dcfc0f60-1f4f-4dfa-bbaf-2da4274d67cc">
-    <missing/>
+    <manual asset="aplas-keynote-1"/>
   </match>
   <match event_id="60f4fa55-a96f-4db6-9954-a94ad5243bcc">
     <confpub id="sas21main-id31-p"/>
@@ -322,10 +322,10 @@
     <missing/>
   </match>
   <match event_id="d9d6e0ac-f9e4-415c-9e4a-5ff0f2802def">
-    <missing/>
+    <confpub id="onward21essays-id6-p"/>
   </match>
   <match event_id="0f80dc7c-040a-4764-a133-5e55b5519014">
-    <missing/>
+    <confpub id="onward21papers-p4-p"/>
   </match>
   <match event_id="7e72ede0-84a8-45df-97b4-f2b728e7a48d">
     <confpub id="oopsla21main-p75-p"/>
@@ -358,13 +358,13 @@
     <confpub id="splashcomp21src-id13-p"/>
   </match>
   <match event_id="9f76f988-b925-4637-b537-a889063cde4e">
-    <missing/>
+    <confpub id="onward21papers-p12-p"/>
   </match>
   <match event_id="2b68ac11-de3a-4514-9aab-1d569dc4be5c">
     <missing/>
   </match>
   <match event_id="6a7aa849-d624-401f-89d1-bcd47a266aaf">
-    <missing/>
+    <confpub id="splashcomp21foreword-fm001-p"/>
   </match>
   <match event_id="e78d6285-c5ed-4a96-8242-9315d1c25ef4">
     <confpub id="oopsla21main-p194-p"/>
@@ -379,7 +379,7 @@
     <confpub id="oopsla21main-p170-p"/>
   </match>
   <match event_id="5d3ee16e-9b3a-4ef2-8613-7460b6b8831b">
-    <missing/>
+    <confpub id="onward21essays-id3-p"/>
   </match>
   <match event_id="7cec55c1-6dca-4fb5-8296-9086c8d221a3">
     <missing/>
@@ -472,7 +472,7 @@
     <confpub id="oopsla21main-p190-p"/>
   </match>
   <match event_id="a7c8cbe2-0dca-4ddf-95b1-1261b79c3555">
-    <missing/>
+    <confpub id="onward21papers-p7-p"/>
   </match>
   <match event_id="f767b573-d238-483e-bafc-2f0adec651ed">
     <confpub id="oopsla21main-p301-p"/>

@@ -146,6 +146,12 @@ class PrerecordedEvent(ConferenceEvent):
             self.duration += stretch
             return stretch
         return datetime.timedelta()
+    
+    def make_playlist_element(self):
+        if self.asset == None: 
+            raise RuntimeError(f"Trying to generate a playlist with missing asset for {self.title} and event id {self.timeslot.event_id} in track {self.timeslot.tracks}")
+        return PlaylistEvent(self.asset.asset_name, "PROGRAM", self.duration, "FOLLOW", self.start, None, self.timeslot)
+    
     def __str__(self):
         return f"Prerecorded({self.title}, {self.asset}, {self.start} for {self.duration}, in {self.timeslot})"
 class LiveEvent(ConferenceEvent):
@@ -156,158 +162,15 @@ class LiveEvent(ConferenceEvent):
         self.duration = duration
         self.timeslot = timeslot
         self.recording = recording
+
     def offer_time(self, offered):
         return datetime.timedelta()
+    
+    def make_playlist_element(self):
+        return PlaylistEvent(self.source.remote_stream(), "LIVE", self.duration, "FOLLOW", self.start, None, self.timeslot, self.recording)
+    
     def __str__(self):
         return f"Live({self.title}, {self.source}, {self.start} for {self.duration}, in {self.timeslot})"
-
-class PlaylistEvent:
-    """
-    An example event
-      <event>
-         <category>LIVE</category>
-         <duration>00:15:00:00</duration>
-         <endmode>FOLLOW</endmode>
-         <ignoreincomingscte35signals>false</ignoreincomingscte35signals>
-         <maxExtendedDuration>00:00:00:00</maxExtendedDuration>
-         <offset>00:00:00:00</offset>
-         <onairtime>2021-09-20T21:01:59:13</onairtime>
-         <playoutswitchlist/>
-         <recording>false</recording>
-         <recordingPattern>$(title)</recordingPattern>
-         <scte35list/>
-         <secondaryeventlist/>
-         <som>00:00:00:00</som>
-         <startmode>FOLLOW</startmode>
-         <title>live-demo</title>
-         <twitchrpclist/>
-         <untimedAdList/>
-         <voiceoverlist/>
-      </event>
-    """
-    def __init__(self, title, category, duration, endmode, onairtime, m, ts):
-        self.title = title
-        self.category = category
-        self.duration = duration
-        self.endmode = endmode
-        self.onairtime = onairtime
-
-        self.m = m
-        self.ts = ts
-
-    def __str__(self):
-        return f"PlaylistEvent({self.title}; {self.onairtime} for {self.duration}; for {self.ts})"
-
-    def to_xml(self):
-        """
-        This returns the etree object
-        """
-        # The base element
-        event = ET.Element("event")
-
-        category = ET.Element("category")
-        category.text = self.category
-
-        duration = ET.Element("duration")
-        duration.text = str(self.duration)
-        
-        title = ET.Element("title")
-        title.text = self.title
-        if not self.title:
-            print(f"Warning: {self.ts.event_id} has an empty title")
-
-        onairtime = ET.Element("onairtime")
-        onairtime.text = self.onairtime.isoformat(timespec='seconds')
-
-        recordingpat = ET.Element("recordingpattern")
-        recordingpat.text = "$(title)" # TODO: what is this, how is it computed
-                                       # I am guessing it is be the confpub id value from the mapping xml?
-        # Bunch of defaults
-        offset = ET.Element("offset")
-        offset.text = "00:00:00:00"
-        endmode = ET.Element("endmode")
-        endmode.text = "FOLLOW"
-        igincomsig = ET.Element("ignoreincomingscte35signals")
-        igincomsig_text = "false"
-
-        maxExtendedDuration = ET.Element("maxExtendedDuration")
-        maxExtendedDuration.text = "00:00:00:00"
-
-        scte35list = ET.Element("scte35list")
-        secondaryeventlist = ET.Element("secondaryeventlist")
-
-        som = ET.Element("som")
-        som.text = "00:00:00:00"
-        
-        startmode = ET.Element("startmode") ## TODO: I am assuming this is default
-        startmode.text = "FOLLOW"
-
-        twitchrpclist = ET.Element("twitchrpclist")
-        untimedAdList = ET.Element("untimedAdList")
-        voiceoverlist = ET.Element("voiceoverlist")
-        
-        
-        playoutswithlist = ET.Element("playoutswithlist")
-        recording = ET.Element("recording") # TODO: Confirm! if category is not live then we dont have to record,
-                                            # or do we record everything or there are some events that we won't record?
-        recording.text = "true"
-
-        
-        event.extend (
-              [ category, title, duration, onairtime, recordingpat ]
-            + [ offset, endmode, igincomsig, maxExtendedDuration, scte35list
-                , som, playoutswithlist, startmode, recording
-                , twitchrpclist, untimedAdList, voiceoverlist ]
-        )
-        
-        return event
-
-def gen_playlist_event(m, ts):
-    """
-    Given a event mapping and a schedule timeslot generates a playlist event
-    """    
-    title = m.title
-    category = "LIVE" # FIXME
-    duration = ts.end_ts - ts.start_ts
-    endmode = "FOLLOW" # TODO: Confirm this
-    onairtime = ts.start_ts
-        
-    return PlaylistEvent(title, category, duration, endmode, onairtime, m, ts)
-
-
-def window(iterable, size):
-    """
-    sliding window over an iterable
-    src: https://stackoverflow.com/questions/6822725/rolling-or-sliding-window-iterator 
-    """
-    iters = tee(iterable, size)
-    for i in range(1, size):
-        for each in iters[i:]:
-            next(each, None)
-    return list(zip(*iters))
-
-
-def gen_fillers(room_id, timeslots):
-    """
-    Takes a list of time ordered timeslot if any two events have a gap then we generate a filler event to fit in the gap
-    """
-    filler_threshold = (1, 2) # generate a filler only if the gap is between this duration.
-    
-    adjacent_ts = list(window(timeslots, 2))
-    fillers = []
-    for (e1, e2) in adjacent_ts:
-        if e2.onairtime < e1.onairtime + e1.duration:
-            print(f"Warning: Overlapping events {e1.ts.title} {e2.ts.title}")
-        if e2.onairtime > e1.onairtime + e1.duration: # TODO may be the diff should be between a threshold?
-            print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.title} and {e2.title}")
-            fillers.append(PlaylistEvent("FILLER_"+room_id
-                                         , "FILLER" # TODO Fillers won't be live... ?
-                                         , e2.onairtime - (e1.onairtime + e1.duration)
-                                         , e1.endmode
-                                         , e1.onairtime + e1.duration, # start after the prev event ends
-                                         None, # We don't have a mapping or timeslot xml object for fillers
-                                         None))
-    return fillers
 
 def parse_confpub(el):
     confpub_id = el.xpath("./@id")[0]
@@ -361,6 +224,9 @@ class EventRoom:
         self.live = live_stream
         self.filler = filler_stream
 
+    def remote_stream(self):
+        return self.live
+
     @classmethod
     def from_xml(cls, elem):
         return cls(elem.xpath("./@name")[0], elem.xpath("./@live")[0], elem.xpath("./@filler")[0])
@@ -370,6 +236,10 @@ class ZoomInfo:
         self.room = room
         self.url = url
         self.stream = stream
+
+    def remote_stream(self):
+        return self.stream 
+
     @classmethod
     def from_xml(cls, elem):
         room_elem = elem.xpath("./@room")
@@ -446,6 +316,7 @@ class PrerecordedElement(ScheduleElement):
         plenary = elem.xpath('./@plenary')
         is_plenary = len(plenary) > 0 and plenary[0] == "true"
         return cls(asset, plenary=is_plenary)
+
 
 class LiveElement(ScheduleElement): 
     def __init__(self, source, plenary=False, recording=None, xml_elem=None):
@@ -678,6 +549,153 @@ class Scheduler:
         events = list(map(EventSpec.from_xml, elem.xpath(".//events/event")))
         return cls(rooms, events, is_mirror)
 
+
+class PlaylistEvent:
+    """
+    An example event
+      <event>
+         <category>LIVE</category>
+         <duration>00:15:00:00</duration>
+         <endmode>FOLLOW</endmode>
+         <ignoreincomingscte35signals>false</ignoreincomingscte35signals>
+         <maxExtendedDuration>00:00:00:00</maxExtendedDuration>
+         <offset>00:00:00:00</offset>
+         <onairtime>2021-09-20T21:01:59:13</onairtime>
+         <playoutswitchlist/>
+         <recording>false</recording>
+         <recordingPattern>$(title)</recordingPattern>
+         <scte35list/>
+         <secondaryeventlist/>
+         <som>00:00:00:00</som>
+         <startmode>FOLLOW</startmode>
+         <title>live-demo</title>
+         <twitchrpclist/>
+         <untimedAdList/>
+         <voiceoverlist/>
+      </event>
+    """
+    def __init__(self, title, category, duration, endmode, onairtime, m, ts, recording=None):
+        self.title = title
+        self.category = category
+        self.duration = duration
+        self.endmode = endmode
+        self.onairtime = onairtime
+        self.recording = recording
+
+        self.m = m
+        self.ts = ts
+
+    def __str__(self):
+        return f"PlaylistEvent({self.title}; {self.onairtime} for {self.duration}; for {self.ts})"
+
+    def to_xml(self):
+        """
+        This returns the etree object
+        """
+        # The base element
+        event = ET.Element("event")
+
+        category = ET.Element("category")
+        category.text = self.category
+
+        duration = ET.Element("duration")
+        duration.text = str(self.duration)
+        
+        title = ET.Element("title")
+        title.text = self.title
+        if not self.title:
+            print(f"Warning: {self.ts.event_id} has an empty title")
+
+        onairtime = ET.Element("onairtime")
+        onairtime.text = self.onairtime.isoformat(timespec='seconds')
+
+        recordingpat = ET.Element("recordingpattern")
+        recordingpat.text = "$(title)" # TODO: what is this, how is it computed
+                                       # I am guessing it is be the confpub id value from the mapping xml?
+        # Bunch of defaults
+        offset = ET.Element("offset")
+        offset.text = "00:00:00:00"
+        endmode = ET.Element("endmode")
+        endmode.text = "FOLLOW"
+        igincomsig = ET.Element("ignoreincomingscte35signals")
+        igincomsig_text = "false"
+
+        maxExtendedDuration = ET.Element("maxExtendedDuration")
+        maxExtendedDuration.text = "00:00:00:00"
+
+        scte35list = ET.Element("scte35list")
+        secondaryeventlist = ET.Element("secondaryeventlist")
+
+        som = ET.Element("som")
+        som.text = "00:00:00:00"
+        
+        startmode = ET.Element("startmode") ## TODO: I am assuming this is default
+        startmode.text = "FOLLOW"
+
+        twitchrpclist = ET.Element("twitchrpclist")
+        untimedAdList = ET.Element("untimedAdList")
+        voiceoverlist = ET.Element("voiceoverlist")
+        
+        
+        playoutswithlist = ET.Element("playoutswithlist")
+        recording = ET.Element("recording") # TODO: Confirm! if category is not live then we dont have to record,
+                                            # or do we record everything or there are some events that we won't record?
+        recording.text = "true"
+
+        
+        event.extend (
+              [ category, title, duration, onairtime, recordingpat ]
+            + [ offset, endmode, igincomsig, maxExtendedDuration, scte35list
+                , som, playoutswithlist, startmode, recording
+                , twitchrpclist, untimedAdList, voiceoverlist ]
+        )
+        
+        return event
+
+
+def gen_playlist_event(m, ts):
+    """
+    Given a event mapping and a schedule timeslot generates a playlist event
+    """    
+    title = m.title
+    category = "LIVE" # FIXME
+    duration = ts.end_ts - ts.start_ts
+    endmode = "FOLLOW" # TODO: Confirm this
+    onairtime = ts.start_ts
+        
+    return PlaylistEvent(title, category, duration, endmode, onairtime, m, ts)
+
+
+def window(iterable, size):
+    """
+    sliding window over an iterable
+    src: https://stackoverflow.com/questions/6822725/rolling-or-sliding-window-iterator 
+    """
+    iters = tee(iterable, size)
+    for i in range(1, size):
+        for each in iters[i:]:
+            next(each, None)
+    return list(zip(*iters))
+
+def gen_fillers(room_id, timeslots):
+    """
+    Takes a list of time ordered timeslot if any two events have a gap then we generate a filler event to fit in the gap
+    """
+    adjacent_ts = list(window(timeslots, 2))
+    fillers = []
+    for (e1, e2) in adjacent_ts:
+        if e2.onairtime < e1.onairtime + e1.duration:
+            print(f"Warning: Overlapping events {e1.ts.title} {e2.ts.title}")
+        if e2.onairtime > e1.onairtime + e1.duration: # TODO may be the diff should be between a threshold?
+            print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.title} and {e2.title}")
+            fillers.append(PlaylistEvent("FILLER_"+room_id
+                                         , "LIVE" # TODO Fillers won't be live... ?
+                                         , e2.onairtime - (e1.onairtime + e1.duration)
+                                         , e1.endmode
+                                         , e1.onairtime + e1.duration, # start after the prev event ends
+                                         None, # We don't have a mapping or timeslot xml object for fillers
+                                         None))
+    return fillers
         
 
     
@@ -718,59 +736,25 @@ if __name__ == '__main__':
 
     subevents = list(map(lambda el: SubeventSchedule.from_xml(schedule_timezone, el), schedule_xml.xpath("//subevent[subevent_id]")))
 
-
     mapping = VideoMapping.from_files("mapping.xml", "asset-info.csv")
     parser = ET.XMLParser(remove_comments=True)
     scheduler = Scheduler.from_xml(ET.parse("liveinfo.xml", parser = parser))
 
-    schedule = dict((room, []) for room in rooms)
+    schedule = dict()
     for se in subevents:
         if not se.room in rooms:
             continue
-        for k,v in scheduler.schedule(mapping, se).items():
-            schedule[k].extend(v)
-    for k,v in schedule.items():
-        print(k)
-        v.sort(key=lambda evt: evt.start)
-        for it in v:
-            print(it)
-
+        schedule = merge_schedule_dicts(schedule, scheduler.schedule(mapping, se))
     
-    mapping_xml = ET.parse("mapping.xml")
+    room_playlists = dict()
+    for room, evts in schedule.items():
+        evts.sort(key=lambda evt: evt.start)
+        room_playlists[room] = list(map(lambda evt: evt.make_playlist_element(), evts))
 
-    # dictonary for event_id to confpub id mapping
-    event_mappings = dict(map(lambda match: (match.event_id, match)
-                              , map(lambda m: PrerecordedVideo.mapping_from_xml(m), mapping_xml.getroot())))
-
-    # get all the time slots from all the subevents under events
-    timeslots_xml = schedule_xml.getroot().xpath("//timeslot[event_id]")
-    # we filter on only those timeslots that have an event_id and a badges node
-    timeslots = []
-    for ts in timeslots_xml:
-        timeslots.append(TimeSlotSchedule.from_xml(schedule_timezone, ts))
-
-    # TODO: actually assemble the schedule
     # TODO: insert filler elements
-
-    # mapping between even_ids and schedule timeslots
-    timeslots_mappings = dict(map(lambda x: (x.event_id, x), timeslots))
-    
-    print(f"Parsed Schedule({len(timeslots)}) and event mappings({len(event_mappings)})")
-
-    x = len (event_mappings.keys() - timeslots_mappings.keys())    
-    if x:
-        print(f"Warning: There are {x} events in event mappings that are not scheduled")
-
-    x = len (timeslots_mappings.keys() - event_mappings.keys()) 
-    if x:
-        print(f"Warning: There are {x} events in the schedule but not in event mappings")
-            
     for r in room_ids:
         current_room = base_room + r
         print(f"Generating Playlist for {current_room}")
-        # filter timeslots for current room
-        timeslots_mapping_for_room = dict(filter(lambda x: x[1].room == current_room, timeslots_mappings.items()))
-
         # a single event_id can appear more than once 
         # (they're duplicated for mirrored events)
         # so we can't build a map based on them. Only slot_ids are unique.
@@ -780,7 +764,7 @@ if __name__ == '__main__':
         eventlist = ET.Element("eventlist")
         eventlist.set("timeinmilliseconds", "false")
         root.append(eventlist)
-        playlist_xml = map (PlaylistEvent.to_xml, generate_playlist(event_mappings, filter(lambda ts: ts.room == base_room + r, timeslots)))
+        playlist_xml = map (PlaylistEvent.to_xml, room_playlists[current_room])
         root.extend(list(playlist_xml))
 
         # write it to a file
