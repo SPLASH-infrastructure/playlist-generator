@@ -186,6 +186,18 @@
 			</format>
 			<format event_id="1953b8e6-dbc4-41de-82f3-767184e4791d">
 				<live source="zoom"  record="{timeslot.event_id}"/>
+			</format> 
+			<format event_id="65df9844-070c-4122-adea-ff24e69cdcd3" mirror="true">
+				<live source="zoom"  record="{timeslot.event_id}"/>
+			</format>
+			<format event_id="65df9844-070c-4122-adea-ff24e69cdcd3">
+				<prerecorded source="mirror"/>
+			</format>
+			<format event_id="5c03a4dc-23f5-48ee-86f6-f3a571c4d6d1" mirror="true">
+				<live source="zoom"  record="{timeslot.event_id}"/>
+			</format>
+			<format event_id="5c03a4dc-23f5-48ee-86f6-f3a571c4d6d1">
+				<prerecorded source="mirror"/>
 			</format>
 			<format name="Discussion, Questions and Answers">
 				<live source="zoom"/>
