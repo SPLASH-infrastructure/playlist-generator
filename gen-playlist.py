@@ -432,9 +432,10 @@ class NotStreamedElement(ScheduleElement):
 SCHEDULE_ELEMENT_TYPES = dict(prerecorded=PrerecordedElement, live=LiveElement, notstreamed=NotStreamedElement)
 
 class EventFormat:
-    def __init__(self, cond, schedule):
+    def __init__(self, cond, schedule, name=""):
         self.cond = cond
         self.schedules = schedule
+        self.name = name
 
     # attempts to schedule the given timeslot with the given spec
     # if successful, returns a dict of room=>schedule elements. 
@@ -442,6 +443,7 @@ class EventFormat:
     def schedule(self, scheduler, mapping, rooms, spec, timeslot):
         if not self.cond(scheduler, timeslot):
             return None
+
         scheduled = dict()
         now = timeslot.start_ts
         for schedule_elem in self.schedules:
@@ -494,6 +496,17 @@ class EventFormat:
             slot_id_req = slot_id_cond[0]
             old_cond = cond
             cond = lambda sch, ts: slot_id_req == ts.slot_id and old_cond(sch, ts)
+            
+        subevent_id_cond = elem.xpath("./@subevent_id")
+        if len(subevent_id_cond) > 0:
+            subevent_id_req = subevent_id_cond[0]
+            old_cond = cond
+            def new_cond(sch,ts):
+                res_a = subevent_id_req == ts.subevent.subevent_id
+                res_b = old_cond(sch, ts)
+                print(f"applies to {ts.event_id}? {res_a} and {res_b}")
+                return res_a and res_b
+            cond = new_cond
 
         # ====================
         # event format parsing
@@ -506,7 +519,12 @@ class EventFormat:
                 raise RuntimeError(f"Invalid schedule element type {child.tag}")
             schedule_elems.append(SCHEDULE_ELEMENT_TYPES[child.tag].from_xml(child))
 
-        return EventFormat(cond, schedule_elems)
+        name = ""
+        name_els = elem.xpath("./@format_name")
+        if len(name_els) > 0:
+            name = name_els[0]
+
+        return EventFormat(cond, schedule_elems, name=name)
 
 
 def merge_schedule_dicts(d1, d2):
