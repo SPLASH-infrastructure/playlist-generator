@@ -6,7 +6,7 @@
 		<room name="Swissotel Chicago | Zurich C" live="STREAM_C" filler="FILLER_C"/>
 	</rooms>
 	<events>
-		<event name="Research Papers">
+		<event name="Research Papers" compact_recorded="true">
 			<zoom url="" stream="APLAS_ZOOM"/>
 			<format name="Q&amp;A and discussion">
 				<live source="zoom"/>
@@ -83,7 +83,7 @@
 				<live source="room" plenary="true" record="{timeslot.event_id}"/>
 			</format>
 		</event>
-		<event name="Onward! Papers">
+		<event name="Onward! Papers" compact_recorded="true">
 			<zoom url="" stream="ONWARD_ZOOM"/>
 			<format event_id="645df455-35ac-42ea-bfb9-de49bf84c5d7" mirror="true">
 				<prerecorded source="mirror"/>
