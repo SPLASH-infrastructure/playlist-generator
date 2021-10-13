@@ -53,6 +53,7 @@
 		</event>
 		<event name="Opening">
 			<zoom url="" stream="OOPSLA_ZURICH_A_ZOOM"/>
+			<format event_id="8e548b3d-7e89-4c53-ab08-185cc101f9b0"><notstreamed/></format>
 			<format event_id="479c9271-75b9-4332-a52e-2443916ed203"><notstreamed/></format>
 			<format mirror="true"><prerecorded source="mirror"/></format>
 			<format><live plenary="true" source="room" record="{timeslot.event_id}"/></format>
@@ -90,20 +91,26 @@
 			<format event_id="645df455-35ac-42ea-bfb9-de49bf84c5d7">
 				<live source="zoom" record="{timeslot.event_id}"/>
 			</format>
-			<zoom url="" stream="ONWARD_ZOOM"/>
 			<format event_id="35abc255-2ef4-4837-af5f-9c0784a6fcca" mirror="true">
 				<prerecorded source="mirror"/>
 			</format>
 			<format event_id="35abc255-2ef4-4837-af5f-9c0784a6fcca">
 				<live source="zoom" record="{timeslot.event_id}"/>
 			</format>
-			<format>
-				<prerecorded/>
+			<format mirror="true" name="Discussion, Questions and Answers">
+				<live source="zoom"/>
+			</format>
+			<format name="Discussion, Questions and Answers">
 				<live source="room"/>
 			</format>
 			<format mirror="true">
 				<prerecorded/>
-				<live source="zoom"/>
+			</format>
+			<format badge="In-Person">
+				<live source="room"/>
+			</format>
+			<format badge="Virtual">
+				<prerecorded/>
 			</format>
 		</event>
 		<event name="REBASE">
@@ -120,8 +127,10 @@
 			<format event_id="77995b66-f823-4c12-a66a-32f1a9318823">
 				<live source="zoom" record="{timeslot.event_id}"/>
 			</format>
-			<format>
-				<prerecorded/>
+			<format name="Discussion, Questions and Answers">
+				<live source="zoom"/>
+			</format>
+			<format badge="Virtual">
 				<live source="zoom"/>
 			</format>
 		</event>
@@ -133,13 +142,15 @@
 			<format event_id="a97ec605-a47a-416a-8145-2f81ace21eaa">
 				<live source="zoom" record="{timeslot.event_id}"/>
 			</format>
-			<format>
-				<prerecorded/>
+			<format name="Discussion, Questions and Answers">
+				<live source="zoom"/>
+			</format>
+			<format badge="Virtual">
 				<live source="zoom"/>
 			</format>
 		</event>
 		<event name="GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences">
-			<zoom url="" stream="SLE_ZOOM"/>
+			<zoom url="" stream="GPCE_ZOOM"/>
 			<format event_id="a97ec605-a47a-416a-8145-2f81ace21eaa" mirror="true">
 				<prerecorded source="mirror"/>
 			</format>
@@ -152,15 +163,19 @@
 			<format event_id="52162c2c-b58f-4bf6-8bfd-aa4df8dc3e4b">
 				<live source="zoom" record="{timeslot.event_id}"/>
 			</format>
-			<zoom url="" stream="GPCE_ZOOM"/>
 			<format event_id="1953b8e6-dbc4-41de-82f3-767184e4791d" mirror="true">
 				<prerecorded source="mirror"/>
 			</format>
 			<format event_id="1953b8e6-dbc4-41de-82f3-767184e4791d">
 				<live source="zoom"  record="{timeslot.event_id}"/>
 			</format>
-			<format>
-				<prerecorded/>
+			<format name="Discussion, Questions and Answers">
+				<live source="zoom"/>
+			</format>
+			<format name="Discussion, Questions, Answers">
+				<live source="zoom"/>
+			</format>
+			<format badge="Virtual">
 				<live source="zoom"/>
 			</format>
 		</event>
