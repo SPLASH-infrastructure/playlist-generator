@@ -101,16 +101,20 @@
 				<live source="zoom"/>
 			</format>
 			<format name="Discussion, Questions and Answers">
-				<live source="room"/>
-			</format>
-			<format mirror="true">
-				<prerecorded/>
+				<live source="zoom"/>
 			</format>
 			<format badge="In-Person">
 				<live source="room"/>
 			</format>
+			<format badge="Virtual" mirror="true">
+				<prerecorded>
+					<backup><prerecorded source="mirror"/></backup>
+				</prerecorded>
+			</format>
 			<format badge="Virtual">
-				<prerecorded/>
+				<prerecorded>
+					<backup><live source="zoom" record="{timeslot.event_id}"/></backup>
+				</prerecorded>
 			</format>
 		</event>
 		<event name="REBASE">
@@ -119,7 +123,7 @@
 				<live source="zoom"/>
 			</format>
 		</event>
-		<event name="Dynamic Languages Symposium">
+		<event name="Dynamic Languages Symposium" compact_recorded="true">
 			<zoom url="" stream="DLS_ZOOM"/>
 			<format event_id="77995b66-f823-4c12-a66a-32f1a9318823" mirror="true">
 				<prerecorded source="mirror"/>
@@ -130,26 +134,40 @@
 			<format name="Discussion, Questions and Answers">
 				<live source="zoom"/>
 			</format>
+			<format badge="Virtual" mirror="true">
+				<prerecorded>
+					<backup><prerecorded source="mirror"/></backup>
+				</prerecorded>
+			</format>
 			<format badge="Virtual">
-				<live source="zoom"/>
+				<prerecorded>
+					<backup><live source="zoom"  record="{timeslot.event_id}"/></backup>
+				</prerecorded>
 			</format>
 		</event>
-		<event name="SLE (Software Language Engineering) 2021">
+		<event name="SLE (Software Language Engineering) 2021" compact_recorded="true">
 			<zoom url="" stream="SLE_ZOOM"/>
 			<format event_id="a97ec605-a47a-416a-8145-2f81ace21eaa" mirror="true">
-				<prerecorded source="mirror"/>
+				<live source="zoom" record="{timeslot.event_id}"/> <!-- this one is flipped in the researchr schedule. -->
 			</format>
 			<format event_id="a97ec605-a47a-416a-8145-2f81ace21eaa">
-				<live source="zoom" record="{timeslot.event_id}"/>
+				<prerecorded source="mirror"/>
 			</format>
 			<format name="Discussion, Questions and Answers">
 				<live source="zoom"/>
 			</format>
+			<format badge="Virtual" mirror="true">
+				<prerecorded>
+					<backup><prerecorded source="mirror"/></backup>
+				</prerecorded>
+			</format>
 			<format badge="Virtual">
-				<live source="zoom"/>
+				<prerecorded>
+					<backup><live source="zoom" record="{timeslot.event_id}"/></backup>
+				</prerecorded>
 			</format>
 		</event>
-		<event name="GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences">
+		<event name="GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences" compact_recorded="true">
 			<zoom url="" stream="GPCE_ZOOM"/>
 			<format event_id="a97ec605-a47a-416a-8145-2f81ace21eaa" mirror="true">
 				<prerecorded source="mirror"/>
@@ -175,8 +193,15 @@
 			<format name="Discussion, Questions, Answers">
 				<live source="zoom"/>
 			</format>
+			<format badge="Virtual" mirror="true">
+				<prerecorded>
+					<backup><prerecorded source="mirror"/></backup>
+				</prerecorded>
+			</format>
 			<format badge="Virtual">
-				<live source="zoom"/>
+				<prerecorded>
+					<backup><live source="zoom" record="{timeslot.event_id}"/></backup>
+				</prerecorded>
 			</format>
 		</event>
 		<event name="PLMW@SPLASH">
@@ -197,8 +222,10 @@
 		<event name="Onward! Essays">
 			<zoom url="" stream="ONWARD_ZOOM"/>
 			<format>
-				<prerecorded/>
-				<live source="room"/>
+				<prerecorded>
+					<backup><live source="zoom"/></backup>
+				</prerecorded>
+				<live source="zoom"/>
 			</format>
 		</event>
 		<event name="Faculty Mentorship Roundtable">

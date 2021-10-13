@@ -49,14 +49,16 @@ class TimeSlotSchedule:
       </badges>
     </timeslot>
     """
-    def __init__(self, event_id, title, room, start_ts, end_ts, badges, tracks, subevent, ts):
+    def __init__(self, event_id, slot_id, title, room, start_ts, end_ts, is_mirror, badges, tracks, subevent, ts):
         self.event_id = event_id
+        self.slot_id = slot_id
         self.title = title
         
         self.room = room
         self.start_ts = start_ts
         self.end_ts = end_ts
         self.subevent = subevent
+        self.is_mirror = is_mirror
         
         self.badges = badges # in-person or virtual, keynote etc.
         self.tracks = tracks
@@ -71,6 +73,7 @@ class TimeSlotSchedule:
         Does validation and returns a TimeSlot Schedule
         """
         event_id = timeslot_xml.xpath(".//event_id/text()")[0]
+        slot_id = timeslot_xml.xpath(".//slot_id/text()")[0]
         title = timeslot_xml.xpath(".//title/text()")[0]
         room = timeslot_xml.xpath(".//room/text()")[0]
 
@@ -79,6 +82,11 @@ class TimeSlotSchedule:
         start_time = timeslot_xml.xpath(".//start_time/text()")[0]
         end_date = timeslot_xml.xpath(".//end_date/text()")[0]
         end_time = timeslot_xml.xpath(".//end_time/text()")[0]
+
+        is_mirror = False 
+        mirror_els = timeslot_xml.xpath("./@is_mirror")
+        if len(mirror_els) > 0:
+            is_mirror = mirror_els[0] == "true"
 
         researchr_fstring = "%Y/%m/%d %H:%M"
         start_ts = datetime.datetime.strptime(f"{start_date} {start_time}", researchr_fstring).replace(tzinfo=timezone)
@@ -95,7 +103,7 @@ class TimeSlotSchedule:
         # ANI: Maybe we can have a class Badge to define that behaviour
         badges = timeslot_xml.xpath(".//badges/badge/text()")
 
-        return TimeSlotSchedule(event_id, title, room, start_ts, end_ts, badges, tracks, subevent, timeslot_xml)
+        return TimeSlotSchedule(event_id, slot_id, title, room, start_ts, end_ts, is_mirror, badges, tracks, subevent, timeslot_xml)
 
 class SubeventSchedule:
     """
@@ -194,6 +202,11 @@ class PrerecordedVideo:
         mediaid = ET.Element("mediaid")
         mediaid.text = self.asset_name
         return "PROGRAM", mediaid
+    
+    def to_onsite_xml(self):
+        media = ET.Element("asset")
+        media.text = self.asset_name
+        return media
 
     @classmethod
     def from_xml(cls, elem, duration_mappings):
@@ -241,6 +254,10 @@ class EventRoom:
         mediaid.text = self.live
         return "LIVE", mediaid
 
+    def to_onsite_xml(self):
+        media = ET.Element("room")
+        return media
+
     @classmethod
     def from_xml(cls, elem):
         return cls(elem.xpath("./@name")[0], elem.xpath("./@live")[0], elem.xpath("./@filler")[0])
@@ -258,7 +275,11 @@ class ZoomInfo:
         mediaid = ET.Element("liveid")
         mediaid.text = self.stream
         return "LIVE", mediaid
-        
+    
+    def to_onsite_xml(self):
+        media = ET.Element("zoom")
+        media.text = self.url
+        return media
 
     @classmethod
     def from_xml(cls, elem):
@@ -285,14 +306,14 @@ class ScheduleElement:
             first = True
             for room in rooms:
                 out_evt, new_now = self.schedule_one(mapping, room, spec, format, timeslot, now, first=first)
-                out[room.name] = [out_evt]
+                out[room.name] = out_evt
                 first = False
         else: 
             for room in rooms:
                 previous_now = None
                 if room.name == timeslot.room:
                     out_evt, new_now = self.schedule_one(mapping, room, spec, format, timeslot, now)
-                    out[room.name] = [out_evt]
+                    out[room.name] = out_evt
                     if new_now != previous_now and previous_now != None:
                         raise RuntimeError("Repeated scheduling of a plenary event produced a different now time")
                     elif previous_now == None:
@@ -300,9 +321,10 @@ class ScheduleElement:
         return out, new_now
 
 class PrerecordedElement(ScheduleElement):
-    def __init__(self, source, plenary=False):
+    def __init__(self, source, plenary=False, backup=None):
         self.source = source
         self.plenary = plenary
+        self.backup = backup
 
     def schedule_one(self, mapping, room, spec, format, timeslot, now, first=True):
         ctx_dict = self.make_context_dict(room, spec, format, timeslot)
@@ -319,14 +341,24 @@ class PrerecordedElement(ScheduleElement):
             if asset_data.asset_name != None:
                 asset = asset_data
                 duration = asset_data.duration
-                if duration == None or duration > (timeslot.end_ts - now):
+                    
+                if duration != None and duration > (timeslot.end_ts - now):
+                    duration = (timeslot.end_ts - now)
+                elif duration == None and self.backup != None:
+                    output = []
+                    for backup in self.backup:
+                        evts,now = backup.schedule(mapping, [room], spec, format, timeslot, now)
+                        output.extend(evts[room.name])
+                    return output, now
+                elif duration == None: 
+                    print(f"totally missing {timeslot.event_id}")
                     duration = (timeslot.end_ts - now)
             else:
                 asset = None
                 duration = (timeslot.end_ts - now)
         onairtime = now
 
-        return PrerecordedEvent(timeslot.title, asset, onairtime, duration, timeslot), now+duration
+        return [PrerecordedEvent(timeslot.title, asset, onairtime, duration, timeslot)], now+duration
 
     @classmethod
     def from_xml(cls, elem):
@@ -337,7 +369,18 @@ class PrerecordedElement(ScheduleElement):
 
         plenary = elem.xpath('./@plenary')
         is_plenary = len(plenary) > 0 and plenary[0] == "true"
-        return cls(asset, plenary=is_plenary)
+
+        backup_elems = elem.xpath("./backup")
+        backup_schedule = None
+        if len(backup_elems) > 0:
+            backup_schedule = []
+            backup_elem = backup_elems[0]
+            for child in backup_elem:
+                if not child.tag in SCHEDULE_ELEMENT_TYPES:
+                    raise RuntimeError(f"Invalid schedule element type {child.tag}")
+                backup_schedule.append(SCHEDULE_ELEMENT_TYPES[child.tag].from_xml(child))
+
+        return cls(asset, plenary=is_plenary, backup=backup_schedule)
 
 
 class LiveElement(ScheduleElement): 
@@ -357,7 +400,7 @@ class LiveElement(ScheduleElement):
         duration = timeslot.end_ts - now
         onairtime = now
         ts = timeslot
-        return LiveEvent(timeslot.title, source, onairtime, duration, timeslot, recording=self.recording.format(**ctx_dict) if self.recording != None and first else None), now+duration
+        return [LiveEvent(timeslot.title, source, onairtime, duration, timeslot, recording=self.recording.format(**ctx_dict) if self.recording != None and first else None)], now+duration
 
     @classmethod
     def from_xml(cls, elem):
@@ -429,7 +472,7 @@ class EventFormat:
             is_mirror = scheduler.is_mirror(ts)
             return scheduler.is_mirror(ts) and mirrored
         # mirror condition
-        cond = prop_cond("./@mirror", lambda cond, mirrored: lambda sch, ts: is_mirror(sch, ts, mirrored=="true") and cond(sch, ts), cond)
+        cond = prop_cond("./@mirror", lambda cond, mirrored: lambda sch, ts: (ts.is_mirror == (mirrored == "true")) and cond(sch, ts), cond)
 
         # badges condition
         badge_cond = elem.xpath("./@badge")
@@ -444,6 +487,13 @@ class EventFormat:
             event_id_req = event_id_cond[0]
             old_cond = cond
             cond = lambda sch, ts: event_id_req == ts.event_id and old_cond(sch, ts)
+
+        # explicit slot_id condition (last minute stuff)
+        slot_id_cond = elem.xpath("./@slot_id")
+        if len(slot_id_cond) >0:
+            slot_id_req = slot_id_cond[0]
+            old_cond = cond
+            cond = lambda sch, ts: slot_id_req == ts.slot_id and old_cond(sch, ts)
 
         # ====================
         # event format parsing
@@ -531,17 +581,18 @@ class EventSpec:
         return out
 
 class Scheduler:
-    def __init__(self, rooms, events, is_mirror = lambda ts: False):
+    def __init__(self, rooms, events, main_start = None, main_end = None):
         self.rooms = rooms 
         self.events = events
         self.events_map = dict()
+        self.main_start = main_start
+        self.main_end = main_end
         for event_spec in self.events:
             if not event_spec.name in self.events_map:
                 self.events_map[event_spec.name] = event_spec
             else:
                 raise RuntimeError(f"Repeated definition of event ${event_spec.name}!")
 
-        self.is_mirror = is_mirror
 
     def schedule(self, mapping, subevent):
         scheduler = None
@@ -556,20 +607,17 @@ class Scheduler:
     @classmethod
     def from_xml(cls, elem):
         mirroring_els = elem.xpath("./mirroring")
-        is_mirror = lambda ts: False
+        main_start = None
+        main_end = None
         if len(mirroring_els) > 0:
             mirroring_el = mirroring_els[0]
             # find when the main track starts and ends
             tz = TZ.gettz(mirroring_el.xpath("./@timezone")[0])
             main_start = datetime.time.fromisoformat(mirroring_el.xpath("./@start")[0]).replace(tzinfo=tz)
             main_end = datetime.time.fromisoformat(mirroring_el.xpath("./@end")[0]).replace(tzinfo=tz)
-            def is_mirror_fun(ts):
-                out = ts.start_ts.timetz() <= main_start or ts.end_ts.timetz() >= main_end
-                return out
-            is_mirror = is_mirror_fun
         rooms = list(map(EventRoom.from_xml, elem.xpath(".//rooms/room")))
         events = list(map(EventSpec.from_xml, elem.xpath(".//events/event")))
-        return cls(rooms, events, is_mirror)
+        return cls(rooms, events, main_start, main_end)
 
 
 class PlaylistEvent:
@@ -612,6 +660,25 @@ class PlaylistEvent:
     def __str__(self):
         return f"PlaylistEvent({self.title}; {self.onairtime} for {self.duration}; for {self.ts})"
 
+    def to_session_chair_xml(self):
+        event = ET.Element("event")
+        event.set("title", self.title)
+        event.set("start", self.onairtime.isoformat())
+        event.set("nominal_start", self.ts.start_ts.isoformat())
+        event.set("duration", str(self.duration.total_seconds()))
+        event.set("nominal_duration", str(self.ts.end_ts - self.ts.start_ts))
+        event.set("session", self.ts.subevent.title)
+
+        tracks = ET.Element("tracks")
+        event.append(tracks)
+        for track in self.ts.tracks:
+            track_el = ET.Element("track")
+            track_el.text = track
+            tracks.append(track_el)
+        
+        event.append(self.source.to_onsite_xml())
+        return event
+
     def to_xml(self):
         """
         This returns the etree object
@@ -640,7 +707,7 @@ class PlaylistEvent:
 
         onairtime = ET.Element("onairtime")
         onairtime.text = self.onairtime.replace(tzinfo=datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S:00")
-        recordingpat = ET.Element("recordingpattern")
+        recordingpat = ET.Element("recordingPattern")
         recordingpat.text = self.recording if self.recording != None else "" # TODO: what is this, how is it computed
                                        # I am guessing it is be the confpub id value from the mapping xml?
         # Bunch of defaults
@@ -755,7 +822,15 @@ def validate_playlist(pl):
     for (e1, e2) in adj_evs:
         if e2.onairtime < e1.onairtime + e1.duration:
             print(f"{e1.title} ({e1.ts.event_id}@{e1.onairtime}-{e1.duration.total_seconds()}) runs over {e2.title} ({e2.ts.event_id}@{e2.onairtime}-{e2.duration.total_seconds()}) by {((e1.onairtime + e1.duration) - e2.onairtime).total_seconds()}")
-        
+
+def make_chair_xml(in_room, schedule_xml, scheduler):
+    room = ET.Element("room")
+    if scheduler.main_start != None and scheduler.main_end != None:
+        room.set("main_start", scheduler.main_start.isoformat())
+        room.set("main_end", scheduler.main_end.isoformat())
+    room.set("timezone", schedule_xml.xpath("//timezone_id/text()")[0])
+    room.set("room", in_room)
+    return room
 
 # prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
 if __name__ == '__main__':
@@ -816,12 +891,22 @@ if __name__ == '__main__':
         root.append(eventlist)
         playlist_xml = map (PlaylistEvent.to_xml, filter(lambda evt: evt.duration.total_seconds() > 0, room_playlists[current_room]))
         eventlist.extend(list(playlist_xml))
+        
+        chair_root_xml = make_chair_xml(room, schedule_xml, scheduler)
+        session_chair_xml = map(PlaylistEvent.to_session_chair_xml, filter(lambda evt: evt.duration.total_seconds() > 0, room_playlists[current_room])) 
+        chair_root_xml.extend(list(session_chair_xml))
 
         # write it to a file
         output_file = base_output_file + r + ".xml"
         print(f"writing to file {output_file}")
         with open(output_file, "wb") as xf:
             xf.write(ET.tostring(root, pretty_print=True, xml_declaration=True, encoding='utf-8', standalone=True))
+
+        output_session_chair_file = base_output_file + r + "_chair.xml"
+        print(f"writing to file {output_session_chair_file}")
+        with open(output_session_chair_file, "wb") as xf:
+            xf.write(ET.tostring(chair_root_xml, pretty_print=True, xml_declaration=True, encoding='utf-8', standalone=True))
+        
         
     # TODO: find filler events in the timeline
     # TODO: Some manual events whose durations we don't know, cut through filler or zoom room (ANI: I don't undrstand this)
