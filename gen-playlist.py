@@ -151,12 +151,13 @@ class PrerecordedEvent(ConferenceEvent):
     def make_playlist_element(self):
         if self.asset == None: 
             raise RuntimeError(f"Trying to generate a playlist with missing asset for {self.title} and event id {self.timeslot.event_id} in track {self.timeslot.tracks}")
-        return PlaylistEvent(self.asset.asset_name, "PROGRAM", self.duration, "FOLLOW", self.start, None, self.timeslot)
+        return PlaylistEvent(self.title, self.asset, "PROGRAM", self.duration, "FOLLOW", self.start, None, self.timeslot)
     
     def __str__(self):
         return f"Prerecorded({self.title}, {self.asset}, {self.start} for {self.duration}, in {self.timeslot})"
 class LiveEvent(ConferenceEvent):
     def __init__(self, title, source, start, duration, timeslot, recording=None):
+        assert isinstance(title, str)
         self.title = title
         self.source = source
         self.start = start
@@ -168,7 +169,7 @@ class LiveEvent(ConferenceEvent):
         return datetime.timedelta()
     
     def make_playlist_element(self):
-        return PlaylistEvent(self.source.remote_stream(), "LIVE", self.duration, "FOLLOW", self.start, None, self.timeslot, self.recording)
+        return PlaylistEvent(self.title, self.source, "LIVE", self.duration, "FOLLOW", self.start, None, self.timeslot, self.recording)
     
     def __str__(self):
         return f"Live({self.title}, {self.source}, {self.start} for {self.duration}, in {self.timeslot})"
@@ -185,8 +186,15 @@ class PrerecordedVideo:
     def __init__(self, asset_name, duration):
         self.asset_name = asset_name
         self.duration = duration
+
     def __str__(self) -> str:
         return f"Prerecord({self.asset_name} for {self.duration})"
+    
+    def to_playlist_xml(self):
+        mediaid = ET.Element("mediaid")
+        mediaid.text = self.asset_name
+        return "PROGRAM", mediaid
+
     @classmethod
     def from_xml(cls, elem, duration_mappings):
         source = list(elem)[0]
@@ -228,6 +236,11 @@ class EventRoom:
     def remote_stream(self):
         return self.live
 
+    def to_playlist_xml(self):
+        mediaid = ET.Element("liveid")
+        mediaid.text = self.live
+        return "LIVE", mediaid
+
     @classmethod
     def from_xml(cls, elem):
         return cls(elem.xpath("./@name")[0], elem.xpath("./@live")[0], elem.xpath("./@filler")[0])
@@ -240,6 +253,12 @@ class ZoomInfo:
 
     def remote_stream(self):
         return self.stream 
+    
+    def to_playlist_xml(self):
+        mediaid = ET.Element("liveid")
+        mediaid.text = self.stream
+        return "LIVE", mediaid
+        
 
     @classmethod
     def from_xml(cls, elem):
@@ -577,8 +596,10 @@ class PlaylistEvent:
          <voiceoverlist/>
       </event>
     """
-    def __init__(self, title, category, duration, endmode, onairtime, m, ts, recording=None):
+    def __init__(self, title, source, category, duration, endmode, onairtime, m, ts, recording=None):
+        assert isinstance(title, str)
         self.title = title
+        self.source = source
         self.category = category
         self.duration = duration
         self.endmode = endmode
@@ -598,8 +619,6 @@ class PlaylistEvent:
         # The base element
         event = ET.Element("event")
 
-        category = ET.Element("category")
-        category.text = self.category
 
         duration = ET.Element("duration")
         total_secs = self.duration.total_seconds()
@@ -614,14 +633,10 @@ class PlaylistEvent:
         title.text = self.title
         if not self.title:
             print(f"Warning: {self.ts.event_id} has an empty title")
-        if self.category == "PROGRAM":
-            mediaid = ET.Element("mediaid")
-            mediaid.text = self.title
-            idel = mediaid
-        elif self.category == "LIVE":
-            liveid = ET.Element("liveid")
-            liveid.text = self.title
-            idel = liveid
+
+        category_type, idel = self.source.to_playlist_xml() 
+        category = ET.Element("category")
+        category.text = category_type
 
         onairtime = ET.Element("onairtime")
         onairtime.text = self.onairtime.replace(tzinfo=datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S:00")
@@ -739,7 +754,7 @@ def validate_playlist(pl):
     adj_evs = list(window(sorted_pl, 2))
     for (e1, e2) in adj_evs:
         if e2.onairtime < e1.onairtime + e1.duration:
-            print(f"{e1.title} ({e1.ts.event_id}@{e1.onairtime}) runs over {e2.title} ({e2.ts.event_id}@{e2.onairtime}-{e2.duration.total_seconds()}) by {((e1.onairtime + e1.duration) - e2.onairtime).total_seconds()}")
+            print(f"{e1.title} ({e1.ts.event_id}@{e1.onairtime}-{e1.duration.total_seconds()}) runs over {e2.title} ({e2.ts.event_id}@{e2.onairtime}-{e2.duration.total_seconds()}) by {((e1.onairtime + e1.duration) - e2.onairtime).total_seconds()}")
         
 
 # prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
