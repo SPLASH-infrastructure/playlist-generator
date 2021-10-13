@@ -739,7 +739,7 @@ def validate_playlist(pl):
     adj_evs = list(window(sorted_pl, 2))
     for (e1, e2) in adj_evs:
         if e2.onairtime < e1.onairtime + e1.duration:
-            print(f"{e1.title} runs over {e2.title}")
+            print(f"{e1.title} ({e1.ts.event_id}@{e1.onairtime}) runs over {e2.title} ({e2.ts.event_id}@{e2.onairtime}-{e2.duration.total_seconds()}) by {((e1.onairtime + e1.duration) - e2.onairtime).total_seconds()}")
         
 
 # prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
