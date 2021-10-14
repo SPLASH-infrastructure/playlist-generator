@@ -21,6 +21,9 @@
 			<zoom room="Swissotel Chicago | Zurich A" url="" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="" stream="ZOOMC"/>
+			<format badge="Invited Talk">
+				<live source="zoom"/>
+			</format>
 			<format>
 				<prerecorded/>
 				<live source="zoom"/>
@@ -256,7 +259,9 @@
 			<zoom room="Swissotel Chicago | Zurich A" url="" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="" stream="ZOOMC"/>
-			<format><live source="room"/></format>
+			<format>
+				<notstreamed/>  <!--- not streamed -->
+			</format>
 		</event>
 		<event name="Ask Me Anything (AMA)">
 			<zoom room="Swissotel Chicago | Zurich A" url="" stream="ZOOMA"/>
