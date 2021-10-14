@@ -724,7 +724,7 @@ class PlaylistEvent:
         category.text = category_type
 
         onairtime = ET.Element("onairtime")
-        onairtime.text = self.onairtime.replace(tzinfo=datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S:00")
+        onairtime.text = self.onairtime.astimezone(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S:00")
         recordingpat = ET.Element("recordingPattern")
         recordingpat.text = self.recording if self.recording != None else "" # TODO: what is this, how is it computed
                                        # I am guessing it is be the confpub id value from the mapping xml?
