@@ -686,6 +686,7 @@ class PlaylistEvent:
         event.set("duration", str(self.duration.total_seconds()))
         event.set("nominal_duration", str(self.ts.end_ts - self.ts.start_ts))
         event.set("session", self.ts.subevent.title)
+        event.set("is_mirror", str(self.ts.is_mirror))
 
         tracks = ET.Element("tracks")
         event.append(tracks)
@@ -847,7 +848,7 @@ def make_chair_xml(in_room, schedule_xml, scheduler):
         room.set("main_start", scheduler.main_start.isoformat())
         room.set("main_end", scheduler.main_end.isoformat())
     room.set("timezone", schedule_xml.xpath("//timezone_id/text()")[0])
-    room.set("room", in_room)
+    room.set("name", in_room)
     return room
 
 # prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
@@ -887,6 +888,7 @@ if __name__ == '__main__':
         print(f"validating playlist for room {room}")
         validate_playlist(room_playlists[room])
         
+    chair_xml_root = ET.Element("conference")
     # TODO: insert filler elements
     for r in room_ids:
         current_room = base_room + r
@@ -910,9 +912,11 @@ if __name__ == '__main__':
         playlist_xml = map (PlaylistEvent.to_xml, filter(lambda evt: evt.duration.total_seconds() > 0, room_playlists[current_room]))
         eventlist.extend(list(playlist_xml))
         
-        chair_root_xml = make_chair_xml(room, schedule_xml, scheduler)
+
+        room_xml = make_chair_xml(current_room, schedule_xml, scheduler)
         session_chair_xml = map(PlaylistEvent.to_session_chair_xml, filter(lambda evt: evt.duration.total_seconds() > 0, room_playlists[current_room])) 
-        chair_root_xml.extend(list(session_chair_xml))
+        room_xml.extend(list(session_chair_xml))
+        chair_xml_root.append(room_xml)
 
         # write it to a file
         output_file = base_output_file + r + ".xml"
@@ -920,10 +924,10 @@ if __name__ == '__main__':
         with open(output_file, "wb") as xf:
             xf.write(ET.tostring(root, pretty_print=True, xml_declaration=True, encoding='utf-8', standalone=True))
 
-        output_session_chair_file = base_output_file + r + "_chair.xml"
-        print(f"writing to file {output_session_chair_file}")
-        with open(output_session_chair_file, "wb") as xf:
-            xf.write(ET.tostring(chair_root_xml, pretty_print=True, xml_declaration=True, encoding='utf-8', standalone=True))
+    output_session_chair_file = base_output_file+ "_chair.xml"
+    print(f"writing to file {output_session_chair_file}")
+    with open(output_session_chair_file, "wb") as xf:
+        xf.write(ET.tostring(chair_xml_root, pretty_print=True, xml_declaration=True, encoding='utf-8', standalone=True))
         
         
     # TODO: find filler events in the timeline
