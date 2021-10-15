@@ -696,7 +696,9 @@ class PlaylistEvent:
             track_el.text = track
             tracks.append(track_el)
         
-        event.append(self.source.to_onsite_xml())
+        sources = ET.Element("sources")
+        sources.append(self.source.to_onsite_xml())
+        event.append(sources)
         return event
 
     def to_xml(self):
