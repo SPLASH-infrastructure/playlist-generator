@@ -686,6 +686,7 @@ class PlaylistEvent:
         event.set("duration", str(self.duration.total_seconds()))
         event.set("nominal_duration", str(self.ts.end_ts - self.ts.start_ts))
         event.set("session", self.ts.subevent.title)
+        event.set("event_id", self.ts.event_id)
         event.set("is_mirror", str(self.ts.is_mirror))
 
         tracks = ET.Element("tracks")
@@ -863,6 +864,7 @@ def make_chair_xml(room_playlists, scheduler):
         for session, evts in session_map.items():
             session_elem = ET.Element("session")
             session_elem.set("title", session.title)
+            session_elem.set("track", session.tracks[0])
             session_elem.extend(evts)
             room_elem.append(session_elem)
         chair_xml_root.append(room_elem)
