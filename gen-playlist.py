@@ -842,14 +842,31 @@ def validate_playlist(pl):
         if e2.onairtime < e1.onairtime + e1.duration:
             print(f"{e1.title} ({e1.ts.event_id}@{e1.onairtime}-{e1.duration.total_seconds()}) runs over {e2.title} ({e2.ts.event_id}@{e2.onairtime}-{e2.duration.total_seconds()}) by {((e1.onairtime + e1.duration) - e2.onairtime).total_seconds()}")
 
-def make_chair_xml(in_room, schedule_xml, scheduler):
-    room = ET.Element("room")
+def make_chair_xml(room_playlists, scheduler):
+    room_map = dict()
+    for room,evts in room_playlists.items():
+        session_map = dict()
+        evts.sort(key=lambda evt: evt.onairtime)
+        for evt in evts:
+            in_subevent = session_map.get(evt.ts.subevent, [])
+            in_subevent.append(evt.to_session_chair_xml())
+            session_map[evt.ts.subevent] = in_subevent
+        room_map[room] = session_map
+    chair_xml_root = ET.Element("conference")
     if scheduler.main_start != None and scheduler.main_end != None:
-        room.set("main_start", scheduler.main_start.isoformat())
-        room.set("main_end", scheduler.main_end.isoformat())
-    room.set("timezone", schedule_xml.xpath("//timezone_id/text()")[0])
-    room.set("name", in_room)
-    return room
+        chair_xml_root.set("main_start", scheduler.main_start.isoformat())
+        chair_xml_root.set("main_end", scheduler.main_end.isoformat())
+    chair_xml_root.set("timezone", schedule_xml.xpath("//timezone_id/text()")[0])
+    for room, session_map in room_map.items():
+        room_elem = ET.Element("room")
+        room_elem.set("name", room)
+        for session, evts in session_map.items():
+            session_elem = ET.Element("session")
+            session_elem.set("title", session.title)
+            session_elem.extend(evts)
+            room_elem.append(session_elem)
+        chair_xml_root.append(room_elem)
+    return chair_xml_root
 
 # prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
 if __name__ == '__main__':
@@ -888,7 +905,6 @@ if __name__ == '__main__':
         print(f"validating playlist for room {room}")
         validate_playlist(room_playlists[room])
         
-    chair_xml_root = ET.Element("conference")
     # TODO: insert filler elements
     for r in room_ids:
         current_room = base_room + r
@@ -911,12 +927,6 @@ if __name__ == '__main__':
         root.append(eventlist)
         playlist_xml = map (PlaylistEvent.to_xml, filter(lambda evt: evt.duration.total_seconds() > 0, room_playlists[current_room]))
         eventlist.extend(list(playlist_xml))
-        
-
-        room_xml = make_chair_xml(current_room, schedule_xml, scheduler)
-        session_chair_xml = map(PlaylistEvent.to_session_chair_xml, filter(lambda evt: evt.duration.total_seconds() > 0, room_playlists[current_room])) 
-        room_xml.extend(list(session_chair_xml))
-        chair_xml_root.append(room_xml)
 
         # write it to a file
         output_file = base_output_file + r + ".xml"
@@ -925,6 +935,7 @@ if __name__ == '__main__':
             xf.write(ET.tostring(root, pretty_print=True, xml_declaration=True, encoding='utf-8', standalone=True))
 
     output_session_chair_file = base_output_file+ "_chair.xml"
+    chair_xml_root = make_chair_xml(room_playlists, scheduler)
     print(f"writing to file {output_session_chair_file}")
     with open(output_session_chair_file, "wb") as xf:
         xf.write(ET.tostring(chair_xml_root, pretty_print=True, xml_declaration=True, encoding='utf-8', standalone=True))
