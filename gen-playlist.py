@@ -271,6 +271,23 @@ class EventRoom:
     def from_xml(cls, elem):
         return cls(elem.xpath("./@name")[0], elem.xpath("./@live")[0], elem.xpath("./@filler")[0])
 
+
+class FillerStream:
+    def __init__(self, stream):
+        self.stream = stream
+
+    def to_playlist_xml(self):
+        mediaid = ET.Element("liveid")
+        mediaid.text = self.stream
+        return "LIVE", mediaid
+        
+    def to_onsite_xml(self):
+        media = ET.Element("filler")
+        return media
+
+    @classmethod
+    def from_xml(cls, elem):
+        return cls(elem.xpath("./@stream")[0])
 class ZoomInfo:
     def __init__(self, room, url, stream):
         self.room = room
@@ -806,25 +823,23 @@ class PlaylistEvent:
 
     
 
-# def gen_fillers(room_id, timeslots):
-#     """
-#     Takes a list of time ordered timeslot if any two events have a gap then we generate a filler event to fit in the gap
-#     """
-#     adjacent_ts = list(window(timeslots, 2))
-#     fillers = []
-#     for (e1, e2) in adjacent_ts:
-#         if e2.onairtime < e1.onairtime + e1.duration:
-#             print(f"Warning: Overlapping events {e1.ts.title} {e2.ts.title}")
-#         if e2.onairtime > e1.onairtime + e1.duration: # TODO may be the diff should be between a threshold?
-#             print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.title} and {e2.title}")
-#             fillers.append(PlaylistEvent("FILLER_"+room_id
-#                                          , "LIVE" # TODO Fillers won't be live... ?
-#                                          , e2.onairtime - (e1.onairtime + e1.duration)
-#                                          , e1.endmode
-#                                          , e1.onairtime + e1.duration, # start after the prev event ends
-#                                          None, # We don't have a mapping or timeslot xml object for fillers
-#                                          None))
-#     return fillers
+def gen_fillers(room_id, timeslots):
+    """
+    Takes a list of time ordered timeslot if any two events have a gap then we generate a filler event to fit in the gap
+    """
+    adjacent_ts = list(window(timeslots, 2))
+    fillers = []
+    for (e1, e2) in adjacent_ts:
+        if e2.onairtime < e1.onairtime + e1.duration:
+            print(f"Warning: Overlapping events {e1.ts.title} {e2.ts.title}")
+        if e2.onairtime > e1.onairtime + e1.duration: # TODO may be the diff should be between a threshold?
+            print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.title} and {e2.title}")
+
+            fillers.append(PlaylistEvent("FILLER_"+room_id,
+                FillerStream("FILLER"+room_id), "LIVE", e2.onairtime - (e1.onairtime + e1.duration), e1.endmode, e1.onairtime + e1.duration, # start after the prev event ends
+                                         None, # We don't have a mapping or timeslot xml object for fillers
+                                         None))
+    return fillers
         
 
     
@@ -943,7 +958,10 @@ if __name__ == '__main__':
         eventlist = ET.Element("eventlist")
         eventlist.set("timeinmilliseconds", "true")
         root.append(eventlist)
-        playlist_xml = map (PlaylistEvent.to_xml, filter(lambda evt: evt.duration.total_seconds() > 0, room_playlists[current_room]))
+        playlist = list(room_playlists[current_room])
+        fillers = gen_fillers(r, playlist)
+        playlist.extend(fillers)
+        playlist_xml = map (PlaylistEvent.to_xml, filter(lambda evt: evt.duration.total_seconds() > 0, playlist))
         eventlist.extend(list(playlist_xml))
 
         # write it to a file
