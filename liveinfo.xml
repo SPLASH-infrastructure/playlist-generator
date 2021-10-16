@@ -22,8 +22,20 @@
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format badge="Invited Talk">
-				<live source="zoom"/>
+				<live source="zoom" record="{timeslot.event_id}"/>
 			</format>
+			<format name="Session 1A Discussion, Questions and Answers "><live source="zoom"/></format>
+			<format name="Session 1B Discussion, Questions and Answers"><live source="zoom"/></format>
+			<format name="Session 1C Discussion, Questions and Answers"><live source="zoom"/></format>
+			<format name="Session 2A Discussion, Questions and Answers"><live source="zoom"/></format>
+			<format name="Session 2B Discussion, Questions and Answers"><live source="zoom"/></format>
+			<format name="Session 2C Discussion, Questions and Answers"><live source="zoom"/></format>
+			<format name="Session 3A Discussion, Questions and Answers"><live source="zoom"/></format>
+			<format name="Session 3B Discussion, Questions and Answers"><live source="zoom"/></format>
+			<format name="Session 3C Discussion, Questions and Answers"><live source="zoom"/></format>
+			<format name="Session 4A Discussion, Questions and Answers"><live source="zoom"/></format>
+			<format name="Session 4B Discussion, Questions and Answers"><live source="zoom"/></format>
+			<format name="Session 4C Discussion, Questions and Answers"><live source="zoom"/></format>
 			<format>
 				<prerecorded/>
 				<live source="zoom"/>
@@ -65,7 +77,7 @@
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format event_id="8e548b3d-7e89-4c53-ab08-185cc101f9b0"><notstreamed/></format>
-			<format event_id="479c9271-75b9-4332-a52e-2443916ed203"><notstreamed/></format>
+			<format event_id="c8da7aa6-2f36-4498-8dcc-2c6f2da523e4"><notstreamed/></format>
 			<format mirror="true"><prerecorded source="mirror"/></format>
 			<format><live plenary="true" source="room" record="{timeslot.event_id}"/></format>
 		</event>
@@ -97,7 +109,7 @@
 				<prerecorded plenary="true" source="mirror"/>
 			</format>
 			<format>
-				<live source="room" plenary="true" record="{timeslot.event_id}"/>
+				<live source="zoom" plenary="true" record="{timeslot.event_id}"/>
 			</format>
 		</event>
 		<event name="Onward! Papers" compact_recorded="true">
@@ -228,6 +240,7 @@
 			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
+			<format event_id="699cfeca-5240-418f-89b9-320ece98abb6"><notstreamed/></format>
 			<format badge="In-Person"><live source="room" record="{timeslot.event_id}"/></format>
 			<format badge="In-person"><live source="room" record="{timeslot.event_id}"/></format>
 			<format badge="Virtual"><live source="room" record="{timeslot.event_id}"/></format>

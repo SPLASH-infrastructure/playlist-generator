@@ -329,14 +329,15 @@ class PrerecordedElement(ScheduleElement):
     def schedule_one(self, mapping, room, spec, format, timeslot, now, first=True):
         ctx_dict = self.make_context_dict(room, spec, format, timeslot)
         
-        if not mapping.has_event(timeslot.event_id):
-            raise RuntimeError(f"Playing a prerecorded video for an unmapped event ({timeslot.event_id})!")
         
         if self.source != None:
             sources = {'mirror': lambda: PrerecordedVideo(timeslot.event_id, timeslot.end_ts - timeslot.start_ts)}
             asset = sources[self.source]()
             duration = asset.duration
-        else:
+        else:    
+            if not mapping.has_event(timeslot.event_id):
+                raise RuntimeError(f"Playing a prerecorded video for an unmapped event ({timeslot.event_id})!")
+
             asset_data = mapping.get_event(timeslot.event_id)
             if asset_data.asset_name != None:
                 asset = asset_data
