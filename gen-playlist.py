@@ -723,8 +723,9 @@ class PlaylistEvent:
                      # We have :00 added as frames and iso parser gets confused with that
         
         endmode = xml.xpath("./endmode/text()")[0]
-        onairtime = datetime.datetime.fromisoformat(xml.xpath("./onairtime/text()")[0].replace('T', ' ')[:19])
-                       # not sure why we have an extra :00 for ms. This is not standard!
+        onairtime_raw = xml.xpath("./onairtime/text()")[0].replace('T', ' ')
+        onairtime = datetime.datetime.fromisoformat(onairtime_raw[:19])
+        onairtime += datetime.timedelta(milliseconds=int(onairtime_raw[20:22])*1000/25)
 
         recording = xml.xpath("./recording/text()")[0]
         return PlaylistEvent(title,None,  category, duration, endmode, onairtime, None, None, recording)
@@ -756,7 +757,10 @@ class PlaylistEvent:
         category.text = category_type
 
         onairtime = ET.Element("onairtime")
-        onairtime.text = self.onairtime.astimezone(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S:00")
+        time_text = self.onairtime.astimezone(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")
+        frames = math.floor((self.onairtime.microsecond * 25)/1000000)
+        onairtime.text = f"{time_text}:{frames:02d}"
+
         recordingpat = ET.Element("recordingPattern")
         recordingpat.text = self.recording if self.recording != None else "" # TODO: what is this, how is it computed
                                        # I am guessing it is be the confpub id value from the mapping xml?
