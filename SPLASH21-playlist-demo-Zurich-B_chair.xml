@@ -1,0 +1,891 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<room main_start="09:00:00" main_end="17:00:00" timezone="America/Chicago" room="Swissotel Chicago | Zurich B">
+  <event title="Oracle Parfait: The Flavour of Real-World Vulnerability Detection and Intelligent Configuration" start="2021-10-17T07:40:00-05:00" nominal_start="2021-10-17T07:40:00-05:00" duration="4800.0" nominal_duration="1:20:00" session="SAS: Session 4A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21inv-inv1-p-video</asset>
+  </event>
+  <event title="Accelerating Program Analyses in Datalog by Merging Library Facts" start="2021-10-17T09:00:00-05:00" nominal_start="2021-10-17T09:00:00-05:00" duration="753.18" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id40-p-video</asset>
+  </event>
+  <event title="Accelerating Program Analyses in Datalog by Merging Library Facts" start="2021-10-17T09:12:33.180000-05:00" nominal_start="2021-10-17T09:00:00-05:00" duration="446.82" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Exploiting Verified Neural Networks via Floating Point Numerical Error" start="2021-10-17T09:20:00-05:00" nominal_start="2021-10-17T09:20:00-05:00" duration="629.15" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id6-p-video</asset>
+  </event>
+  <event title="Exploiting Verified Neural Networks via Floating Point Numerical Error" start="2021-10-17T09:30:29.150000-05:00" nominal_start="2021-10-17T09:20:00-05:00" duration="570.85" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Verifying Low-dimensional Input Neural Networks via Input Quantization" start="2021-10-17T09:40:00-05:00" nominal_start="2021-10-17T09:40:00-05:00" duration="457.18" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id26-p-video</asset>
+  </event>
+  <event title="Verifying Low-dimensional Input Neural Networks via Input Quantization" start="2021-10-17T09:47:37.180000-05:00" nominal_start="2021-10-17T09:40:00-05:00" duration="742.82" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="A Multi-Language Static Analysis of Python Programs with Native C Extensions" start="2021-10-17T10:00:00-05:00" nominal_start="2021-10-17T10:00:00-05:00" duration="823.09" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id7-p-video</asset>
+  </event>
+  <event title="A Multi-Language Static Analysis of Python Programs with Native C Extensions" start="2021-10-17T10:13:43.090000-05:00" nominal_start="2021-10-17T10:00:00-05:00" duration="376.91" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Static Analysis of Endian Portability by Abstract Interpretation" start="2021-10-17T13:50:00-05:00" nominal_start="2021-10-17T13:50:00-05:00" duration="827.27" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id33-p-video</asset>
+  </event>
+  <event title="Static Analysis of Endian Portability by Abstract Interpretation" start="2021-10-17T14:03:47.270000-05:00" nominal_start="2021-10-17T13:50:00-05:00" duration="372.73" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Verified Functional Programming of an Abstract Interpreter" start="2021-10-17T14:10:00-05:00" nominal_start="2021-10-17T14:10:00-05:00" duration="779.17" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id19-p-video</asset>
+  </event>
+  <event title="Verified Functional Programming of an Abstract Interpreter" start="2021-10-17T14:22:59.170000-05:00" nominal_start="2021-10-17T14:10:00-05:00" duration="420.83" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Data Abstraction: A General Framework to Handle Program Verification of Data Structures" start="2021-10-17T14:30:00-05:00" nominal_start="2021-10-17T14:30:00-05:00" duration="767.12" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id11-p-video</asset>
+  </event>
+  <event title="Data Abstraction: A General Framework to Handle Program Verification of Data Structures" start="2021-10-17T14:42:47.120000-05:00" nominal_start="2021-10-17T14:30:00-05:00" duration="432.88" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Oracle Parfait: The Flavour of Real-World Vulnerability Detection and Intelligent Configuration" start="2021-10-17T15:40:00-05:00" nominal_start="2021-10-17T15:40:00-05:00" duration="4800.0" nominal_duration="1:20:00" session="SAS: Session 4A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21inv-inv1-p-video</asset>
+  </event>
+  <event title="Accelerating Program Analyses in Datalog by Merging Library Facts" start="2021-10-17T17:00:00-05:00" nominal_start="2021-10-17T17:00:00-05:00" duration="753.18" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id40-p-video</asset>
+  </event>
+  <event title="Accelerating Program Analyses in Datalog by Merging Library Facts" start="2021-10-17T17:12:33.180000-05:00" nominal_start="2021-10-17T17:00:00-05:00" duration="446.82" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Exploiting Verified Neural Networks via Floating Point Numerical Error" start="2021-10-17T17:20:00-05:00" nominal_start="2021-10-17T17:20:00-05:00" duration="629.15" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id6-p-video</asset>
+  </event>
+  <event title="Exploiting Verified Neural Networks via Floating Point Numerical Error" start="2021-10-17T17:30:29.150000-05:00" nominal_start="2021-10-17T17:20:00-05:00" duration="570.85" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Verifying Low-dimensional Input Neural Networks via Input Quantization" start="2021-10-17T17:40:00-05:00" nominal_start="2021-10-17T17:40:00-05:00" duration="457.18" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id26-p-video</asset>
+  </event>
+  <event title="Verifying Low-dimensional Input Neural Networks via Input Quantization" start="2021-10-17T17:47:37.180000-05:00" nominal_start="2021-10-17T17:40:00-05:00" duration="742.82" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="A Multi-Language Static Analysis of Python Programs with Native C Extensions" start="2021-10-17T18:00:00-05:00" nominal_start="2021-10-17T18:00:00-05:00" duration="823.09" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id7-p-video</asset>
+  </event>
+  <event title="A Multi-Language Static Analysis of Python Programs with Native C Extensions" start="2021-10-17T18:13:43.090000-05:00" nominal_start="2021-10-17T18:00:00-05:00" duration="376.91" nominal_duration="0:20:00" session="SAS: Session 1A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Static Analysis of Endian Portability by Abstract Interpretation" start="2021-10-17T21:50:00-05:00" nominal_start="2021-10-17T21:50:00-05:00" duration="827.27" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id33-p-video</asset>
+  </event>
+  <event title="Static Analysis of Endian Portability by Abstract Interpretation" start="2021-10-17T22:03:47.270000-05:00" nominal_start="2021-10-17T21:50:00-05:00" duration="372.73" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Verified Functional Programming of an Abstract Interpreter" start="2021-10-17T22:10:00-05:00" nominal_start="2021-10-17T22:10:00-05:00" duration="779.17" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id19-p-video</asset>
+  </event>
+  <event title="Verified Functional Programming of an Abstract Interpreter" start="2021-10-17T22:22:59.170000-05:00" nominal_start="2021-10-17T22:10:00-05:00" duration="420.83" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Data Abstraction: A General Framework to Handle Program Verification of Data Structures" start="2021-10-17T22:30:00-05:00" nominal_start="2021-10-17T22:30:00-05:00" duration="767.12" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id11-p-video</asset>
+  </event>
+  <event title="Data Abstraction: A General Framework to Handle Program Verification of Data Structures" start="2021-10-17T22:42:47.120000-05:00" nominal_start="2021-10-17T22:30:00-05:00" duration="432.88" nominal_duration="0:20:00" session="SAS: Session 3A">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Automated Verification of the Parallel Bellman--Ford Algorithm" start="2021-10-18T07:40:00-05:00" nominal_start="2021-10-18T07:40:00-05:00" duration="899.21" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id31-p-video</asset>
+  </event>
+  <event title="Automated Verification of the Parallel Bellman--Ford Algorithm" start="2021-10-18T07:54:59.210000-05:00" nominal_start="2021-10-18T07:40:00-05:00" duration="300.79" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Backward Symbolic Execution with Loop Folding" start="2021-10-18T08:00:00-05:00" nominal_start="2021-10-18T08:00:00-05:00" duration="778.18" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id47-p-video</asset>
+  </event>
+  <event title="Backward Symbolic Execution with Loop Folding" start="2021-10-18T08:12:58.180000-05:00" nominal_start="2021-10-18T08:00:00-05:00" duration="421.82" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Improving Thread-Modular Abstract Interpretation" start="2021-10-18T08:20:00-05:00" nominal_start="2021-10-18T08:20:00-05:00" duration="898.18" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id37-p-video</asset>
+  </event>
+  <event title="Improving Thread-Modular Abstract Interpretation" start="2021-10-18T08:34:58.180000-05:00" nominal_start="2021-10-18T08:20:00-05:00" duration="301.82" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Symbolic Automatic Relations and Their Applications to SMT and CHC Solving" start="2021-10-18T08:40:00-05:00" nominal_start="2021-10-18T08:40:00-05:00" duration="884.02" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id29-p-video</asset>
+  </event>
+  <event title="Symbolic Automatic Relations and Their Applications to SMT and CHC Solving" start="2021-10-18T08:54:44.020000-05:00" nominal_start="2021-10-18T08:40:00-05:00" duration="315.98" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Compositional Verification of Smart Contracts Through Communication Abstraction" start="2021-10-18T10:50:00-05:00" nominal_start="2021-10-18T10:50:00-05:00" duration="897.24" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id32-p-video</asset>
+  </event>
+  <event title="Compositional Verification of Smart Contracts Through Communication Abstraction" start="2021-10-18T11:04:57.240000-05:00" nominal_start="2021-10-18T10:50:00-05:00" duration="302.76" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Selectively-Amortized Resource Bounding" start="2021-10-18T11:10:00-05:00" nominal_start="2021-10-18T11:10:00-05:00" duration="865.09" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id41-p-video</asset>
+  </event>
+  <event title="Selectively-Amortized Resource Bounding" start="2021-10-18T11:24:25.090000-05:00" nominal_start="2021-10-18T11:10:00-05:00" duration="334.91" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Thread-modular Analysis of Release-Acquire Concurrency" start="2021-10-18T11:30:00-05:00" nominal_start="2021-10-18T11:30:00-05:00" duration="897.03" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id44-p-video</asset>
+  </event>
+  <event title="Thread-modular Analysis of Release-Acquire Concurrency" start="2021-10-18T11:44:57.030000-05:00" nominal_start="2021-10-18T11:30:00-05:00" duration="302.97" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Interactive Code Analysis" start="2021-10-18T13:50:00-05:00" nominal_start="2021-10-18T13:50:00-05:00" duration="4800.0" nominal_duration="1:20:00" session="SAS: Session 3B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21inv-inv2-p-video</asset>
+  </event>
+  <event title="Automated Verification of the Parallel Bellman--Ford Algorithm" start="2021-10-18T15:40:00-05:00" nominal_start="2021-10-18T15:40:00-05:00" duration="899.21" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id31-p-video</asset>
+  </event>
+  <event title="Automated Verification of the Parallel Bellman--Ford Algorithm" start="2021-10-18T15:54:59.210000-05:00" nominal_start="2021-10-18T15:40:00-05:00" duration="300.79" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Backward Symbolic Execution with Loop Folding" start="2021-10-18T16:00:00-05:00" nominal_start="2021-10-18T16:00:00-05:00" duration="778.18" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id47-p-video</asset>
+  </event>
+  <event title="Backward Symbolic Execution with Loop Folding" start="2021-10-18T16:12:58.180000-05:00" nominal_start="2021-10-18T16:00:00-05:00" duration="421.82" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Improving Thread-Modular Abstract Interpretation" start="2021-10-18T16:20:00-05:00" nominal_start="2021-10-18T16:20:00-05:00" duration="898.18" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id37-p-video</asset>
+  </event>
+  <event title="Improving Thread-Modular Abstract Interpretation" start="2021-10-18T16:34:58.180000-05:00" nominal_start="2021-10-18T16:20:00-05:00" duration="301.82" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Symbolic Automatic Relations and Their Applications to SMT and CHC Solving" start="2021-10-18T16:40:00-05:00" nominal_start="2021-10-18T16:40:00-05:00" duration="884.02" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id29-p-video</asset>
+  </event>
+  <event title="Symbolic Automatic Relations and Their Applications to SMT and CHC Solving" start="2021-10-18T16:54:44.020000-05:00" nominal_start="2021-10-18T16:40:00-05:00" duration="315.98" nominal_duration="0:20:00" session="SAS: Session 4B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Compositional Verification of Smart Contracts Through Communication Abstraction" start="2021-10-18T18:50:00-05:00" nominal_start="2021-10-18T18:50:00-05:00" duration="897.24" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id32-p-video</asset>
+  </event>
+  <event title="Compositional Verification of Smart Contracts Through Communication Abstraction" start="2021-10-18T19:04:57.240000-05:00" nominal_start="2021-10-18T18:50:00-05:00" duration="302.76" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Selectively-Amortized Resource Bounding" start="2021-10-18T19:10:00-05:00" nominal_start="2021-10-18T19:10:00-05:00" duration="865.09" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id41-p-video</asset>
+  </event>
+  <event title="Selectively-Amortized Resource Bounding" start="2021-10-18T19:24:25.090000-05:00" nominal_start="2021-10-18T19:10:00-05:00" duration="334.91" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Thread-modular Analysis of Release-Acquire Concurrency" start="2021-10-18T19:30:00-05:00" nominal_start="2021-10-18T19:30:00-05:00" duration="897.03" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21main-id44-p-video</asset>
+  </event>
+  <event title="Thread-modular Analysis of Release-Acquire Concurrency" start="2021-10-18T19:44:57.030000-05:00" nominal_start="2021-10-18T19:30:00-05:00" duration="302.97" nominal_duration="0:20:00" session="SAS: Session 2B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Interactive Code Analysis" start="2021-10-18T21:50:00-05:00" nominal_start="2021-10-18T21:50:00-05:00" duration="4800.0" nominal_duration="1:20:00" session="SAS: Session 3B">
+    <tracks>
+      <track>SAS 2021 - 28th Static Analysis Symposium</track>
+    </tracks>
+    <asset>sas21inv-inv2-p-video</asset>
+  </event>
+  <event title="Hedy: Creating a gradual programming language" start="2021-10-19T07:30:00-05:00" nominal_start="2021-10-19T07:30:00-05:00" duration="5400.0" nominal_duration="1:30:00" session="SPLASH REBASE: Education">
+    <tracks>
+      <track>REBASE</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="The F# view on the Static / Dynamic divide" start="2021-10-19T09:00:00-05:00" nominal_start="2021-10-19T09:00:00-05:00" duration="5400.0" nominal_duration="1:30:00" session="SPLASH REBASE: Dynamism">
+    <tracks>
+      <track>REBASE</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="A Retrospective on the Design of the Swift Programming Language" start="2021-10-19T10:50:00-05:00" nominal_start="2021-10-19T10:50:00-05:00" duration="5400.0" nominal_duration="1:30:00" session="SPLASH REBASE: Language">
+    <tracks>
+      <track>REBASE</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="A Brief History of the API, Revisited" start="2021-10-19T13:50:00-05:00" nominal_start="2021-10-19T13:50:00-05:00" duration="5400.0" nominal_duration="1:30:00" session="SPLASH REBASE: Interfaces">
+    <tracks>
+      <track>REBASE</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Fragmentation of Machine Architecture" start="2021-10-19T15:40:00-05:00" nominal_start="2021-10-19T15:40:00-05:00" duration="5400.0" nominal_duration="1:30:00" session="SPLASH REBASE: Hardware">
+    <tracks>
+      <track>REBASE</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="A Multiparty Session Typing Discipline for Fault-tolerant Event-driven Distributed Programming" start="2021-10-20T07:40:00-05:00" nominal_start="2021-10-20T07:40:00-05:00" duration="890.27" nominal_duration="0:15:00" session="SPLASH OOPSLA: Distributed Programming - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p119-p-video</asset>
+  </event>
+  <event title="Much ADO about Failures: A Fault-Aware Model for Compositional Verification of Strongly Consistent Distributed Systems" start="2021-10-20T07:54:50.270000-05:00" nominal_start="2021-10-20T07:55:00-05:00" duration="878.03" nominal_duration="0:15:00" session="SPLASH OOPSLA: Distributed Programming - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p2-p-video</asset>
+  </event>
+  <event title="Automatic Migration from Synchronous to Asynchronous JavaScript APIs" start="2021-10-20T08:09:28.300000-05:00" nominal_start="2021-10-20T08:10:00-05:00" duration="898.11" nominal_duration="0:15:00" session="SPLASH OOPSLA: Distributed Programming - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p446-p-video</asset>
+  </event>
+  <event title="QuickSilver: Modeling and Parameterized Verification for Distributed Agreement-Based Systems" start="2021-10-20T08:24:26.410000-05:00" nominal_start="2021-10-20T08:25:00-05:00" duration="869.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Distributed Programming - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p364-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T08:38:55.410000-05:00" nominal_start="2021-10-20T08:40:00-05:00" duration="1264.59" nominal_duration="0:20:00" session="SPLASH OOPSLA: Distributed Programming - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="SPLASH Conference at Chicago Starts Now" start="2021-10-20T09:00:00-05:00" nominal_start="2021-10-20T09:00:00-05:00" duration="60.0" nominal_duration="0:01:00" session="SPLASH Opening: SPLASH Start">
+    <tracks>
+      <track>Opening</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Exascale and then what?: HPC and AI for Scientific Discovery" start="2021-10-20T09:20:00-05:00" nominal_start="2021-10-20T09:20:00-05:00" duration="3600.0" nominal_duration="1:00:00" session="SPLASH Keynotes: SPLASH Keynote">
+    <tracks>
+      <track>Keynotes</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Fully Automated Functional Fuzzing of Android Apps for Detecting Non-Crashing Logic Bugs" start="2021-10-20T10:50:00-05:00" nominal_start="2021-10-20T10:50:00-05:00" duration="792.09" nominal_duration="0:15:00" session="SPLASH OOPSLA: Testing">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p344-p-video</asset>
+  </event>
+  <event title="Permchecker: A Toolchain for Debugging Memory Managers with Typestate" start="2021-10-20T11:03:12.090000-05:00" nominal_start="2021-10-20T11:05:00-05:00" duration="899.17" nominal_duration="0:15:00" session="SPLASH OOPSLA: Testing">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p236-p-video</asset>
+  </event>
+  <event title="Generative Type-Aware Mutation for Testing SMT Solvers" start="2021-10-20T11:18:11.260000-05:00" nominal_start="2021-10-20T11:20:00-05:00" duration="741.2" nominal_duration="0:15:00" session="SPLASH OOPSLA: Testing">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p264-p-video</asset>
+  </event>
+  <event title="Programming and Execution Models for Parallel Bounded Exhaustive Testing" start="2021-10-20T11:30:32.460000-05:00" nominal_start="2021-10-20T11:35:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Testing">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T11:45:32.460000-05:00" nominal_start="2021-10-20T11:50:00-05:00" duration="1467.54" nominal_duration="0:20:00" session="SPLASH OOPSLA: Testing">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="SpecSafe: Detecting Cache Side Channels in a Speculative World" start="2021-10-20T13:50:00-05:00" nominal_start="2021-10-20T13:50:00-05:00" duration="886.11" nominal_duration="0:15:00" session="SPLASH OOPSLA: Security">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p141-p-video</asset>
+  </event>
+  <event title="Interpretable Noninterference Measurement and its Application to Processor Designs" start="2021-10-20T14:04:46.110000-05:00" nominal_start="2021-10-20T14:05:00-05:00" duration="900.06" nominal_duration="0:15:00" session="SPLASH OOPSLA: Security">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p184-p-video</asset>
+  </event>
+  <event title="Reconciling Optimization With Secure Compilation" start="2021-10-20T14:19:46.170000-05:00" nominal_start="2021-10-20T14:20:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Security">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p190-p-video</asset>
+  </event>
+  <event title="Not So Fast: Understanding and Mitigating Negative Impacts of Compiler Optimizations on Code Reuse Gadget Sets" start="2021-10-20T14:34:46.170000-05:00" nominal_start="2021-10-20T14:35:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Security">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T14:49:46.170000-05:00" nominal_start="2021-10-20T14:50:00-05:00" duration="1213.83" nominal_duration="0:20:00" session="SPLASH OOPSLA: Security">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="A Multiparty Session Typing Discipline for Fault-tolerant Event-driven Distributed Programming" start="2021-10-20T15:40:00-05:00" nominal_start="2021-10-20T15:40:00-05:00" duration="890.27" nominal_duration="0:15:00" session="SPLASH OOPSLA: Distributed Programming">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p119-p-video</asset>
+  </event>
+  <event title="Much ADO about Failures: A Fault-Aware Model for Compositional Verification of Strongly Consistent Distributed Systems" start="2021-10-20T15:54:50.270000-05:00" nominal_start="2021-10-20T15:55:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Distributed Programming">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Automatic Migration from Synchronous to Asynchronous JavaScript APIs" start="2021-10-20T16:09:50.270000-05:00" nominal_start="2021-10-20T16:10:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Distributed Programming">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="QuickSilver: Modeling and Parameterized Verification for Distributed Agreement-Based Systems" start="2021-10-20T16:24:50.270000-05:00" nominal_start="2021-10-20T16:25:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Distributed Programming">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T16:39:50.270000-05:00" nominal_start="2021-10-20T16:40:00-05:00" duration="1209.73" nominal_duration="0:20:00" session="SPLASH OOPSLA: Distributed Programming">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Exascale and then what?: HPC and AI for Scientific Discovery" start="2021-10-20T17:20:00-05:00" nominal_start="2021-10-20T17:20:00-05:00" duration="3600.0" nominal_duration="1:00:00" session="SPLASH Keynotes: SPLASH Keynote">
+    <tracks>
+      <track>Keynotes</track>
+    </tracks>
+    <asset>4aea397e-24ec-43c4-a73b-26df9bb20557</asset>
+  </event>
+  <event title="Fully Automated Functional Fuzzing of Android Apps for Detecting Non-Crashing Logic Bugs" start="2021-10-20T18:50:00-05:00" nominal_start="2021-10-20T18:50:00-05:00" duration="792.09" nominal_duration="0:15:00" session="SPLASH OOPSLA: Testing - Mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p344-p-video</asset>
+  </event>
+  <event title="Permchecker: A Toolchain for Debugging Memory Managers with Typestate" start="2021-10-20T19:03:12.090000-05:00" nominal_start="2021-10-20T19:05:00-05:00" duration="899.17" nominal_duration="0:15:00" session="SPLASH OOPSLA: Testing - Mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p236-p-video</asset>
+  </event>
+  <event title="Generative Type-Aware Mutation for Testing SMT Solvers" start="2021-10-20T19:18:11.260000-05:00" nominal_start="2021-10-20T19:20:00-05:00" duration="741.2" nominal_duration="0:15:00" session="SPLASH OOPSLA: Testing - Mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p264-p-video</asset>
+  </event>
+  <event title="Programming and Execution Models for Parallel Bounded Exhaustive Testing" start="2021-10-20T19:30:32.460000-05:00" nominal_start="2021-10-20T19:35:00-05:00" duration="896.18" nominal_duration="0:15:00" session="SPLASH OOPSLA: Testing - Mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p532-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T19:45:28.640000-05:00" nominal_start="2021-10-20T19:50:00-05:00" duration="1471.36" nominal_duration="0:20:00" session="SPLASH OOPSLA: Testing - Mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="SpecSafe: Detecting Cache Side Channels in a Speculative World" start="2021-10-20T21:50:00-05:00" nominal_start="2021-10-20T21:50:00-05:00" duration="886.11" nominal_duration="0:15:00" session="SPLASH OOPSLA: Security - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p141-p-video</asset>
+  </event>
+  <event title="Interpretable Noninterference Measurement and its Application to Processor Designs" start="2021-10-20T22:04:46.110000-05:00" nominal_start="2021-10-20T22:05:00-05:00" duration="900.06" nominal_duration="0:15:00" session="SPLASH OOPSLA: Security - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p184-p-video</asset>
+  </event>
+  <event title="Reconciling Optimization With Secure Compilation" start="2021-10-20T22:19:46.170000-05:00" nominal_start="2021-10-20T22:20:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Security - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p190-p-video</asset>
+  </event>
+  <event title="Not So Fast: Understanding and Mitigating Negative Impacts of Compiler Optimizations on Code Reuse Gadget Sets" start="2021-10-20T22:34:46.170000-05:00" nominal_start="2021-10-20T22:35:00-05:00" duration="898.07" nominal_duration="0:15:00" session="SPLASH OOPSLA: Security - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p301-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T22:49:44.240000-05:00" nominal_start="2021-10-20T22:50:00-05:00" duration="1215.76" nominal_duration="0:20:00" session="SPLASH OOPSLA: Security - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Rich Specifications for Ethereum Smart Contract Verification" start="2021-10-21T07:40:00-05:00" nominal_start="2021-10-21T07:40:00-05:00" duration="827.21" nominal_duration="0:15:00" session="SPLASH OOPSLA: Smart Contracts and Distributed Programming - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p222-p-video</asset>
+  </event>
+  <event title="Symbolic Value-Flow Static Analysis: Deep, Precise, Complete Modeling of Ethereum Smart Contracts" start="2021-10-21T07:53:47.210000-05:00" nominal_start="2021-10-21T07:55:00-05:00" duration="897.15" nominal_duration="0:15:00" session="SPLASH OOPSLA: Smart Contracts and Distributed Programming - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p476-p-video</asset>
+  </event>
+  <event title="ECROs: Building Global Scale Systems from Sequential Code" start="2021-10-21T08:08:44.360000-05:00" nominal_start="2021-10-21T08:10:00-05:00" duration="882.16" nominal_duration="0:15:00" session="SPLASH OOPSLA: Smart Contracts and Distributed Programming - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p42-p-video</asset>
+  </event>
+  <event title="Durable Functions: Semantics for Stateful Serverless" start="2021-10-21T08:23:26.520000-05:00" nominal_start="2021-10-21T08:25:00-05:00" duration="898.26" nominal_duration="0:15:00" session="SPLASH OOPSLA: Smart Contracts and Distributed Programming - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p153-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-21T08:38:24.780000-05:00" nominal_start="2021-10-21T08:40:00-05:00" duration="1295.22" nominal_duration="0:20:00" session="SPLASH OOPSLA: Smart Contracts and Distributed Programming - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Integrated Scientific Modeling and Lab Automation" start="2021-10-21T09:20:00-05:00" nominal_start="2021-10-21T09:20:00-05:00" duration="3600.0" nominal_duration="1:00:00" session="SPLASH Keynotes: SPLASH Keynote">
+    <tracks>
+      <track>Keynotes</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Promises Are Made to be Broken" start="2021-10-21T10:50:00-05:00" nominal_start="2021-10-21T10:50:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Dynamic Languages">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="SimTyper: Sound Type Inference for Ruby using Type Equality Prediction" start="2021-10-21T11:05:00-05:00" nominal_start="2021-10-21T11:05:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Dynamic Languages">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Gradually Structured Data" start="2021-10-21T11:20:00-05:00" nominal_start="2021-10-21T11:20:00-05:00" duration="773.21" nominal_duration="0:15:00" session="SPLASH OOPSLA: Dynamic Languages">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p125-p-video</asset>
+  </event>
+  <event title="Solver-based Gradual Type Migration" start="2021-10-21T11:32:53.210000-05:00" nominal_start="2021-10-21T11:35:00-05:00" duration="699.09" nominal_duration="0:15:00" session="SPLASH OOPSLA: Dynamic Languages">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p49-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-21T11:44:32.300000-05:00" nominal_start="2021-10-21T11:50:00-05:00" duration="1527.7" nominal_duration="0:20:00" session="SPLASH OOPSLA: Dynamic Languages">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Generalizable Synthesis Through Unification" start="2021-10-21T13:50:00-05:00" nominal_start="2021-10-21T13:50:00-05:00" duration="849.08" nominal_duration="0:15:00" session="SPLASH OOPSLA: Program Synthesis">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p542-p-video</asset>
+  </event>
+  <event title="Gauss: Program Synthesis by Reasoning Over Graphs" start="2021-10-21T14:04:09.080000-05:00" nominal_start="2021-10-21T14:05:00-05:00" duration="879.15" nominal_duration="0:15:00" session="SPLASH OOPSLA: Program Synthesis">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p157-p-video</asset>
+  </event>
+  <event title="APIfix: Output-Oriented Program Synthesis for Combating Breaking Changes in Libraries" start="2021-10-21T14:18:48.230000-05:00" nominal_start="2021-10-21T14:20:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Program Synthesis">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="LooPy: Interactive Program Synthesis with Control Structures" start="2021-10-21T14:33:48.230000-05:00" nominal_start="2021-10-21T14:35:00-05:00" duration="838.08" nominal_duration="0:15:00" session="SPLASH OOPSLA: Program Synthesis">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p294-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-21T14:47:46.310000-05:00" nominal_start="2021-10-21T14:50:00-05:00" duration="1333.69" nominal_duration="0:20:00" session="SPLASH OOPSLA: Program Synthesis">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Rich Specifications for Ethereum Smart Contract Verification" start="2021-10-21T15:40:00-05:00" nominal_start="2021-10-21T15:40:00-05:00" duration="827.21" nominal_duration="0:15:00" session="SPLASH OOPSLA: Smart Contracts and Distributed Programming">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p222-p-video</asset>
+  </event>
+  <event title="Symbolic Value-Flow Static Analysis: Deep, Precise, Complete Modeling of Ethereum Smart Contracts" start="2021-10-21T15:53:47.210000-05:00" nominal_start="2021-10-21T15:55:00-05:00" duration="897.15" nominal_duration="0:15:00" session="SPLASH OOPSLA: Smart Contracts and Distributed Programming">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p476-p-video</asset>
+  </event>
+  <event title="ECROs: Building Global Scale Systems from Sequential Code" start="2021-10-21T16:08:44.360000-05:00" nominal_start="2021-10-21T16:10:00-05:00" duration="882.16" nominal_duration="0:15:00" session="SPLASH OOPSLA: Smart Contracts and Distributed Programming">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p42-p-video</asset>
+  </event>
+  <event title="Durable Functions: Semantics for Stateful Serverless" start="2021-10-21T16:23:26.520000-05:00" nominal_start="2021-10-21T16:25:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Smart Contracts and Distributed Programming">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-21T16:38:26.520000-05:00" nominal_start="2021-10-21T16:40:00-05:00" duration="1293.48" nominal_duration="0:20:00" session="SPLASH OOPSLA: Smart Contracts and Distributed Programming">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Integrated Scientific Modeling and Lab Automation" start="2021-10-21T17:20:00-05:00" nominal_start="2021-10-21T17:20:00-05:00" duration="3600.0" nominal_duration="1:00:00" session="SPLASH Keynotes: SPLASH Keynote">
+    <tracks>
+      <track>Keynotes</track>
+    </tracks>
+    <asset>3cd9d6e6-482e-4d66-9453-b8af77578e91</asset>
+  </event>
+  <event title="Promises Are Made to be Broken" start="2021-10-21T18:50:00-05:00" nominal_start="2021-10-21T18:50:00-05:00" duration="845.06" nominal_duration="0:15:00" session="SPLASH OOPSLA: Dynamic Languages - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p18-p-video</asset>
+  </event>
+  <event title="SimTyper: Sound Type Inference for Ruby using Type Equality Prediction" start="2021-10-21T19:04:05.060000-05:00" nominal_start="2021-10-21T19:05:00-05:00" duration="865.08" nominal_duration="0:15:00" session="SPLASH OOPSLA: Dynamic Languages - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p40-p-video</asset>
+  </event>
+  <event title="Gradually Structured Data" start="2021-10-21T19:18:30.140000-05:00" nominal_start="2021-10-21T19:20:00-05:00" duration="773.21" nominal_duration="0:15:00" session="SPLASH OOPSLA: Dynamic Languages - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p125-p-video</asset>
+  </event>
+  <event title="Solver-based Gradual Type Migration" start="2021-10-21T19:31:23.350000-05:00" nominal_start="2021-10-21T19:35:00-05:00" duration="699.09" nominal_duration="0:15:00" session="SPLASH OOPSLA: Dynamic Languages - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p49-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-21T19:43:02.440000-05:00" nominal_start="2021-10-21T19:50:00-05:00" duration="1617.56" nominal_duration="0:20:00" session="SPLASH OOPSLA: Dynamic Languages - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Generalizable Synthesis Through Unification" start="2021-10-21T21:50:00-05:00" nominal_start="2021-10-21T21:50:00-05:00" duration="849.08" nominal_duration="0:15:00" session="SPLASH OOPSLA: Program Synthesis - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p542-p-video</asset>
+  </event>
+  <event title="Gauss: Program Synthesis by Reasoning Over Graphs" start="2021-10-21T22:04:09.080000-05:00" nominal_start="2021-10-21T22:05:00-05:00" duration="879.15" nominal_duration="0:15:00" session="SPLASH OOPSLA: Program Synthesis - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p157-p-video</asset>
+  </event>
+  <event title="APIfix: Output-Oriented Program Synthesis for Combating Breaking Changes in Libraries" start="2021-10-21T22:18:48.230000-05:00" nominal_start="2021-10-21T22:20:00-05:00" duration="872.25" nominal_duration="0:15:00" session="SPLASH OOPSLA: Program Synthesis - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p448-p-video</asset>
+  </event>
+  <event title="LooPy: Interactive Program Synthesis with Control Structures" start="2021-10-21T22:33:20.480000-05:00" nominal_start="2021-10-21T22:35:00-05:00" duration="838.08" nominal_duration="0:15:00" session="SPLASH OOPSLA: Program Synthesis - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p294-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-21T22:47:18.560000-05:00" nominal_start="2021-10-21T22:50:00-05:00" duration="1361.44" nominal_duration="0:20:00" session="SPLASH OOPSLA: Program Synthesis - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="SPLASH Awards" start="2021-10-22T09:00:00-05:00" nominal_start="2021-10-22T09:00:00-05:00" duration="1200.0" nominal_duration="0:20:00" session="SPLASH Awards: Awards">
+    <tracks>
+      <track>Awards</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Copy-and-Patch Compilation" start="2021-10-22T10:50:00-05:00" nominal_start="2021-10-22T10:50:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Optimization">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p169-p-video</asset>
+  </event>
+  <event title="VESPA: Static Profiling for Binary Optimization" start="2021-10-22T11:05:00-05:00" nominal_start="2021-10-22T11:05:00-05:00" duration="856.26" nominal_duration="0:15:00" session="SPLASH OOPSLA: Optimization">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p194-p-video</asset>
+  </event>
+  <event title="A Derivative-based Parser Generator for Visibly Pushdown Grammars" start="2021-10-22T11:19:16.260000-05:00" nominal_start="2021-10-22T11:20:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Optimization">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-22T11:34:16.260000-05:00" nominal_start="2021-10-22T11:35:00-05:00" duration="2143.74" nominal_duration="0:35:00" session="SPLASH OOPSLA: Optimization">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="MonkeyDB: Effectively Testing Correctness under Weak Isolation Levels" start="2021-10-22T13:50:00-05:00" nominal_start="2021-10-22T13:50:00-05:00" duration="857.08" nominal_duration="0:15:00" session="SPLASH OOPSLA: Test and Verification">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p150-p-video</asset>
+  </event>
+  <event title="Formal Verification of High-Level Synthesis" start="2021-10-22T14:04:17.080000-05:00" nominal_start="2021-10-22T14:05:00-05:00" duration="899.02" nominal_duration="0:15:00" session="SPLASH OOPSLA: Test and Verification">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p86-p-video</asset>
+  </event>
+  <event title="Specifying and Testing GPU Workgroup Progress Models" start="2021-10-22T14:19:16.100000-05:00" nominal_start="2021-10-22T14:20:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Test and Verification">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-22T14:34:16.100000-05:00" nominal_start="2021-10-22T14:35:00-05:00" duration="2143.9" nominal_duration="0:35:00" session="SPLASH OOPSLA: Test and Verification">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="SPLASH Awards" start="2021-10-22T17:00:00-05:00" nominal_start="2021-10-22T17:00:00-05:00" duration="1200.0" nominal_duration="0:20:00" session="SPLASH Awards: Awards">
+    <tracks>
+      <track>Awards</track>
+    </tracks>
+    <asset>fa5fb5f4-0b6b-404a-90be-226c87cf9558</asset>
+  </event>
+  <event title="Copy-and-Patch Compilation" start="2021-10-22T18:50:00-05:00" nominal_start="2021-10-22T18:50:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Optimization - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p169-p-video</asset>
+  </event>
+  <event title="VESPA: Static Profiling for Binary Optimization" start="2021-10-22T19:05:00-05:00" nominal_start="2021-10-22T19:05:00-05:00" duration="856.26" nominal_duration="0:15:00" session="SPLASH OOPSLA: Optimization - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p194-p-video</asset>
+  </event>
+  <event title="A Derivative-based Parser Generator for Visibly Pushdown Grammars" start="2021-10-22T19:19:16.260000-05:00" nominal_start="2021-10-22T19:20:00-05:00" duration="815.19" nominal_duration="0:15:00" session="SPLASH OOPSLA: Optimization - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p245-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-22T19:32:51.450000-05:00" nominal_start="2021-10-22T19:35:00-05:00" duration="2228.55" nominal_duration="0:35:00" session="SPLASH OOPSLA: Optimization - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="MonkeyDB: Effectively Testing Correctness under Weak Isolation Levels" start="2021-10-22T21:50:00-05:00" nominal_start="2021-10-22T21:50:00-05:00" duration="857.08" nominal_duration="0:15:00" session="SPLASH OOPSLA: Test and Verification - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p150-p-video</asset>
+  </event>
+  <event title="Formal Verification of High-Level Synthesis" start="2021-10-22T22:04:17.080000-05:00" nominal_start="2021-10-22T22:05:00-05:00" duration="899.02" nominal_duration="0:15:00" session="SPLASH OOPSLA: Test and Verification - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p86-p-video</asset>
+  </event>
+  <event title="Specifying and Testing GPU Workgroup Progress Models" start="2021-10-22T22:19:16.100000-05:00" nominal_start="2021-10-22T22:20:00-05:00" duration="897.15" nominal_duration="0:15:00" session="SPLASH OOPSLA: Test and Verification - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p143-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-22T22:34:13.250000-05:00" nominal_start="2021-10-22T22:35:00-05:00" duration="2146.75" nominal_duration="0:35:00" session="SPLASH OOPSLA: Test and Verification - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+</room>

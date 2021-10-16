@@ -26,6 +26,16 @@ import math
 from itertools import *
 from enum import Enum
 
+
+## Some global constants
+researchr_fstring = "%Y/%m/%d %H:%M"
+
+base_output_file = "SPLASH21-playlist-demo-Zurich-" # FIXME remove demo for final
+base_room = "Swissotel Chicago | Zurich "
+
+room_ids = ["A", "B", "C"]
+
+
 class TimeSlotSchedule:
     """
     Appears as a timeslot in the schedule
@@ -88,7 +98,6 @@ class TimeSlotSchedule:
         if len(mirror_els) > 0:
             is_mirror = mirror_els[0] == "true"
 
-        researchr_fstring = "%Y/%m/%d %H:%M"
         start_ts = datetime.datetime.strptime(f"{start_date} {start_time}", researchr_fstring).replace(tzinfo=timezone)
         end_ts = datetime.datetime.strptime(f"{end_date} {end_time}", researchr_fstring).replace(tzinfo=timezone)
         # description and persons elided; we don't need them for scheduling
@@ -665,7 +674,7 @@ class PlaylistEvent:
     """
     def __init__(self, title, source, category, duration, endmode, onairtime, m, ts, recording=None):
         assert isinstance(title, str)
-        self.title = title
+        self.title = title.strip()
         self.source = source
         self.category = category
         self.duration = duration
@@ -701,6 +710,24 @@ class PlaylistEvent:
         sources.append(self.source.to_onsite_xml())
         event.append(sources)
         return event
+    
+    def from_xml(xml):
+        """
+        Returns a list of PlaylistEvents reading from the playlist file.
+        """
+        title = xml.xpath("./title/text()")[0]
+        category = xml.xpath("./category/text()")[0]
+        ds =  xml.xpath("./duration/text()")[0].split(':')
+
+        duration = datetime.timedelta(hours=int(ds[0]), minutes=int(ds[1]), seconds=int(ds[3]), milliseconds=int(ds[3]))
+                     # We have :00 added as frames and iso parser gets confused with that
+        
+        endmode = xml.xpath("./endmode/text()")[0]
+        onairtime = datetime.datetime.fromisoformat(xml.xpath("./onairtime/text()")[0].replace('T', ' ')[:19])
+                       # not sure why we have an extra :00 for ms. This is not standard!
+
+        recording = xml.xpath("./recording/text()")[0]
+        return PlaylistEvent(title,None,  category, duration, endmode, onairtime, None, None, recording)
 
     def to_xml(self):
         """
@@ -773,18 +800,43 @@ class PlaylistEvent:
         
         return event
 
+    
 
-def gen_playlist_event(m, ts):
-    """
-    Given a event mapping and a schedule timeslot generates a playlist event
-    """    
-    title = m.title
-    category = "LIVE" # FIXME
-    duration = ts.end_ts - ts.start_ts
-    endmode = "FOLLOW" # TODO: Confirm this
-    onairtime = ts.start_ts
+# def gen_fillers(room_id, timeslots):
+#     """
+#     Takes a list of time ordered timeslot if any two events have a gap then we generate a filler event to fit in the gap
+#     """
+#     adjacent_ts = list(window(timeslots, 2))
+#     fillers = []
+#     for (e1, e2) in adjacent_ts:
+#         if e2.onairtime < e1.onairtime + e1.duration:
+#             print(f"Warning: Overlapping events {e1.ts.title} {e2.ts.title}")
+#         if e2.onairtime > e1.onairtime + e1.duration: # TODO may be the diff should be between a threshold?
+#             print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.title} and {e2.title}")
+#             fillers.append(PlaylistEvent("FILLER_"+room_id
+#                                          , "LIVE" # TODO Fillers won't be live... ?
+#                                          , e2.onairtime - (e1.onairtime + e1.duration)
+#                                          , e1.endmode
+#                                          , e1.onairtime + e1.duration, # start after the prev event ends
+#                                          None, # We don't have a mapping or timeslot xml object for fillers
+#                                          None))
+#     return fillers
         
-    return PlaylistEvent(title, category, duration, endmode, onairtime, m, ts)
+
+    
+# def gen_playlist(room_id, event_mappings, timeslots_mappings):
+#     """
+#     Given an map of event mappings and a map of event schedules generates a playlist 
+#     """
+#     event_ids = event_mappings.keys() & timeslots_mappings.keys()
+    
+#     es = map(lambda x: gen_playlist_event(event_mappings[x], timeslots_mappings[x]), event_ids)
+
+#     pl = sorted(es, key=lambda x: x.onairtime)
+
+#     fillers = gen_fillers(room_id, pl)
+
+#     return list(sorted ((pl + fillers), key=lambda x: x.onairtime))
 
 
 def window(iterable, size):
@@ -798,43 +850,6 @@ def window(iterable, size):
             next(each, None)
     return list(zip(*iters))
 
-def gen_fillers(room_id, timeslots):
-    """
-    Takes a list of time ordered timeslot if any two events have a gap then we generate a filler event to fit in the gap
-    """
-    adjacent_ts = list(window(timeslots, 2))
-    fillers = []
-    for (e1, e2) in adjacent_ts:
-        if e2.onairtime < e1.onairtime + e1.duration:
-            print(f"Warning: Overlapping events {e1.ts.title} {e2.ts.title}")
-        if e2.onairtime > e1.onairtime + e1.duration: # TODO may be the diff should be between a threshold?
-            print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.title} and {e2.title}")
-            fillers.append(PlaylistEvent("FILLER_"+room_id
-                                         , "LIVE" # TODO Fillers won't be live... ?
-                                         , e2.onairtime - (e1.onairtime + e1.duration)
-                                         , e1.endmode
-                                         , e1.onairtime + e1.duration, # start after the prev event ends
-                                         None, # We don't have a mapping or timeslot xml object for fillers
-                                         None))
-    return fillers
-        
-
-    
-def gen_playlist(room_id, event_mappings, timeslots_mappings):
-    """
-    Given an map of event mappings and a map of event schedules generates a playlist 
-    """
-    event_ids = event_mappings.keys() & timeslots_mappings.keys()
-    
-    es = map(lambda x: gen_playlist_event(event_mappings[x], timeslots_mappings[x]), event_ids)
-
-    pl = sorted(es, key=lambda x: x.onairtime)
-
-    fillers = gen_fillers(room_id, pl)
-
-    return list(sorted ((pl + fillers), key=lambda x: x.onairtime))
-        
-    
 def validate_playlist(pl):
     """
     For a room, we don't want multiple events running or 
@@ -845,7 +860,8 @@ def validate_playlist(pl):
     for (e1, e2) in adj_evs:
         if e2.onairtime < e1.onairtime + e1.duration:
             print(f"{e1.title} ({e1.ts.event_id}@{e1.onairtime}-{e1.duration.total_seconds()}) runs over {e2.title} ({e2.ts.event_id}@{e2.onairtime}-{e2.duration.total_seconds()}) by {((e1.onairtime + e1.duration) - e2.onairtime).total_seconds()}")
-
+        
+    
 def make_chair_xml(room_playlists, scheduler):
     room_map = dict()
     for room,evts in room_playlists.items():
@@ -875,13 +891,7 @@ def make_chair_xml(room_playlists, scheduler):
 
 # prduces 3 files "SPLASH-2021-playlist-demo-Zurich{A|B|C}.xml"
 if __name__ == '__main__':
-    print("howdy")
-    
-    base_output_file = "SPLASH21-playlist-demo-Zurich-" # FIXME remove demo for final
-    base_room = "Swissotel Chicago | Zurich "
-
-    room_ids = ["A", "B", "C"]
-    
+    print("howdy")    
     rooms = [base_room + r for r in room_ids]
 
 
@@ -907,7 +917,6 @@ if __name__ == '__main__':
     for room, evts in schedule.items():
         evts.sort(key=lambda evt: evt.start)
         room_playlists[room] = list(map(lambda evt: evt.make_playlist_element(), evts))
-        print(f"validating playlist for room {room}")
         validate_playlist(room_playlists[room])
         
     # TODO: insert filler elements

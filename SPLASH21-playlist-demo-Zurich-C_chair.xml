@@ -1,0 +1,1083 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<room main_start="09:00:00" main_end="17:00:00" timezone="America/Chicago" room="Swissotel Chicago | Zurich B">
+  <event title="A Concurrency Model for JavaScript with Cooperative Cancellation" start="2021-10-17T07:40:00-05:00" nominal_start="2021-10-17T07:40:00-05:00" duration="898.24" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 4">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p38-p-video</asset>
+  </event>
+  <event title="There Is More Than One Way to Zen Your Python" start="2021-10-17T07:54:58.240000-05:00" nominal_start="2021-10-17T07:55:00-05:00" duration="877.13" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 4">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p30-p-video</asset>
+  </event>
+  <event title="Extracting The Power of Dependent Types" start="2021-10-17T08:09:35.370000-05:00" nominal_start="2021-10-17T08:10:00-05:00" duration="900.0" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 4">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Getting Grammars into Shape for Block-based Editors" start="2021-10-17T08:24:35.370000-05:00" nominal_start="2021-10-17T08:25:00-05:00" duration="900.0" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 4">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Discussion, Questions, Answers" start="2021-10-17T08:39:35.370000-05:00" nominal_start="2021-10-17T08:40:00-05:00" duration="1224.63" nominal_duration="0:20:00" session="GPCE: GPCE/SLE Session 4">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="SLE/GPCE Joint Welcome" start="2021-10-17T09:00:00-05:00" nominal_start="2021-10-17T09:00:00-05:00" duration="1200.0" nominal_duration="0:20:00" session="GPCE: GPCE/SLE Session 1">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="SLE Keynote - Integrating Usability into Programming Language Design" start="2021-10-17T09:20:00-05:00" nominal_start="2021-10-17T09:20:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="GPCE: GPCE/SLE Session 1">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Monilogging for Executable Domain-Specific Languages" start="2021-10-17T09:50:00-05:00" nominal_start="2021-10-17T09:50:00-05:00" duration="898.24" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 1">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p21-p-video</asset>
+  </event>
+  <event title="Vision: The Next 700 Language Workbenches" start="2021-10-17T10:04:58.240000-05:00" nominal_start="2021-10-17T10:05:00-05:00" duration="373.14" nominal_duration="0:08:00" session="GPCE: GPCE/SLE Session 1">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p24-p-video</asset>
+  </event>
+  <event title="Discussion, Questions, Answers" start="2021-10-17T10:11:11.380000-05:00" nominal_start="2021-10-17T10:13:00-05:00" duration="528.62" nominal_duration="0:07:00" session="GPCE: GPCE/SLE Session 1">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="GPCE Keynote - Live Programming and Programming by Example: Better Together" start="2021-10-17T10:50:00-05:00" nominal_start="2021-10-17T10:50:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="GPCE: GPCE/SLE Session 2">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Automating the Synthesis of Recommender Systems for Modelling Languages" start="2021-10-17T11:20:00-05:00" nominal_start="2021-10-17T11:20:00-05:00" duration="816.0" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 2">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p20-p-video</asset>
+  </event>
+  <event title="Executing Certified Model Transformations on Apache Spark" start="2021-10-17T11:33:36-05:00" nominal_start="2021-10-17T11:35:00-05:00" duration="984.0" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 2">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p6-p-video</asset>
+  </event>
+  <event title="New Ideas: Automated Engineering of Metamorphic Testing Environments for Domain-Specific Languages" start="2021-10-17T11:50:00-05:00" nominal_start="2021-10-17T11:50:00-05:00" duration="434.02" nominal_duration="0:08:00" session="GPCE: GPCE/SLE Session 2">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p18-p-video</asset>
+  </event>
+  <event title="Discussion, Questions, Answers" start="2021-10-17T11:57:14.020000-05:00" nominal_start="2021-10-17T11:58:00-05:00" duration="765.98" nominal_duration="0:12:00" session="GPCE: GPCE/SLE Session 2">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="A Variational Database Management System" start="2021-10-17T13:50:00-05:00" nominal_start="2021-10-17T13:50:00-05:00" duration="900.0" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 3">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p5-p-video</asset>
+  </event>
+  <event title="The Life Cycle of Features in Highly-Configurable Software Systems Evolving in Space and Time" start="2021-10-17T14:05:00-05:00" nominal_start="2021-10-17T14:05:00-05:00" duration="897.23" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 3">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p2-p-video</asset>
+  </event>
+  <event title="Towards Supporting SPL Engineering in Low-Code Platforms using a DSL Approach" start="2021-10-17T14:19:57.230000-05:00" nominal_start="2021-10-17T14:20:00-05:00" duration="800.18" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 3">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p3-p-video</asset>
+  </event>
+  <event title="On-Stack Replacement for Program Generators and Source-to-Source Compilers" start="2021-10-17T14:33:17.410000-05:00" nominal_start="2021-10-17T14:35:00-05:00" duration="853.09" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 3">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p28-p-video</asset>
+  </event>
+  <event title="Discussion, Questions, Answers" start="2021-10-17T14:47:30.500000-05:00" nominal_start="2021-10-17T14:50:00-05:00" duration="1349.5" nominal_duration="0:20:00" session="GPCE: GPCE/SLE Session 3">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="A Concurrency Model for JavaScript with Cooperative Cancellation" start="2021-10-17T15:40:00-05:00" nominal_start="2021-10-17T15:40:00-05:00" duration="898.24" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 4">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p38-p-video</asset>
+  </event>
+  <event title="There Is More Than One Way to Zen Your Python" start="2021-10-17T15:54:58.240000-05:00" nominal_start="2021-10-17T15:55:00-05:00" duration="877.13" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 4">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p30-p-video</asset>
+  </event>
+  <event title="Extracting The Power of Dependent Types" start="2021-10-17T16:09:35.370000-05:00" nominal_start="2021-10-17T16:10:00-05:00" duration="900.0" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 4">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>65df9844-070c-4122-adea-ff24e69cdcd3</asset>
+  </event>
+  <event title="Getting Grammars into Shape for Block-based Editors" start="2021-10-17T16:24:35.370000-05:00" nominal_start="2021-10-17T16:25:00-05:00" duration="900.0" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 4">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>5c03a4dc-23f5-48ee-86f6-f3a571c4d6d1</asset>
+  </event>
+  <event title="Discussion, Questions, Answers" start="2021-10-17T16:39:35.370000-05:00" nominal_start="2021-10-17T16:40:00-05:00" duration="1224.63" nominal_duration="0:20:00" session="GPCE: GPCE/SLE Session 4">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="SLE/GPCE Joint Welcome" start="2021-10-17T17:00:00-05:00" nominal_start="2021-10-17T17:00:00-05:00" duration="1200.0" nominal_duration="0:20:00" session="GPCE: GPCE/SLE Session 1">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>1953b8e6-dbc4-41de-82f3-767184e4791d</asset>
+  </event>
+  <event title="SLE Keynote - Integrating Usability into Programming Language Design" start="2021-10-17T17:20:00-05:00" nominal_start="2021-10-17T17:20:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="GPCE: GPCE/SLE Session 1">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>a97ec605-a47a-416a-8145-2f81ace21eaa</asset>
+  </event>
+  <event title="Monilogging for Executable Domain-Specific Languages" start="2021-10-17T17:50:00-05:00" nominal_start="2021-10-17T17:50:00-05:00" duration="898.24" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 1">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p21-p-video</asset>
+  </event>
+  <event title="Vision: The Next 700 Language Workbenches" start="2021-10-17T18:04:58.240000-05:00" nominal_start="2021-10-17T18:05:00-05:00" duration="373.14" nominal_duration="0:08:00" session="GPCE: GPCE/SLE Session 1">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p24-p-video</asset>
+  </event>
+  <event title="Discussion, Questions, Answers" start="2021-10-17T18:11:11.380000-05:00" nominal_start="2021-10-17T18:13:00-05:00" duration="528.62" nominal_duration="0:07:00" session="GPCE: GPCE/SLE Session 1">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="GPCE Keynote - Live Programming and Programming by Example: Better Together" start="2021-10-17T18:50:00-05:00" nominal_start="2021-10-17T18:50:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="GPCE: GPCE/SLE Session 2">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>52162c2c-b58f-4bf6-8bfd-aa4df8dc3e4b</asset>
+  </event>
+  <event title="Automating the Synthesis of Recommender Systems for Modelling Languages" start="2021-10-17T19:20:00-05:00" nominal_start="2021-10-17T19:20:00-05:00" duration="816.0" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 2">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p20-p-video</asset>
+  </event>
+  <event title="Executing Certified Model Transformations on Apache Spark" start="2021-10-17T19:33:36-05:00" nominal_start="2021-10-17T19:35:00-05:00" duration="984.0" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 2">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p6-p-video</asset>
+  </event>
+  <event title="New Ideas: Automated Engineering of Metamorphic Testing Environments for Domain-Specific Languages" start="2021-10-17T19:50:00-05:00" nominal_start="2021-10-17T19:50:00-05:00" duration="434.02" nominal_duration="0:08:00" session="GPCE: GPCE/SLE Session 2">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p18-p-video</asset>
+  </event>
+  <event title="Discussion, Questions, Answers" start="2021-10-17T19:57:14.020000-05:00" nominal_start="2021-10-17T19:58:00-05:00" duration="765.98" nominal_duration="0:12:00" session="GPCE: GPCE/SLE Session 2">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="A Variational Database Management System" start="2021-10-17T21:50:00-05:00" nominal_start="2021-10-17T21:50:00-05:00" duration="900.0" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 3">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p5-p-video</asset>
+  </event>
+  <event title="The Life Cycle of Features in Highly-Configurable Software Systems Evolving in Space and Time" start="2021-10-17T22:05:00-05:00" nominal_start="2021-10-17T22:05:00-05:00" duration="897.23" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 3">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p2-p-video</asset>
+  </event>
+  <event title="Towards Supporting SPL Engineering in Low-Code Platforms using a DSL Approach" start="2021-10-17T22:19:57.230000-05:00" nominal_start="2021-10-17T22:20:00-05:00" duration="800.18" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 3">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p3-p-video</asset>
+  </event>
+  <event title="On-Stack Replacement for Program Generators and Source-to-Source Compilers" start="2021-10-17T22:33:17.410000-05:00" nominal_start="2021-10-17T22:35:00-05:00" duration="853.09" nominal_duration="0:15:00" session="GPCE: GPCE/SLE Session 3">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p28-p-video</asset>
+  </event>
+  <event title="Discussion, Questions, Answers" start="2021-10-17T22:47:30.500000-05:00" nominal_start="2021-10-17T22:50:00-05:00" duration="1349.5" nominal_duration="0:20:00" session="GPCE: GPCE/SLE Session 3">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Leveraging Relational Concept Analysis for Automated Feature Location in Software Product Lines" start="2021-10-18T07:40:00-05:00" nominal_start="2021-10-18T07:40:00-05:00" duration="894.02" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 8">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p32-p-video</asset>
+  </event>
+  <event title="FIDDLR: Streamlining Reuse with Concern-Specific Modelling Languages" start="2021-10-18T07:54:54.020000-05:00" nominal_start="2021-10-18T07:55:00-05:00" duration="811.02" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 8">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p44-p-video</asset>
+  </event>
+  <event title="Lifted Termination Analysis by Abstract Interpretation and its Applications" start="2021-10-18T08:08:25.040000-05:00" nominal_start="2021-10-18T08:10:00-05:00" duration="859.06" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 8">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p20-p-video</asset>
+  </event>
+  <event title="Delta-based Verification of Software Product Families" start="2021-10-18T08:22:44.100000-05:00" nominal_start="2021-10-18T08:25:00-05:00" duration="897.15" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 8">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p16-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-18T08:37:41.250000-05:00" nominal_start="2021-10-18T08:40:00-05:00" duration="1338.75" nominal_duration="0:20:00" session="SLE: SLE/GPCE Session 8">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Type-safe generation of modules in applicative and generative styles" start="2021-10-18T09:00:00-05:00" nominal_start="2021-10-18T09:00:00-05:00" duration="881.02" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 5">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p35-p-video</asset>
+  </event>
+  <event title="HACCLE: Metaprogramming for Secure Multi-Party Computation" start="2021-10-18T09:14:41.020000-05:00" nominal_start="2021-10-18T09:15:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 5">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Multi-Stage Programming with Generative and Analytical Macros" start="2021-10-18T09:29:41.020000-05:00" nominal_start="2021-10-18T09:30:00-05:00" duration="720.28" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 5">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p21-p-video</asset>
+  </event>
+  <event title="Metaprogramming with Combinators" start="2021-10-18T09:41:41.300000-05:00" nominal_start="2021-10-18T09:45:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 5">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-18T09:56:41.300000-05:00" nominal_start="2021-10-18T10:00:00-05:00" duration="1398.7" nominal_duration="0:20:00" session="SLE: SLE/GPCE Session 5">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Invited Speaker" start="2021-10-18T10:20:00-05:00" nominal_start="2021-10-18T10:20:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="SPLASH Ask Me Anything (AMA): AMA Session">
+    <tracks>
+      <track>Ask Me Anything (AMA)</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Fast Incremental PEG Parsing" start="2021-10-18T10:50:00-05:00" nominal_start="2021-10-18T10:50:00-05:00" duration="857.27" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p5-p-video</asset>
+  </event>
+  <event title="Faster Reachability Analysis for LR(1) Parsers" start="2021-10-18T11:04:17.270000-05:00" nominal_start="2021-10-18T11:05:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p15-p-video</asset>
+  </event>
+  <event title="Automatic Grammar Repair" start="2021-10-18T11:19:17.270000-05:00" nominal_start="2021-10-18T11:20:00-05:00" duration="721.11" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p33-p-video</asset>
+  </event>
+  <event title="Vision: Bias in Systematic Grammar-Based Test Suite Construction Algorithms" start="2021-10-18T11:31:18.380000-05:00" nominal_start="2021-10-18T11:35:00-05:00" duration="316.02" nominal_duration="0:08:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p12-p-video</asset>
+  </event>
+  <event title="Compiling pattern matching to in-place modifications" start="2021-10-18T11:36:34.400000-05:00" nominal_start="2021-10-18T11:43:00-05:00" duration="480.27" nominal_duration="0:08:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p22-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-18T11:44:34.670000-05:00" nominal_start="2021-10-18T11:51:00-05:00" duration="1525.33" nominal_duration="0:19:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="A DSL for Explanatory Decision Making" start="2021-10-18T13:50:00-05:00" nominal_start="2021-10-18T13:50:00-05:00" duration="889.15" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 7">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p25-p-video</asset>
+  </event>
+  <event title="SEALS: A framework for building Self-Adaptive Virtual Machines" start="2021-10-18T14:04:49.150000-05:00" nominal_start="2021-10-18T14:05:00-05:00" duration="711.15" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 7">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p40-p-video</asset>
+  </event>
+  <event title="Understanding and Improving Model-Driven IoT Systems Through Accompanying Digital Twins" start="2021-10-18T14:16:40.300000-05:00" nominal_start="2021-10-18T14:20:00-05:00" duration="862.07" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 7">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p36-p-video</asset>
+  </event>
+  <event title="Artifact and Reference Models for Generative AI Frameworks and Build Systems" start="2021-10-18T14:31:02.370000-05:00" nominal_start="2021-10-18T14:35:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 7">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-18T14:46:02.370000-05:00" nominal_start="2021-10-18T14:50:00-05:00" duration="1437.63" nominal_duration="0:20:00" session="SLE: SLE/GPCE Session 7">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Leveraging Relational Concept Analysis for Automated Feature Location in Software Product Lines" start="2021-10-18T15:40:00-05:00" nominal_start="2021-10-18T15:40:00-05:00" duration="894.02" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 8">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p32-p-video</asset>
+  </event>
+  <event title="FIDDLR: Streamlining Reuse with Concern-Specific Modelling Languages" start="2021-10-18T15:54:54.020000-05:00" nominal_start="2021-10-18T15:55:00-05:00" duration="811.02" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 8">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p44-p-video</asset>
+  </event>
+  <event title="Lifted Termination Analysis by Abstract Interpretation and its Applications" start="2021-10-18T16:08:25.040000-05:00" nominal_start="2021-10-18T16:10:00-05:00" duration="859.06" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 8">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p20-p-video</asset>
+  </event>
+  <event title="Delta-based Verification of Software Product Families" start="2021-10-18T16:22:44.100000-05:00" nominal_start="2021-10-18T16:25:00-05:00" duration="897.15" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 8">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p16-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-18T16:37:41.250000-05:00" nominal_start="2021-10-18T16:40:00-05:00" duration="1338.75" nominal_duration="0:20:00" session="SLE: SLE/GPCE Session 8">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Type-safe generation of modules in applicative and generative styles" start="2021-10-18T17:00:00-05:00" nominal_start="2021-10-18T17:00:00-05:00" duration="881.02" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 5">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p35-p-video</asset>
+  </event>
+  <event title="HACCLE: Metaprogramming for Secure Multi-Party Computation" start="2021-10-18T17:14:41.020000-05:00" nominal_start="2021-10-18T17:15:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 5">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>f543f436-3672-458d-b29e-a56692560d3c</asset>
+  </event>
+  <event title="Multi-Stage Programming with Generative and Analytical Macros" start="2021-10-18T17:29:41.020000-05:00" nominal_start="2021-10-18T17:30:00-05:00" duration="720.28" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 5">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p21-p-video</asset>
+  </event>
+  <event title="Metaprogramming with Combinators" start="2021-10-18T17:41:41.300000-05:00" nominal_start="2021-10-18T17:45:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 5">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>973121e8-34fe-4e2b-b368-0c84d6a61a30</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-18T17:56:41.300000-05:00" nominal_start="2021-10-18T18:00:00-05:00" duration="1398.7" nominal_duration="0:20:00" session="SLE: SLE/GPCE Session 5">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Fast Incremental PEG Parsing" start="2021-10-18T18:50:00-05:00" nominal_start="2021-10-18T18:50:00-05:00" duration="857.27" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p5-p-video</asset>
+  </event>
+  <event title="Faster Reachability Analysis for LR(1) Parsers" start="2021-10-18T19:04:17.270000-05:00" nominal_start="2021-10-18T19:05:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p15-p-video</asset>
+  </event>
+  <event title="Automatic Grammar Repair" start="2021-10-18T19:19:17.270000-05:00" nominal_start="2021-10-18T19:20:00-05:00" duration="721.11" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p33-p-video</asset>
+  </event>
+  <event title="Vision: Bias in Systematic Grammar-Based Test Suite Construction Algorithms" start="2021-10-18T19:31:18.380000-05:00" nominal_start="2021-10-18T19:35:00-05:00" duration="316.02" nominal_duration="0:08:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p12-p-video</asset>
+  </event>
+  <event title="Compiling pattern matching to in-place modifications" start="2021-10-18T19:36:34.400000-05:00" nominal_start="2021-10-18T19:43:00-05:00" duration="480.27" nominal_duration="0:08:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p22-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-18T19:44:34.670000-05:00" nominal_start="2021-10-18T19:51:00-05:00" duration="1525.33" nominal_duration="0:19:00" session="SLE: SLE/GPCE Session 6">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="A DSL for Explanatory Decision Making" start="2021-10-18T21:50:00-05:00" nominal_start="2021-10-18T21:50:00-05:00" duration="889.15" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 7">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p25-p-video</asset>
+  </event>
+  <event title="SEALS: A framework for building Self-Adaptive Virtual Machines" start="2021-10-18T22:04:49.150000-05:00" nominal_start="2021-10-18T22:05:00-05:00" duration="711.15" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 7">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <asset>splashws21slemain-p40-p-video</asset>
+  </event>
+  <event title="Understanding and Improving Model-Driven IoT Systems Through Accompanying Digital Twins" start="2021-10-18T22:16:40.300000-05:00" nominal_start="2021-10-18T22:20:00-05:00" duration="862.07" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 7">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>splashws21gpcemain-p36-p-video</asset>
+  </event>
+  <event title="Artifact and Reference Models for Generative AI Frameworks and Build Systems" start="2021-10-18T22:31:02.370000-05:00" nominal_start="2021-10-18T22:35:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SLE: SLE/GPCE Session 7">
+    <tracks>
+      <track>GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences</track>
+    </tracks>
+    <asset>60d3efad-cea5-4f5b-8978-c0d7e8885703</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-18T22:46:02.370000-05:00" nominal_start="2021-10-18T22:50:00-05:00" duration="1437.63" nominal_duration="0:20:00" session="SLE: SLE/GPCE Session 7">
+    <tracks>
+      <track>SLE (Software Language Engineering) 2021</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Chair's Welcome and Most Notable Paper Award" start="2021-10-19T07:40:00-05:00" nominal_start="2021-10-19T07:40:00-05:00" duration="600.0" nominal_duration="0:10:00" session="DLS: DLS Talks 2">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title=" Union and intersection contracts are hard, actually" start="2021-10-19T07:50:00-05:00" nominal_start="2021-10-19T07:50:00-05:00" duration="1500.0" nominal_duration="0:25:00" session="DLS: DLS Talks 2">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Runtime and Compiler Support for HAMTs" start="2021-10-19T08:15:00-05:00" nominal_start="2021-10-19T08:15:00-05:00" duration="1500.0" nominal_duration="0:25:00" session="DLS: DLS Talks 2">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="How to Navigate SPLASH" start="2021-10-19T09:00:00-05:00" nominal_start="2021-10-19T09:00:00-05:00" duration="1200.0" nominal_duration="0:20:00" session="SPLASH PLMW: Introduction to SPLASH">
+    <tracks>
+      <track>PLMW@SPLASH</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="A Tour through the Program" start="2021-10-19T09:20:00-05:00" nominal_start="2021-10-19T09:20:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="SPLASH PLMW: Introduction to SPLASH">
+    <tracks>
+      <track>PLMW@SPLASH</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Mentoring Sessions" start="2021-10-19T09:50:00-05:00" nominal_start="2021-10-19T09:50:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="SPLASH PLMW: Introduction to SPLASH">
+    <tracks>
+      <track>PLMW@SPLASH</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Invited Speaker" start="2021-10-19T10:20:00-05:00" nominal_start="2021-10-19T10:20:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="SPLASH Ask Me Anything (AMA): AMA Session">
+    <tracks>
+      <track>Ask Me Anything (AMA)</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="PL/SE Career Panel" start="2021-10-19T10:50:00-05:00" nominal_start="2021-10-19T10:50:00-05:00" duration="4800.0" nominal_duration="1:20:00" session="SPLASH PLMW: Career Perspectives">
+    <tracks>
+      <track>PLMW@SPLASH</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Analyzing Permission Transfer Channels for Dynamically Typed Languages" start="2021-10-19T13:50:00-05:00" nominal_start="2021-10-19T13:50:00-05:00" duration="1500.0" nominal_duration="0:25:00" session="DLS: DLS Talks 1">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="On Design and Use of First-Class Environments in R" start="2021-10-19T14:15:00-05:00" nominal_start="2021-10-19T14:15:00-05:00" duration="2100.0" nominal_duration="0:35:00" session="DLS: DLS Talks 1">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="CompGen: Generation of Fast JIT Compilers in a Multi-Language VM" start="2021-10-19T14:50:00-05:00" nominal_start="2021-10-19T14:50:00-05:00" duration="1200.0" nominal_duration="0:20:00" session="DLS: DLS Talks 1">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Chair's Welcome and Most Notable Paper Award" start="2021-10-19T15:40:00-05:00" nominal_start="2021-10-19T15:40:00-05:00" duration="600.0" nominal_duration="0:10:00" session="DLS: DLS Talks 2">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <asset>77995b66-f823-4c12-a66a-32f1a9318823</asset>
+  </event>
+  <event title=" Union and intersection contracts are hard, actually" start="2021-10-19T15:50:00-05:00" nominal_start="2021-10-19T15:50:00-05:00" duration="1500.0" nominal_duration="0:25:00" session="DLS: DLS Talks 2">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <asset>a2bd814e-644b-4386-a2fe-63fc670a4c7d</asset>
+  </event>
+  <event title="Runtime and Compiler Support for HAMTs" start="2021-10-19T16:15:00-05:00" nominal_start="2021-10-19T16:15:00-05:00" duration="1500.0" nominal_duration="0:25:00" session="DLS: DLS Talks 2">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <asset>2ff813f8-2b71-4bbd-8098-ecd51e17189c</asset>
+  </event>
+  <event title="How to Navigate SPLASH" start="2021-10-19T17:00:00-05:00" nominal_start="2021-10-19T17:00:00-05:00" duration="1200.0" nominal_duration="0:20:00" session="SPLASH PLMW: Introduction to SPLASH">
+    <tracks>
+      <track>PLMW@SPLASH</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="A Tour through the Program" start="2021-10-19T17:20:00-05:00" nominal_start="2021-10-19T17:20:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="SPLASH PLMW: Introduction to SPLASH">
+    <tracks>
+      <track>PLMW@SPLASH</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Mentoring Sessions" start="2021-10-19T17:50:00-05:00" nominal_start="2021-10-19T17:50:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="SPLASH PLMW: Introduction to SPLASH">
+    <tracks>
+      <track>PLMW@SPLASH</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Invited Speaker" start="2021-10-19T18:20:00-05:00" nominal_start="2021-10-19T18:20:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="SPLASH Ask Me Anything (AMA): AMA Session">
+    <tracks>
+      <track>Ask Me Anything (AMA)</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="PL/SE Career Panel" start="2021-10-19T18:50:00-05:00" nominal_start="2021-10-19T18:50:00-05:00" duration="4800.0" nominal_duration="1:20:00" session="SPLASH PLMW: Career Perspectives">
+    <tracks>
+      <track>PLMW@SPLASH</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Analyzing Permission Transfer Channels for Dynamically Typed Languages" start="2021-10-19T21:50:00-05:00" nominal_start="2021-10-19T21:50:00-05:00" duration="1500.0" nominal_duration="0:25:00" session="DLS: DLS Talks 1">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <asset>9993747b-3c5e-4b12-955b-de42f70eb152</asset>
+  </event>
+  <event title="On Design and Use of First-Class Environments in R" start="2021-10-19T22:15:00-05:00" nominal_start="2021-10-19T22:15:00-05:00" duration="2100.0" nominal_duration="0:35:00" session="DLS: DLS Talks 1">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <asset>9bdff49b-71f5-4402-b9c5-72c6e4a6847f</asset>
+  </event>
+  <event title="CompGen: Generation of Fast JIT Compilers in a Multi-Language VM" start="2021-10-19T22:50:00-05:00" nominal_start="2021-10-19T22:50:00-05:00" duration="1200.0" nominal_duration="0:20:00" session="DLS: DLS Talks 1">
+    <tracks>
+      <track>Dynamic Languages Symposium</track>
+    </tracks>
+    <asset>b34908e0-77cf-44d3-a0e4-e7848afc6c69</asset>
+  </event>
+  <event title="Making Pointer Analysis More Precise by Unleashing the Power of Selective Context Sensitivity" start="2021-10-20T07:40:00-05:00" nominal_start="2021-10-20T07:40:00-05:00" duration="898.09" nominal_duration="0:15:00" session="SPLASH OOPSLA: Analysis - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p223-p-video</asset>
+  </event>
+  <event title="Compacting Points-To Sets Through Object Clustering" start="2021-10-20T07:54:58.090000-05:00" nominal_start="2021-10-20T07:55:00-05:00" duration="896.06" nominal_duration="0:15:00" session="SPLASH OOPSLA: Analysis - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p426-p-video</asset>
+  </event>
+  <event title="Program Analysis via Efficient Symbolic Abstraction" start="2021-10-20T08:09:54.150000-05:00" nominal_start="2021-10-20T08:10:00-05:00" duration="790.04" nominal_duration="0:15:00" session="SPLASH OOPSLA: Analysis - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p90-p-video</asset>
+  </event>
+  <event title="JavaDL: Automatically Incrementalizing Java Bug Pattern Detection" start="2021-10-20T08:23:04.190000-05:00" nominal_start="2021-10-20T08:25:00-05:00" duration="745.12" nominal_duration="0:15:00" session="SPLASH OOPSLA: Analysis - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p507-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T08:35:29.310000-05:00" nominal_start="2021-10-20T08:40:00-05:00" duration="1470.69" nominal_duration="0:20:00" session="SPLASH OOPSLA: Analysis - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="SPLASH Conference at Chicago Starts Now" start="2021-10-20T09:00:00-05:00" nominal_start="2021-10-20T09:00:00-05:00" duration="60.0" nominal_duration="0:01:00" session="SPLASH Opening: SPLASH Start">
+    <tracks>
+      <track>Opening</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Exascale and then what?: HPC and AI for Scientific Discovery" start="2021-10-20T09:20:00-05:00" nominal_start="2021-10-20T09:20:00-05:00" duration="3600.0" nominal_duration="1:00:00" session="SPLASH Keynotes: SPLASH Keynote">
+    <tracks>
+      <track>Keynotes</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Invited Speaker" start="2021-10-20T10:20:00-05:00" nominal_start="2021-10-20T10:20:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="SPLASH Ask Me Anything (AMA): AMA Session">
+    <tracks>
+      <track>Ask Me Anything (AMA)</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Onward! Welcome" start="2021-10-20T10:50:00-05:00" nominal_start="2021-10-20T10:50:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 1">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Natural Language-Guided Programming" start="2021-10-20T11:05:00-05:00" nominal_start="2021-10-20T11:05:00-05:00" duration="887.27" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 1">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p7-p-video</asset>
+  </event>
+  <event title="Towards Self-Adaptable Languages" start="2021-10-20T11:19:47.270000-05:00" nominal_start="2021-10-20T11:20:00-05:00" duration="747.15" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 1">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p13-p-video</asset>
+  </event>
+  <event title="Neural Surrogates of Programs" start="2021-10-20T11:32:14.420000-05:00" nominal_start="2021-10-20T11:35:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 1">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T11:47:14.420000-05:00" nominal_start="2021-10-20T11:50:00-05:00" duration="1365.58" nominal_duration="0:20:00" session="SPLASH Onward! Papers: Onward! Paper Session 1">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Kotlin Coroutines: Design and Implementation" start="2021-10-20T13:50:00-05:00" nominal_start="2021-10-20T13:50:00-05:00" duration="688.0" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 2">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p11-p-video</asset>
+  </event>
+  <event title="Dala: A Simple Capability-Based Dynamic Language Design For Data Race-Freedom" start="2021-10-20T14:01:28-05:00" nominal_start="2021-10-20T14:05:00-05:00" duration="867.0" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 2">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p3-p-video</asset>
+  </event>
+  <event title="Motivating Complexity Understanding By Profiling Energy Usage" start="2021-10-20T14:15:55-05:00" nominal_start="2021-10-20T14:20:00-05:00" duration="816.18" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 2">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p12-p-video</asset>
+  </event>
+  <event title="SkyQuery: An Aerial Drone Video Sensing Platform" start="2021-10-20T14:29:31.180000-05:00" nominal_start="2021-10-20T14:35:00-05:00" duration="890.11" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 2">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p10-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T14:44:21.290000-05:00" nominal_start="2021-10-20T14:50:00-05:00" duration="1538.71" nominal_duration="0:20:00" session="SPLASH Onward! Papers: Onward! Paper Session 2">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Making Pointer Analysis More Precise by Unleashing the Power of Selective Context Sensitivity" start="2021-10-20T15:40:00-05:00" nominal_start="2021-10-20T15:40:00-05:00" duration="898.09" nominal_duration="0:15:00" session="SPLASH OOPSLA: Analysis">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p223-p-video</asset>
+  </event>
+  <event title="Compacting Points-To Sets Through Object Clustering" start="2021-10-20T15:54:58.090000-05:00" nominal_start="2021-10-20T15:55:00-05:00" duration="896.06" nominal_duration="0:15:00" session="SPLASH OOPSLA: Analysis">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p426-p-video</asset>
+  </event>
+  <event title="Program Analysis via Efficient Symbolic Abstraction" start="2021-10-20T16:09:54.150000-05:00" nominal_start="2021-10-20T16:10:00-05:00" duration="790.04" nominal_duration="0:15:00" session="SPLASH OOPSLA: Analysis">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p90-p-video</asset>
+  </event>
+  <event title="JavaDL: Automatically Incrementalizing Java Bug Pattern Detection" start="2021-10-20T16:23:04.190000-05:00" nominal_start="2021-10-20T16:25:00-05:00" duration="745.12" nominal_duration="0:15:00" session="SPLASH OOPSLA: Analysis">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p507-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T16:35:29.310000-05:00" nominal_start="2021-10-20T16:40:00-05:00" duration="1470.69" nominal_duration="0:20:00" session="SPLASH OOPSLA: Analysis">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Exascale and then what?: HPC and AI for Scientific Discovery" start="2021-10-20T17:20:00-05:00" nominal_start="2021-10-20T17:20:00-05:00" duration="3600.0" nominal_duration="1:00:00" session="SPLASH Keynotes: SPLASH Keynote">
+    <tracks>
+      <track>Keynotes</track>
+    </tracks>
+    <asset>4aea397e-24ec-43c4-a73b-26df9bb20557</asset>
+  </event>
+  <event title="Invited Speaker" start="2021-10-20T18:20:00-05:00" nominal_start="2021-10-20T18:20:00-05:00" duration="1800.0" nominal_duration="0:30:00" session="SPLASH Ask Me Anything (AMA): AMA Session">
+    <tracks>
+      <track>Ask Me Anything (AMA)</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Onward! Welcome" start="2021-10-20T18:50:00-05:00" nominal_start="2021-10-20T18:50:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 1">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>645df455-35ac-42ea-bfb9-de49bf84c5d7</asset>
+  </event>
+  <event title="Natural Language-Guided Programming" start="2021-10-20T19:05:00-05:00" nominal_start="2021-10-20T19:05:00-05:00" duration="887.27" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 1">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p7-p-video</asset>
+  </event>
+  <event title="Towards Self-Adaptable Languages" start="2021-10-20T19:19:47.270000-05:00" nominal_start="2021-10-20T19:20:00-05:00" duration="747.15" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 1">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p13-p-video</asset>
+  </event>
+  <event title="Neural Surrogates of Programs" start="2021-10-20T19:32:14.420000-05:00" nominal_start="2021-10-20T19:35:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 1">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T19:47:14.420000-05:00" nominal_start="2021-10-20T19:50:00-05:00" duration="1365.58" nominal_duration="0:20:00" session="SPLASH Onward! Papers: Onward! Paper Session 1">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Kotlin Coroutines: Design and Implementation" start="2021-10-20T21:50:00-05:00" nominal_start="2021-10-20T21:50:00-05:00" duration="688.0" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 2">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p11-p-video</asset>
+  </event>
+  <event title="Dala: A Simple Capability-Based Dynamic Language Design For Data Race-Freedom" start="2021-10-20T22:01:28-05:00" nominal_start="2021-10-20T22:05:00-05:00" duration="867.0" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 2">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p3-p-video</asset>
+  </event>
+  <event title="Motivating Complexity Understanding By Profiling Energy Usage" start="2021-10-20T22:15:55-05:00" nominal_start="2021-10-20T22:20:00-05:00" duration="816.18" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 2">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p12-p-video</asset>
+  </event>
+  <event title="SkyQuery: An Aerial Drone Video Sensing Platform" start="2021-10-20T22:29:31.180000-05:00" nominal_start="2021-10-20T22:35:00-05:00" duration="890.11" nominal_duration="0:15:00" session="SPLASH Onward! Papers: Onward! Paper Session 2">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <asset>onward21papers-p10-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-20T22:44:21.290000-05:00" nominal_start="2021-10-20T22:50:00-05:00" duration="1538.71" nominal_duration="0:20:00" session="SPLASH Onward! Papers: Onward! Paper Session 2">
+    <tracks>
+      <track>Onward! Papers</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Programming as Architecture, Design and Urban Planning" start="2021-10-21T07:40:00-05:00" nominal_start="2021-10-21T07:40:00-05:00" duration="1722.03" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 1">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <asset>onward21essays-id3-p-video</asset>
+  </event>
+  <event title="Programming as Architecture, Design and Urban Planning" start="2021-10-21T08:08:42.030000-05:00" nominal_start="2021-10-21T07:40:00-05:00" duration="677.97" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 1">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Angelic and Demonic Visitation: School Memories" start="2021-10-21T08:20:00-05:00" nominal_start="2021-10-21T08:20:00-05:00" duration="2400.0" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 1">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Integrated Scientific Modeling and Lab Automation" start="2021-10-21T09:20:00-05:00" nominal_start="2021-10-21T09:20:00-05:00" duration="3600.0" nominal_duration="1:00:00" session="SPLASH Keynotes: SPLASH Keynote">
+    <tracks>
+      <track>Keynotes</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Future of Conferences" start="2021-10-21T10:50:00-05:00" nominal_start="2021-10-21T10:50:00-05:00" duration="4800.0" nominal_duration="1:20:00" session="SPLASH SIGPLAN Business: Future of Conferences">
+    <tracks>
+      <track>SIGPLAN Business</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Coarsening Optimization for Differentiable Programming" start="2021-10-21T13:50:00-05:00" nominal_start="2021-10-21T13:50:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Implementation of special Paradigms">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p142-p-video</asset>
+  </event>
+  <event title="Statically Bounded-Memory Delayed Sampling for Probabilistic Streams" start="2021-10-21T14:05:00-05:00" nominal_start="2021-10-21T14:05:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Implementation of special Paradigms">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Efficient Automatic Scheduling of Imaging &amp; Vision Pipelines for the GPU" start="2021-10-21T14:20:00-05:00" nominal_start="2021-10-21T14:20:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Implementation of special Paradigms">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Compilation of Sparse Array Programming Models" start="2021-10-21T14:35:00-05:00" nominal_start="2021-10-21T14:35:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Implementation of special Paradigms">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-21T14:50:00-05:00" nominal_start="2021-10-21T14:50:00-05:00" duration="1200.0" nominal_duration="0:20:00" session="SPLASH OOPSLA: Implementation of special Paradigms">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Programming as Architecture, Design and Urban Planning" start="2021-10-21T15:40:00-05:00" nominal_start="2021-10-21T15:40:00-05:00" duration="1722.03" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 1">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <asset>onward21essays-id3-p-video</asset>
+  </event>
+  <event title="Programming as Architecture, Design and Urban Planning" start="2021-10-21T16:08:42.030000-05:00" nominal_start="2021-10-21T15:40:00-05:00" duration="677.97" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 1">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Angelic and Demonic Visitation: School Memories" start="2021-10-21T16:20:00-05:00" nominal_start="2021-10-21T16:20:00-05:00" duration="2400.0" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 1">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Integrated Scientific Modeling and Lab Automation" start="2021-10-21T17:20:00-05:00" nominal_start="2021-10-21T17:20:00-05:00" duration="3600.0" nominal_duration="1:00:00" session="SPLASH Keynotes: SPLASH Keynote">
+    <tracks>
+      <track>Keynotes</track>
+    </tracks>
+    <asset>3cd9d6e6-482e-4d66-9453-b8af77578e91</asset>
+  </event>
+  <event title="Future of Conferences" start="2021-10-21T18:50:00-05:00" nominal_start="2021-10-21T18:50:00-05:00" duration="4800.0" nominal_duration="1:20:00" session="SPLASH SIGPLAN Business: Future of Conferences">
+    <tracks>
+      <track>SIGPLAN Business</track>
+    </tracks>
+    <asset>b41962fe-f7e6-43cf-a9b7-e0d1ee39e8d9</asset>
+  </event>
+  <event title="Coarsening Optimization for Differentiable Programming" start="2021-10-21T21:50:00-05:00" nominal_start="2021-10-21T21:50:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Implementation of special Paradigms - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p142-p-video</asset>
+  </event>
+  <event title="Statically Bounded-Memory Delayed Sampling for Probabilistic Streams" start="2021-10-21T22:05:00-05:00" nominal_start="2021-10-21T22:05:00-05:00" duration="899.21" nominal_duration="0:15:00" session="SPLASH OOPSLA: Implementation of special Paradigms - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p81-p-video</asset>
+  </event>
+  <event title="Efficient Automatic Scheduling of Imaging &amp; Vision Pipelines for the GPU" start="2021-10-21T22:19:59.210000-05:00" nominal_start="2021-10-21T22:20:00-05:00" duration="899.23" nominal_duration="0:15:00" session="SPLASH OOPSLA: Implementation of special Paradigms - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p45-p-video</asset>
+  </event>
+  <event title="Compilation of Sparse Array Programming Models" start="2021-10-21T22:34:58.440000-05:00" nominal_start="2021-10-21T22:35:00-05:00" duration="898.25" nominal_duration="0:15:00" session="SPLASH OOPSLA: Implementation of special Paradigms - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p133-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-21T22:49:56.690000-05:00" nominal_start="2021-10-21T22:50:00-05:00" duration="1203.31" nominal_duration="0:20:00" session="SPLASH OOPSLA: Implementation of special Paradigms - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="SPLASH Awards" start="2021-10-22T09:00:00-05:00" nominal_start="2021-10-22T09:00:00-05:00" duration="1200.0" nominal_duration="0:20:00" session="SPLASH Awards: Awards">
+    <tracks>
+      <track>Awards</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="UDF to SQL Translation through Compositional Lazy Inductive Synthesis" start="2021-10-22T10:50:00-05:00" nominal_start="2021-10-22T10:50:00-05:00" duration="833.22" nominal_duration="0:15:00" session="SPLASH OOPSLA: Algorithms, Libraries and Databases">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p66-p-video</asset>
+  </event>
+  <event title="LXM: Better Splittable Pseudorandom Number Generators (and Almost as Fast)" start="2021-10-22T11:03:53.220000-05:00" nominal_start="2021-10-22T11:05:00-05:00" duration="900.04" nominal_duration="0:15:00" session="SPLASH OOPSLA: Algorithms, Libraries and Databases">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p229-p-video</asset>
+  </event>
+  <event title="FPL: Fast Presburger Arithmetic through Transprecision" start="2021-10-22T11:18:53.260000-05:00" nominal_start="2021-10-22T11:20:00-05:00" duration="855.03" nominal_duration="0:15:00" session="SPLASH OOPSLA: Algorithms, Libraries and Databases">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p469-p-video</asset>
+  </event>
+  <event title="Verifying Concurrent Multicopy Search Structures" start="2021-10-22T11:33:08.290000-05:00" nominal_start="2021-10-22T11:35:00-05:00" duration="900.0" nominal_duration="0:15:00" session="SPLASH OOPSLA: Algorithms, Libraries and Databases">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-22T11:48:08.290000-05:00" nominal_start="2021-10-22T11:50:00-05:00" duration="1311.71" nominal_duration="0:20:00" session="SPLASH OOPSLA: Algorithms, Libraries and Databases">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <room/>
+  </event>
+  <event title="Let a Thousand Flowers Bloom: on the Uses of Diversity in Software Testing" start="2021-10-22T13:50:00-05:00" nominal_start="2021-10-22T13:50:00-05:00" duration="959.07" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 2">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <asset>onward21essays-id2-p-video</asset>
+  </event>
+  <event title="Let a Thousand Flowers Bloom: on the Uses of Diversity in Software Testing" start="2021-10-22T14:05:59.070000-05:00" nominal_start="2021-10-22T13:50:00-05:00" duration="1440.93" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 2">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="The Kingdoms of Objects and Values" start="2021-10-22T14:30:00-05:00" nominal_start="2021-10-22T14:30:00-05:00" duration="2045.11" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 2">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <asset>onward21essays-id4-p-video</asset>
+  </event>
+  <event title="The Kingdoms of Objects and Values" start="2021-10-22T15:04:05.110000-05:00" nominal_start="2021-10-22T14:30:00-05:00" duration="354.89" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 2">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="SPLASH Awards" start="2021-10-22T17:00:00-05:00" nominal_start="2021-10-22T17:00:00-05:00" duration="1200.0" nominal_duration="0:20:00" session="SPLASH Awards: Awards">
+    <tracks>
+      <track>Awards</track>
+    </tracks>
+    <asset>fa5fb5f4-0b6b-404a-90be-226c87cf9558</asset>
+  </event>
+  <event title="UDF to SQL Translation through Compositional Lazy Inductive Synthesis" start="2021-10-22T18:50:00-05:00" nominal_start="2021-10-22T18:50:00-05:00" duration="833.22" nominal_duration="0:15:00" session="SPLASH OOPSLA: Algorithms, Libraries and Databases - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p66-p-video</asset>
+  </event>
+  <event title="LXM: Better Splittable Pseudorandom Number Generators (and Almost as Fast)" start="2021-10-22T19:03:53.220000-05:00" nominal_start="2021-10-22T19:05:00-05:00" duration="900.04" nominal_duration="0:15:00" session="SPLASH OOPSLA: Algorithms, Libraries and Databases - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p229-p-video</asset>
+  </event>
+  <event title="FPL: Fast Presburger Arithmetic through Transprecision" start="2021-10-22T19:18:53.260000-05:00" nominal_start="2021-10-22T19:20:00-05:00" duration="855.03" nominal_duration="0:15:00" session="SPLASH OOPSLA: Algorithms, Libraries and Databases - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p469-p-video</asset>
+  </event>
+  <event title="Verifying Concurrent Multicopy Search Structures" start="2021-10-22T19:33:08.290000-05:00" nominal_start="2021-10-22T19:35:00-05:00" duration="866.2" nominal_duration="0:15:00" session="SPLASH OOPSLA: Algorithms, Libraries and Databases - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <asset>oopsla21main-p70-p-video</asset>
+  </event>
+  <event title="Discussion, Questions and Answers" start="2021-10-22T19:47:34.490000-05:00" nominal_start="2021-10-22T19:50:00-05:00" duration="1345.51" nominal_duration="0:20:00" session="SPLASH OOPSLA: Algorithms, Libraries and Databases - mirror">
+    <tracks>
+      <track>OOPSLA</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="Let a Thousand Flowers Bloom: on the Uses of Diversity in Software Testing" start="2021-10-22T21:50:00-05:00" nominal_start="2021-10-22T21:50:00-05:00" duration="959.07" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 2">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <asset>onward21essays-id2-p-video</asset>
+  </event>
+  <event title="Let a Thousand Flowers Bloom: on the Uses of Diversity in Software Testing" start="2021-10-22T22:05:59.070000-05:00" nominal_start="2021-10-22T21:50:00-05:00" duration="1440.93" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 2">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+  <event title="The Kingdoms of Objects and Values" start="2021-10-22T22:30:00-05:00" nominal_start="2021-10-22T22:30:00-05:00" duration="2045.11" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 2">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <asset>onward21essays-id4-p-video</asset>
+  </event>
+  <event title="The Kingdoms of Objects and Values" start="2021-10-22T23:04:05.110000-05:00" nominal_start="2021-10-22T22:30:00-05:00" duration="354.89" nominal_duration="0:40:00" session="SPLASH Onward! Essays: Essays Session 2">
+    <tracks>
+      <track>Onward! Essays</track>
+    </tracks>
+    <zoom></zoom>
+  </event>
+</room>
