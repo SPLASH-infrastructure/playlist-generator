@@ -719,7 +719,7 @@ class PlaylistEvent:
         category = xml.xpath("./category/text()")[0]
         ds =  xml.xpath("./duration/text()")[0].split(':')
 
-        duration = datetime.timedelta(hours=int(ds[0]), minutes=int(ds[1]), seconds=int(ds[3]), milliseconds=int(ds[3]))
+        duration = datetime.timedelta(hours=int(ds[0]), minutes=int(ds[1]), seconds=int(ds[2]), milliseconds=int(ds[3])*40)
                      # We have :00 added as frames and iso parser gets confused with that
         
         endmode = xml.xpath("./endmode/text()")[0]
