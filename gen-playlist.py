@@ -410,7 +410,7 @@ class LiveElement(ScheduleElement):
         duration = timeslot.end_ts - now
         onairtime = now
         ts = timeslot
-        return [LiveEvent(timeslot.title, source, onairtime, duration, timeslot, recording=self.recording.format(**ctx_dict) if self.recording != None and first else None)], now+duration
+        return [LiveEvent(f"Live: {timeslot.title}", source, onairtime, duration, timeslot, recording=self.recording.format(**ctx_dict) if self.recording != None and first else None)], now+duration
 
     @classmethod
     def from_xml(cls, elem):
