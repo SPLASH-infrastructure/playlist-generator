@@ -689,7 +689,7 @@ class PlaylistEvent:
          <voiceoverlist/>
       </event>
     """
-    def __init__(self, title, source, category, duration, endmode, onairtime, m, ts, recording=None):
+    def __init__(self, title, source, category, duration, endmode, onairtime, m, ts, recording=None, recordingPat=None):
         assert isinstance(title, str)
         self.title = title.strip()
         self.source = source
@@ -698,12 +698,13 @@ class PlaylistEvent:
         self.endmode = endmode
         self.onairtime = onairtime
         self.recording = recording
-
+        self.recordingPat = recordingPat
+        
         self.m = m
         self.ts = ts
 
     def __str__(self):
-        return f"PlaylistEvent({self.title}; {self.onairtime} for {self.duration}; for {self.ts})"
+        return f"PlaylistEvent({self.title}; {self.onairtime} for {self.duration}; for {self.ts}; for {self.recordingPat})"
 
     def to_session_chair_xml(self):
         event = ET.Element("event")
@@ -742,10 +743,14 @@ class PlaylistEvent:
         endmode = xml.xpath("./endmode/text()")[0]
         onairtime_raw = xml.xpath("./onairtime/text()")[0].replace('T', ' ')
         onairtime = datetime.datetime.fromisoformat(onairtime_raw[:19])
-        onairtime += datetime.timedelta(milliseconds=int(onairtime_raw[20:22])*1000/25)
-
+        onairtime += datetime.timedelta(milliseconds=int(onairtime_raw[20:22])*40)
+        
         recording = xml.xpath("./recording/text()")[0]
-        return PlaylistEvent(title,None,  category, duration, endmode, onairtime, None, None, recording)
+        recordingPat = None
+        if xml.xpath("./recordingPattern/text()"):
+            recordingPat = xml.xpath("./recordingPattern/text()")[0]
+
+        return PlaylistEvent(title, None,  category, duration, endmode, onairtime, None, None, recording, recordingPat)
 
     def to_xml(self):
         """
@@ -779,8 +784,8 @@ class PlaylistEvent:
         onairtime.text = f"{time_text}:{frames:02d}"
 
         recordingpat = ET.Element("recordingPattern")
-        recordingpat.text = self.recording if self.recording != None else "" # TODO: what is this, how is it computed
-                                       # I am guessing it is be the confpub id value from the mapping xml?
+        recordingpat.text = self.recording if self.recording != None else ""
+        
         # Bunch of defaults
         offset = ET.Element("offset")
         offset.text = "00:00:00:00"
