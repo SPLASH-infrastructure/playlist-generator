@@ -191,11 +191,11 @@
 			</format>
 			<format badge="Virtual">
 				<prerecorded>
-					<backup><live source="zoom" record="{timeslot.event_id}"/></backup>
+					<backup><live source="zoom"/></backup>
 				</prerecorded>
 			</format>
 			<format badge="In-Person">
-				<live source="room"/>
+				<live source="room" record="{timeslot.event_id}"/>
 			</format>
 		</event>
 		<event name="GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences" compact_recorded="true">
