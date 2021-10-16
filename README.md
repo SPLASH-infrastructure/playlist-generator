@@ -2,8 +2,9 @@
 mash schedule and mapping file to generate an playlist xml file
 
 
-make sure you have `schedule.xml` `mapping.xml` in the same path as this file
+make sure you have `schedule.xml`, `mapping.xml`, `liveinfo.xml`, `asset-info.csv` in the same path as this file
 
-dependencies: `python3`, `lxml` `python-dateutils`
+dependencies: ``python3`, `lxml`, `python-dateutils`
 
-execution instructions: `$ python3 generator.py`
+Playlist generation: `$ ./gen-playlist.py`
+Playlist validation: `$ ./validate-playlist.py`
