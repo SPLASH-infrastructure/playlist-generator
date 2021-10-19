@@ -125,11 +125,9 @@
 			<format event_id="645df455-35ac-42ea-bfb9-de49bf84c5d7">
 				<live source="zoom" record="{timeslot.event_id}"/>
 			</format>
-			<format event_id="35abc255-2ef4-4837-af5f-9c0784a6fcca" mirror="true">
-				<prerecorded source="mirror"/>
-			</format>
 			<format event_id="35abc255-2ef4-4837-af5f-9c0784a6fcca">
-				<live source="zoom" record="{timeslot.event_id}"/>
+				<prerecorded plenary="true"/>
+				<live source="zoom" plenary="true"/>
 			</format>
 			<format mirror="true" name="Discussion, Questions and Answers">
 				<live source="zoom"/>
