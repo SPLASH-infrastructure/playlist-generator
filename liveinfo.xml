@@ -1,13 +1,13 @@
 <liveinfo>
 	<mirroring start="09:00:00" end="17:00:00" timezone="America/Chicago"/>
 	<rooms>
-		<room name="Swissotel Chicago | Zurich A" live="ROOMA" filler="FILLERA"/>
+		<room name="Swissotel Chicago | Zurich D" live="ROOMA" filler="FILLERA"/>
 		<room name="Swissotel Chicago | Zurich B" live="ROOMB" filler="FILLERB"/>
 		<room name="Swissotel Chicago | Zurich C" live="ROOMC" filler="FILLERC"/>
 	</rooms>
 	<events>
 		<event name="Research Papers" compact_recorded="true">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format name="Q&amp;A and discussion">
@@ -17,12 +17,16 @@
 				<prerecorded/>
 			</format>
 		</event>
-		<event name="SAS 2021 - 28th Static Analysis Symposium">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+		<event name="SAS 2021 - 28th Static Analysis Symposium" compact_recorded="true">
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format badge="Invited Talk">
+			<prerecorded>
+			<backup>
 				<live source="zoom" record="{timeslot.event_id}"/>
+				</backup>
+				</prerecorded>
 			</format>
 			<format name="Session 1A Discussion, Questions and Answers "><live source="zoom"/></format>
 			<format name="Session 1B Discussion, Questions and Answers"><live source="zoom"/></format>
@@ -38,11 +42,10 @@
 			<format name="Session 4C Discussion, Questions and Answers"><live source="zoom"/></format>
 			<format>
 				<prerecorded/>
-				<live source="zoom"/>
 			</format>
 		</event>
 		<event name="OOPSLA" compact_recorded="true">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format mirror="true" name="Discussion, Questions and Answers">
@@ -65,7 +68,7 @@
 			</format>
 		</event>
 		<event name="Closing">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format>
@@ -73,7 +76,7 @@
 			</format>
 		</event>
 		<event name="Opening">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format event_id="8e548b3d-7e89-4c53-ab08-185cc101f9b0"><notstreamed/></format>
@@ -82,7 +85,7 @@
 			<format><live plenary="true" source="room" record="{timeslot.event_id}"/></format>
 		</event>
 		<event name="Keynote Talks"> <!-- APLAS keynotes -->
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format>
@@ -91,7 +94,7 @@
 			</format>
 		</event>
 		<event name="Keynotes"> <!-- SPLASH keynotes -->
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format mirror="true">
@@ -102,7 +105,7 @@
 			</format>
 		</event>
 		<event name="Awards">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format mirror="true">
@@ -113,7 +116,7 @@
 			</format>
 		</event>
 		<event name="Onward! Papers" compact_recorded="true">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format event_id="645df455-35ac-42ea-bfb9-de49bf84c5d7" mirror="true">
@@ -149,7 +152,7 @@
 			</format>
 		</event>
 		<event name="REBASE">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format>
@@ -157,7 +160,7 @@
 			</format>
 		</event>
 		<event name="Dynamic Languages Symposium" compact_recorded="true">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format name="Discussion, Questions and Answers">
@@ -178,28 +181,28 @@
 			</format>
 		</event>
 		<event name="SLE (Software Language Engineering) 2021" compact_recorded="true">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
-			<format name="Discussion, Questions and Answers">
+			<format name="Discussion, Questions and Answers" format_name="DQ and A">
 				<live source="zoom"/>
 			</format>
-			<format badge="Virtual" mirror="true">
+			<format badge="Virtual" mirror="true" format_name="SLE-mirror">
 				<prerecorded>
 					<backup><live source="zoom" record="{timeslot.event_id}"/></backup>
 				</prerecorded>
 			</format>
-			<format badge="Virtual">
+			<format badge="Virtual" format_name="SLE-nonmirror">
 				<prerecorded>
 					<backup><live source="zoom"/></backup>
 				</prerecorded>
 			</format>
-			<format badge="In-Person">
+			<format badge="In-Person" format_name="in-room">
 				<live source="room" record="{timeslot.event_id}"/>
 			</format>
 		</event>
 		<event name="GPCE 2021 - 20th International Conference on Generative Programming: Concepts &amp; Experiences" compact_recorded="true">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format name="Discussion, Questions and Answers">
@@ -212,7 +215,7 @@
 				<live source="zoom" record="{timeslot.event_id}"/>
 			</format>
 			<format event_id="52162c2c-b58f-4bf6-8bfd-aa4df8dc3e4b">
-				<live source="zoom" record="{timeslot.event_id}"/>
+				<prerecorded/>
 			</format>
 			<format badge="Virtual" mirror="true">
 				<prerecorded>
@@ -229,7 +232,7 @@
 			</format>
 		</event>
 		<event name="PLMW@SPLASH">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format>
@@ -237,7 +240,7 @@
 			</format>
 		</event>
 		<event name="Ask Me Anything (AMA)">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format event_id="699cfeca-5240-418f-89b9-320ece98abb6"><notstreamed/></format>
@@ -246,14 +249,14 @@
 			<format badge="Virtual"><live source="room" record="{timeslot.event_id}"/></format>
 		</event>
 		<event name="SIGPLAN Business">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format mirror="true"><prerecorded source="mirror"/></format>
 			<format><live source="room" record="{timeslot.event_id}"/></format>
 		</event>
 		<event name="Onward! Essays">
-			<zoom room="Swissotel Chicago | Zurich A" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
 			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
 			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
 			<format>

@@ -33,7 +33,7 @@ researchr_fstring = "%Y/%m/%d %H:%M"
 base_output_file = "SPLASH21-playlist-demo-Zurich-" # FIXME remove demo for final
 base_room = "Swissotel Chicago | Zurich "
 
-room_ids = ["A", "B", "C"]
+room_ids = ["D", "B", "C"]
 
 
 class TimeSlotSchedule:
@@ -355,7 +355,6 @@ class PrerecordedElement(ScheduleElement):
     def schedule_one(self, mapping, room, spec, format, timeslot, now, first=True):
         ctx_dict = self.make_context_dict(room, spec, format, timeslot)
         
-        
         if self.source != None:
             sources = {'mirror': lambda: PrerecordedVideo(timeslot.event_id, timeslot.end_ts - timeslot.start_ts)}
             asset = sources[self.source]()
@@ -470,6 +469,9 @@ class EventFormat:
     def schedule(self, scheduler, mapping, rooms, spec, timeslot):
         if not self.cond(scheduler, timeslot):
             return None
+
+        if (timeslot.event_id == "a2bd814e-644b-4386-a2fe-63fc670a4c7d"):
+            print(f"here {self.name} {self.schedules}")
 
         scheduled = dict()
         now = timeslot.start_ts
@@ -836,12 +838,17 @@ def gen_fillers(room_id, timeslots):
     fillers = []
     for (e1, e2) in adjacent_ts:
         if e2.onairtime < e1.onairtime + e1.duration:
-            print(f"Warning: Overlapping events {e1.ts.title} {e2.ts.title}")
+            pass #print(f"Warning: Overlapping events {e1.ts.title} {e2.ts.title}")
         if e2.onairtime > e1.onairtime + e1.duration: # TODO may be the diff should be between a threshold?
-            print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.title} and {e2.title}")
+            pass# print(f"We have a {str(e2.onairtime - (e1.onairtime + e1.duration))} hr gap between {e1.title} and {e2.title}")
 
-            fillers.append(PlaylistEvent("FILLER_"+room_id,
-                FillerStream("FILLER"+room_id), "LIVE", e2.onairtime - (e1.onairtime + e1.duration), e1.endmode, e1.onairtime + e1.duration, # start after the prev event ends
+            #I hate this I hate this I hate this
+            real_id = room_id 
+            if real_id == 'D':
+                real_id = "A"
+
+            fillers.append(PlaylistEvent("FILLER_"+real_id,
+                FillerStream("FILLER"+real_id), "LIVE", e2.onairtime - (e1.onairtime + e1.duration), e1.endmode, e1.onairtime + e1.duration, # start after the prev event ends
                                          None, # We don't have a mapping or timeslot xml object for fillers
                                          None))
     return fillers
