@@ -238,13 +238,13 @@
 			</format>
 		</event>
 		<event name="Ask Me Anything (AMA)">
-			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
-			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="ZOOMB"/>
-			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="ZOOMC"/>
+			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="AMAZOOM"/>
+			<zoom room="Swissotel Chicago | Zurich B" url="https://acm-org.zoom.us/j/98273751636?pwd=T1lEb2tEQ2QyaTg1MTlYb2l5bDA3dz09" stream="AMAZOOM"/>
+			<zoom room="Swissotel Chicago | Zurich C" url="https://acm-org.zoom.us/j/98830886007?pwd=c2NEeFNORTBPRGg3OUdsV0Exb1laUT09" stream="AMAZOOM"/>
 			<format event_id="699cfeca-5240-418f-89b9-320ece98abb6"><notstreamed/></format>
 			<format badge="In-Person"><live source="room" record="{timeslot.event_id}"/></format>
 			<format badge="In-person"><live source="room" record="{timeslot.event_id}"/></format>
-			<format badge="Virtual"><live source="room" record="{timeslot.event_id}"/></format>
+			<format badge="Virtual"><live source="zoom" record="{timeslot.event_id}"/></format>
 		</event>
 		<event name="SIGPLAN Business">
 			<zoom room="Swissotel Chicago | Zurich D" url="https://acm-org.zoom.us/j/97070104853?pwd=NzRuN1Fwc0xZK09jcE50emJIeHd3UT09" stream="ZOOMA"/>
